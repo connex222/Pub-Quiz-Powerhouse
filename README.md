@@ -1,8 +1,23 @@
+# Pub Quiz Powerhouse — v3.3.0-alpha.4 (Stage D, multiplayer hardening)
+
+**Development preview only. Do not replace live v3.2 on Render yet.** This build adds authenticated phone sessions, relay-side team-binding, private phone response channels, TV pairing checks and reconnect sequencing. It includes Classic and TV Game Show gameplay from Alphas 2–3.
+
+See [V3.3_ALPHA4_RELEASE_NOTES.md](V3.3_ALPHA4_RELEASE_NOTES.md) for improvements, test results, security limitations and the manual device checklist.
+
+Run on Windows: unzip into a separate folder, then double-click **start.bat**. After installing dependencies, open **http://localhost:3000/** in Chrome.
+
+**Security boundary:** the relay prevents one registered phone from *falsely claiming another phone or team in a message*. However, the existing user interface still lets guests deliberately choose an existing team if they know the public join link. Full identity verification will require host approval or team-specific PINs before public events.
+
+**Recovery boundary:** the host's quiz/scores still live in that browser's local storage. A Render restart may require re-pairing the TV. The app is intended for one Render instance, not horizontal scaling.
+
+---
+
+
 # Pub Quiz Powerhouse — v3.2 Quiz Society Edition
 
 **What's new:** the 24 premium Quiz Society avatars are now part of the game, with Correct, Wrong and Win reactions. All supplied game sounds and music remain in place.
 
-**Windows (first run):** Unzip the whole folder, open `pub-quiz-powerhouse-repo`, and double-click `start.bat`. The launcher installs Express and Socket.io automatically the first time (internet needed). Then open `http://localhost:3000/`. Keep the black server window open while playing. Use Setup → Edit avatar to select one of the 24 portraits.
+**Windows (first run):** Extract the ZIP into a new folder and double-click `start.bat` inside that folder. The launcher installs Express and Socket.io automatically the first time (internet needed). Then open `http://localhost:3000/`. Keep the black server window open while playing. Use Setup → Edit avatar to select one of the 24 portraits.
 
 **Important:** the uploaded ZIP supplied three reaction states per character, but no neutral Idle state. The Correct image acts as the resting portrait for now. The full-resolution original PNGs remain in your separate `PUB QUIZ AVATARS.zip`. See `AVATAR_ASSET_LIBRARY.md` for details.
 

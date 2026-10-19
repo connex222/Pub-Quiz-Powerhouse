@@ -1,5 +1,5 @@
 @echo off
-title Pub Quiz Powerhouse v3.2 - keep this window open
+title Pub Quiz Powerhouse v3.3 Alpha 4 - keep this window open
 cd /d "%~dp0"
 where node >nul 2>nul
 if errorlevel 1 (
@@ -16,7 +16,7 @@ if not exist "node_modules\express\package.json" (
   if errorlevel 1 (echo Install failed. Check your connection, then run start.bat again.& pause& exit /b 1)
 )
 echo.
-echo Starting Pub Quiz Powerhouse v3.2...
+echo Starting Pub Quiz Powerhouse v3.3 Alpha 4...
 node server.js
 if errorlevel 1 echo Server stopped due to an error; read the message above.
 pause
