@@ -1,3 +1,15 @@
+# Pub Quiz Powerhouse — v3.2 Quiz Society Edition
+
+**What's new:** the 24 premium Quiz Society avatars are now part of the game, with Correct, Wrong and Win reactions. All supplied game sounds and music remain in place.
+
+**Windows (first run):** Unzip the whole folder, open `pub-quiz-powerhouse-repo`, and double-click `start.bat`. The launcher installs Express and Socket.io automatically the first time (internet needed). Then open `http://localhost:3000/`. Keep the black server window open while playing. Use Setup → Edit avatar to select one of the 24 portraits.
+
+**Important:** the uploaded ZIP supplied three reaction states per character, but no neutral Idle state. The Correct image acts as the resting portrait for now. The full-resolution original PNGs remain in your separate `PUB QUIZ AVATARS.zip`. See `AVATAR_ASSET_LIBRARY.md` for details.
+
+---
+
+> **Quiz Night Live 3.1 redesign:** 24 original team avatars, upgraded TV/host/phone layouts and the preserved user-supplied audio library. See [REDESIGN_RELEASE_NOTES.md](REDESIGN_RELEASE_NOTES.md) for details and testing limitations.
+
 # Pub Quiz Powerhouse
 
 A full quiz night. The **TV shows the questions**, each **team buzzes on their own phone**, and the **quizmaster** runs everything from a laptop, tablet or phone.

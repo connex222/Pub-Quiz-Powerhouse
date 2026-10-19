@@ -1,0 +1,247 @@
+{
+  "collection": "Quiz Society",
+  "version": "3.2.0",
+  "images": [
+    {
+      "id": "professor",
+      "name": "The Professor",
+      "states": {
+        "correct": "quiz-society/professor-correct.webp",
+        "wrong": "quiz-society/professor-wrong.webp",
+        "win": "quiz-society/professor-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "landlady",
+      "name": "The Landlady",
+      "states": {
+        "correct": "quiz-society/landlady-correct.webp",
+        "wrong": "quiz-society/landlady-wrong.webp",
+        "win": "quiz-society/landlady-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "captain",
+      "name": "The Captain",
+      "states": {
+        "correct": "quiz-society/captain-correct.webp",
+        "wrong": "quiz-society/captain-wrong.webp",
+        "win": "quiz-society/captain-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "historian",
+      "name": "The Historian",
+      "states": {
+        "correct": "quiz-society/historian-correct.webp",
+        "wrong": "quiz-society/historian-wrong.webp",
+        "win": "quiz-society/historian-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "barrister",
+      "name": "The Barrister",
+      "states": {
+        "correct": "quiz-society/barrister-correct.webp",
+        "wrong": "quiz-society/barrister-wrong.webp",
+        "win": "quiz-society/barrister-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "headmaster",
+      "name": "The Headmaster",
+      "states": {
+        "correct": "quiz-society/headmaster-correct.webp",
+        "wrong": "quiz-society/headmaster-wrong.webp",
+        "win": "quiz-society/headmaster-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "music-buff",
+      "name": "The Music Buff",
+      "states": {
+        "correct": "quiz-society/music-buff-correct.webp",
+        "wrong": "quiz-society/music-buff-wrong.webp",
+        "win": "quiz-society/music-buff-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "craft-beer-expert",
+      "name": "The Craft Beer Expert",
+      "states": {
+        "correct": "quiz-society/craft-beer-expert-correct.webp",
+        "wrong": "quiz-society/craft-beer-expert-wrong.webp",
+        "win": "quiz-society/craft-beer-expert-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "detective",
+      "name": "The Detective",
+      "states": {
+        "correct": "quiz-society/detective-correct.webp",
+        "wrong": "quiz-society/detective-wrong.webp",
+        "win": "quiz-society/detective-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "quiz-mum",
+      "name": "The Quiz Mum",
+      "states": {
+        "correct": "quiz-society/quiz-mum-correct.webp",
+        "wrong": "quiz-society/quiz-mum-wrong.webp",
+        "win": "quiz-society/quiz-mum-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "data-analyst",
+      "name": "The Data Analyst",
+      "states": {
+        "correct": "quiz-society/data-analyst-correct.webp",
+        "wrong": "quiz-society/data-analyst-wrong.webp",
+        "win": "quiz-society/data-analyst-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "pub-philosopher",
+      "name": "The Pub Philosopher",
+      "states": {
+        "correct": "quiz-society/pub-philosopher-correct.webp",
+        "wrong": "quiz-society/pub-philosopher-wrong.webp",
+        "win": "quiz-society/pub-philosopher-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "duchess",
+      "name": "The Duchess",
+      "states": {
+        "correct": "quiz-society/duchess-correct.webp",
+        "wrong": "quiz-society/duchess-wrong.webp",
+        "win": "quiz-society/duchess-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "showman",
+      "name": "The Showman",
+      "states": {
+        "correct": "quiz-society/showman-correct.webp",
+        "wrong": "quiz-society/showman-wrong.webp",
+        "win": "quiz-society/showman-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "inventor",
+      "name": "The Inventor",
+      "states": {
+        "correct": "quiz-society/inventor-correct.webp",
+        "wrong": "quiz-society/inventor-wrong.webp",
+        "win": "quiz-society/inventor-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "bookmaker",
+      "name": "The Bookmaker",
+      "states": {
+        "correct": "quiz-society/bookmaker-correct.webp",
+        "wrong": "quiz-society/bookmaker-wrong.webp",
+        "win": "quiz-society/bookmaker-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "night-mayor",
+      "name": "The Night Mayor",
+      "states": {
+        "correct": "quiz-society/night-mayor-correct.webp",
+        "wrong": "quiz-society/night-mayor-wrong.webp",
+        "win": "quiz-society/night-mayor-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "broadcaster",
+      "name": "The Broadcaster",
+      "states": {
+        "correct": "quiz-society/broadcaster-correct.webp",
+        "wrong": "quiz-society/broadcaster-wrong.webp",
+        "win": "quiz-society/broadcaster-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "raven-scholar",
+      "name": "The Raven Scholar",
+      "states": {
+        "correct": "quiz-society/raven-scholar-correct.webp",
+        "wrong": "quiz-society/raven-scholar-wrong.webp",
+        "win": "quiz-society/raven-scholar-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "lionheart",
+      "name": "The Lionheart",
+      "states": {
+        "correct": "quiz-society/lionheart-correct.webp",
+        "wrong": "quiz-society/lionheart-wrong.webp",
+        "win": "quiz-society/lionheart-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "oracle",
+      "name": "The Oracle",
+      "states": {
+        "correct": "quiz-society/oracle-correct.webp",
+        "wrong": "quiz-society/oracle-wrong.webp",
+        "win": "quiz-society/oracle-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "chancellor",
+      "name": "The Chancellor",
+      "states": {
+        "correct": "quiz-society/chancellor-correct.webp",
+        "wrong": "quiz-society/chancellor-wrong.webp",
+        "win": "quiz-society/chancellor-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "falcon",
+      "name": "The Falcon",
+      "states": {
+        "correct": "quiz-society/falcon-correct.webp",
+        "wrong": "quiz-society/falcon-wrong.webp",
+        "win": "quiz-society/falcon-win.webp"
+      },
+      "idleFallback": "correct"
+    },
+    {
+      "id": "luminary",
+      "name": "The Luminary",
+      "states": {
+        "correct": "quiz-society/luminary-correct.webp",
+        "wrong": "quiz-society/luminary-wrong.webp",
+        "win": "quiz-society/luminary-win.webp"
+      },
+      "idleFallback": "correct"
+    }
+  ],
+  "note": "Idle state uses Correct as fallback until 24 neutral portraits are supplied. Source PNGs retained in the separate user-supplied PUB QUIZ AVATARS.zip."
+}

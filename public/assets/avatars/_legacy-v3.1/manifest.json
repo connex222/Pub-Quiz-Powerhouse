@@ -1,0 +1,98 @@
+[
+  {
+    "id": "owl",
+    "name": "Professor Hoot"
+  },
+  {
+    "id": "fox",
+    "name": "Foxy Facts"
+  },
+  {
+    "id": "bear",
+    "name": "The Quizzly Bear"
+  },
+  {
+    "id": "badger",
+    "name": "Lord Badger"
+  },
+  {
+    "id": "duck",
+    "name": "Disco Duck"
+  },
+  {
+    "id": "robot",
+    "name": "QuizBot"
+  },
+  {
+    "id": "cat",
+    "name": "Cat-egory King"
+  },
+  {
+    "id": "frog",
+    "name": "Ribbit Right"
+  },
+  {
+    "id": "rabbit",
+    "name": "Quick Wit"
+  },
+  {
+    "id": "ghost",
+    "name": "The Quiz Spirit"
+  },
+  {
+    "id": "wizard",
+    "name": "The Wise One"
+  },
+  {
+    "id": "raccoon",
+    "name": "The Bandit"
+  },
+  {
+    "id": "lion",
+    "name": "Quiz Lion"
+  },
+  {
+    "id": "penguin",
+    "name": "The Cool One"
+  },
+  {
+    "id": "astronaut",
+    "name": "Major Knowledge"
+  },
+  {
+    "id": "sausage",
+    "name": "Sausage Genius"
+  },
+  {
+    "id": "unicorn",
+    "name": "Mystic Mind"
+  },
+  {
+    "id": "koala",
+    "name": "The Thinker"
+  },
+  {
+    "id": "monkey",
+    "name": "Cheeky Chimp"
+  },
+  {
+    "id": "dog",
+    "name": "Sherlock Bones"
+  },
+  {
+    "id": "alien",
+    "name": "Cosmic Clever"
+  },
+  {
+    "id": "dragon",
+    "name": "Dragon Brain"
+  },
+  {
+    "id": "mouse",
+    "name": "Squeaky Clean"
+  },
+  {
+    "id": "pirate",
+    "name": "Captain Quiz"
+  }
+]

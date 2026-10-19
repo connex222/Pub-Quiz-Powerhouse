@@ -1,14 +1,22 @@
 @echo off
-title Pub Quiz Powerhouse - keep this window open while you play
+title Pub Quiz Powerhouse v3.2 - keep this window open
 cd /d "%~dp0"
 where node >nul 2>nul
 if errorlevel 1 (
-  echo.
-  echo   Node.js is not installed.
-  echo   Download the LTS version from https://nodejs.org, install it, then double-click start.bat again.
-  echo.
+  echo Node.js is missing. Install it from https://nodejs.org and try again.
   pause
   exit /b 1
 )
+if not exist "node_modules\express\package.json" (
+  echo.
+  echo Installing the game server software. Internet is required for the first run.
+  where npm >nul 2>nul
+  if errorlevel 1 (echo npm is missing. Reinstall Node.js.& pause& exit /b 1)
+  call npm install
+  if errorlevel 1 (echo Install failed. Check your connection, then run start.bat again.& pause& exit /b 1)
+)
+echo.
+echo Starting Pub Quiz Powerhouse v3.2...
 node server.js
+if errorlevel 1 echo Server stopped due to an error; read the message above.
 pause
