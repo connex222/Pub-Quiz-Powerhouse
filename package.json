@@ -1,16 +1,22 @@
 {
-  "name": "eckey-thump-game-night",
-  "version": "1.0.0",
+  "name": "pub-quiz-powerhouse",
+  "version": "3.3.0-alpha.4",
+  "description": "Pub Quiz Powerhouse: a quiz night with a TV screen, phone buzzers and a quizmaster console",
+  "main": "server.js",
   "private": true,
-  "description": "ECKEY THUMP v1.0 Showtime gameplay, five comedy challenges, optional original SFX and cinematic results",
-  "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "node --watch server/index.js",
-    "test": "node --test test/*.test.js"
+    "start": "node server.js",
+    "test": "node test/relay-security.js && node test/client-reconnect.js && node test/relay.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js",
+    "test:offline": "node test/relay-security.js && node test/client-reconnect.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js"
   },
   "engines": {
-    "node": ">=20.11"
+    "node": ">=18"
   },
-  "license": "UNLICENSED"
+  "dependencies": {
+    "express": "4.21.2",
+    "socket.io": "4.8.1"
+  },
+  "devDependencies": {
+    "socket.io-client": "4.8.1"
+  }
 }
