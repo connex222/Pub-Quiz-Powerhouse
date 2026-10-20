@@ -22,6 +22,24 @@ function client(){
   sockets.set(id,s);connected(s);return s;
 }
 const P='pqpowerhouse/v1/ROOM42/';
+// Regression: a hostile network peer may emit null, arrays or scalars for
+// any event. The server must reject them without throwing or changing state.
+const malformedClient = client();
+for (const event of ['claim','phone-auth','phone-assign','sub','pair','tv-resume']) {
+  for (const value of [null, [], 'malformed', 17]) {
+    assert.doesNotThrow(() => {
+      const answer = malformedClient.request(event,value);
+      assert.equal(answer?.ok,false,`${event} must reject malformed input`);
+    }, `${event} crashed for ${String(value)}`);
+  }
+}
+for (const event of ['unsub','pub']) {
+  for (const value of [null, [], 'malformed', 17]) {
+    assert.doesNotThrow(() => malformedClient.send(event,value));
+  }
+}
+assert.equal(relay.rooms.size,0,'invalid events must not create rooms');
+malformedClient.disconnect();
 const msg=(s,k,cid,team,extra={})=>s.send('pub',{topic:P+'in',msg:JSON.stringify({k,cid,team,...extra})});
 function drain(s){const arr=s.messages.filter(m=>m.ev==='msg');s.messages=[];return arr;}
 const host=client(),phone=client(),other=client(),attacker=client();
@@ -46,6 +64,10 @@ msg(phone,'buzz','phone123','A');
 assert.equal(drain(host).length,0,'unassigned phones cannot buzz');
 msg(phone,'join','phone123','A');
 assert.equal(drain(host).length,1,'join reaches host');
+msg(phone,'cancel','phone123','A');
+assert.equal(drain(host).length,1,'authenticated request cancellation reaches host');
+msg(attacker,'cancel','phone123','A');
+assert.equal(drain(host).length,0,'unregistered cancel cannot forge a phone cancellation');
 assert.equal(host.request('phone-assign',{room:'ROOM42',cid:'phone123',team:'A'}).ok,true);
 msg(phone,'buzz','phone123','B');
 assert.equal(drain(host).length,0,'cross-team buzz rejected by server');

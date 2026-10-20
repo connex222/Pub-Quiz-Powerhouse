@@ -16,6 +16,13 @@ const inbox=s=>{const got=[];s.on('msg',m=>got.push(m));return got;};
 (async()=>{
   await new Promise(r=>(server.listening?r():server.once('listening',r)));
   const host=await connect();const hostIn=inbox(host);
+  // A malformed Socket.io client must not crash the host process.
+  for (const event of ['claim','phone-auth','phone-assign','sub','pair','tv-resume']) {
+    const reply=await call(host,event,null);
+    assert.strictEqual(reply.ok,false,`${event} accepted null`);
+  }
+  for (const event of ['pub','unsub']) host.emit(event,null);
+
   assert.ok((await call(host,'claim',{room:'ROOM42',token:'a'.repeat(32)})).ok);
   assert.ok((await call(host,'sub',{topic:P+'in'})).ok);
   const thief=await connect();

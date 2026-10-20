@@ -386,6 +386,14 @@ details summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;alig
 .join-url{font-size:.85rem;word-break:break-all;color:var(--ink-2);-webkit-user-select:all;user-select:all;margin:4px 0 0}
 .join-panel{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--rule);border-radius:22px;padding:22px;max-width:960px;width:100%;margin:0 auto;box-shadow:var(--shadow)}
 .join-panel .qr{width:clamp(180px,26vw,300px)}
+.join-approvals{border:2px solid var(--gold,#bea36b);margin-bottom:18px}
+.join-approvals .approval-entry{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0;border-top:1px solid var(--rule)}
+.join-approvals .approval-entry:first-of-type{border-top:0}
+.join-approvals .approval-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.join-approvals h2{margin:0 0 6px}
+.join-approvals p{margin:4px 0}
+.ph-await{border:1px solid #bb9b59;background:rgba(175,136,57,.12);border-radius:18px;padding:20px;margin:18px 0;text-align:center}
+.ph-await h2{margin:4px 0 10px}
 .join-panel h3{font-family:var(--display);font-weight:600;font-size:clamp(1.4rem,3vw,2.2rem);margin:0 0 8px}
 .warn{background:color-mix(in srgb,var(--bad) 10%,var(--surface));border:1px solid var(--bad);border-radius:var(--r-md);padding:12px 14px;margin:10px 0}
 .tv-pair{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
@@ -1120,7 +1128,7 @@ function freshState(){
     timer: { running: false, end: 0, rem: 30 },
     history: [],
     settings: { experience: 'classic', timer: 0, autoOpen: true, autoTimer: false, penalty: false, sound: true, music: false, scoring: 'points', mode: 'teams' },
-    net: { on: false, room: '', key: '', broker: 0, url: '', allowNew: true },
+    net: { on: false, room: '', key: '', broker: 0, url: '', allowNew: true, requireApproval: true },
     theme: 'dark'
   };
 }
@@ -1220,7 +1228,7 @@ function normalise(d){
     net: (() => {
       const nt = d.net || {};
       const room = typeof nt.room === 'string' && /^[A-Z0-9]{4,8}$/.test(nt.room) ? nt.room : '';
-      return { on: !!nt.on && !!room, room, key: typeof nt.key === 'string' && /^[A-Za-z0-9]{6,32}$/.test(nt.key) ? nt.key : '', broker: 0, url: typeof nt.url === 'string' ? nt.url.slice(0, 300) : '', allowNew: nt.allowNew !== false };
+      return { on: !!nt.on && !!room, room, key: typeof nt.key === 'string' && /^[A-Za-z0-9]{6,32}$/.test(nt.key) ? nt.key : '', broker: 0, url: typeof nt.url === 'string' ? nt.url.slice(0, 300) : '', allowNew: nt.allowNew !== false, requireApproval: nt.requireApproval !== false };
     })(),
     theme: ['auto','light','dark'].includes(d.theme) ? d.theme : 'auto'
   };
@@ -1249,7 +1257,7 @@ if (/^#buzz/i.test(location.hash)){ runPhone(); return; }
 
 let S = SCREEN ? freshState() : (load() || freshState());
 let view = SCREEN || readHashView() === 'player' ? 'player' : 'setup';
-const NET = { client: null, status: 'off', phones: new Map(), pubT: null, leader: false, key: '' };
+const NET = { client: null, status: 'off', phones: new Map(), joinRequests: new Map(), approving: new Set(), pubT: null, leader: false, key: '' };
 const WIN_ID = uid();
 let showJoin = false;
 const main = $('#main');
@@ -2290,7 +2298,7 @@ function render(){
     focusKey = `[data-act="${ae.dataset.act}"]` + ['id','r','q','d','view','st','mode','i'].map(k => ae.dataset[k] != null ? `[data-${k}="${CSS.escape(ae.dataset[k])}"]` : '').join('');
   }
   renderHeader();
-  main.innerHTML = view === 'player' ? renderPlayer() : view === 'setup' ? renderSetup() : renderHost();
+  main.innerHTML = (view !== 'player' && !SCREEN ? phoneApprovalHTML() : '') + (view === 'player' ? renderPlayer() : view === 'setup' ? renderSetup() : renderHost());
   paintTimer();
   if (focusKey){ const el = main.querySelector(focusKey); if (el && !el.disabled){ try { el.focus({ preventScroll: true }); } catch (e) {} } }
 }
@@ -2679,6 +2687,8 @@ const ACT = {
   'net-broker': () => ask('Switch buzzer server?', 'Use this if phones can’t connect. Phones already connected will need to scan the new QR code.', 'Switch server', () => {
     netAnnounceClose(); S.net.broker = (S.net.broker + 1) % BROKERS.length; commit(); toast(`Using buzzer server ${S.net.broker + 1} of ${BROKERS.length}`);
   }),
+  'phone-approve': b => approveJoin(b.dataset.cid),
+  'phone-reject': b => rejectJoin(b.dataset.cid),
   'copy-join': async () => { const u = joinURL(); if (!u) return; try { await navigator.clipboard.writeText(u); toast('Join link copied'); } catch (e) { toast(u); } },
   'show-join': () => { showJoin = !showJoin; render(); },
   'export-show': () => { const ta = $('#fJson'); if (ta){ ta.value = exportData(); ta.focus(); ta.select(); } },
@@ -2737,6 +2747,7 @@ main.addEventListener('change', e => {
   else if (bind === 'tb-guess'){ if (team(el.dataset.id)){ S.tb.guesses[el.dataset.id] = el.value.trim().slice(0, 20); save(); } }
   else if (bind === 'net-url'){ let v = el.value.trim(); if (v && !/^https?:\/\//i.test(v)) v = 'https://' + v; S.net.url = v.slice(0, 300); commit(); }
   else if (bind === 'net-allow'){ S.net.allowNew = el.checked; save(); }
+  else if (bind === 'net-approval'){ S.net.requireApproval = el.checked; commit(); }
   else if (bind === 'set'){ const k = el.dataset.k; if (k in S.settings){ S.settings[k] = el.checked; save(); if (k === 'music' || k === 'sound') syncMusic(); } }
 });
 main.addEventListener('keydown', e => {
@@ -3582,7 +3593,12 @@ function mqttClient(_url, onMsg, onStatus){
     bindPhone(room, cid, secret){ phoneAuth = { room, cid, secret }; if (sock?.connected) authenticate(); },
     assignPhone(room, cid, team, done){
       if (!api.online) { if (done) done(false); return; }
-      sock.emit('phone-assign', { room, cid, team }, r => { if (done) done(!!r?.ok); });
+      // A deployment/disconnect can swallow an acknowledgement. Never leave the
+      // quizmaster's Approve button stuck in a permanently pending state.
+      let settled = false;
+      const finish = ok => { if (settled) return; settled = true; clearTimeout(timeout); if (done) done(ok); };
+      const timeout = setTimeout(() => finish(false), 6500);
+      sock.emit('phone-assign', { room, cid, team }, r => finish(!!r?.ok));
     },
     pairTV(p){ tvPair = p; if (sock?.connected) authenticate(); },
     kick(){ if (sock && !closed && !sock.connected) sock.connect(); else if (sock?.connected && !api.online) authenticate(); },
@@ -3802,6 +3818,8 @@ function retireClient(){ const old = NET.client; NET.client = null; if (old) set
 function startNet(){
   retireClient();
   NET.phones.clear();
+  NET.joinRequests.clear();
+  NET.approving.clear();
   NET.key = S.net.on && S.net.room ? S.net.room + '|' + S.net.broker : '';
   if (!NET.key){ NET.status = 'off'; paintNet(); return; }
   let c = null;
@@ -3813,7 +3831,7 @@ function startNet(){
 }
 function stopNet(){
   retireClient();
-  NET.phones.clear(); NET.key = ''; NET.status = 'off'; paintNet();
+  NET.phones.clear(); NET.joinRequests.clear(); NET.approving.clear(); NET.key = ''; NET.status = 'off'; paintNet();
 }
 function netAnnounceClose(){
   if (!NET.leader || !NET.client || !NET.client.online) return;
@@ -3855,7 +3873,7 @@ function netState(){
   }
   return {
     v: 1, ts: Date.now(), title: S.quiz.title, phase, mode: S.settings.mode, experience: S.settings.experience, scoring: S.settings.scoring,
-    allowNew: !!S.net.allowNew && !isDuel() && S.teams.length < MAX_TEAMS,
+    allowNew: !!S.net.allowNew && !isDuel() && S.teams.length < MAX_TEAMS, requireApproval: !!S.net.requireApproval,
     n: S.buzz.n, lifecycle: phase === 'q' ? questionPhase() : '',
     exclusive: phase === 'q' && isShowExclusive(), lockedBy: phase === 'q' && isShowExclusive() && showActive() ? showActive().id : null,
     remainingBuzzers: phase === 'q' && isShowExclusive() ? PQPShowBuzzer.remaining(S.buzz, S.teams.map(t=>t.id)).length : 0,
@@ -3880,43 +3898,135 @@ function publishState(now){
   };
   if (now) go(); else NET.pubT = setTimeout(go, 120);
 }
+/* Host-controlled team joining. A public room code is not permission to join a team.
+   Pending requests are transient: phones repeat their request after a reconnect. */
+function phoneApprovalHTML(){
+  if (!S.net.on || !NET.leader || !NET.joinRequests.size) return '';
+  const now = Date.now();
+  const requests = [...NET.joinRequests.values()].filter(x => now - x.at < 120000);
+  if (!requests.length) return '';
+  return `<section class="card join-approvals" aria-live="polite">
+    <h2>Phone join requests (${requests.length})</h2>
+    <p class="hint">Choose who can join. A room code alone does not give permission to join someone else's team.</p>
+    ${requests.map(x => `<div class="approval-entry"><div><strong>${esc(x.name || teamName(x.team))}</strong><p class="hint">${x.name && !x.team ? 'New team requested' : 'Wants to join an existing team'} · phone ${esc(x.cid.slice(-5))}</p></div>
+      <div class="approval-buttons"><button class="btn sm ok" type="button" data-act="phone-approve" data-cid="${esc(x.cid)}" ${NET.approving.has(x.cid) ? 'disabled' : ''}>${NET.approving.has(x.cid) ? 'Approving…' : 'Approve'}</button>
+      <button class="btn sm bad" type="button" data-act="phone-reject" data-cid="${esc(x.cid)}">Reject</button></div></div>`).join('')}
+  </section>`;
+}
+function rejectJoin(cid){
+  const x = NET.joinRequests.get(cid); if (!x) return;
+  NET.joinRequests.delete(cid);
+  if (NET.client) NET.client.publish(netTopic('out/' + cid), JSON.stringify({k:'nojoin',why:'The quizmaster declined this request.'}), false);
+  toast('Join request declined'); softRender();
+}
+/* Joining a team is an asynchronous server assignment. Reserve the approval until
+   the relay confirms it, so repeated clicks cannot create phantom/duplicate teams.
+   On cancellation while a request is in flight, restore the prior binding. */
+function finishPhoneJoin(cid, tid, ph, reply, draftTeam){
+  const client = NET.client, room = S.net.room;
+  if (!client || !client.online) return reply({k:'nojoin',why:'Host connection interrupted. Please retry.'});
+  if (NET.approving.has(cid)) return;
+  const request = NET.joinRequests.get(cid);
+  const oldTeam = ph.team;
+  NET.approving.add(cid);
+  softRender();
+  client.assignPhone(room, cid, tid, ok => {
+    // A new room / host connection must never mutate this quiz or respond to its phones.
+    if (NET.client !== client || S.net.room !== room) return;
+    NET.approving.delete(cid);
+    // A user may cancel or be rejected while an approval is in flight.
+    if (request && NET.joinRequests.get(cid) !== request){
+      if (ok) client.assignPhone(room,cid,oldTeam || null,()=>{});
+      softRender();
+      return;
+    }
+    if (!ok){
+      // The relay may have accepted the binding but its acknowledgement was lost.
+      // Restore the previous team where possible before the player retries.
+      if (client.online) client.assignPhone(room,cid,oldTeam || null,()=>{});
+      NET.joinRequests.delete(cid);
+      reply({k:'nojoin',why:'Phone session could not be paired. Reconnect and try again.'});
+      softRender();
+      return;
+    }
+    // Only commit new-team creation after the server has confirmed the phone binding.
+    if (draftTeam && !S.teams.some(t => t.id === draftTeam.id)){
+      S.teams.push(draftTeam);
+      toast(`${draftTeam.name} approved as a new team`);
+    }
+    NET.joinRequests.delete(cid);
+    ph.team = tid;
+    if (S.lobby && !S.ready.includes(tid)){ S.ready.push(tid); beep(600 + S.ready.length * 70, 0.16); }
+    reply({k:'joined',team:tid});
+    save(); softRender();
+  });
+}
+function approveJoin(cid){
+  const x = NET.joinRequests.get(cid); if (!x || NET.approving.has(cid)) return;
+  if (Date.now()-x.at > 120000){ rejectJoin(cid); return; }
+  const ph = NET.phones.get(cid); if (!ph){ NET.joinRequests.delete(cid); softRender(); return; }
+  let tid = x.team, draft = null;
+  if (tid && !team(tid)){ rejectJoin(cid); return; }
+  if (!tid){
+    if (!x.name || !S.net.allowNew || isDuel() || S.teams.length >= MAX_TEAMS){ rejectJoin(cid); return; }
+    const existing = S.teams.find(t => t.name.toLowerCase() === x.name.toLowerCase());
+    if (existing) tid = existing.id;
+    else {
+      // Serialise new-team creation so two approvals cannot exceed the team limit
+      // or create duplicates with the same requested name while a relay ack is late.
+      const newTeamInFlight = [...NET.approving].some(id => {
+        const pending = NET.joinRequests.get(id);
+        return pending && !pending.team;
+      });
+      if (newTeamInFlight){ toast('Another new team is being approved. Try again in a moment.'); return; }
+      draft = newTeam(x.name,S.teams); tid = draft.id;
+    }
+  }
+  const reply = m => { if (NET.client) NET.client.publish(netTopic('out/' + cid), JSON.stringify(m), false); };
+  finishPhoneJoin(cid,tid,ph,reply,draft);
+}
 function onNetMsg(topic, raw){
   let m; try { m = JSON.parse(raw); } catch (e) { return; }
   if (!m || typeof m.cid !== 'string' || m.cid.length > 40 || !/^[a-z0-9]+$/i.test(m.cid)) return;
   const reply = o => { if (NET.client) NET.client.publish(netTopic('out/' + m.cid), JSON.stringify(o), false); };
   const ph = NET.phones.get(m.cid) || { team: null, last: 0 };
   ph.last = Date.now(); NET.phones.set(m.cid, ph);
-  if (m.k === 'ping'){ reply({ k: 'pong', t0: Number(m.t0) || 0, th: Date.now() }); return; }
+  if (m.k === 'ping'){ reply({k:'pong',t0:Number(m.t0)||0,th:Date.now()}); return; }
+  if (m.k === 'cancel'){
+    NET.joinRequests.delete(m.cid); reply({k:'cancelled'}); softRender(); return;
+  }
   if (m.k === 'join'){
-    let tid = typeof m.team === 'string' && team(m.team) ? m.team : null;
-    if (!tid && typeof m.name === 'string' && m.name.trim()){
-      const name = m.name.trim().replace(/\s+/g, ' ').slice(0, 40);
-      const same = S.teams.find(x => x.name.toLowerCase() === name.toLowerCase());
-      if (same) tid = same.id;
-      else if (S.net.allowNew && !isDuel() && S.teams.length < MAX_TEAMS){
-        const nt = newTeam(name, S.teams); S.teams.push(nt); tid = nt.id;
-        toast(`${nt.name} joined from a phone`);
-      } else {
-        reply({ k: 'nojoin', why: isDuel() ? 'Pick one of the two players.' : S.teams.length >= MAX_TEAMS ? 'The quiz is full. Join an existing team.' : 'The host isn\u2019t taking new teams. Pick an existing one.' });
-        return;
+    const desiredTeam = typeof m.team === 'string' && team(m.team) ? m.team : null;
+    const requestedName = !desiredTeam && typeof m.name === 'string' ? m.name.trim().replace(/\s+/g,' ').slice(0,40) : '';
+    let tid = desiredTeam;
+    if (!tid && requestedName){
+      const existing = S.teams.find(t => t.name.toLowerCase() === requestedName.toLowerCase());
+      if (existing) tid = existing.id;
+      else if (!S.net.allowNew || isDuel() || S.teams.length >= MAX_TEAMS){
+        reply({k:'nojoin',why:isDuel()?'Pick one of the two players.':'New teams are closed. Please select an existing team.'}); return;
       }
     }
-    if (!tid){ reply({ k: 'nojoin', why: 'That team no longer exists. Pick again.' }); return; }
-    // The relay binds a registered phone session to one team before any
-    // buzz can be forwarded. A forged team field is rejected at the server.
-    NET.client.assignPhone(S.net.room, m.cid, tid, ok => {
-      if (!ok){ reply({ k: 'nojoin', why: 'Phone pairing expired. Reconnect and try again.' }); return; }
-      ph.team = tid;
-      if (S.lobby && !S.ready.includes(tid)){ S.ready.push(tid); beep(600 + S.ready.length * 70, 0.16); }
-      reply({ k: 'joined', team: tid });
-      save(); softRender();
-    });
-    return;
+    if (!tid && !requestedName){ reply({k:'nojoin',why:'That team no longer exists. Pick again.'}); return; }
+    // Reconnection to the same previously approved team needs no second approval.
+    if (ph.team === tid && tid){ NET.joinRequests.delete(m.cid); reply({k:'joined',team:tid}); return; }
+    if (S.net.requireApproval){
+      for (const [id, request] of NET.joinRequests) if (Date.now() - request.at > 120000) NET.joinRequests.delete(id);
+      const old=NET.joinRequests.get(m.cid);
+      if (!old || old.team !== tid || old.name !== (tid?null:requestedName)){
+        if (NET.joinRequests.size >= 40){ reply({k:'nojoin',why:'Too many requests. Ask the quizmaster to clear the queue.'}); return; }
+        NET.joinRequests.set(m.cid,{cid:m.cid,team:tid,name:tid?null:requestedName,at:Date.now()});
+        toast('A phone is requesting to join — approve it on the quizmaster screen.'); softRender();
+      }
+      reply({k:'pending',team:tid || null,name:tid?null:requestedName});
+      return;
+    }
+    if (!tid){ const nt=newTeam(requestedName,S.teams); S.teams.push(nt); tid=nt.id; }
+    finishPhoneJoin(m.cid,tid,ph,reply); return;
   }
   if (m.k === 'buzz'){
     if (typeof m.team !== 'string' || !team(m.team) || ph.team !== m.team) return;
-    if (!S.lobby && m.n !== S.buzz.n) return; /* a buzz meant for an earlier question */
-    buzz(m.team, Number(m.te), typeof m.ans === 'number' || typeof m.ans === 'string' ? m.ans : undefined);
+    if (!S.lobby && m.n !== S.buzz.n) return;
+    buzz(m.team,Number(m.te),typeof m.ans === 'number' || typeof m.ans === 'string' ? m.ans : undefined);
   }
 }
 
@@ -3937,6 +4047,8 @@ function buzzModeHTML(deviceHowto){
       ? `<div class="join-box">${qrSVG(url, 180)}<div><p class="hint" style="margin:0">Room code</p><p class="room-code">${S.net.room}</p><p class="join-url">${esc(url)}</p></div></div>`
       : `<div class="warn"><strong>Phones can\u2019t join yet.</strong> Open the quiz from its web address (for example your Render address, or the address shown when the quiz server starts), not from a saved file.</div>`}
     ${isDuel() ? '' : `<label class="check"><input type="checkbox" data-bind="net-allow" ${S.net.allowNew ? 'checked' : ''}>Let phones start a new team</label>`}
+    <label class="check"><input type="checkbox" data-bind="net-approval" ${S.net.requireApproval ? 'checked' : ''}>Quizmaster must approve phones before they join (recommended)</label>
+    <p class="hint">Requests appear at the top of the quizmaster's screen. Turning approval off is less secure: anyone with the QR code can pick a team.</p>
     <div class="row">
       <button class="btn sm" data-act="copy-join" type="button" ${url ? '' : 'disabled'}>Copy join link</button>
       <button class="btn sm" data-act="net-newroom" type="button">New room code</button>
@@ -3946,6 +4058,7 @@ function buzzModeHTML(deviceHowto){
       <li>Show the Player screen on the TV. It shows this QR code.</li>
       <li>One person per ${noun()} points their phone camera at the code and taps the link.</li>
       <li>They tap their ${noun()}\u2019s name${S.net.allowNew && !isDuel() ? ', or type a new team name' : ''}.</li>
+      ${S.net.requireApproval ? '<li>The quizmaster approves each new phone request on the host screen.</li>' : ''}
       <li>Their phone turns into a big buzzer in their colour. Fastest tap wins.</li>
       <li>Phones need Wi-Fi or mobile data, and should stay unlocked during the quiz.</li></ol>
     <h3 style="margin-top:16px">Show the quiz on a smart TV</h3>
@@ -3999,7 +4112,7 @@ function runPhone(){
   const keep = () => { try { localStorage.setItem(PKEY, JSON.stringify(mem)); } catch (e) {} };
   keep();
   const cid = mem.cid;
-  const P = { net: 'connecting', st: null, team: typeof mem.team === 'string' ? mem.team : null, choosing: false, pending: false, n: null, err: '', offs: [], joining: false };
+  const P = { net: 'connecting', st: null, team: typeof mem.team === 'string' ? mem.team : null, choosing: false, pending: false, n: null, err: '', offs: [], joining: false, waiting: null };
   const base = NET_PREFIX + room + '/';
 
   let lock = null;
@@ -4025,8 +4138,10 @@ function runPhone(){
       if (P.offs.length > 8) P.offs.shift();
       return;
     }
-    if (m.k === 'joined' && typeof m.team === 'string'){ P.team = m.team; mem.team = m.team; keep(); P.choosing = false; P.joining = false; vib(40); draw(); return; }
-    if (m.k === 'nojoin'){ P.joining = false; say(String(m.why || 'Couldn\u2019t join. Try again.').slice(0, 120)); draw(); }
+    if (m.k === 'joined' && typeof m.team === 'string'){ P.waiting=null; P.team = m.team; mem.team = m.team; keep(); P.choosing = false; P.joining = false; vib(40); draw(); return; }
+    if (m.k === 'pending'){ P.joining=false; P.waiting={team:m.team||null,name:m.name||null}; draw(); return; }
+    if (m.k === 'cancelled'){ P.waiting=null; P.joining=false; draw(); return; }
+    if (m.k === 'nojoin'){ P.waiting=null; P.joining = false; say(String(m.why || 'Couldn\u2019t join. Try again.').slice(0, 120)); draw(); }
   }
 
   const cl = mqttClient(BROKERS[broker], onMsg, st => { P.net = st; draw(); });
@@ -4036,8 +4151,9 @@ function runPhone(){
   const ping = () => send({ k: 'ping', t0: Date.now(), team: P.team || undefined });
   cl.subscribe(base + 'state');
   cl.subscribe(base + 'out/' + cid);
-  cl.onConnect = () => { ping(); setTimeout(ping, 500); setTimeout(ping, 1200); if (P.team) send({ k: 'join', team: P.team }); };
+  cl.onConnect = () => { ping(); setTimeout(ping, 500); setTimeout(ping, 1200); if (P.waiting) send(Object.assign({k:'join'},P.waiting)); else if (P.team) send({k:'join',team:P.team}); };
   setInterval(ping, 8000);
+  setInterval(() => { if (P.waiting && P.net === 'online') send(Object.assign({k:'join'},P.waiting)); }, 12000);
   setTimeout(() => { if (!P.st && !P.err){ P.err = 'notfound'; draw(); } }, 10000);
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible'){ cl.kick(); wake(); } });
 
@@ -4063,10 +4179,16 @@ function runPhone(){
     });
   }, 350);
   function chooseHTML(s){
+    if (P.waiting) return `<header class="ph-top"><span class="ph-title">QUIZ NIGHT LIVE</span><span>Room ${room}</span></header>
+      <section class="ph-await" role="status"><h2>Waiting for quizmaster approval</h2>
+        <p>Your request to join <strong>${esc(P.waiting.name || (s.teams.find(t => t.id === P.waiting.team)||{}).name || 'the quiz')}</strong> has been sent.</p>
+        <p>The quizmaster can approve or reject it. Keep this page open.</p>
+        <button class="btn" type="button" data-ph="cancel">Cancel request</button></section>`;
     const duel = s.mode === 'duel';
     return `<header class="ph-top"><span class="ph-title">QUIZ NIGHT LIVE <small>${esc(s.title)}</small></span><span class="muted">Room ${room}</span></header>
       ${P.net !== 'online' ? '<p class="ph-warn">Reconnecting\u2026</p>' : ''}
       <h1 class="ph-h">${duel ? 'Which player are you?' : 'Which team are you on?'}</h1>
+      ${s.requireApproval ? '<p class="ph-status">The quizmaster will approve your request before you can play.</p>' : ''}
       <div class="ph-teams">${s.teams.map(t => `<button class="ph-team" style="${teamVars(t)}" data-ph="pick" data-id="${esc(t.id)}" type="button">${phoneAvatar(t)}<span>${esc(t.name)}</span></button>`).join('') || '<p class="muted">No teams yet.</p>'}</div>
       ${s.allowNew ? `<div><label class="field">Or start a new team<input id="phName" maxlength="40" placeholder="Team name" autocomplete="off"></label>
         <button class="btn primary big" data-ph="create" type="button" style="width:100%">Join as a new team</button></div>` : ''}
@@ -4174,6 +4296,7 @@ function runPhone(){
     const b = e.target.closest('[data-ph]'); if (!b) return;
     const a = b.dataset.ph;
     wake();
+    if (a === 'cancel'){ send({k:'cancel'}); P.waiting=null; P.joining=false; draw(); return; }
     if (a === 'buzz'){ if (e.detail === 0) doBuzz(); return; }
     if (a === 'choose'){ if (e.detail === 0) doAnswer(Number(b.dataset.c)); return; }
     if (a === 'send'){ const inp = document.getElementById('phAns'); doAnswer(inp ? inp.value : ''); return; }

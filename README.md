@@ -1,3 +1,25 @@
+# Pub Quiz Powerhouse v3.3 Alpha 7 — relay security verification
+
+**Development build; do not update production Render yet.** This release prevents malformed relay messages from crashing the server and includes strengthened local testing and avatar checks. Extract it on Windows and double-click `run-release-checks.bat`; return `LIVE_TEST_RESULTS.txt` to ChatGPT. See [V3.3_ALPHA7_RELEASE_NOTES.md](V3.3_ALPHA7_RELEASE_NOTES.md). Real phones/TV and Render staging remain untested.
+
+---
+
+# Pub Quiz Powerhouse v3.3 Alpha 6 — pre-release multiplayer checks
+
+**Development version only.** Alpha 6 is not the public v3.3 release. Keep your production Render service deploying from `main` until all real-device and staging tests are passed. Use `run-release-checks.bat` on Windows after extraction to install missing dependencies and run the real Socket.io integration test. See `V3.3_ALPHA6_RELEASE_NOTES.md`.
+
+# Pub Quiz Powerhouse — v3.3.0-alpha.5 (Team Approval)
+
+**Development build — keep the live v3.2 service unchanged.** This adds a quizmaster-controlled phone join queue to the dual-experience (Classic Pub Quiz / TV Game Show) foundation.
+
+**To host:** Setup → **From their phones** → leave **Quizmaster must approve phones before they join** checked. When a guest scans the QR code and selects a team, an **Approve / Reject** request appears on the Host and Setup screens. Guests wait on their phones until approved. Approved phones reconnect to the same team automatically when their session is still valid.
+
+For full feature details, limitations, tests and safe deployment instructions see [V3.3_ALPHA5_RELEASE_NOTES.md](V3.3_ALPHA5_RELEASE_NOTES.md).
+
+**Tests:** `npm run test:offline` runs security, host approval and scoring tests without dependencies. `npm test` includes the real Socket.io test and needs `npm ci`. The optional browser approval test uses Python Playwright + Chromium: `python test/browser-join-approval.py`.
+
+---
+
 # Pub Quiz Powerhouse — v3.3.0-alpha.4 (Stage D, multiplayer hardening)
 
 **Development preview only. Do not replace live v3.2 on Render yet.** This build adds authenticated phone sessions, relay-side team-binding, private phone response channels, TV pairing checks and reconnect sequencing. It includes Classic and TV Game Show gameplay from Alphas 2–3.
@@ -6,7 +28,7 @@ See [V3.3_ALPHA4_RELEASE_NOTES.md](V3.3_ALPHA4_RELEASE_NOTES.md) for improvement
 
 Run on Windows: unzip into a separate folder, then double-click **start.bat**. After installing dependencies, open **http://localhost:3000/** in Chrome.
 
-**Security boundary:** the relay prevents one registered phone from *falsely claiming another phone or team in a message*. However, the existing user interface still lets guests deliberately choose an existing team if they know the public join link. Full identity verification will require host approval or team-specific PINs before public events.
+**Alpha 4 security boundary:** the relay prevents registered phones from spoofing other phones/teams. Alpha 5 adds default host approval when selecting a team. Neither is verified real-world identity.
 
 **Recovery boundary:** the host's quiz/scores still live in that browser's local storage. A Render restart may require re-pairing the TV. The app is intended for one Render instance, not horizontal scaling.
 

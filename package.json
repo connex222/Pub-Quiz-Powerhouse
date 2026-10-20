@@ -1,13 +1,14 @@
 {
   "name": "pub-quiz-powerhouse",
-  "version": "3.3.0-alpha.4",
+  "version": "3.3.0-alpha.7",
   "description": "Pub Quiz Powerhouse: a quiz night with a TV screen, phone buzzers and a quizmaster console",
   "main": "server.js",
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "test": "node test/relay-security.js && node test/client-reconnect.js && node test/relay.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js",
-    "test:offline": "node test/relay-security.js && node test/client-reconnect.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js"
+    "test": "node test/join-approval.js && node test/approval-transaction.js && node test/relay-security.js && node test/client-reconnect.js && node test/client-assignment-timeout.js && node test/relay.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js && node test/assets.js",
+    "test:offline": "node test/join-approval.js && node test/approval-transaction.js && node test/relay-security.js && node test/client-reconnect.js && node test/client-assignment-timeout.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js && node test/assets.js",
+    "test:browser-join": "python test/browser-join-approval.py"
   },
   "engines": {
     "node": ">=18"

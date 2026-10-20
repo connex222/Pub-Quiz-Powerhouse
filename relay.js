@@ -59,13 +59,18 @@ function attach(io) {
       return true;
     };
     const ack = (fn, result) => { if (typeof fn === 'function') fn(result); };
+    // Socket payloads are untrusted. In particular, JavaScript destructuring
+    // accepts undefined defaults but THROWS on null; a remote client could
+    // otherwise crash the entire Node process with an event carrying null.
+    const payload = value => value && typeof value === 'object' && !Array.isArray(value) ? value : {};
     const canSub = (t) => {
       if (t.kind === 'in') return owns.has(t.room);
       if (t.kind === 'out') return phones.get(t.room)?.cid === t.id;
       if (t.kind === 'screen') return screens.has(t.room + '/' + t.key) || !!socket.data.pairGrants?.has(t.room + '/' + t.key);
       return !!rooms.get(t.room)?.owner; // room state is intentionally visible to room-code holders
     };
-    socket.on('claim', ({room,token} = {}, fn) => {
+    socket.on('claim', (data, fn) => {
+      const {room,token} = payload(data);
       if (!allow() || !ROOM_RE.test(String(room)) || !SECRET_RE.test(String(token))) return ack(fn, {ok:false,error:'invalid'});
       const r = roomFor(room);
       if (r.owner && !sameSecret(r.owner, token)) return ack(fn, {ok:false,error:'taken'});
@@ -73,7 +78,8 @@ function attach(io) {
       owns.add(room);
       ack(fn, {ok:true});
     });
-    socket.on('phone-auth', ({room,cid,secret} = {}, fn) => {
+    socket.on('phone-auth', (data, fn) => {
+      const {room,cid,secret} = payload(data);
       if (!allow() || !ROOM_RE.test(String(room)) || !CID_RE.test(String(cid)) || !SECRET_RE.test(String(secret))) return ack(fn, {ok:false,error:'invalid'});
       const r = rooms.get(room);
       if (!r?.owner) return ack(fn, {ok:false,error:'notfound'});
@@ -87,14 +93,16 @@ function attach(io) {
       phones.set(room, {cid,secret});
       ack(fn, {ok:true,team:r.phones.get(cid).team});
     });
-    socket.on('phone-assign', ({room,cid,team} = {}, fn) => {
+    socket.on('phone-assign', (data, fn) => {
+      const {room,cid,team} = payload(data);
       if (!allow() || !owns.has(room) || !CID_RE.test(String(cid)) || (team !== null && !/^[a-z0-9_-]{1,80}$/i.test(String(team)))) return ack(fn,{ok:false});
       const p = rooms.get(room)?.phones.get(cid);
       if (!p) return ack(fn,{ok:false,error:'phone-notfound'});
       p.team = team; p.last = Date.now();
       ack(fn,{ok:true});
     });
-    socket.on('sub', ({topic} = {}, fn) => {
+    socket.on('sub', (data, fn) => {
+      const {topic} = payload(data);
       if (!allow()) return ack(fn,{ok:false,error:'rate'});
       const t = parseTopic(topic);
       if (!t || !canSub(t)) return ack(fn,{ok:false,error:'unauthorised'});
@@ -103,8 +111,10 @@ function attach(io) {
       if (kept) socket.emit('msg',{topic,msg:kept});
       ack(fn,{ok:true});
     });
-    socket.on('unsub', ({topic} = {}) => { if (typeof topic === 'string' && parseTopic(topic)) socket.leave(topic); });
-    socket.on('pub', ({topic,msg,retain} = {}) => {
+    socket.on('unsub', data => {
+      const {topic} = payload(data); if (typeof topic === 'string' && parseTopic(topic)) socket.leave(topic); });
+    socket.on('pub', data => {
+      const {topic,msg,retain} = payload(data);
       if (!allow()) return;
       const t = parseTopic(topic);
       if (!t || typeof msg !== 'string' || Buffer.byteLength(msg,'utf8') > MAX_MSG) return;
@@ -116,9 +126,9 @@ function attach(io) {
         if (!p || !sameSecret(p.secret,bound.secret)) return;
         let data;
         try { data = JSON.parse(msg); } catch { return; }
-        if (!data || typeof data !== 'object' || data.cid !== bound.cid || !['join','ping','buzz'].includes(data.k)) return;
+        if (!data || typeof data !== 'object' || data.cid !== bound.cid || !['join','ping','buzz','cancel'].includes(data.k)) return;
         if (data.k === 'buzz' && (!p.team || data.team !== p.team)) return;
-        if (data.k === 'join' && data.team !== undefined && typeof data.team !== 'string') return;
+        if (data.k === 'join' && (data.team !== undefined && typeof data.team !== 'string' || data.name !== undefined && (typeof data.name !== 'string' || data.name.length > 80))) return;
         p.last = Date.now();
       }
       r.touched = Date.now();
@@ -141,7 +151,8 @@ function attach(io) {
       pairCodes.set(code,{socketId:socket.id,expires:Date.now()+PAIR_TTL_MS});
       ack(fn,{ok:true,code});
     });
-    socket.on('pair', ({code,room,key} = {}, fn) => {
+    socket.on('pair', (data, fn) => {
+      const {code,room,key} = payload(data);
       if (!allow() || !owns.has(room) || !SCREEN_RE.test(String(key))) return ack(fn,{ok:false,error:'Host must be connected.'});
       const c = String(code||'').trim(), p=pairCodes.get(c);
       if (!p || p.expires < Date.now()) return ack(fn,{ok:false,error:'No TV is showing that code.'});
@@ -155,7 +166,8 @@ function attach(io) {
       tv.emit('paired',{room,key});
       ack(fn,{ok:true});
     });
-    socket.on('tv-resume', ({room,key} = {}, fn) => {
+    socket.on('tv-resume', (data, fn) => {
+      const {room,key} = payload(data);
       if (!allow() || !ROOM_RE.test(String(room)) || !SCREEN_RE.test(String(key)) || !rooms.get(room)?.tvKeys.has(key)) return ack(fn,{ok:false,error:'needs-pair'});
       screens.add(room+'/'+key);
       ack(fn,{ok:true});
