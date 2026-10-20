@@ -1,3 +1,20 @@
+# Pub Quiz Powerhouse v3.3 — Release Candidate 1
+
+**Version:** `3.3.0-rc.1`  
+**Status:** Release candidate for final staging verification, **not production**.  
+**Branch:** `release/v3.3-rc1` (do not merge into `main` until signed off).  
+**Deployment:** Retain the existing v3.2 Render production service; test RC1 using the separate staging service.
+
+Two experiences are available: **Classic Pub Quiz** (equal points for correct answers) and **TV Game Show** (speed bonuses for simultaneous answers and exclusive first-buzzer rounds). The release candidate retains 24 Quiz Society avatars, 72 Correct/Wrong/Win portraits, the audio library and quizmaster-approved phone joining.
+
+**Staging acceptance evidence:** On 20 October 2026, the quiz owner reported successful real-device tests of team approvals, TV pairing, Classic marking and corrections, Game Show buzzer locks/penalties/timers, browser/phone/TV reconnect, Render restart recovery, end-of-quiz win display, and an eight-question two-round playthrough. These are **reported test outcomes**, not an automated test of RC1 itself. All prior local tests must still be repeated against RC1 on staging.
+
+For the exact release checklist, operational limitations and QA sign-off, see [V3.3_RC1_RELEASE_NOTES.md](V3.3_RC1_RELEASE_NOTES.md) and [V3.3_RELEASE_CHECKLIST.md](V3.3_RELEASE_CHECKLIST.md). On Windows run `run-release-checks.bat`; on a Node-enabled computer use `npm ci && npm test`. The main quiz session and scores remain stored in the quizmaster browser; clearing browser storage or losing that device is not a recoverable server-side backup.
+
+---
+
+## Historical development notes (Alpha 7 and earlier)
+
 # Pub Quiz Powerhouse v3.3 Alpha 7 — relay security verification
 
 **Development build; do not update production Render yet.** This release prevents malformed relay messages from crashing the server and includes strengthened local testing and avatar checks. Extract it on Windows and double-click `run-release-checks.bat`; return `LIVE_TEST_RESULTS.txt` to ChatGPT. See [V3.3_ALPHA7_RELEASE_NOTES.md](V3.3_ALPHA7_RELEASE_NOTES.md). Real phones/TV and Render staging remain untested.
