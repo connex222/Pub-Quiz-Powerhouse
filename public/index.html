@@ -386,6 +386,14 @@ details summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;alig
 .join-url{font-size:.85rem;word-break:break-all;color:var(--ink-2);-webkit-user-select:all;user-select:all;margin:4px 0 0}
 .join-panel{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--rule);border-radius:22px;padding:22px;max-width:960px;width:100%;margin:0 auto;box-shadow:var(--shadow)}
 .join-panel .qr{width:clamp(180px,26vw,300px)}
+.join-approvals{border:2px solid var(--gold,#bea36b);margin-bottom:18px}
+.join-approvals .approval-entry{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0;border-top:1px solid var(--rule)}
+.join-approvals .approval-entry:first-of-type{border-top:0}
+.join-approvals .approval-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.join-approvals h2{margin:0 0 6px}
+.join-approvals p{margin:4px 0}
+.ph-await{border:1px solid #bb9b59;background:rgba(175,136,57,.12);border-radius:18px;padding:20px;margin:18px 0;text-align:center}
+.ph-await h2{margin:4px 0 10px}
 .join-panel h3{font-family:var(--display);font-weight:600;font-size:clamp(1.4rem,3vw,2.2rem);margin:0 0 8px}
 .warn{background:color-mix(in srgb,var(--bad) 10%,var(--surface));border:1px solid var(--bad);border-radius:var(--r-md);padding:12px 14px;margin:10px 0}
 .tv-pair{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
@@ -729,6 +737,41 @@ html.is-screen .board-premium .team-avatar-ring{width:43px;height:43px}
 .avatar-state-win{filter:drop-shadow(0 0 15px rgba(249,203,94,.48))}
 @media(max-width:460px){.avatar-choice{min-height:136px}.avatar-choice img{width:82px;height:82px}}
 
+/* v3.3 Classic question lifecycle status: clear to quizmaster, not distracting on TV */
+.lifecycle{border-color:var(--brass);font-weight:800;letter-spacing:.04em;background:rgba(177,130,46,.12)}
+/* v3.3 experience selector: two distinct products, one established brand */
+.experience-picker button{min-height:144px;text-align:left;padding:20px;border:1px solid rgba(218,179,105,.32);background:linear-gradient(140deg,#133229,#0c1e20);color:#f5ecd8;gap:10px}
+.experience-picker button strong{font-family:var(--display);font-size:1.28rem;color:#f4d994}
+.experience-picker button span{color:#c5d0c7;font-size:.91rem;line-height:1.5}
+.experience-picker button[aria-pressed="true"]{border-color:#f2c671;box-shadow:inset 0 0 0 2px #d6a955,0 0 22px rgba(220,167,81,.17)}
+.legacy-warning{border-left:3px solid var(--brass);padding:10px 12px;background:var(--surface-2)}
+@media(max-width:570px){.experience-picker{grid-template-columns:1fr}}
+
+/* v3.3 alpha.3: exclusive Game Show focus, never cover the question */
+/* Five compact TV positions per row support the full ten-team roster at 720p. */
+html.is-screen .show-exclusives{gap:6px;padding:9px 14px}
+html.is-screen .show-exclusives .stage-q{padding:13px 18px;font-size:clamp(1.55rem,3vw,2.55rem)}
+html.is-screen .show-exclusives .show-callout{padding:5px 12px;min-height:70px;gap:2px}
+html.is-screen .show-exclusives .show-callout strong{font-size:clamp(1.4rem,2.6vw,2.2rem)}
+html.is-screen .show-exclusives .pads:not(.duel){grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;padding-top:0}
+html.is-screen .show-exclusives .pads:not(.duel) .pad{min-height:77px;padding:3px 6px 5px;gap:2px;font-size:clamp(.73rem,1vw,1rem)}
+html.is-screen .show-exclusives .pads:not(.duel) .pad .team-avatar{height:35px;width:35px}
+html.is-screen .show-exclusives .pads:not(.duel) .pad .order{width:27px;min-width:27px;height:27px;top:-7px;right:-4px;font-size:.9rem;border-width:1px}
+@media(max-width:760px){html.is-screen .show-exclusives{gap:6px;padding:9px 14px}
+html.is-screen .show-exclusives .stage-q{padding:13px 18px;font-size:clamp(1.55rem,3vw,2.55rem)}
+html.is-screen .show-exclusives .show-callout{padding:5px 12px;min-height:70px;gap:2px}
+html.is-screen .show-exclusives .show-callout strong{font-size:clamp(1.4rem,2.6vw,2.2rem)}
+html.is-screen .show-exclusives .pads:not(.duel){grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.show-exclusives .show-callout{display:flex;flex-direction:column;align-items:center;gap:4px;padding:15px 24px;min-height:90px;border:2px solid #f4d795;box-shadow:0 0 28px rgba(237,188,87,.2), inset 0 0 20px rgba(245,200,97,.1)}
+.show-callout-kicker{font:700 clamp(.8rem,1.2vw,1rem)/1.4 var(--font);letter-spacing:.2em;text-transform:uppercase}
+.show-callout strong{font:700 clamp(1.6rem,3vw,2.75rem)/1.15 var(--display)}
+.show-callout span:last-child:not(:first-child){font-size:clamp(.82rem,1.25vw,1rem)}
+.show-exclusives .pad.show-locked{filter:grayscale(.7) brightness(.62)}
+.show-exclusives .pad.first{outline:4px solid #f4d795;outline-offset:2px;box-shadow:0 0 35px rgba(237,188,87,.36)}
+.show-exclusives .show-victory{animation:show-award-enter .45s ease-out both}
+@keyframes show-award-enter{from{opacity:.65;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.show-exclusives .show-victory{animation:none}}
 </style>
 </head>
 <body class="view-setup">
@@ -766,6 +809,11 @@ html.is-screen .board-premium .team-avatar-ring{width:43px;height:43px}
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script src="/socket.io/socket.io.js"></script>
+<script src="/quiz-rules.js"></script>
+<script src="/quiz-lifecycle.js"></script>
+<script src="/show-buzzer.js"></script>
+<script src="/question-banks/quizdemon-batch1.js"></script>
+<script src="/question-banks/weekly-745-754-batch2.js"></script>
 <script>
 (() => {
 'use strict';
@@ -1030,7 +1078,15 @@ function inkFor(hex){
 
 /* Mode-aware wording and keys */
 const isDuel = () => S.settings.mode === 'duel';
-const isSpeed = () => S.settings.scoring === 'speed';
+const isClassic = () => S.settings.experience === 'classic';
+const isShow = () => S.settings.experience === 'show';
+const isLegacy = () => S.settings.experience === 'legacy';
+const isSpeed = () => isLegacy() && S.settings.scoring === 'speed';
+const isShowExclusive = () => isShow() && !isAnswerRound() && !isWritten();
+const showActive = () => PQPShowBuzzer.active(S.buzz);
+/* Multiple correct answers are marked together, not first-correct buzzer wins. */
+const isBatchScoring = () => isClassic() || (isShow() && isAnswerRound()) || isSpeed();
+const experienceName = () => isClassic() ? 'Classic Pub Quiz' : isShow() ? 'TV Game Show' : 'Legacy v3.2';
 const noun = pl => isDuel() ? (pl ? 'players' : 'player') : (pl ? 'teams' : 'team');
 const Noun = pl => { const w = noun(pl); return w[0].toUpperCase() + w.slice(1); };
 const keyFor = i => isDuel() ? (DUEL_KEYS[i] || '') : (i < 9 ? String(i + 1) : (i === 9 ? '0' : ''));
@@ -1063,18 +1119,18 @@ function newTeam(name, teams){
 }
 function freshState(){
   return {
-    v: 1,
+    v: 2,
     quiz: { title: 'Friday Night Quiz', rounds: starterRounds(DEFAULT_CATS, 8, 1, false), tiebreakers: starterTiebreakers() },
     teams: defaultTeams(),
     pos: { r: 0, q: 0 },
-    lobby: true, ready: [], seen: [], recap: false, scored: {},
+    lobby: true, ready: [], seen: [], recap: false, scored: {}, questionAwards: {}, questionSessions: {},
     lx: { rid: '', clue: false, mystery: false }, tb: { on: false, i: 0, guesses: {}, shown: false, winner: null },
     revealed: false, finished: false, between: false, showBoard: false, avatarFx: {},
     buzz: { open: true, order: [], awarded: false, g: null, n: uid(), closedAt: 0 },
     timer: { running: false, end: 0, rem: 30 },
     history: [],
-    settings: { timer: 30, autoOpen: true, autoTimer: false, penalty: false, sound: true, music: false, scoring: 'speed', mode: 'teams' },
-    net: { on: false, room: '', key: '', broker: 0, url: '', allowNew: true },
+    settings: { experience: 'classic', timer: 0, autoOpen: true, autoTimer: false, penalty: false, sound: true, music: false, scoring: 'points', mode: 'teams' },
+    net: { on: false, room: '', key: '', broker: 0, url: '', allowNew: true, requireApproval: true },
     theme: 'dark'
   };
 }
@@ -1130,18 +1186,29 @@ function normalise(d){
   settings.timer = clamp(Math.round(+settings.timer) || 0, 0, 600);
   ['autoOpen','autoTimer','penalty','sound','music'].forEach(k => { settings[k] = !!settings[k]; });
   if (!['speed','points'].includes(settings.scoring)) settings.scoring = 'speed';
+  settings.experience = PQPRules.migrateExperience(d.settings && d.settings.experience);
   if (!['teams','duel'].includes(settings.mode)) settings.mode = 'teams';
   if (settings.mode === 'duel' && teams.length !== 2) settings.mode = 'teams';
   const b = d.buzz || {};
   const tm = d.timer || {};
   const st = {
-    v: 1, quiz, teams, settings,
+    v: 2, quiz, teams, settings,
     pos: { r: +(d.pos && d.pos.r) || 0, q: +(d.pos && d.pos.q) || 0 },
     lobby: !!d.lobby,
     ready: Array.isArray(d.ready) ? d.ready.filter(id => ids.has(id)) : [],
     seen: Array.isArray(d.seen) ? d.seen.filter(x => typeof x === 'string').slice(-1000) : [],
     recap: !!d.recap,
     scored: d.scored && typeof d.scored === 'object' ? Object.fromEntries(Object.entries(d.scored).filter(([, v]) => typeof v === 'string')) : {},
+    questionAwards: (() => {
+      const allIds = new Set(quiz.rounds.flatMap(r => r.questions.map(q => q.id)));
+      const src = d.questionAwards && typeof d.questionAwards === 'object' ? d.questionAwards : {};
+      return Object.fromEntries(Object.entries(src).filter(([qid,v]) => allIds.has(qid) && v && ((typeof v.g === 'string' && v.g.length < 50) || v.zero === true)).map(([qid,v]) => [qid, { g: typeof v.g === 'string' ? v.g : null, zero: v.zero === true }]));
+    })(),
+    questionSessions: (() => {
+      const idsOfQuestions = new Set(quiz.rounds.flatMap(r => r.questions.map(q => q.id)));
+      const src = d.questionSessions && typeof d.questionSessions === 'object' ? d.questionSessions : {};
+      return Object.fromEntries(Object.entries(src).filter(([qid]) => idsOfQuestions.has(qid)).slice(-600).map(([qid, session]) => [qid, PQPLifecycle.cleanSession(session, ids)]));
+    })(),
     lx: (() => { const l = d.lx || {}; return { rid: typeof l.rid === 'string' ? l.rid : '', clue: !!l.clue, mystery: !!l.mystery }; })(),
     tb: (() => {
       const t = d.tb || {};
@@ -1163,11 +1230,18 @@ function normalise(d){
     net: (() => {
       const nt = d.net || {};
       const room = typeof nt.room === 'string' && /^[A-Z0-9]{4,8}$/.test(nt.room) ? nt.room : '';
-      return { on: !!nt.on && !!room, room, key: typeof nt.key === 'string' && /^[A-Za-z0-9]{6,32}$/.test(nt.key) ? nt.key : '', broker: 0, url: typeof nt.url === 'string' ? nt.url.slice(0, 300) : '', allowNew: nt.allowNew !== false };
+      return { on: !!nt.on && !!room, room, key: typeof nt.key === 'string' && /^[A-Za-z0-9]{6,32}$/.test(nt.key) ? nt.key : '', broker: 0, url: typeof nt.url === 'string' ? nt.url.slice(0, 300) : '', allowNew: nt.allowNew !== false, requireApproval: nt.requireApproval !== false };
     })(),
     theme: ['auto','light','dark'].includes(d.theme) ? d.theme : 'auto'
   };
   clampPos(st);
+  if (st.settings.experience === 'show' && !st.lobby && !st.finished && !st.between){
+    const r = st.quiz.rounds[st.pos.r];
+    if (r && r.mode === 'buzz'){
+      st.buzz.order = PQPShowBuzzer.oneActive(st.buzz.order);
+      if (PQPShowBuzzer.active(st.buzz)) st.buzz.open = false;
+    }
+  }
   return st;
 }
 function load(){
@@ -1175,6 +1249,7 @@ function load(){
 }
 function save(){
   if (SCREEN) return;
+  if (!isLegacy() && inPlay()) rememberQuestion();
   try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* storage full or blocked: keep running in memory */ }
   netSync();
 }
@@ -1184,17 +1259,17 @@ if (/^#buzz/i.test(location.hash)){ runPhone(); return; }
 
 let S = SCREEN ? freshState() : (load() || freshState());
 let view = SCREEN || readHashView() === 'player' ? 'player' : 'setup';
-const NET = { client: null, status: 'off', phones: new Map(), pubT: null, leader: false, key: '' };
+const NET = { client: null, status: 'off', phones: new Map(), joinRequests: new Map(), approving: new Set(), pubT: null, leader: false, key: '' };
 const WIN_ID = uid();
 let showJoin = false;
 const main = $('#main');
 const modal = $('#modal');
 
 /* ---------- Quiz position helpers ---------- */
-const rounds = (st = S) => st.quiz.rounds;
+function rounds(st = S){ return st.quiz.rounds; }
 const curRound = () => rounds()[S.pos.r] || null;
 const curQ = () => { const r = curRound(); return r ? r.questions[S.pos.q] || null : null; };
-const totalQs = (st = S) => rounds(st).reduce((n, r) => n + r.questions.length, 0);
+function totalQs(st = S){ return rounds(st).reduce((n, r) => n + r.questions.length, 0); }
 const team = id => S.teams.find(t => t.id === id) || null;
 const teamName = id => { const t = team(id); return t ? t.name : 'Removed'; };
 function nextNonEmpty(from, st = S){ const R = rounds(st); for (let i = Math.max(0, from); i < R.length; i++) if (R[i].questions.length) return i; return -1; }
@@ -1323,47 +1398,100 @@ function addScore(id, d, label, g){
   S.history.push({ id, d, label, g });
   if (S.history.length > 200) S.history.splice(0, S.history.length - 200);
 }
-/* Speed scoring: correct answers ranked by buzz time get 2, 1, then 0 */
+/* One rules module handles Classic, Show and untouched legacy scoring. */
 function speedAwards(){
+  const q = curQ(), base = q ? q.pts : 1;
+  const lq = isAnswerRound() ? listAnswers(q) : null;
   const right = S.buzz.order.filter(b => b.st === 'right').sort((a, b) => a.t - b.t);
-  const m = new Map();
-  const lq = isAnswerRound() ? listAnswers(curQ()) : null;
-  if (lq){ const cap = Math.max(curQ().pts || 1, lq.length); right.forEach(b => m.set(b.id, Math.min(cap, Math.max(1, b.hits || 0)))); return m; }
-  if (!isSpeed() && isAnswerRound()){ const pts = curQ() ? curQ().pts : 1; right.forEach(b => m.set(b.id, pts)); return m; }
-  right.forEach((b, i) => m.set(b.id, i === 0 ? 2 : i === 1 ? 1 : 0));
-  return m;
+  const map = new Map();
+  if (lq){
+    const cap = Math.max(base || 1, lq.length);
+    right.forEach(b => map.set(b.id, Math.min(cap, Math.max(1, b.hits || 0))));
+    return map;
+  }
+  const scoring = isClassic()
+    ? PQPRules.calculateClassicAwards(base, S.buzz.order)
+    : isShow()
+      ? PQPRules.calculateShowAwards(base, S.buzz.order, isAnswerRound() ? 'simultaneous' : 'exclusive')
+      : PQPRules.calculateLegacyAwards(S.settings.scoring, base, S.buzz.order, isAnswerRound());
+  return new Map(scoring);
 }
 function awardSpeed(silent){
   if (S.buzz.awarded) return false;
+  if (!isLegacy() && curQ() && S.questionAwards[curQ().id]) {
+    if (!silent) toast('This question has already been scored. Scores were not awarded again.');
+    return false;
+  }
+  if (!isLegacy() && !S.revealed){ if (!silent) toast('Reveal the answer before awarding points.'); return false; }
+  if (!isLegacy() && S.buzz.order.some(b => b.st === 'wait')){
+    if (!silent) toast('Mark every answer before awarding points.'); return false;
+  }
   const m = speedAwards();
   const gains = Array.from(m).filter(([, p]) => p > 0);
   if (!gains.length){ if (!silent) toast('Mark at least one answer correct first.'); return false; }
   const g = uid();
-  gains.forEach(([id, p]) => addScore(id, p, !isSpeed() ? 'Correct answer' : p === 2 ? 'Fastest correct' : 'Second fastest correct', g));
+  gains.forEach(([id, p]) => addScore(id, p, isClassic() ? 'Classic correct answer' : isShow() ? 'Game show correct answer' : !isSpeed() ? 'Correct answer' : p === 2 ? 'Fastest correct' : 'Second fastest correct', g));
   S.buzz.awarded = true; S.buzz.g = g; S.buzz.open = false;
+  if (!isLegacy() && curQ()) S.questionAwards[curQ().id] = { g };
   timerPause();
   playCue('gain',.45);
   if (!silent) toast(gains.map(([id, p]) => `${teamName(id)} +${p}`).join(', '));
   return true;
 }
 function markBuzz(id, st){
-  if (S.buzz.awarded){ toast('Points are already awarded. Press Undo to change them.'); return; }
+  if (isShowExclusive()){ toast('Use the Correct / Wrong buttons for the active team.'); return; }
+  if (!isLegacy() && !S.revealed){ toast('Lock and reveal the question before changing marks.'); return; }
+  if (S.buzz.awarded || (!isLegacy() && curQ() && S.questionAwards[curQ().id])){ toast('Points are already awarded. Press Undo to change them.'); return; }
   const b = S.buzz.order.find(x => x.id === id); if (!b) return;
   b.st = b.st === st ? 'wait' : st;
-  setAvatarReaction(id,b.st);
+  if (isLegacy() || S.revealed) setAvatarReaction(id,b.st);
   commit();
 }
 function judge(ok){
   const b = S.buzz.order.find(x => x.st === 'wait');
   if (!b){ toast('No answer waiting to be marked.'); return; }
-  if (isSpeed()){
-    if (S.buzz.awarded){ toast('Points are already awarded. Press Undo to change them.'); return; }
-    b.st = ok ? 'right' : 'wrong'; setAvatarReaction(b.id,b.st); commit(); return;
+  if (isBatchScoring()){
+    if (S.buzz.awarded || (!isLegacy() && curQ() && S.questionAwards[curQ().id])){ toast('Points are already awarded. Press Undo to change them.'); return; }
+    b.st = ok ? 'right' : 'wrong'; if (isLegacy() || S.revealed) setAvatarReaction(b.id,b.st); commit(); return;
   }
   const q = curQ(); const pts = q ? q.pts : 1;
+  if (isShowExclusive()){
+    /* One live team at a time. Wrong buzzes unlock another eligible team.
+       All deductions and the eventual positive award share a question group. */
+    if (S.buzz.awarded || S.revealed || b !== showActive()) return;
+    b.st = ok ? 'right' : 'wrong';
+    const group = S.buzz.g || uid();
+    S.buzz.g = group;
+    setAvatarReaction(b.id, b.st);
+    if (ok){
+      addScore(b.id, pts, 'Game Show winning buzzer', group);
+      S.questionAwards[q.id] = { g: group };
+      S.revealed = true;
+      if (!S.seen.includes(q.id)) S.seen.push(q.id);
+      S.buzz.awarded = true;
+      S.buzz.open = false;
+      timerPause();
+      playCue('correct',.46);
+      toast(`${teamName(b.id)} wins the buzzer: +${pts}`);
+    } else {
+      if (S.settings.penalty) addScore(b.id, -pts, 'Game Show wrong buzz', group);
+      S.buzz.open = PQPShowBuzzer.canReopen(S.buzz, S.teams.map(t => t.id), timerRem(), S.settings.timer > 0);
+      if (S.buzz.open) S.buzz.closedAt = 0;
+      if (S.buzz.open && S.settings.timer > 0 && !S.timer.running) timerStart();
+      if (!S.buzz.open) S.buzz.closedAt = Date.now();
+      playCue('wrong', .42);
+      toast(S.buzz.open ? `${teamName(b.id)} misses. Buzzers reopened for other teams.` : 'No more eligible buzzers. Reveal the answer and finalise.');
+    }
+    commit();
+    return;
+  }
   if (ok){
+    if (!isLegacy() && curQ() && S.questionAwards[curQ().id]){ toast('This question is already scored.'); return; }
     b.st = 'right';
-    addScore(b.id, pts, 'Correct buzz');
+    const g = uid();
+    addScore(b.id, pts, 'Correct buzz', g);
+    S.buzz.g = g;
+    if (!isLegacy() && curQ()) S.questionAwards[curQ().id] = { g };
     S.buzz.open = false; S.buzz.awarded = true;
     playCue('correct', .48);
     toast(`${teamName(b.id)} +${pts}`);
@@ -1377,8 +1505,62 @@ function judge(ok){
   setAvatarReaction(b.id,b.st);
   commit();
 }
+/* Explicit question recovery. A score group may no longer be the latest
+   history event when the quizmaster revisits an older question. */
+function reopenCurrentAward(){
+  if (isLegacy() || !inPlay() || !curQ()) return;
+  const qid = curQ().id, record = S.questionAwards[qid];
+  if (!record) return;
+  ask(isShowExclusive() ? 'Re-run this buzzer question?' : 'Reopen this question?', isShowExclusive() ? 'This reverses the scores and penalties from this question only, then clears all buzzer attempts so teams can play the question again.' : 'This reverses ONLY the points awarded for this question. Other questions and manual score adjustments stay unchanged. You can then correct the marks and award again.', isShowExclusive() ? 'Re-run question' : 'Reopen marking', () => {
+    const group = record.g;
+    if (group){
+      S.history = S.history.filter(h => {
+        if (h.g !== group) return true;
+        const t = team(h.id); if (t) t.score -= h.d;
+        return false;
+      });
+    }
+    delete S.questionAwards[qid];
+    S.buzz.awarded = false; S.buzz.g = null; S.buzz.open = false;
+    if (isShowExclusive()){
+      /* Re-running a buzzer question needs a fresh attempt ID and clean queue. */
+      S.buzz.order = []; S.buzz.n = uid(); S.buzz.open = S.settings.autoOpen;
+      S.revealed = false; timerReset();
+      if (S.buzz.open && S.settings.autoTimer) timerStart();
+    } else { S.revealed = true; timerPause(); }
+    commit(); toast(isShowExclusive() ? 'Buzzer round restarted; earlier awards and penalties reversed.' : 'Marks reopened. Correct them, then finalise again.');
+  });
+}
+function finaliseZero(silent){
+  if (isLegacy() || !inPlay() || !curQ()) return false;
+  if (S.buzz.awarded || S.questionAwards[curQ().id]) return false;
+  if (!S.revealed){ if (!silent) toast('Reveal the answer before finalising.'); return false; }
+  if (S.buzz.order.some(b => b.st === 'wait')){ if (!silent) toast('Mark every submitted answer before finalising.'); return false; }
+  if (Array.from(speedAwards().values()).some(p => p > 0)){
+    if (!silent) toast('Correct answers are marked. Use Award points, or change the marks.');
+    return false;
+  }
+  S.questionAwards[curQ().id] = { g: isShowExclusive() ? S.buzz.g : null, zero: true };
+  S.buzz.awarded = true; S.buzz.g = null; S.buzz.open = false;
+  timerPause();
+  if (!silent) toast('Question finalised: no correct answer points awarded.');
+  return true;
+}
+function skipCurrent(){
+  if (isLegacy() || !inPlay() || !curQ()) return;
+  if (S.questionAwards[curQ().id]) { goNext(); return; }
+  ask('Skip this question?', 'This records zero points for every team and moves on. Any submitted answers will not score. You can return later and reopen marking if needed.', 'Skip for zero points', () => {
+    if (isShowExclusive() && S.buzz.g){
+      removeGroup(S.buzz.g);
+      S.buzz.g = null;
+    }
+    S.revealed = true; S.buzz.open = false;
+    S.buzz.order.forEach(b => { b.st = 'wrong'; });
+    if (finaliseZero(true)){ commit(); goNext(); }
+  });
+}
 function undo(){
-  const last = S.history[S.history.length - 1]; if (!last) return;
+  const last = S.history[S.history.length - 1]; if (!last) { if (!isLegacy() && curQ() && S.questionAwards[curQ().id]) return reopenCurrentAward(); return; }
   const g = last.g; const popped = [];
   while (S.history.length){
     const h = S.history[S.history.length - 1];
@@ -1386,12 +1568,47 @@ function undo(){
   }
   popped.forEach(h => { const t = team(h.id); if (t) t.score -= h.d; });
   if (g && S.buzz.g === g){ S.buzz.awarded = false; S.buzz.g = null; }
+  if (g && S.questionAwards) Object.keys(S.questionAwards).forEach(qid => { if (S.questionAwards[qid].g === g) delete S.questionAwards[qid]; });
   if (g) Object.keys(S.scored).forEach(k => { if (S.scored[k] === g) delete S.scored[k]; });
   commit();
   toast('Undone: ' + popped.map(h => `${h.d > 0 ? '+' : ''}${h.d} ${teamName(h.id)}`).join(', '));
 }
 
 /* ---------- Game flow ---------- */
+function questionPhase(){
+  return PQPLifecycle.phase({ open: S.buzz.open, revealed: S.revealed,
+    awarded: S.buzz.awarded, order: S.buzz.order, started: !!curQ() });
+}
+function rememberQuestion(){
+  const q = curQ(); if (!q || isLegacy() || !inPlay()) return;
+  S.questionSessions[q.id] = {
+    revealed: !!S.revealed, open: !!S.buzz.open, awarded: !!S.buzz.awarded,
+    order: S.buzz.order.map(b => ({ id:b.id, t:b.t, st:b.st, ans:b.ans, hits:b.hits })),
+    closedAt: +S.buzz.closedAt || 0, g: S.buzz.g || null
+  };
+}
+function restoreQuestion(){
+  const q = curQ(), stored = q && S.questionSessions[q.id];
+  if (!isLegacy() && stored){
+    const ids = new Set(S.teams.map(t => t.id));
+    const b = PQPLifecycle.cleanSession(stored, ids);
+    S.revealed = b.revealed;
+    S.recap = false; S.avatarFx = {};
+    const storedOrder = isShowExclusive() ? PQPShowBuzzer.oneActive(b.order) : b.order;
+    S.buzz = { open: b.open && !b.revealed && !S.questionAwards[q.id] && !(isShowExclusive() && PQPShowBuzzer.active({order:storedOrder})), order: storedOrder,
+      awarded: !!S.questionAwards[q.id], g: S.questionAwards[q.id]?.g || null,
+      n: uid(), closedAt: 0 };
+    /* Old phone messages must not be counted after question navigation. */
+    if (S.buzz.awarded){ S.buzz.open = false; S.revealed = true; }
+    timerReset();
+    return;
+  }
+  resetForQuestion(true);
+  if (!isLegacy() && q && S.questionAwards[q.id]){
+    S.buzz.awarded = true; S.buzz.open = false; S.buzz.g = S.questionAwards[q.id].g;
+    S.revealed = true;
+  }
+}
 function commit(){ save(); render(); }
 function resetForQuestion(open){
   S.revealed = false;
@@ -1405,7 +1622,7 @@ function restartGame(){
   S.teams.forEach(t => { t.score = 0; });
   S.history = [];
   S.finished = false; S.between = false; S.showBoard = false;
-  S.lobby = true; S.ready = []; S.seen = []; S.scored = {};
+  S.lobby = true; S.ready = []; S.seen = []; S.scored = {}; S.questionAwards = {}; S.questionSessions = {};
   S.lx = { rid: '', clue: false, mystery: false };
   S.tb = { on: false, i: 0, guesses: {}, shown: false, winner: null };
   const r = nextNonEmpty(0);
@@ -1425,6 +1642,7 @@ function startQuiz(){
   toast('Quiz started. Good luck!');
 }
 function finish(){
+  if (inPlay()) rememberQuestion();
   S.finished = true; S.between = false; S.showBoard = true;
   resetForQuestion(false);
   commit(); fanfare();
@@ -1432,22 +1650,26 @@ function finish(){
 }
 function goNext(){
   if (!totalQs() || S.finished) return;
+  if (!isLegacy() && inPlay() && !isWritten() && !S.buzz.awarded){
+    toast('Finalise this question before continuing: reveal, mark and award, or use Skip for zero points.'); return;
+  }
   if (S.lobby){ startQuiz(); return; }
   const R = rounds();
+  if (inPlay()) rememberQuestion();
   let note = '';
-  if (inPlay() && (isSpeed() || isAnswerRound()) && !S.buzz.awarded){ if (isAnswerRound() && !S.revealed) autoMark(); if (awardSpeed(true)) note = 'Points awarded for that question.'; }
+  if (inPlay() && isLegacy() && (isSpeed() || isAnswerRound()) && !S.buzz.awarded){ if (isAnswerRound() && !S.revealed) autoMark(); if (awardSpeed(true)) note = 'Points awarded for that question.'; }
   if (S.between){
     const nr = nextNonEmpty(S.pos.r + 1);
     S.between = false; S.showBoard = false;
     if (nr < 0){ finish(); return; }
     S.pos = { r: nr, q: 0 };
-    resetForQuestion(true); commit();
+    restoreQuestion(); commit();
     toast(`${R[nr].name} starts now`);
     return;
   }
   if (!isLastInRound()){
     S.pos.q += 1; S.showBoard = false;
-    resetForQuestion(true); commit();
+    restoreQuestion(); commit();
     if (note) toast(note);
     return;
   }
@@ -1461,9 +1683,10 @@ function goPrev(){
   if (!totalQs() || S.lobby) return;
   if (S.finished || S.between){
     S.finished = false; S.between = false; S.showBoard = false;
-    resetForQuestion(false); commit();
+    restoreQuestion(); commit();
     return;
   }
+  if (inPlay()) rememberQuestion();
   if (S.pos.q > 0) S.pos.q -= 1;
   else {
     const pr = prevNonEmpty(S.pos.r - 1);
@@ -1471,27 +1694,35 @@ function goPrev(){
     S.pos = { r: pr, q: rounds()[pr].questions.length - 1 };
   }
   S.showBoard = false;
-  resetForQuestion(true); commit();
+  restoreQuestion(); commit();
 }
 function goNextRound(){
   if (S.lobby) return;
+  if (!isLegacy() && inPlay() && !isWritten() && !S.buzz.awarded){
+    toast('Finalise this question before advancing to the next round.'); return;
+  }
   const nr = nextNonEmpty(S.pos.r + 1);
   if (nr < 0){ toast('This is the last round.'); return; }
-  if (inPlay() && (isSpeed() || isAnswerRound()) && !S.buzz.awarded){ if (isAnswerRound() && !S.revealed) autoMark(); awardSpeed(true); }
+  if (inPlay() && isLegacy() && (isSpeed() || isAnswerRound()) && !S.buzz.awarded){ if (isAnswerRound() && !S.revealed) autoMark(); awardSpeed(true); }
+  if (inPlay()) rememberQuestion();
   S.between = false; S.finished = false; S.showBoard = false;
   S.pos = { r: nr, q: 0 };
-  resetForQuestion(true); commit();
+  restoreQuestion(); commit();
   toast(`${rounds()[nr].name} starts now`);
 }
 function toggleReveal(){
   if (!inPlay() || !curQ()) return;
+  if (isShowExclusive() && showActive() && !S.buzz.awarded){
+    toast('Judge the active buzzer before revealing.'); return;
+  }
+  if (!isLegacy() && S.revealed) { toast('The answer has already been revealed.'); return; }
   S.revealed = !S.revealed;
   if (S.revealed && !S.seen.includes(curQ().id)) S.seen.push(curQ().id);
   if (S.revealed){ if (S.buzz.open) S.buzz.closedAt = Date.now(); S.buzz.open = false; timerPause(); }
   let note = '';
   if (S.revealed && isAnswerRound() && !S.buzz.awarded){
     autoMark();
-    if (isChoice()){
+    if (isChoice() && isLegacy()){
       const gains = Array.from(speedAwards()).filter(([, p]) => p > 0);
       if (awardSpeed(true)) note = gains.map(([id, p]) => `${teamName(id)} +${p}`).join(', ');
       else note = S.buzz.order.length ? 'Nobody got it right.' : 'Nobody answered.';
@@ -1523,20 +1754,42 @@ function buzz(id, te, ans){
     if (ans === '') return;
   }
   const now = Date.now();
-  const at = Number.isFinite(te) && te >= now - 2500 && te <= now + 200 ? Math.min(te, now) : now;
+  const at = !isLegacy() ? now : Number.isFinite(te) && te >= now - 2500 && te <= now + 200 ? Math.min(te, now) : now;
   if (S.between || S.finished){ if (!remote) toast('No question is live right now.'); return; }
-  if (S.buzz.awarded){ if (!remote) toast('Points are already awarded for this question.'); return; }
-  const lateOk = !S.buzz.open && S.buzz.closedAt > 0 && at <= S.buzz.closedAt;
+  if (S.buzz.awarded || (!isLegacy() && curQ() && S.questionAwards[curQ().id])){ if (!remote) toast('Points are already awarded for this question.'); return; }
+  if (isShowExclusive() && S.settings.timer > 0 && timerRem() <= 0){
+    S.buzz.open = false;
+    if (!remote) toast('The buzzer timer has expired.');
+    return;
+  }
+  if (isShowExclusive() && !PQPShowBuzzer.canAccept(S.buzz, id, S.teams.map(x => x.id))){
+    if (!remote) toast(showActive() ? `${teamName(showActive().id)} is answering. Wait for the host.` : S.buzz.order.some(b => b.id === id) ? 'Your team has already tried this question.' : 'Buzzers are closed.');
+    return;
+  }
+  const lateOk = !isShowExclusive() && !S.buzz.open && S.buzz.closedAt > 0 && at <= S.buzz.closedAt;
   if (!S.buzz.open && !lateOk){ if (!remote) toast('Buzzers are closed.'); return; }
-  if (S.buzz.order.some(b => b.id === id)) return;
+  const previous = S.buzz.order.find(b => b.id === id);
+  if (previous){
+    if (isClassic() && isAnswerRound() && S.buzz.open && !S.revealed){
+      previous.ans = ans; previous.st = 'wait'; previous.hits = undefined;
+      done();
+    }
+    return;
+  }
   const entry = { id, t: at, st: 'wait' };
   if (isAnswerRound()) entry.ans = ans;
   const pos = S.buzz.order.findIndex(b => b.t > at);
   if (pos < 0) S.buzz.order.push(entry); else S.buzz.order.splice(pos, 0, entry);
   const firstIn = S.buzz.order.length === 1;
-  if (isSpeed() || isAnswerRound()){
+  if (isShowExclusive()){
+    /* Atomic host-side first claim. No second queued contender until judged. */
+    S.buzz.open = false;
+    S.buzz.closedAt = now;
+    timerPause();
+    playCue('buzz', .58);
+  } else if (isBatchScoring() || isAnswerRound()){
     playCue('buzz', firstIn ? .52 : .3);
-    if (S.buzz.order.length >= S.teams.length){ if (S.buzz.open) S.buzz.closedAt = now; S.buzz.open = false; timerPause(); }
+    if (!isClassic() && S.buzz.order.length >= S.teams.length){ if (S.buzz.open) S.buzz.closedAt = now; S.buzz.open = false; timerPause(); }
   } else {
     const first = S.buzz.order.filter(b => b.st === 'wait').length === 1;
     if (first){ playCue('buzz', .52); timerPause(); } else playCue('buzz', .28);
@@ -1589,7 +1842,14 @@ function rankMap(){
   return m;
 }
 function teamStyle(t){ return `--c:${t.colour};--ci:${inkFor(t.colour)}`; }
-function scoringLabel(q){ if (q && isAnswerRound() && listAnswers(q)) return `${listAnswers(q).length} answers, a point each`; return (isAnswerRound() && !isSpeed()) ? plural(q ? q.pts : 1, 'point') + ' for every correct answer' : isWritten() ? (q && q.pts > 1 ? `Written answer, ${q.pts} points` : 'Written answer') : isSpeed() ? 'Fastest correct 2, second 1' : plural(q ? q.pts : 1, 'point'); }
+function scoringLabel(q){
+  if (q && isAnswerRound() && listAnswers(q)) return `${listAnswers(q).length} answers, a point each`;
+  if (isWritten()) return q && q.pts > 1 ? `Written answer, ${q.pts} points` : 'Written answer';
+  const base = q ? q.pts : 1;
+  if (isClassic()) return `${base} ${base === 1 ? 'point' : 'points'} for every correct answer`;
+  if (isShow()) return isAnswerRound() ? `Correct +${base}, fastest +2, second +1` : `First correct buzzer: ${plural(base, 'point')}`;
+  return (isAnswerRound() && !isSpeed()) ? plural(base, 'point') + ' for every correct answer' : isSpeed() ? 'Fastest correct 2, second 1' : plural(base, 'point');
+}
 
 function timerHTML(){
   const rem = timerRem(), tot = S.settings.timer || 1;
@@ -1673,6 +1933,8 @@ function renderHost(){
     left = `<article class="card">
       <div class="q-meta">
         <span class="pill">${esc(r.name)}</span>
+        <span class="pill">${experienceName()}</span>
+        ${!isLegacy() && !isWritten() ? `<span class="pill lifecycle" aria-label="Question status">${questionPhase()}</span>` : ''}
         <span class="pill">Question ${S.pos.q + 1} of ${r.questions.length}</span>
         <span class="pill pts">${scoringLabel(q)}</span>
         ${q.cat && q.cat !== r.name ? `<span class="pill">${esc(q.cat)}</span>` : ''}
@@ -1689,7 +1951,8 @@ function renderHost(){
       </div></article>
       <div class="card controls">
         <button class="btn" data-act="prev" type="button" ${atStart() ? 'disabled' : ''}>Previous</button>
-        <button class="btn ${S.revealed ? '' : 'ok'}" data-act="reveal" type="button" aria-pressed="${S.revealed}">${S.revealed ? 'Hide answer' : isAnswerRound() ? 'Reveal and mark' : 'Show answer'}</button>
+        <button class="btn ${S.revealed ? '' : 'ok'}" data-act="reveal" type="button" aria-pressed="${S.revealed}" ${!isLegacy() && S.revealed ? 'disabled' : ''}>${S.revealed ? (isLegacy() ? 'Hide answer' : 'Answer revealed') : isAnswerRound() ? 'Lock, reveal and mark' : 'Show answer'}</button>
+        ${!isLegacy() && !isWritten() ? `<button class="btn sm" data-act="skip-question" type="button" ${S.buzz.awarded ? 'disabled' : ''}>Skip for 0 points</button>` : ''}
         <button class="btn primary" data-act="next" type="button">${isLastInRound() ? (isLastRound() ? 'Finish quiz' : 'End round') : 'Next question'}</button>
         <button class="btn" data-act="next-round" type="button" ${isLastRound() ? 'disabled' : ''}>Skip to next round</button>
       </div>`;
@@ -1709,7 +1972,7 @@ function buzzCard(){
   let list, judgeBox = '';
   if (!order.length){
     list = `<p class="muted" aria-live="polite">${open ? 'Waiting for someone to buzz in.' : 'Buzzers are closed.'}</p>`;
-  } else if (isSpeed()){
+  } else if (isBatchScoring()){
     const aw = speedAwards();
     list = `<ol class="queue" aria-live="polite">${order.map((b, i) => { const t = team(b.id); if (!t) return ''; const p = aw.get(b.id);
       return `<li class="${b.st === 'wait' ? '' : b.st}"><span class="team-avatar-ring" style="${teamStyle(t)}">${avatarHTML(t)}</span><strong>${i + 1}. ${esc(t.name)}</strong><span class="muted">${timeLabel(b, i)}</span><span class="spacer"></span>
@@ -1720,36 +1983,44 @@ function buzzCard(){
         </span></li>`; }).join('')}</ol>`;
     const any = Array.from(aw.values()).some(p => p > 0);
     judgeBox = awarded
-      ? `<p class="hint">Points awarded. Press Undo on the scoreboard to change them.</p>`
-      : `<div class="judge"><p>Ask each ${noun()} for their answer and mark it \u2714 or \u2718. Fastest correct gets 2 points, second fastest gets 1, everyone else 0.</p>
-         <button class="btn primary" data-act="award" type="button" ${any ? '' : 'disabled'}>Award points</button></div>`;
+      ? `<p class="hint">Question finalised. ${!isLegacy() ? '<button class="btn sm" data-act="reopen-current" type="button">Reopen marking</button>' : 'Press Undo on the scoreboard to change the points.'}</p>`
+      : `<div class="judge"><p>${esc(scoringLabel(curQ()))}. Mark each ${noun()} \u2714 or \u2718, then award.</p>
+         ${any ? `<button class="btn primary" data-act="award" type="button" ${!isLegacy() && (!S.revealed || order.some(b => b.st === 'wait')) ? 'disabled' : ''}>Award points</button>` : (!isLegacy() && S.revealed ? `<button class="btn" data-act="finalise-zero" type="button" ${order.some(b => b.st === 'wait') ? 'disabled' : ''}>Finalise: 0 points</button>` : '')}
+         ${!isLegacy() && !S.revealed ? '<span class="hint">Reveal the answer to mark and finalise.</span>' : ''}</div>`;
   } else {
     const active = order.find(b => b.st === 'wait');
     const q = curQ(); const pts = q ? q.pts : 1;
     list = `<ol class="queue" aria-live="polite">${order.map((b, i) => { const t = team(b.id); if (!t) return '';
       const mark = b.st === 'right' ? ' \u2714 correct' : b.st === 'wrong' ? ' \u2718 wrong' : '';
       return `<li class="${b === active ? 'active' : b.st}"><span class="team-avatar-ring" style="${teamStyle(t)}">${avatarHTML(t)}</span><strong>${i + 1}. ${esc(t.name)}</strong><span class="spacer"></span><span class="muted">${timeLabel(b, i)}${mark}</span></li>`; }).join('')}</ol>`;
-    if (active && team(active.id)) judgeBox = `<div class="judge"><p><strong>${esc(team(active.id).name)}</strong> to answer</p>
+    if (active && team(active.id)) judgeBox = `<div class="judge"><p><strong>${esc(team(active.id).name)}</strong> to answer${isShowExclusive() ? ' — other buzzers locked' : ''}</p>
        <div class="row"><button class="btn ok" data-act="judge-right" type="button">Correct, +${pts}</button>
        <button class="btn bad" data-act="judge-wrong" type="button">Wrong${S.settings.penalty ? `, \u2212${pts}` : ''}</button></div></div>`;
+    else if (isShowExclusive() && awarded){
+      judgeBox = `<div class="judge"><p>This buzzer question is finalised.</p><button class="btn sm" data-act="reopen-current" type="button">Re-run question (reverses its scores)</button></div>`;
+    }
+    else if (isShowExclusive() && !awarded){
+      const remaining = PQPShowBuzzer.remaining(S.buzz, S.teams.map(t => t.id)).length;
+      judgeBox = `<div class="judge"><p>${S.revealed ? 'The answer is revealed. Finalise without a correct answer.' : open ? `Waiting for the next contender — ${remaining} ${noun(true)} eligible.` : `No active contender. ${remaining ? 'Buzzers are closed.' : 'Every team has tried.'}`}</p>${S.revealed ? '<button class="btn" data-act="finalise-zero" type="button">Finalise: no correct answer</button>' : ''}</div>`;
+    }
   }
   const pads = S.teams.map((t, i) => `<button class="mini-pad ${order.some(b => b.id === t.id) ? 'in' : ''}" style="${teamStyle(t)}" data-act="buzz" data-id="${t.id}" type="button">${keyFor(i) ? keyFor(i) + ': ' : ''}${esc(t.name)}</button>`).join('');
   return `<section class="card">
     <div class="section-head"><h2>Buzzers</h2><span class="status ${open ? 'open' : 'closed'}">${open ? 'Open' : 'Closed'}</span></div>
     ${list}${judgeBox}
     <div class="row" style="margin-top:12px">
-      <button class="btn sm" data-act="buzz-toggle" type="button" ${awarded ? 'disabled' : ''}>${open ? 'Close buzzers' : 'Open buzzers'}</button>
-      <button class="btn sm" data-act="buzz-clear" type="button" ${order.length && !awarded ? '' : 'disabled'}>Clear and reopen</button>
+      <button class="btn sm" data-act="buzz-toggle" type="button" ${awarded || (isShowExclusive() && (!!showActive() || (open === false && PQPShowBuzzer.remaining(S.buzz,S.teams.map(t=>t.id)).length === 0))) ? 'disabled' : ''}>${open ? 'Close buzzers' : 'Open buzzers'}</button>
+      <button class="btn sm" data-act="buzz-clear" type="button" ${order.length && !awarded ? '' : 'disabled'}>${isShowExclusive() ? 'Restart buzzer attempts' : 'Clear and reopen'}</button>
       <button class="btn sm" data-act="open-player-window" type="button">Open player window</button>
     </div>
     ${S.net.on ? `<p class="hint"><span class="net-status ${NET.status}" data-net-status>${netStatusText()}</span>${NET.leader ? `, ${plural(phonesOnline(), 'phone')} connected` : ''}</p>` : ''}
-    <p class="hint">Buzz for a ${noun()} by tapping below, or with their key.</p>
+    <p class="hint">${isShowExclusive() ? 'First buzz locks the other teams. Judge Correct / Wrong before anybody else may buzz. Each team gets one attempt per question.' : `Buzz for a ${noun()} by tapping below, or with their key.`}</p>
     <div class="mini-pads">${pads || `<span class="muted">No ${noun(true)} yet.</span>`}</div></section>`;
 }
 
 function scoreCard(){
   const q = curQ();
-  const pts = isSpeed() ? 2 : ((q && inPlay()) ? q.pts : 1);
+  const pts = isShow() && isAnswerRound() ? (q ? q.pts + 2 : 3) : isSpeed() ? 2 : ((q && inPlay()) ? q.pts : 1);
   const ranks = rankMap();
   const rows = S.teams.map(t => `<div class="score-row" style="${teamStyle(t)}">
       <span class="rank">${ranks.get(t.id)}</span><span class="team-avatar-ring" style="${teamStyle(t)}">${avatarHTML(t)}</span>
@@ -1806,7 +2077,7 @@ function renderPlayer(){
   let aw = null;
   if (isWritten()) banner = '<div class="buzz-banner quiet">Write your answer on your team\u2019s sheet</div>';
   else if (isAnswerRound()) banner = '';
-  else if (isSpeed()){
+  else if (isBatchScoring()){
     aw = speedAwards();
     const gains = Array.from(aw).filter(([, p]) => p > 0);
     if (S.buzz.awarded && gains.length) banner = `<div class="buzz-banner right">${gains.map(([id, p]) => `${esc(teamName(id))} +${p}`).join(', ')}</div>`;
@@ -1815,14 +2086,21 @@ function renderPlayer(){
   } else {
     const active = order.find(b => b.st === 'wait');
     const right = order.find(b => b.st === 'right');
-    if (right) banner = `<div class="buzz-banner right">${esc(teamName(right.id))} got it!</div>`;
+    if (isShowExclusive()){
+      const misses = order.filter(b=>b.st==='wrong').length;
+      if (right) banner = `<div class="buzz-banner right show-callout show-victory" role="status"><span class="show-callout-kicker">CORRECT BUZZER · POINTS AWARDED</span><strong>${esc(teamName(right.id))} +${curQ() ? curQ().pts : 1}</strong></div>`;
+      else if (active) banner = `<div class="buzz-banner show-callout" role="status"><span class="show-callout-kicker">FIRST BUZZ · EXCLUSIVE TURN</span><strong>${esc(teamName(active.id))}</strong><span>Other buzzers locked · Timer paused · ${misses} previous attempt${misses===1?'':'s'}</span></div>`;
+      else if (S.revealed) banner = `<div class="buzz-banner quiet">Answer revealed · no winning buzzer</div>`;
+      else if (S.buzz.open) banner = `<div class="buzz-banner quiet show-ready">BUZZERS OPEN · ${PQPShowBuzzer.remaining(S.buzz, S.teams.map(t=>t.id)).length} ELIGIBLE</div>`;
+      else banner = `<div class="buzz-banner quiet">Buzzers closed · awaiting reveal</div>`;
+    } else if (right) banner = `<div class="buzz-banner right">${esc(teamName(right.id))} got it!</div>`;
     else if (active) banner = `<div class="buzz-banner">${esc(teamName(active.id))} buzzed first!</div>`;
     else if (!S.buzz.open && !S.revealed) banner = `<div class="buzz-banner quiet">Buzzers are closed</div>`;
   }
-  const activeClassic = isSpeed() ? null : order.find(b => b.st === 'wait');
+  const activeClassic = isBatchScoring() ? null : order.find(b => b.st === 'wait');
   const pads = S.teams.map((t, i) => {
     const idx = order.findIndex(b => b.id === t.id); const b = order[idx];
-    const cls = [idx >= 0 ? 'in' : '', b && b === activeClassic ? 'first' : '', b && b.st === 'wrong' ? 'wrong' : '', b && b.st === 'right' ? 'right' : ''].join(' ');
+    const cls = [idx >= 0 ? 'in' : '', b && b === activeClassic ? 'first' : '', b && b.st === 'wrong' ? 'wrong' : '', b && b.st === 'right' ? 'right' : '', isShowExclusive() && activeClassic && (!b || b !== activeClassic) ? 'show-locked' : ''].join(' ');
     let badge = '';
     if (idx >= 0){
       const p = aw && S.buzz.awarded ? aw.get(t.id) : 0;
@@ -1831,9 +2109,9 @@ function renderPlayer(){
     return `<button class="pad ${cls}" style="${teamStyle(t)}" data-act="buzz" data-id="${t.id}" type="button" aria-label="Buzz for ${esc(t.name)}">
       ${avatarHTML(t)}${keyFor(i) ? `<span class="key">${keyFor(i)}</span>` : ''}<span class="pad-name">${esc(t.name)}</span>${badge}</button>`;
   }).join('');
-  return `<section class="stage">
+  return `<section class="stage ${isShowExclusive() ? 'show-exclusives' : ''}">
     ${showJoin && S.net.on ? joinPanelHTML() : ''}
-    <div class="stage-top"><span>${esc(r.name)}</span><span>Question ${S.pos.q + 1} of ${r.questions.length}</span><span>${scoringLabel(q)}</span></div>
+    <div class="stage-top"><span>${esc(r.name)} · ${experienceName()}</span><span>Question ${S.pos.q + 1} of ${r.questions.length}</span><span>${scoringLabel(q)}</span></div>
     ${r.info ? `<p class="stage-info">${esc(r.info)}</p>` : ''}
     ${lettersHTML(r, true)}
     ${r.type === 'letters' && r.clue && lxFlags().clue ? `<p class="stage-clue">Clue: ${esc(r.clue)}</p>` : ''}
@@ -1857,12 +2135,18 @@ function renderSetup(){
   </section>`;
 
   const step1 = `<section class="card">
-    <div class="step-head"><span class="step-no">1</span><h2>Choose how you\u2019re playing</h2></div>
+    <div class="step-head"><span class="step-no">1</span><h2>Choose your quiz experience</h2></div>
+    <div class="choice experience-picker" role="group" aria-label="Quiz experience">
+      <button data-act="set-experience" data-experience="classic" type="button" aria-pressed="${isClassic()}"><strong>Classic Pub Quiz</strong><span>Every team answers. Every correct answer earns points. Quizmaster-led pacing.</span></button>
+      <button data-act="set-experience" data-experience="show" type="button" aria-pressed="${isShow()}"><strong>TV Game Show</strong><span>Speed bonuses, exclusive buzzer rounds and higher-energy competition.</span></button>
+    </div>
+    ${isLegacy() ? '<p class="hint legacy-warning">Existing v3.2 session: original scoring is preserved until you choose an experience.</p>' : `<p class="hint"><strong>${experienceName()}</strong>: ${isClassic() ? 'all correct teams score equally' : 'bonus points for early correct answers in simultaneous rounds'}.</p>`}
+    <h3 class="sub-h">Number of players</h3>
     <div class="choice">
       <button data-act="set-mode" data-mode="teams" type="button" aria-pressed="${!duel}">Teams<span>2 to 10 teams, ideal for a full room</span></button>
       <button data-act="set-mode" data-mode="duel" type="button" aria-pressed="${duel}">Head to head<span>Just 2 players, one each side of the screen</span></button>
     </div>
-    <p class="hint">Scoring: ${isSpeed() ? 'the fastest correct answer gets 2 points, the second fastest gets 1, everyone else gets 0.' : 'the first correct buzz wins the question\u2019s points.'} Change this under Game settings.</p>
+    <p class="hint">${isClassic() ? 'Choose multiple choice or typed-answer rounds for a traditional quiz.' : isShow() ? 'Choose multiple choice or typed rounds for speed bonuses, or buzz rounds for a first-correct challenge.' : 'Original scoring options remain below while you finish your saved v3.2 session.'}</p>
   </section>`;
 
   const full = S.teams.length >= MAX_TEAMS;
@@ -1933,14 +2217,14 @@ function renderSetup(){
   const settingsCard = `<section class="card">
     <h2>Game settings</h2>
     <label class="field">Quiz title<input maxlength="80" value="${esc(S.quiz.title)}" data-bind="title"></label>
-    <fieldset class="field"><legend>Scoring</legend>
+    ${isLegacy() ? `<fieldset class="field"><legend>Legacy v3.2 scoring (saved game only)</legend>
       <label class="check"><input type="radio" name="scoring" value="speed" data-bind="set-scoring" ${isSpeed() ? 'checked' : ''}>Speed: fastest correct 2 points, second fastest 1, others 0</label>
       <label class="check"><input type="radio" name="scoring" value="points" data-bind="set-scoring" ${isSpeed() ? '' : 'checked'}>Question points: first correct buzz wins that question\u2019s points</label>
-    </fieldset>
+    </fieldset>` : `<div class="howto"><strong>${experienceName()} scoring:</strong> ${scoringLabel(curQ())}. Switch experiences in step 1 before starting a new game.</div>`}
     <label class="field">Seconds per question (0 turns the timer off)<input type="number" min="0" max="600" step="5" value="${s.timer}" data-bind="set-timer" inputmode="numeric"></label>
     <label class="check"><input type="checkbox" data-bind="set" data-k="autoOpen" ${s.autoOpen ? 'checked' : ''}>Open buzzers on each new question</label>
     <label class="check"><input type="checkbox" data-bind="set" data-k="autoTimer" ${s.autoTimer ? 'checked' : ''}>Start the timer on each new question</label>
-    <label class="check"><input type="checkbox" data-bind="set" data-k="penalty" ${s.penalty ? 'checked' : ''}>Take points off for a wrong buzz (question points scoring only)</label>
+    ${isClassic() ? '' : `<label class="check"><input type="checkbox" data-bind="set" data-k="penalty" ${s.penalty ? 'checked' : ''}>Take points off for a wrong buzz (optional)</label>`}
     <label class="check"><input type="checkbox" data-bind="set" data-k="sound" ${s.sound ? 'checked' : ''}>Game-show sound effects</label>
     <label class="check"><input type="checkbox" data-bind="set" data-k="music" ${s.music ? 'checked' : ''}>Ambient background music (off by default)</label>
     <div class="row" style="margin-top:8px">
@@ -2016,7 +2300,7 @@ function render(){
     focusKey = `[data-act="${ae.dataset.act}"]` + ['id','r','q','d','view','st','mode','i'].map(k => ae.dataset[k] != null ? `[data-${k}="${CSS.escape(ae.dataset[k])}"]` : '').join('');
   }
   renderHeader();
-  main.innerHTML = view === 'player' ? renderPlayer() : view === 'setup' ? renderSetup() : renderHost();
+  main.innerHTML = (view !== 'player' && !SCREEN ? phoneApprovalHTML() : '') + (view === 'player' ? renderPlayer() : view === 'setup' ? renderSetup() : renderHost());
   paintTimer();
   if (focusKey){ const el = main.querySelector(focusKey); if (el && !el.disabled){ try { el.focus({ preventScroll: true }); } catch (e) {} } }
 }
@@ -2118,7 +2402,7 @@ function showHelp(){
     ['\u2192 or N', 'Next question (starts the quiz from the buzzer check)'], ['\u2190 or P', 'Previous question'], ['Space or A', 'Show or hide the answer'],
     [isDuel() ? 'Z / M' : '1\u20139, 0', isDuel() ? 'Buzz for player 1 / player 2' : 'Buzz for team 1\u201310'],
     ['C', 'Mark the next answer correct'], ['W', 'Mark the next answer wrong'],
-    ['S', 'Award points (speed scoring)'], ['B', 'Open or close buzzers'], ['T', 'Start or pause the timer'],
+    ['S', 'Award points for marked correct answers'], ['B', 'Open or close buzzers'], ['T', 'Start or pause the timer'],
     ['L', 'Show or hide the leaderboard'], ['U', 'Undo last score change'], ['F', 'Full screen'], ['?', 'This help']
   ];
   showModal(`<h2>How to run a quiz night</h2>
@@ -2126,7 +2410,7 @@ function showHelp(){
     <p><strong>Two screens:</strong> plug in a TV, open this page in a second window, choose Player screen there and drag it onto the TV. Both windows stay in sync.</p>
     <p><strong>Phone buzzers:</strong> switch them on in Setup step 2. Players scan the QR code on the Player screen and their phone becomes a buzzer. Phones reach the quiz through its web address, so open the quiz from there rather than from a saved file.</p>
     <p><strong>Smart TV:</strong> with phone buzzers on, open <strong>${esc(tvAddress())}</strong> in the TV\u2019s web browser and type the code it shows into Setup step 2. The TV then follows the quiz by itself, with sound.</p>
-    <p><strong>Multiple choice:</strong> ${noun(true)} pick A, B, C or D on their phones, or tap their row on the Player screen. Press Reveal and mark, and the fastest correct ${noun(true)} score.</p>
+    <p><strong>Multiple choice:</strong> ${noun(true)} pick A, B, C or D on phones, or enter an answer on the quizmaster screen. In Classic mode every correct team receives the full question points. In TV Game Show mode speed bonuses apply.</p>
     <p><strong>Typed answers:</strong> ${noun(true)} type their answer on their phones. The app marks them, forgiving small spelling slips, and you can change any mark before awarding points.</p>
     <p><strong>Speed scoring:</strong> every ${noun()} can lock in. Mark each answer \u2714 or \u2718, then press Award points. Fastest correct gets 2, second fastest gets 1.</p>
     <h2 style="margin-top:14px">Keyboard shortcuts</h2>
@@ -2216,6 +2500,25 @@ function setMode(m){
   } else apply();
 }
 
+function setExperience(next){
+  if (!['classic','show'].includes(next) || next === S.settings.experience) return;
+  const apply = () => {
+    const prior = S.settings.experience;
+    S.settings.experience = next;
+    S.settings.scoring = next === 'classic' ? 'points' : 'speed';
+    S.settings.penalty = false;
+    S.settings.timer = next === 'classic' ? 0 : 20;
+    S.settings.autoTimer = next === 'show';
+    if (prior === 'legacy' || !S.lobby || S.teams.some(t => t.score !== 0)) restartGame();
+    else resetForQuestion(true);
+    commit();
+    toast(experienceName() + ' selected');
+  };
+  if (!S.lobby || S.teams.some(t => t.score !== 0))
+    ask('Start a new experience?', 'Switching experiences resets this quiz night and all scores to zero. Your teams, avatars, and quiz questions are kept.', 'Reset and switch', apply);
+  else apply();
+}
+
 /* ---------- Actions ---------- */
 function swap(arr, i, j){ if (j < 0 || j >= arr.length) return; [arr[i], arr[j]] = [arr[j], arr[i]]; }
 const ACT = {
@@ -2230,15 +2533,33 @@ const ACT = {
   'modal-close': closeModal,
   'start-quiz': startQuiz,
   'set-mode': b => setMode(b.dataset.mode),
+  'set-experience': b => setExperience(b.dataset.experience),
   prev: goPrev, next: goNext, 'next-round': goNextRound, reveal: toggleReveal,
   'edit-current': () => { if (curQ()) openQEditor(S.pos.r, S.pos.q); },
   'timer-toggle': () => { if (S.timer.running) timerPause(); else timerStart(); commit(); },
   'timer-reset': () => { timerReset(); commit(); },
   buzz: b => buzz(b.dataset.id),
-  'buzz-toggle': () => { if (S.buzz.awarded || !inPlay()) return; S.buzz.open = !S.buzz.open; S.buzz.closedAt = S.buzz.open ? 0 : Date.now(); commit(); },
-  'buzz-clear': () => { if (S.buzz.awarded) return; S.buzz = { open: true, order: [], awarded: false, g: null, n: S.buzz.n, closedAt: 0 }; commit(); },
+  'buzz-toggle': () => { if (S.buzz.awarded || !inPlay()) return; if (!isLegacy() && S.revealed){ toast('Answers have been revealed. Reopen marking to correct results.'); return; } if (isShowExclusive() && (showActive() || (!S.buzz.open && !PQPShowBuzzer.remaining(S.buzz,S.teams.map(t=>t.id)).length) || (!S.buzz.open && S.settings.timer > 0 && timerRem() <= 0))){ toast('Judge the active buzzer, or no further teams are eligible.'); return; } S.buzz.open = !S.buzz.open; S.buzz.closedAt = S.buzz.open ? 0 : Date.now(); if (!S.buzz.open) timerPause(); commit(); },
+  'buzz-clear': () => { if (S.buzz.awarded || (!isLegacy() && S.revealed)) return;
+    if (isShowExclusive() && S.buzz.g) removeGroup(S.buzz.g);
+    S.buzz = { open: true, order: [], awarded: false, g: null, n: uid(), closedAt: 0 };
+    timerReset(); if (S.settings.autoTimer) timerStart(); commit(); },
   mark: b => markBuzz(b.dataset.id, b.dataset.st),
   award: () => { if (awardSpeed(false)) commit(); },
+  'finalise-zero': () => { if (finaliseZero(false)) commit(); },
+  'reopen-current': reopenCurrentAward,
+  'skip-question': skipCurrent,
+  'host-typed': b => {
+    if (!isClassic() || !isTyped() || !inPlay() || !S.buzz.open || S.revealed) return;
+    const t = team(b.dataset.id); if (!t) return;
+    const prev = S.buzz.order.find(x => x.id === t.id);
+    showModal(`<h2>Answer for ${esc(t.name)}</h2><p class="hint">This will be marked when you reveal the answer.</p><label class="field">Typed answer<input id="manualTypedAnswer" maxlength="160" value="${esc(prev && prev.ans !== undefined ? prev.ans : '')}"></label><div class="modal-actions"><button class="btn" data-act="modal-close" type="button">Cancel</button><button class="btn primary" id="manualTypedSubmit" type="button">Save answer</button></div>`);
+    $('#manualTypedSubmit').addEventListener('click', () => {
+      const value = $('#manualTypedAnswer').value.trim(); if (!value){ toast('Enter an answer.'); return; }
+      closeModal(); buzz(t.id, undefined, value);
+    });
+    $('#manualTypedAnswer').focus();
+  },
   'judge-right': () => judge(true),
   'judge-wrong': () => judge(false),
   score: b => { addScore(b.dataset.id, +b.dataset.d, 'Manual'); commit(); },
@@ -2289,7 +2610,7 @@ const ACT = {
     }, true);
   },
   'reset-scores': () => ask('Reset all scores?', `Every ${noun()} goes back to 0. The question position stays where it is.`, 'Reset scores', () => {
-    S.teams.forEach(t => { t.score = 0; }); S.history = []; S.scored = {}; S.buzz.awarded = false; S.buzz.g = null; commit(); toast('Scores reset');
+    S.teams.forEach(t => { t.score = 0; }); S.history = []; S.scored = {}; S.questionAwards = {}; S.questionSessions = {}; resetForQuestion(true); commit(); toast('Scores reset; current question reopened');
   }, true),
   'round-add': () => { rounds().push(makeRound(`Round ${rounds().length + 1}`, [], 1)); commit(); },
   'round-up': b => { keepCurrent(() => swap(rounds(), +b.dataset.r, +b.dataset.r - 1)); commit(); },
@@ -2316,9 +2637,10 @@ const ACT = {
     }, true);
   },
   'q-go': b => {
+    if (inPlay()) rememberQuestion();
     S.pos = { r: +b.dataset.r, q: +b.dataset.q };
     S.lobby = false; S.between = false; S.finished = false; S.showBoard = false;
-    clampPos(); resetForQuestion(true); save(); setView('host');
+    clampPos(); restoreQuestion(); save(); setView('host');
   },
   'recap-toggle': () => { S.recap = !S.recap; commit(); },
   'lib-play': b => openLibPlay(b.dataset.lib),
@@ -2367,6 +2689,8 @@ const ACT = {
   'net-broker': () => ask('Switch buzzer server?', 'Use this if phones can’t connect. Phones already connected will need to scan the new QR code.', 'Switch server', () => {
     netAnnounceClose(); S.net.broker = (S.net.broker + 1) % BROKERS.length; commit(); toast(`Using buzzer server ${S.net.broker + 1} of ${BROKERS.length}`);
   }),
+  'phone-approve': b => approveJoin(b.dataset.cid),
+  'phone-reject': b => rejectJoin(b.dataset.cid),
   'copy-join': async () => { const u = joinURL(); if (!u) return; try { await navigator.clipboard.writeText(u); toast('Join link copied'); } catch (e) { toast(u); } },
   'show-join': () => { showJoin = !showJoin; render(); },
   'export-show': () => { const ta = $('#fJson'); if (ta){ ta.value = exportData(); ta.focus(); ta.select(); } },
@@ -2412,7 +2736,7 @@ main.addEventListener('change', e => {
     if (!S.timer.running) S.timer.rem = S.settings.timer;
     save();
   }
-  else if (bind === 'set-scoring'){ if (el.checked){ S.settings.scoring = el.value === 'points' ? 'points' : 'speed'; S.buzz.order.forEach(b => { b.st = 'wait'; }); commit(); toast(isSpeed() ? 'Speed scoring: 2, 1, 0' : 'Question points scoring'); } }
+  else if (bind === 'set-scoring'){ if (isLegacy() && el.checked){ S.settings.scoring = el.value === 'points' ? 'points' : 'speed'; S.buzz.order.forEach(b => { b.st = 'wait'; }); commit(); toast(isSpeed() ? 'Speed scoring: 2, 1, 0' : 'Question points scoring'); } }
   else if (bind === 'round-field'){
     const r = rounds()[+el.dataset.r], f = el.dataset.f; if (!r) return;
     if (f === 'mode'){ r.mode = ['choice', 'typed', 'buzz', 'written'].includes(el.value) ? el.value : 'buzz'; if (r.mode === 'choice') fillOptions(r, false); }
@@ -2425,6 +2749,7 @@ main.addEventListener('change', e => {
   else if (bind === 'tb-guess'){ if (team(el.dataset.id)){ S.tb.guesses[el.dataset.id] = el.value.trim().slice(0, 20); save(); } }
   else if (bind === 'net-url'){ let v = el.value.trim(); if (v && !/^https?:\/\//i.test(v)) v = 'https://' + v; S.net.url = v.slice(0, 300); commit(); }
   else if (bind === 'net-allow'){ S.net.allowNew = el.checked; save(); }
+  else if (bind === 'net-approval'){ S.net.requireApproval = el.checked; commit(); }
   else if (bind === 'set'){ const k = el.dataset.k; if (k in S.settings){ S.settings[k] = el.checked; save(); if (k === 'music' || k === 'sound') syncMusic(); } }
 });
 main.addEventListener('keydown', e => {
@@ -2495,7 +2820,7 @@ main.addEventListener('focusout', () => {
 /* =====================================================================
    Quiz library: ready-made quizzes plus any quiz files you add
    ===================================================================== */
-const BUILTIN_QUIZZES = [{"title":"New Quiz A","rounds":[{"name":"General Knowledge","mode":"choice","questions":[{"q":"How many sides does a heptagon have?","a":"Seven","wrong":["Six","Eight","Nine"]},{"q":"What is the chemical symbol for gold?","a":"Au","wrong":["Ag","Gd","Go"]},{"q":"Which famous diarist recorded burying his parmesan cheese in the garden to save it from the Great Fire of London in 1666?","a":"Samuel Pepys","wrong":["Jonathan Swift","Geoffrey Chaucer","Christopher Wren"]},{"q":"In the NATO phonetic alphabet, which word stands for the letter Q?","a":"Quebec","wrong":["Queen","Quartz","Quintet"]},{"q":"By weight, what is the largest internal organ in the human body?","a":"The liver","wrong":["The brain","The heart","The stomach"]},{"q":"How many years of marriage does a ruby wedding anniversary celebrate?","a":"40","wrong":["25","50","60"]},{"q":"What colour is an aircraft's 'black box' flight recorder actually painted?","a":"Orange","wrong":["Black","Yellow","Silver"]},{"q":"What is the nickname of the Great Bell in the Elizabeth Tower at the Palace of Westminster?","a":"Big Ben","wrong":["Great Tom","Great Paul","Old Bailey"]},{"q":"How many players does each team have on court in a game of netball?","a":"Seven","wrong":["Five","Six","Nine"]},{"q":"In which English city would you find the Royal Crescent and the Roman Baths?","a":"Bath","wrong":["Bristol","Cheltenham","York"]}]},{"name":"Geography","mode":"choice","questions":[{"q":"What is the capital city of Australia?","a":"Canberra","wrong":["Sydney","Melbourne","Perth"]},{"q":"Which river flows through Cairo?","a":"The Nile","wrong":["The Euphrates","The Tigris","The Jordan"]},{"q":"What is the smallest country in the world by area?","a":"Vatican City","wrong":["Monaco","San Marino","Liechtenstein"]},{"q":"Mount Kilimanjaro is in which country?","a":"Tanzania","wrong":["Kenya","Uganda","Ethiopia"]},{"q":"What is the longest river that flows entirely within England?","a":"The Thames","wrong":["The Severn","The Trent","The Great Ouse"]},{"q":"What is the capital city of Canada?","a":"Ottawa","wrong":["Toronto","Montreal","Vancouver"]},{"q":"Which sea separates Italy from Croatia?","a":"The Adriatic Sea","wrong":["The Aegean Sea","The Ionian Sea","The Tyrrhenian Sea"]},{"q":"Which US state is nicknamed the Sunshine State?","a":"Florida","wrong":["California","Arizona","Hawaii"]},{"q":"The Giant's Causeway is in which county of Northern Ireland?","a":"County Antrim","wrong":["County Down","County Fermanagh","County Armagh"]},{"q":"What is the largest hot desert in the world?","a":"The Sahara","wrong":["The Gobi","The Kalahari","The Arabian Desert"]}]},{"name":"Music","mode":"choice","questions":[{"q":"Which band released the album Abbey Road in 1969?","a":"The Beatles","wrong":["The Rolling Stones","The Kinks","The Who"]},{"q":"How many strings does a standard violin have?","a":"Four","wrong":["Three","Five","Six"]},{"q":"Which band had a 1995 hit with Wonderwall?","a":"Oasis","wrong":["Blur","The Stone Roses","The Verve"]},{"q":"Who composed The Four Seasons?","a":"Antonio Vivaldi","wrong":["Johann Sebastian Bach","George Frideric Handel","Wolfgang Amadeus Mozart"]},{"q":"Which singer released the 1984 album Like A Virgin?","a":"Madonna","wrong":["Cyndi Lauper","Whitney Houston","Kylie Minogue"]},{"q":"Freddie Mercury was the lead singer of which band?","a":"Queen","wrong":["Genesis","Yes","Wham!"]},{"q":"In music, what does the instruction 'forte' tell a player to do?","a":"Play loudly","wrong":["Play softly","Play quickly","Play slowly"]},{"q":"Which ABBA song won the Eurovision Song Contest in 1974?","a":"Waterloo","wrong":["Mamma Mia","Dancing Queen","SOS"]},{"q":"Which instrument did jazz legend Louis Armstrong famously play?","a":"Trumpet","wrong":["Saxophone","Trombone","Clarinet"]},{"q":"What was the name of Elvis Presley's mansion in Memphis?","a":"Graceland","wrong":["Neverland","Paisley Park","Xanadu"]}]},{"name":"Science and Nature","mode":"choice","questions":[{"q":"Which gas do plants take in from the air to use in photosynthesis?","a":"Carbon dioxide","wrong":["Oxygen","Nitrogen","Hydrogen"]},{"q":"How many bones are there in the adult human body?","a":"206","wrong":["186","212","226"]},{"q":"What is the hardest natural substance on Earth?","a":"Diamond","wrong":["Quartz","Granite","Topaz"]},{"q":"Which planet is closest to the Sun?","a":"Mercury","wrong":["Venus","Mars","Earth"]},{"q":"What is H2O more commonly known as?","a":"Water","wrong":["Hydrogen peroxide","Salt","Ammonia"]},{"q":"What is the largest species of fish?","a":"The whale shark","wrong":["The great white shark","The basking shark","The tiger shark"]},{"q":"At sea level, at what temperature in degrees Celsius does water boil?","a":"100","wrong":["90","110","120"]},{"q":"Which blood cells help the body fight infection?","a":"White blood cells","wrong":["Red blood cells","Platelets","Plasma cells"]},{"q":"What is a baby kangaroo called?","a":"A joey","wrong":["A kid","A cub","A kit"]},{"q":"Who developed the general theory of relativity?","a":"Albert Einstein","wrong":["Isaac Newton","Niels Bohr","Stephen Hawking"]}]},{"name":"Sport","mode":"choice","questions":[{"q":"How many players does each team have on the pitch in rugby union?","a":"15","wrong":["11","13","12"]},{"q":"In which sport would you perform a slam dunk?","a":"Basketball","wrong":["Volleyball","Netball","Handball"]},{"q":"In which city does the Tour de France traditionally finish?","a":"Paris","wrong":["Lyon","Marseille","Bordeaux"]},{"q":"How many holes are played in a standard round of golf?","a":"18","wrong":["9","16","20"]},{"q":"Which English football club plays its home games at Anfield?","a":"Liverpool","wrong":["Everton","Manchester United","Leeds United"]},{"q":"Without a free ball, what is the maximum break in snooker?","a":"147","wrong":["155","140","180"]},{"q":"What is the highest score possible with three darts?","a":"180","wrong":["170","160","150"]},{"q":"Which tennis Grand Slam tournament is played on clay?","a":"The French Open","wrong":["Wimbledon","The US Open","The Australian Open"]},{"q":"How often are the Summer Olympic Games normally held?","a":"Every four years","wrong":["Every two years","Every three years","Every five years"]},{"q":"In cricket, how many balls are bowled in a standard over?","a":"Six","wrong":["Four","Five","Eight"]}]}],"tiebreakers":[{"q":"A marathon is 26 miles and how many yards?","a":"385"},{"q":"In what year was the first FA Cup final played?","a":"1872"}]},{"title":"New Quiz B","rounds":[{"name":"General Knowledge","mode":"choice","questions":[{"q":"How many minutes are there in a day?","a":"1,440","wrong":["1,240","1,400","1,640"]},{"q":"What is the name of the fairy in J. M. Barrie's Peter Pan?","a":"Tinker Bell","wrong":["Silvermist","Periwinkle","Fawn"]},{"q":"Which metal is liquid at normal room temperature?","a":"Mercury","wrong":["Lead","Tin","Gallium"]},{"q":"In the UK version of the board game Cluedo, what is the name of the murder victim?","a":"Dr Black","wrong":["Professor Plum","Colonel Mustard","Reverend Green"]},{"q":"What is the currency of Japan?","a":"Yen","wrong":["Won","Yuan","Ringgit"]},{"q":"How many hearts does an octopus have?","a":"Three","wrong":["One","Two","Four"]},{"q":"What name is given to the mark on a ship's hull that shows the legal limit it can be loaded to?","a":"The Plimsoll line","wrong":["The Davy line","The Bessemer line","The Marconi line"]},{"q":"Which English king had six wives?","a":"Henry VIII","wrong":["Henry VII","Edward VI","Richard III"]},{"q":"What is the collective noun for a group of crows?","a":"A murder","wrong":["A parliament","A pride","A gaggle"]},{"q":"Which day of the week is named after the Norse god Thor?","a":"Thursday","wrong":["Tuesday","Wednesday","Friday"]}]},{"name":"History","mode":"choice","questions":[{"q":"In which year did the Battle of Hastings take place?","a":"1066","wrong":["1016","1086","1215"]},{"q":"Who was the first female Prime Minister of the United Kingdom?","a":"Margaret Thatcher","wrong":["Theresa May","Barbara Castle","Shirley Williams"]},{"q":"Which ship carried the Pilgrims from England to America in 1620?","a":"The Mayflower","wrong":["The Endeavour","The Golden Hind","The Santa Maria"]},{"q":"In which year did the Berlin Wall fall?","a":"1989","wrong":["1985","1987","1991"]},{"q":"Which Roman emperor ordered the building of a wall across northern England?","a":"Hadrian","wrong":["Claudius","Nero","Augustus"]},{"q":"Who was the first person to walk on the Moon?","a":"Neil Armstrong","wrong":["Buzz Aldrin","Yuri Gagarin","John Glenn"]},{"q":"Which English king sealed the Magna Carta in 1215?","a":"King John","wrong":["Richard I","Henry III","Edward I"]},{"q":"Which nurse was nicknamed 'The Lady with the Lamp'?","a":"Florence Nightingale","wrong":["Mary Seacole","Edith Cavell","Elizabeth Fry"]},{"q":"In which year did the First World War begin?","a":"1914","wrong":["1912","1916","1918"]},{"q":"Which of the Seven Wonders of the Ancient World stood on the Greek island of Rhodes?","a":"The Colossus of Rhodes","wrong":["The Lighthouse of Alexandria","The Hanging Gardens","The Mausoleum"]}]},{"name":"TV and Films","mode":"choice","questions":[{"q":"In Only Fools And Horses, what is Del Boy's surname?","a":"Trotter","wrong":["Butcher","Turner","Tanner"]},{"q":"Who directed the films Jaws and E.T. The Extra-Terrestrial?","a":"Steven Spielberg","wrong":["George Lucas","Ridley Scott","James Cameron"]},{"q":"What type of animal is the title character in the 1995 film Babe?","a":"A pig","wrong":["A sheep","A dog","A duck"]},{"q":"Which fictional bear lives at 32 Windsor Gardens in London?","a":"Paddington","wrong":["Rupert","Winnie the Pooh","Baloo"]},{"q":"In which fictional town is Coronation Street set?","a":"Weatherfield","wrong":["Walford","Emmerdale","Holby"]},{"q":"Who played the boxer Rocky Balboa?","a":"Sylvester Stallone","wrong":["Arnold Schwarzenegger","Robert De Niro","Dolph Lundgren"]},{"q":"Which film won the first ever Oscar for Best Animated Feature, in 2002?","a":"Shrek","wrong":["Monsters, Inc.","Ice Age","Toy Story 2"]},{"q":"What is the name of the coffee shop in the TV series Friends?","a":"Central Perk","wrong":["Monk's Cafe","Cafe Nervosa","The Max"]},{"q":"What is the name of the Doctor's time machine in Doctor Who?","a":"The TARDIS","wrong":["The DeLorean","The Enterprise","The Red Dwarf"]},{"q":"In which film does Darth Vader first appear?","a":"Star Wars","wrong":["The Empire Strikes Back","Return Of The Jedi","Flash Gordon"]}]},{"name":"Food and Drink","mode":"choice","questions":[{"q":"What is the main ingredient of guacamole?","a":"Avocado","wrong":["Pea","Cucumber","Courgette"]},{"q":"Feta cheese traditionally comes from which country?","a":"Greece","wrong":["Italy","Spain","France"]},{"q":"Which spirit is the base of a mojito?","a":"Rum","wrong":["Gin","Vodka","Tequila"]},{"q":"Arborio rice is mainly used to make which dish?","a":"Risotto","wrong":["Paella","Biryani","Sushi"]},{"q":"Which nut is used to make marzipan?","a":"Almond","wrong":["Hazelnut","Cashew","Walnut"]},{"q":"What type of pastry is used to make profiteroles?","a":"Choux","wrong":["Filo","Puff","Shortcrust"]},{"q":"Which spice gives a traditional paella its golden colour?","a":"Saffron","wrong":["Paprika","Cumin","Cinnamon"]},{"q":"Calvados is a brandy made mainly from which fruit?","a":"Apples","wrong":["Plums","Cherries","Grapes"]},{"q":"Wensleydale cheese comes from which English county?","a":"Yorkshire","wrong":["Lancashire","Derbyshire","Cumbria"]},{"q":"Which paprika-seasoned stew is the national dish of Hungary?","a":"Goulash","wrong":["Borscht","Stroganoff","Pierogi"]}]},{"name":"Art and Literature","mode":"choice","questions":[{"q":"Who painted the Mona Lisa?","a":"Leonardo da Vinci","wrong":["Michelangelo","Raphael","Botticelli"]},{"q":"Who wrote the novel Pride And Prejudice?","a":"Jane Austen","wrong":["Charlotte Brontë","George Eliot","Emily Brontë"]},{"q":"In which city is the Louvre museum?","a":"Paris","wrong":["Rome","Madrid","Vienna"]},{"q":"Ebenezer Scrooge is the main character in which Charles Dickens story?","a":"A Christmas Carol","wrong":["Bleak House","Hard Times","Great Expectations"]},{"q":"In which Scottish city did J. K. Rowling write much of the early Harry Potter books?","a":"Edinburgh","wrong":["Glasgow","Aberdeen","Dundee"]},{"q":"Which artist cut off part of his own ear in 1888?","a":"Vincent van Gogh","wrong":["Paul Gauguin","Claude Monet","Paul Cézanne"]},{"q":"What is the farm called at the start of George Orwell's Animal Farm?","a":"Manor Farm","wrong":["Willow Farm","Pinchfield","Foxwood"]},{"q":"Who wrote the poem The Charge Of The Light Brigade?","a":"Alfred, Lord Tennyson","wrong":["William Wordsworth","Rudyard Kipling","Lord Byron"]},{"q":"In which Italian city is Shakespeare's Romeo And Juliet set?","a":"Verona","wrong":["Venice","Padua","Florence"]},{"q":"Which sculptor created The Thinker?","a":"Auguste Rodin","wrong":["Michelangelo","Henry Moore","Donatello"]}]}],"tiebreakers":[{"q":"How many miles long is Hadrian's Wall?","a":"73"},{"q":"In what year was the first episode of Coronation Street broadcast?","a":"1960"}]},{"title":"New Quiz C","rounds":[{"name":"General Knowledge","mode":"choice","questions":[{"q":"Which is the only letter of the alphabet that does not appear in the name of any US state?","a":"Q","wrong":["X","Z","J"]},{"q":"How many pints are there in an imperial gallon?","a":"Eight","wrong":["Four","Six","Ten"]},{"q":"What does 'www' stand for in a web address?","a":"World Wide Web","wrong":["Wide World Web","World Web Window","Wireless World Web"]},{"q":"Which bird is traditionally a symbol of peace?","a":"The dove","wrong":["The swan","The robin","The eagle"]},{"q":"In the nursery rhyme, who sat on a wall and had a great fall?","a":"Humpty Dumpty","wrong":["Little Jack Horner","Little Miss Muffet","Old King Cole"]},{"q":"How many days are there in a leap year?","a":"366","wrong":["364","365","367"]},{"q":"Which Toy Story character's catchphrase is 'To infinity and beyond!'?","a":"Buzz Lightyear","wrong":["Woody","Rex","Zurg"]},{"q":"What is the hottest planet in the Solar System?","a":"Venus","wrong":["Mercury","Mars","Jupiter"]},{"q":"What is the square root of 144?","a":"12","wrong":["11","14","16"]},{"q":"Which British coin, introduced in 2017, has 12 sides?","a":"The £1 coin","wrong":["The £2 coin","The 50p coin","The 20p coin"]}]},{"name":"Geography","mode":"choice","questions":[{"q":"What is the capital city of Spain?","a":"Madrid","wrong":["Barcelona","Seville","Valencia"]},{"q":"What is the largest ocean on Earth?","a":"The Pacific Ocean","wrong":["The Atlantic Ocean","The Indian Ocean","The Arctic Ocean"]},{"q":"Which European country is shaped like a boot?","a":"Italy","wrong":["Portugal","Greece","Croatia"]},{"q":"What is the highest mountain in the UK?","a":"Ben Nevis","wrong":["Snowdon","Scafell Pike","Slieve Donard"]},{"q":"Which city is nicknamed the Big Apple?","a":"New York","wrong":["Chicago","Los Angeles","Boston"]},{"q":"The River Liffey flows through which city?","a":"Dublin","wrong":["Cork","Belfast","Limerick"]},{"q":"Since 2023, which country has had the largest population in the world?","a":"India","wrong":["China","USA","Indonesia"]},{"q":"What is the capital city of Egypt?","a":"Cairo","wrong":["Alexandria","Luxor","Giza"]},{"q":"On which Spanish island is the city of Palma?","a":"Majorca","wrong":["Ibiza","Menorca","Tenerife"]},{"q":"Which strait separates Spain from Morocco?","a":"The Strait of Gibraltar","wrong":["The Bosphorus","The Strait of Messina","The Strait of Hormuz"]}]},{"name":"Music","mode":"choice","questions":[{"q":"Which group had a 1976 number one with Dancing Queen?","a":"ABBA","wrong":["Boney M","The Carpenters","Bucks Fizz"]},{"q":"Which instrument normally has 88 keys?","a":"The piano","wrong":["The organ","The accordion","The harpsichord"]},{"q":"Who sang the 1972 hit Rocket Man?","a":"Elton John","wrong":["David Bowie","Rod Stewart","Billy Joel"]},{"q":"Mick Jagger is the lead singer of which band?","a":"The Rolling Stones","wrong":["The Who","The Kinks","The Animals"]},{"q":"Who composed the Moonlight Sonata?","a":"Ludwig van Beethoven","wrong":["Wolfgang Amadeus Mozart","Frédéric Chopin","Franz Schubert"]},{"q":"What nationality was the composer Frédéric Chopin?","a":"Polish","wrong":["French","Austrian","Hungarian"]},{"q":"Which Bristol band released the 1994 album Dummy?","a":"Portishead","wrong":["Massive Attack","The Verve","Pulp"]},{"q":"How many members were in the original line-up of the Spice Girls?","a":"Five","wrong":["Three","Four","Six"]},{"q":"Who sang Purple Rain?","a":"Prince","wrong":["Michael Jackson","Stevie Wonder","Lionel Richie"]},{"q":"Which Welsh singer is famous for Delilah and It's Not Unusual?","a":"Tom Jones","wrong":["Shirley Bassey","Bonnie Tyler","Shakin' Stevens"]}]},{"name":"Science and Nature","mode":"choice","questions":[{"q":"What is the chemical symbol for sodium?","a":"Na","wrong":["So","Sd","Sn"]},{"q":"Which organ in the human body produces insulin?","a":"The pancreas","wrong":["The liver","The kidneys","The spleen"]},{"q":"How many legs does a spider have?","a":"Eight","wrong":["Six","Ten","Twelve"]},{"q":"Roughly how fast does light travel, in kilometres per second?","a":"300,000","wrong":["30,000","150,000","3,000,000"]},{"q":"Which star is closest to Earth?","a":"The Sun","wrong":["Proxima Centauri","Sirius","Polaris"]},{"q":"What name is given to animals that eat only plants?","a":"Herbivores","wrong":["Carnivores","Omnivores","Insectivores"]},{"q":"What does DNA stand for?","a":"Deoxyribonucleic acid","wrong":["Dinitrogen acid","Deoxyribose nitrate","Dioxynucleic acid"]},{"q":"Which is the largest planet in the Solar System?","a":"Jupiter","wrong":["Saturn","Neptune","Uranus"]},{"q":"What is the largest bird in the world?","a":"The ostrich","wrong":["The emu","The albatross","The condor"]},{"q":"In what unit is electrical resistance measured?","a":"The ohm","wrong":["The volt","The watt","The amp"]}]},{"name":"Sport","mode":"choice","questions":[{"q":"Which country won the 2023 Rugby Union World Cup?","a":"South Africa","wrong":["New Zealand","France","England"]},{"q":"In which sport is the Ryder Cup contested?","a":"Golf","wrong":["Tennis","Cricket","Sailing"]},{"q":"To one decimal place, how many miles long is a marathon?","a":"26.2","wrong":["22.2","24.2","28.2"]},{"q":"Which country won the first FIFA World Cup in 1930?","a":"Uruguay","wrong":["Brazil","Argentina","Italy"]},{"q":"What colour jersey does the overall leader of the Tour de France wear?","a":"Yellow","wrong":["Green","Polka dot","White"]},{"q":"Which boxer called himself 'The Greatest'?","a":"Muhammad Ali","wrong":["Joe Frazier","Mike Tyson","George Foreman"]},{"q":"Which English horse race is held at Aintree each April?","a":"The Grand National","wrong":["The Derby","The St Leger","The Gold Cup"]},{"q":"How many points is a touchdown worth in American football?","a":"Six","wrong":["Three","Five","Seven"]},{"q":"In which sport do players score 'birdies' and 'eagles'?","a":"Golf","wrong":["Archery","Bowls","Croquet"]},{"q":"In which sport would you find a scrum, a line-out and a try?","a":"Rugby","wrong":["Hockey","Lacrosse","Polo"]}]}],"tiebreakers":[{"q":"How many feet high is Ben Nevis?","a":"4,413"},{"q":"In what year did the Channel Tunnel open?","a":"1994"}]},{"title":"New Quiz D","rounds":[{"name":"General Knowledge","mode":"choice","questions":[{"q":"What is the longest bone in the human body?","a":"The femur","wrong":["The tibia","The humerus","The fibula"]},{"q":"Which Roman numeral stands for 500?","a":"D","wrong":["C","L","M"]},{"q":"What is the name of the bear in The Jungle Book?","a":"Baloo","wrong":["Bagheera","Shere Khan","Kaa"]},{"q":"Which country gave the Statue of Liberty to the USA?","a":"France","wrong":["The UK","Spain","The Netherlands"]},{"q":"How many centimetres are there in a metre?","a":"100","wrong":["10","50","1,000"]},{"q":"What is the name of Sherlock Holmes's landlady?","a":"Mrs Hudson","wrong":["Mrs Hughes","Mrs Bridges","Mrs Doyle"]},{"q":"What is the collective noun for a group of lions?","a":"A pride","wrong":["A pack","A troop","A herd"]},{"q":"What is the tallest animal in the world?","a":"The giraffe","wrong":["The elephant","The ostrich","The moose"]},{"q":"How many strings does a standard guitar have?","a":"Six","wrong":["Four","Five","Seven"]},{"q":"In the Bible, who built the ark?","a":"Noah","wrong":["Moses","Abraham","Jonah"]}]},{"name":"History","mode":"choice","questions":[{"q":"Who was the mother of Queen Elizabeth I?","a":"Anne Boleyn","wrong":["Catherine of Aragon","Jane Seymour","Catherine Parr"]},{"q":"In which year did the Second World War end?","a":"1945","wrong":["1943","1944","1946"]},{"q":"Who was the first Emperor of the French?","a":"Napoleon Bonaparte","wrong":["Louis XVI","Charlemagne","Napoleon III"]},{"q":"Which civilisation built Machu Picchu?","a":"The Incas","wrong":["The Aztecs","The Maya","The Olmecs"]},{"q":"On which ship did Charles Darwin sail around the world?","a":"HMS Beagle","wrong":["HMS Victory","HMS Bounty","HMS Endeavour"]},{"q":"Who was Prime Minister for most of the Second World War?","a":"Winston Churchill","wrong":["Neville Chamberlain","Clement Attlee","Anthony Eden"]},{"q":"In which year did the Titanic sink?","a":"1912","wrong":["1905","1910","1914"]},{"q":"Who was the first monarch of the House of Windsor?","a":"George V","wrong":["Edward VII","George VI","Victoria"]},{"q":"In which year did the Spanish Armada sail against England?","a":"1588","wrong":["1558","1603","1605"]},{"q":"Which conspirator was caught guarding the gunpowder under Parliament in 1605?","a":"Guy Fawkes","wrong":["Robert Catesby","Thomas Percy","Thomas Wintour"]}]},{"name":"TV and Films","mode":"choice","questions":[{"q":"Which school of witchcraft and wizardry does Harry Potter attend?","a":"Hogwarts","wrong":["Durmstrang","Beauxbatons","Ilvermorny"]},{"q":"Who voices Shrek in the original 2001 film?","a":"Mike Myers","wrong":["Eddie Murphy","Jim Carrey","Adam Sandler"]},{"q":"In the 1939 film The Wizard Of Oz, what colour are Dorothy's slippers?","a":"Ruby red","wrong":["Silver","Gold","Emerald green"]},{"q":"Which Oxford TV detective loves real ale, crosswords and Wagner?","a":"Inspector Morse","wrong":["Inspector Frost","Bergerac","Inspector Wexford"]},{"q":"What is the name of the pub in EastEnders?","a":"The Queen Victoria","wrong":["The Rovers Return","The Woolpack","The Bull"]},{"q":"Which actor starred in the most official James Bond films?","a":"Roger Moore","wrong":["Sean Connery","Daniel Craig","Pierce Brosnan"]},{"q":"Which 1994 Disney film features Simba?","a":"The Lion King","wrong":["The Jungle Book","Tarzan","Bambi"]},{"q":"In Fawlty Towers, what is the name of the Spanish waiter?","a":"Manuel","wrong":["Miguel","Pedro","Carlos"]},{"q":"Who played the title role in the 1994 film Forrest Gump?","a":"Tom Hanks","wrong":["Tom Cruise","Kevin Costner","Robin Williams"]},{"q":"Which BBC series, running since 1979, tours the country valuing the public's antiques?","a":"Antiques Roadshow","wrong":["Flog It!","Bargain Hunt","Cash In The Attic"]}]},{"name":"Words and Language","mode":"choice","questions":[{"q":"What is the opposite of a synonym?","a":"An antonym","wrong":["A homonym","An acronym","A pseudonym"]},{"q":"Which language has the most native speakers in the world?","a":"Mandarin Chinese","wrong":["English","Spanish","Hindi"]},{"q":"What is the word for a word that reads the same backwards, such as 'level'?","a":"A palindrome","wrong":["An anagram","A homophone","An acrostic"]},{"q":"What is the plural of 'mouse' when it means the animal?","a":"Mice","wrong":["Mouses","Meese","Mouse"]},{"q":"How many is a baker's dozen?","a":"13","wrong":["11","12","14"]},{"q":"What Latin phrase does the abbreviation 'e.g.' stand for?","a":"Exempli gratia","wrong":["Et cetera","Id est","Ergo gratia"]},{"q":"Which letter is used most often in written English?","a":"E","wrong":["A","T","S"]},{"q":"What is the name for a word formed from the first letters of other words and spoken as a word, such as NATO?","a":"An acronym","wrong":["An antonym","An anagram","A homograph"]},{"q":"From which language does the word 'kindergarten' come?","a":"German","wrong":["Dutch","Swedish","Danish"]},{"q":"Which punctuation mark shows possession in 'the dog's lead'?","a":"An apostrophe","wrong":["A comma","A hyphen","A colon"]}]},{"name":"Football","mode":"choice","questions":[{"q":"Which country won the 2022 FIFA World Cup?","a":"Argentina","wrong":["France","Croatia","Brazil"]},{"q":"Which English club is nicknamed the Toffees?","a":"Everton","wrong":["Burnley","Fulham","Stoke City"]},{"q":"How many players does each team start a football match with on the pitch?","a":"11","wrong":["9","10","12"]},{"q":"Which country won Euro 2024, beating England in the final?","a":"Spain","wrong":["Germany","Italy","France"]},{"q":"Who scored a hat-trick for England in the 1966 World Cup final?","a":"Geoff Hurst","wrong":["Bobby Charlton","Martin Peters","Roger Hunt"]},{"q":"Which club won the first Premier League title, in 1992-93?","a":"Manchester United","wrong":["Blackburn Rovers","Arsenal","Aston Villa"]},{"q":"Which country won the Women's Euro 2022 final at Wembley?","a":"England","wrong":["Germany","The Netherlands","Spain"]},{"q":"What is the name of Celtic's home ground?","a":"Celtic Park","wrong":["Ibrox","Hampden Park","Pittodrie"]},{"q":"How many yards from the goal line is the penalty spot?","a":"12","wrong":["10","14","18"]},{"q":"Which club has won the European Cup / Champions League the most times?","a":"Real Madrid","wrong":["AC Milan","Bayern Munich","Liverpool"]}]}],"tiebreakers":[{"q":"In what year was the Football Association formed?","a":"1863"},{"q":"In what year did the Stockton and Darlington Railway open?","a":"1825"}]}];
+const BUILTIN_QUIZZES = [{"title":"New Quiz A","rounds":[{"name":"General Knowledge","mode":"choice","questions":[{"q":"How many sides does a heptagon have?","a":"Seven","wrong":["Six","Eight","Nine"]},{"q":"What is the chemical symbol for gold?","a":"Au","wrong":["Ag","Gd","Go"]},{"q":"Which famous diarist recorded burying his parmesan cheese in the garden to save it from the Great Fire of London in 1666?","a":"Samuel Pepys","wrong":["Jonathan Swift","Geoffrey Chaucer","Christopher Wren"]},{"q":"In the NATO phonetic alphabet, which word stands for the letter Q?","a":"Quebec","wrong":["Queen","Quartz","Quintet"]},{"q":"By weight, what is the largest internal organ in the human body?","a":"The liver","wrong":["The brain","The heart","The stomach"]},{"q":"How many years of marriage does a ruby wedding anniversary celebrate?","a":"40","wrong":["25","50","60"]},{"q":"What colour is an aircraft's 'black box' flight recorder actually painted?","a":"Orange","wrong":["Black","Yellow","Silver"]},{"q":"What is the nickname of the Great Bell in the Elizabeth Tower at the Palace of Westminster?","a":"Big Ben","wrong":["Great Tom","Great Paul","Old Bailey"]},{"q":"How many players does each team have on court in a game of netball?","a":"Seven","wrong":["Five","Six","Nine"]},{"q":"In which English city would you find the Royal Crescent and the Roman Baths?","a":"Bath","wrong":["Bristol","Cheltenham","York"]}]},{"name":"Geography","mode":"choice","questions":[{"q":"What is the capital city of Australia?","a":"Canberra","wrong":["Sydney","Melbourne","Perth"]},{"q":"Which river flows through Cairo?","a":"The Nile","wrong":["The Euphrates","The Tigris","The Jordan"]},{"q":"What is the smallest country in the world by area?","a":"Vatican City","wrong":["Monaco","San Marino","Liechtenstein"]},{"q":"Mount Kilimanjaro is in which country?","a":"Tanzania","wrong":["Kenya","Uganda","Ethiopia"]},{"q":"What is the longest river that flows entirely within England?","a":"The Thames","wrong":["The Severn","The Trent","The Great Ouse"]},{"q":"What is the capital city of Canada?","a":"Ottawa","wrong":["Toronto","Montreal","Vancouver"]},{"q":"Which sea separates Italy from Croatia?","a":"The Adriatic Sea","wrong":["The Aegean Sea","The Ionian Sea","The Tyrrhenian Sea"]},{"q":"Which US state is nicknamed the Sunshine State?","a":"Florida","wrong":["California","Arizona","Hawaii"]},{"q":"The Giant's Causeway is in which county of Northern Ireland?","a":"County Antrim","wrong":["County Down","County Fermanagh","County Armagh"]},{"q":"What is the largest hot desert in the world?","a":"The Sahara","wrong":["The Gobi","The Kalahari","The Arabian Desert"]}]},{"name":"Music","mode":"choice","questions":[{"q":"Which band released the album Abbey Road in 1969?","a":"The Beatles","wrong":["The Rolling Stones","The Kinks","The Who"]},{"q":"How many strings does a standard violin have?","a":"Four","wrong":["Three","Five","Six"]},{"q":"Which band had a 1995 hit with Wonderwall?","a":"Oasis","wrong":["Blur","The Stone Roses","The Verve"]},{"q":"Who composed The Four Seasons?","a":"Antonio Vivaldi","wrong":["Johann Sebastian Bach","George Frideric Handel","Wolfgang Amadeus Mozart"]},{"q":"Which singer released the 1984 album Like A Virgin?","a":"Madonna","wrong":["Cyndi Lauper","Whitney Houston","Kylie Minogue"]},{"q":"Freddie Mercury was the lead singer of which band?","a":"Queen","wrong":["Genesis","Yes","Wham!"]},{"q":"In music, what does the instruction 'forte' tell a player to do?","a":"Play loudly","wrong":["Play softly","Play quickly","Play slowly"]},{"q":"Which ABBA song won the Eurovision Song Contest in 1974?","a":"Waterloo","wrong":["Mamma Mia","Dancing Queen","SOS"]},{"q":"Which instrument did jazz legend Louis Armstrong famously play?","a":"Trumpet","wrong":["Saxophone","Trombone","Clarinet"]},{"q":"What was the name of Elvis Presley's mansion in Memphis?","a":"Graceland","wrong":["Neverland","Paisley Park","Xanadu"]}]},{"name":"Science and Nature","mode":"choice","questions":[{"q":"Which gas do plants take in from the air to use in photosynthesis?","a":"Carbon dioxide","wrong":["Oxygen","Nitrogen","Hydrogen"]},{"q":"How many bones are there in the adult human body?","a":"206","wrong":["186","212","226"]},{"q":"What is the hardest natural substance on Earth?","a":"Diamond","wrong":["Quartz","Granite","Topaz"]},{"q":"Which planet is closest to the Sun?","a":"Mercury","wrong":["Venus","Mars","Earth"]},{"q":"What is H2O more commonly known as?","a":"Water","wrong":["Hydrogen peroxide","Salt","Ammonia"]},{"q":"What is the largest species of fish?","a":"The whale shark","wrong":["The great white shark","The basking shark","The tiger shark"]},{"q":"At sea level, at what temperature in degrees Celsius does water boil?","a":"100","wrong":["90","110","120"]},{"q":"Which blood cells help the body fight infection?","a":"White blood cells","wrong":["Red blood cells","Platelets","Plasma cells"]},{"q":"What is a baby kangaroo called?","a":"A joey","wrong":["A kid","A cub","A kit"]},{"q":"Who developed the general theory of relativity?","a":"Albert Einstein","wrong":["Isaac Newton","Niels Bohr","Stephen Hawking"]}]},{"name":"Sport","mode":"choice","questions":[{"q":"How many players does each team have on the pitch in rugby union?","a":"15","wrong":["11","13","12"]},{"q":"In which sport would you perform a slam dunk?","a":"Basketball","wrong":["Volleyball","Netball","Handball"]},{"q":"In which city does the Tour de France traditionally finish?","a":"Paris","wrong":["Lyon","Marseille","Bordeaux"]},{"q":"How many holes are played in a standard round of golf?","a":"18","wrong":["9","16","20"]},{"q":"Which English football club plays its home games at Anfield?","a":"Liverpool","wrong":["Everton","Manchester United","Leeds United"]},{"q":"Without a free ball, what is the maximum break in snooker?","a":"147","wrong":["155","140","180"]},{"q":"What is the highest score possible with three darts?","a":"180","wrong":["170","160","150"]},{"q":"Which tennis Grand Slam tournament is played on clay?","a":"The French Open","wrong":["Wimbledon","The US Open","The Australian Open"]},{"q":"How often are the Summer Olympic Games normally held?","a":"Every four years","wrong":["Every two years","Every three years","Every five years"]},{"q":"In cricket, how many balls are bowled in a standard over?","a":"Six","wrong":["Four","Five","Eight"]}]}],"tiebreakers":[{"q":"A marathon is 26 miles and how many yards?","a":"385"},{"q":"In what year was the first FA Cup final played?","a":"1872"}]},{"title":"New Quiz B","rounds":[{"name":"General Knowledge","mode":"choice","questions":[{"q":"How many minutes are there in a day?","a":"1,440","wrong":["1,240","1,400","1,640"]},{"q":"What is the name of the fairy in J. M. Barrie's Peter Pan?","a":"Tinker Bell","wrong":["Silvermist","Periwinkle","Fawn"]},{"q":"Which metal is liquid at normal room temperature?","a":"Mercury","wrong":["Lead","Tin","Gallium"]},{"q":"In the UK version of the board game Cluedo, what is the name of the murder victim?","a":"Dr Black","wrong":["Professor Plum","Colonel Mustard","Reverend Green"]},{"q":"What is the currency of Japan?","a":"Yen","wrong":["Won","Yuan","Ringgit"]},{"q":"How many hearts does an octopus have?","a":"Three","wrong":["One","Two","Four"]},{"q":"What name is given to the mark on a ship's hull that shows the legal limit it can be loaded to?","a":"The Plimsoll line","wrong":["The Davy line","The Bessemer line","The Marconi line"]},{"q":"Which English king had six wives?","a":"Henry VIII","wrong":["Henry VII","Edward VI","Richard III"]},{"q":"What is the collective noun for a group of crows?","a":"A murder","wrong":["A parliament","A pride","A gaggle"]},{"q":"Which day of the week is named after the Norse god Thor?","a":"Thursday","wrong":["Tuesday","Wednesday","Friday"]}]},{"name":"History","mode":"choice","questions":[{"q":"In which year did the Battle of Hastings take place?","a":"1066","wrong":["1016","1086","1215"]},{"q":"Who was the first female Prime Minister of the United Kingdom?","a":"Margaret Thatcher","wrong":["Theresa May","Barbara Castle","Shirley Williams"]},{"q":"Which ship carried the Pilgrims from England to America in 1620?","a":"The Mayflower","wrong":["The Endeavour","The Golden Hind","The Santa Maria"]},{"q":"In which year did the Berlin Wall fall?","a":"1989","wrong":["1985","1987","1991"]},{"q":"Which Roman emperor ordered the building of a wall across northern England?","a":"Hadrian","wrong":["Claudius","Nero","Augustus"]},{"q":"Who was the first person to walk on the Moon?","a":"Neil Armstrong","wrong":["Buzz Aldrin","Yuri Gagarin","John Glenn"]},{"q":"Which English king sealed the Magna Carta in 1215?","a":"King John","wrong":["Richard I","Henry III","Edward I"]},{"q":"Which nurse was nicknamed 'The Lady with the Lamp'?","a":"Florence Nightingale","wrong":["Mary Seacole","Edith Cavell","Elizabeth Fry"]},{"q":"In which year did the First World War begin?","a":"1914","wrong":["1912","1916","1918"]},{"q":"Which of the Seven Wonders of the Ancient World stood on the Greek island of Rhodes?","a":"The Colossus of Rhodes","wrong":["The Lighthouse of Alexandria","The Hanging Gardens","The Mausoleum"]}]},{"name":"TV and Films","mode":"choice","questions":[{"q":"In Only Fools And Horses, what is Del Boy's surname?","a":"Trotter","wrong":["Butcher","Turner","Tanner"]},{"q":"Who directed the films Jaws and E.T. The Extra-Terrestrial?","a":"Steven Spielberg","wrong":["George Lucas","Ridley Scott","James Cameron"]},{"q":"What type of animal is the title character in the 1995 film Babe?","a":"A pig","wrong":["A sheep","A dog","A duck"]},{"q":"Which fictional bear lives at 32 Windsor Gardens in London?","a":"Paddington","wrong":["Rupert","Winnie the Pooh","Baloo"]},{"q":"In which fictional town is Coronation Street set?","a":"Weatherfield","wrong":["Walford","Emmerdale","Holby"]},{"q":"Who played the boxer Rocky Balboa?","a":"Sylvester Stallone","wrong":["Arnold Schwarzenegger","Robert De Niro","Dolph Lundgren"]},{"q":"Which film won the first ever Oscar for Best Animated Feature, in 2002?","a":"Shrek","wrong":["Monsters, Inc.","Ice Age","Toy Story 2"]},{"q":"What is the name of the coffee shop in the TV series Friends?","a":"Central Perk","wrong":["Monk's Cafe","Cafe Nervosa","The Max"]},{"q":"What is the name of the Doctor's time machine in Doctor Who?","a":"The TARDIS","wrong":["The DeLorean","The Enterprise","The Red Dwarf"]},{"q":"In which film does Darth Vader first appear?","a":"Star Wars","wrong":["The Empire Strikes Back","Return Of The Jedi","Flash Gordon"]}]},{"name":"Food and Drink","mode":"choice","questions":[{"q":"What is the main ingredient of guacamole?","a":"Avocado","wrong":["Pea","Cucumber","Courgette"]},{"q":"Feta cheese traditionally comes from which country?","a":"Greece","wrong":["Italy","Spain","France"]},{"q":"Which spirit is the base of a mojito?","a":"Rum","wrong":["Gin","Vodka","Tequila"]},{"q":"Arborio rice is mainly used to make which dish?","a":"Risotto","wrong":["Paella","Biryani","Sushi"]},{"q":"Which nut is used to make marzipan?","a":"Almond","wrong":["Hazelnut","Cashew","Walnut"]},{"q":"What type of pastry is used to make profiteroles?","a":"Choux","wrong":["Filo","Puff","Shortcrust"]},{"q":"Which spice gives a traditional paella its golden colour?","a":"Saffron","wrong":["Paprika","Cumin","Cinnamon"]},{"q":"Calvados is a brandy made mainly from which fruit?","a":"Apples","wrong":["Plums","Cherries","Grapes"]},{"q":"Wensleydale cheese comes from which English county?","a":"Yorkshire","wrong":["Lancashire","Derbyshire","Cumbria"]},{"q":"Which paprika-seasoned stew is the national dish of Hungary?","a":"Goulash","wrong":["Borscht","Stroganoff","Pierogi"]}]},{"name":"Art and Literature","mode":"choice","questions":[{"q":"Who painted the Mona Lisa?","a":"Leonardo da Vinci","wrong":["Michelangelo","Raphael","Botticelli"]},{"q":"Who wrote the novel Pride And Prejudice?","a":"Jane Austen","wrong":["Charlotte Brontë","George Eliot","Emily Brontë"]},{"q":"In which city is the Louvre museum?","a":"Paris","wrong":["Rome","Madrid","Vienna"]},{"q":"Ebenezer Scrooge is the main character in which Charles Dickens story?","a":"A Christmas Carol","wrong":["Bleak House","Hard Times","Great Expectations"]},{"q":"In which Scottish city did J. K. Rowling write much of the early Harry Potter books?","a":"Edinburgh","wrong":["Glasgow","Aberdeen","Dundee"]},{"q":"Which artist cut off part of his own ear in 1888?","a":"Vincent van Gogh","wrong":["Paul Gauguin","Claude Monet","Paul Cézanne"]},{"q":"What is the farm called at the start of George Orwell's Animal Farm?","a":"Manor Farm","wrong":["Willow Farm","Pinchfield","Foxwood"]},{"q":"Who wrote the poem The Charge Of The Light Brigade?","a":"Alfred, Lord Tennyson","wrong":["William Wordsworth","Rudyard Kipling","Lord Byron"]},{"q":"In which Italian city is Shakespeare's Romeo And Juliet set?","a":"Verona","wrong":["Venice","Padua","Florence"]},{"q":"Which sculptor created The Thinker?","a":"Auguste Rodin","wrong":["Michelangelo","Henry Moore","Donatello"]}]}],"tiebreakers":[{"q":"How many miles long is Hadrian's Wall?","a":"73"},{"q":"In what year was the first episode of Coronation Street broadcast?","a":"1960"}]},{"title":"New Quiz C","rounds":[{"name":"General Knowledge","mode":"choice","questions":[{"q":"Which is the only letter of the alphabet that does not appear in the name of any US state?","a":"Q","wrong":["X","Z","J"]},{"q":"How many pints are there in an imperial gallon?","a":"Eight","wrong":["Four","Six","Ten"]},{"q":"What does 'www' stand for in a web address?","a":"World Wide Web","wrong":["Wide World Web","World Web Window","Wireless World Web"]},{"q":"Which bird is traditionally a symbol of peace?","a":"The dove","wrong":["The swan","The robin","The eagle"]},{"q":"In the nursery rhyme, who sat on a wall and had a great fall?","a":"Humpty Dumpty","wrong":["Little Jack Horner","Little Miss Muffet","Old King Cole"]},{"q":"How many days are there in a leap year?","a":"366","wrong":["364","365","367"]},{"q":"Which Toy Story character's catchphrase is 'To infinity and beyond!'?","a":"Buzz Lightyear","wrong":["Woody","Rex","Zurg"]},{"q":"What is the hottest planet in the Solar System?","a":"Venus","wrong":["Mercury","Mars","Jupiter"]},{"q":"What is the square root of 144?","a":"12","wrong":["11","14","16"]},{"q":"Which British coin, introduced in 2017, has 12 sides?","a":"The £1 coin","wrong":["The £2 coin","The 50p coin","The 20p coin"]}]},{"name":"Geography","mode":"choice","questions":[{"q":"What is the capital city of Spain?","a":"Madrid","wrong":["Barcelona","Seville","Valencia"]},{"q":"What is the largest ocean on Earth?","a":"The Pacific Ocean","wrong":["The Atlantic Ocean","The Indian Ocean","The Arctic Ocean"]},{"q":"Which European country is shaped like a boot?","a":"Italy","wrong":["Portugal","Greece","Croatia"]},{"q":"What is the highest mountain in the UK?","a":"Ben Nevis","wrong":["Snowdon","Scafell Pike","Slieve Donard"]},{"q":"Which city is nicknamed the Big Apple?","a":"New York","wrong":["Chicago","Los Angeles","Boston"]},{"q":"The River Liffey flows through which city?","a":"Dublin","wrong":["Cork","Belfast","Limerick"]},{"q":"Since 2023, which country has had the largest population in the world?","a":"India","wrong":["China","USA","Indonesia"]},{"q":"What is the capital city of Egypt?","a":"Cairo","wrong":["Alexandria","Luxor","Giza"]},{"q":"On which Spanish island is the city of Palma?","a":"Majorca","wrong":["Ibiza","Menorca","Tenerife"]},{"q":"Which strait separates Spain from Morocco?","a":"The Strait of Gibraltar","wrong":["The Bosphorus","The Strait of Messina","The Strait of Hormuz"]}]},{"name":"Music","mode":"choice","questions":[{"q":"Which group had a 1976 number one with Dancing Queen?","a":"ABBA","wrong":["Boney M","The Carpenters","Bucks Fizz"]},{"q":"Which instrument normally has 88 keys?","a":"The piano","wrong":["The organ","The accordion","The harpsichord"]},{"q":"Who sang the 1972 hit Rocket Man?","a":"Elton John","wrong":["David Bowie","Rod Stewart","Billy Joel"]},{"q":"Mick Jagger is the lead singer of which band?","a":"The Rolling Stones","wrong":["The Who","The Kinks","The Animals"]},{"q":"Who composed the Moonlight Sonata?","a":"Ludwig van Beethoven","wrong":["Wolfgang Amadeus Mozart","Frédéric Chopin","Franz Schubert"]},{"q":"What nationality was the composer Frédéric Chopin?","a":"Polish","wrong":["French","Austrian","Hungarian"]},{"q":"Which Bristol band released the 1994 album Dummy?","a":"Portishead","wrong":["Massive Attack","The Verve","Pulp"]},{"q":"How many members were in the original line-up of the Spice Girls?","a":"Five","wrong":["Three","Four","Six"]},{"q":"Who sang Purple Rain?","a":"Prince","wrong":["Michael Jackson","Stevie Wonder","Lionel Richie"]},{"q":"Which Welsh singer is famous for Delilah and It's Not Unusual?","a":"Tom Jones","wrong":["Shirley Bassey","Bonnie Tyler","Shakin' Stevens"]}]},{"name":"Science and Nature","mode":"choice","questions":[{"q":"What is the chemical symbol for sodium?","a":"Na","wrong":["So","Sd","Sn"]},{"q":"Which organ in the human body produces insulin?","a":"The pancreas","wrong":["The liver","The kidneys","The spleen"]},{"q":"How many legs does a spider have?","a":"Eight","wrong":["Six","Ten","Twelve"]},{"q":"Roughly how fast does light travel, in kilometres per second?","a":"300,000","wrong":["30,000","150,000","3,000,000"]},{"q":"Which star is closest to Earth?","a":"The Sun","wrong":["Proxima Centauri","Sirius","Polaris"]},{"q":"What name is given to animals that eat only plants?","a":"Herbivores","wrong":["Carnivores","Omnivores","Insectivores"]},{"q":"What does DNA stand for?","a":"Deoxyribonucleic acid","wrong":["Dinitrogen acid","Deoxyribose nitrate","Dioxynucleic acid"]},{"q":"Which is the largest planet in the Solar System?","a":"Jupiter","wrong":["Saturn","Neptune","Uranus"]},{"q":"What is the largest bird in the world?","a":"The ostrich","wrong":["The emu","The albatross","The condor"]},{"q":"In what unit is electrical resistance measured?","a":"The ohm","wrong":["The volt","The watt","The amp"]}]},{"name":"Sport","mode":"choice","questions":[{"q":"Which country won the 2023 Rugby Union World Cup?","a":"South Africa","wrong":["New Zealand","France","England"]},{"q":"In which sport is the Ryder Cup contested?","a":"Golf","wrong":["Tennis","Cricket","Sailing"]},{"q":"To one decimal place, how many miles long is a marathon?","a":"26.2","wrong":["22.2","24.2","28.2"]},{"q":"Which country won the first FIFA World Cup in 1930?","a":"Uruguay","wrong":["Brazil","Argentina","Italy"]},{"q":"What colour jersey does the overall leader of the Tour de France wear?","a":"Yellow","wrong":["Green","Polka dot","White"]},{"q":"Which boxer called himself 'The Greatest'?","a":"Muhammad Ali","wrong":["Joe Frazier","Mike Tyson","George Foreman"]},{"q":"Which English horse race is held at Aintree each April?","a":"The Grand National","wrong":["The Derby","The St Leger","The Gold Cup"]},{"q":"How many points is a touchdown worth in American football?","a":"Six","wrong":["Three","Five","Seven"]},{"q":"In which sport do players score 'birdies' and 'eagles'?","a":"Golf","wrong":["Archery","Bowls","Croquet"]},{"q":"In which sport would you find a scrum, a line-out and a try?","a":"Rugby","wrong":["Hockey","Lacrosse","Polo"]}]}],"tiebreakers":[{"q":"How many feet high is Ben Nevis?","a":"4,413"},{"q":"In what year did the Channel Tunnel open?","a":"1994"}]},{"title":"New Quiz D","rounds":[{"name":"General Knowledge","mode":"choice","questions":[{"q":"What is the longest bone in the human body?","a":"The femur","wrong":["The tibia","The humerus","The fibula"]},{"q":"Which Roman numeral stands for 500?","a":"D","wrong":["C","L","M"]},{"q":"What is the name of the bear in The Jungle Book?","a":"Baloo","wrong":["Bagheera","Shere Khan","Kaa"]},{"q":"Which country gave the Statue of Liberty to the USA?","a":"France","wrong":["The UK","Spain","The Netherlands"]},{"q":"How many centimetres are there in a metre?","a":"100","wrong":["10","50","1,000"]},{"q":"What is the name of Sherlock Holmes's landlady?","a":"Mrs Hudson","wrong":["Mrs Hughes","Mrs Bridges","Mrs Doyle"]},{"q":"What is the collective noun for a group of lions?","a":"A pride","wrong":["A pack","A troop","A herd"]},{"q":"What is the tallest animal in the world?","a":"The giraffe","wrong":["The elephant","The ostrich","The moose"]},{"q":"How many strings does a standard guitar have?","a":"Six","wrong":["Four","Five","Seven"]},{"q":"In the Bible, who built the ark?","a":"Noah","wrong":["Moses","Abraham","Jonah"]}]},{"name":"History","mode":"choice","questions":[{"q":"Who was the mother of Queen Elizabeth I?","a":"Anne Boleyn","wrong":["Catherine of Aragon","Jane Seymour","Catherine Parr"]},{"q":"In which year did the Second World War end?","a":"1945","wrong":["1943","1944","1946"]},{"q":"Who was the first Emperor of the French?","a":"Napoleon Bonaparte","wrong":["Louis XVI","Charlemagne","Napoleon III"]},{"q":"Which civilisation built Machu Picchu?","a":"The Incas","wrong":["The Aztecs","The Maya","The Olmecs"]},{"q":"On which ship did Charles Darwin sail around the world?","a":"HMS Beagle","wrong":["HMS Victory","HMS Bounty","HMS Endeavour"]},{"q":"Who was Prime Minister for most of the Second World War?","a":"Winston Churchill","wrong":["Neville Chamberlain","Clement Attlee","Anthony Eden"]},{"q":"In which year did the Titanic sink?","a":"1912","wrong":["1905","1910","1914"]},{"q":"Who was the first monarch of the House of Windsor?","a":"George V","wrong":["Edward VII","George VI","Victoria"]},{"q":"In which year did the Spanish Armada sail against England?","a":"1588","wrong":["1558","1603","1605"]},{"q":"Which conspirator was caught guarding the gunpowder under Parliament in 1605?","a":"Guy Fawkes","wrong":["Robert Catesby","Thomas Percy","Thomas Wintour"]}]},{"name":"TV and Films","mode":"choice","questions":[{"q":"Which school of witchcraft and wizardry does Harry Potter attend?","a":"Hogwarts","wrong":["Durmstrang","Beauxbatons","Ilvermorny"]},{"q":"Who voices Shrek in the original 2001 film?","a":"Mike Myers","wrong":["Eddie Murphy","Jim Carrey","Adam Sandler"]},{"q":"In the 1939 film The Wizard Of Oz, what colour are Dorothy's slippers?","a":"Ruby red","wrong":["Silver","Gold","Emerald green"]},{"q":"Which Oxford TV detective loves real ale, crosswords and Wagner?","a":"Inspector Morse","wrong":["Inspector Frost","Bergerac","Inspector Wexford"]},{"q":"What is the name of the pub in EastEnders?","a":"The Queen Victoria","wrong":["The Rovers Return","The Woolpack","The Bull"]},{"q":"Which actor starred in the most official James Bond films?","a":"Roger Moore","wrong":["Sean Connery","Daniel Craig","Pierce Brosnan"]},{"q":"Which 1994 Disney film features Simba?","a":"The Lion King","wrong":["The Jungle Book","Tarzan","Bambi"]},{"q":"In Fawlty Towers, what is the name of the Spanish waiter?","a":"Manuel","wrong":["Miguel","Pedro","Carlos"]},{"q":"Who played the title role in the 1994 film Forrest Gump?","a":"Tom Hanks","wrong":["Tom Cruise","Kevin Costner","Robin Williams"]},{"q":"Which BBC series, running since 1979, tours the country valuing the public's antiques?","a":"Antiques Roadshow","wrong":["Flog It!","Bargain Hunt","Cash In The Attic"]}]},{"name":"Words and Language","mode":"choice","questions":[{"q":"What is the opposite of a synonym?","a":"An antonym","wrong":["A homonym","An acronym","A pseudonym"]},{"q":"Which language has the most native speakers in the world?","a":"Mandarin Chinese","wrong":["English","Spanish","Hindi"]},{"q":"What is the word for a word that reads the same backwards, such as 'level'?","a":"A palindrome","wrong":["An anagram","A homophone","An acrostic"]},{"q":"What is the plural of 'mouse' when it means the animal?","a":"Mice","wrong":["Mouses","Meese","Mouse"]},{"q":"How many is a baker's dozen?","a":"13","wrong":["11","12","14"]},{"q":"What Latin phrase does the abbreviation 'e.g.' stand for?","a":"Exempli gratia","wrong":["Et cetera","Id est","Ergo gratia"]},{"q":"Which letter is used most often in written English?","a":"E","wrong":["A","T","S"]},{"q":"What is the name for a word formed from the first letters of other words and spoken as a word, such as NATO?","a":"An acronym","wrong":["An antonym","An anagram","A homograph"]},{"q":"From which language does the word 'kindergarten' come?","a":"German","wrong":["Dutch","Swedish","Danish"]},{"q":"Which punctuation mark shows possession in 'the dog's lead'?","a":"An apostrophe","wrong":["A comma","A hyphen","A colon"]}]},{"name":"Football","mode":"choice","questions":[{"q":"Which country won the 2022 FIFA World Cup?","a":"Argentina","wrong":["France","Croatia","Brazil"]},{"q":"Which English club is nicknamed the Toffees?","a":"Everton","wrong":["Burnley","Fulham","Stoke City"]},{"q":"How many players does each team start a football match with on the pitch?","a":"11","wrong":["9","10","12"]},{"q":"Which country won Euro 2024, beating England in the final?","a":"Spain","wrong":["Germany","Italy","France"]},{"q":"Who scored a hat-trick for England in the 1966 World Cup final?","a":"Geoff Hurst","wrong":["Bobby Charlton","Martin Peters","Roger Hunt"]},{"q":"Which club won the first Premier League title, in 1992-93?","a":"Manchester United","wrong":["Blackburn Rovers","Arsenal","Aston Villa"]},{"q":"Which country won the Women's Euro 2022 final at Wembley?","a":"England","wrong":["Germany","The Netherlands","Spain"]},{"q":"What is the name of Celtic's home ground?","a":"Celtic Park","wrong":["Ibrox","Hampden Park","Pittodrie"]},{"q":"How many yards from the goal line is the penalty spot?","a":"12","wrong":["10","14","18"]},{"q":"Which club has won the European Cup / Champions League the most times?","a":"Real Madrid","wrong":["AC Milan","Bayern Munich","Liverpool"]}]}],"tiebreakers":[{"q":"In what year was the Football Association formed?","a":"1863"},{"q":"In what year did the Stockton and Darlington Railway open?","a":"1825"}]}].concat(window.PQP_IMPORTED_QUIZZES || []);
 const LIB_KEY = 'pqp.lib';
 function libItems(){
   try { const d = JSON.parse(localStorage.getItem(LIB_KEY) || '[]'); return Array.isArray(d) ? d.filter(x => x && typeof x.id === 'string' && x.quiz && Array.isArray(x.quiz.rounds)) : []; }
@@ -2787,7 +3112,7 @@ function answersCard(){
   const answered = new Set(order.map(b => b.id));
   const rows = order.map((b, i) => { const t = team(b.id); if (!t) return ''; const p = aw.get(b.id);
     return `<li class="${b.st === 'wait' ? '' : b.st}"><span class="team-avatar-ring" style="${teamStyle(t)}">${avatarHTML(t)}</span><strong>${esc(t.name)}</strong>
-      <span class="muted">${i === 0 ? 'first' : '+' + ((b.t - t0) / 1000).toFixed(2) + 's'}</span>
+      <span class="muted">${isClassic() ? 'Submitted' : i === 0 ? 'first' : '+' + ((b.t - t0) / 1000).toFixed(2) + 's'}</span>
       <span class="ans-chip">${esc(answerText(b, q))}</span><span class="spacer"></span>
       <span class="gain">${p ? '+' + p : ''}</span>
       <span class="mark">
@@ -2797,18 +3122,20 @@ function answersCard(){
   const waiting = S.teams.filter(t => !answered.has(t.id));
   const tapRows = isChoice() && open && !awarded && waiting.length ? `<p class="hint" style="margin-top:10px">No phone? Tap the answer for a ${noun()}:</p>${waiting.map(t => `<div class="tap-row"><span class="swatch" style="${teamStyle(t)}"></span><span class="tname">${esc(t.name)}</span>
       ${LETTERS.map((L, i) => `<button class="btn sm" data-act="answer" data-id="${t.id}" data-c="${i}" type="button" aria-label="${esc(t.name)} answers ${L}">${L}</button>`).join('')}</div>`).join('')}` : '';
+  const typedHostRows = isTyped() && isClassic() && open && !awarded
+    ? `<div class="typed-host"><p class="hint">No phone? The quizmaster can enter or correct typed answers before locking:</p><div class="row">${S.teams.map(t => `<button class="btn sm" type="button" data-act="host-typed" data-id="${t.id}">${esc(t.name)}: ${answered.has(t.id) ? 'Edit' : 'Enter'} answer</button>`).join('')}</div></div>` : '';
   const anyRight = Array.from(aw.values()).some(p => p > 0);
   const footer = !S.revealed
     ? `<button class="btn ok" data-act="reveal" type="button">Reveal answer and mark</button>`
-    : awarded ? `<p class="hint">Points awarded. Press Undo on the scoreboard to change them.</p>`
-    : `<button class="btn primary" data-act="award" type="button" ${anyRight ? '' : 'disabled'}>Award points</button>${isTyped() ? `<span class="hint">Check the automatic marks first. Tap \u2714 or \u2718 to change any.</span>` : ''}`;
+    : awarded ? `<p class="hint">Question finalised. ${!isLegacy() ? '<button class="btn sm" data-act="reopen-current" type="button">Reopen marking</button>' : 'Press Undo on the scoreboard to change the points.'}</p>`
+    : anyRight ? `<button class="btn primary" data-act="award" type="button">Award points</button>${isTyped() ? `<span class="hint">Check the automatic marks first. Tap \u2714 or \u2718 to change any.</span>` : ''}` : `<button class="btn" data-act="finalise-zero" type="button" ${order.some(b => b.st === 'wait') ? 'disabled' : ''}>Finalise: 0 points</button><span class="hint">No correct answers marked. Finalise this question to continue.</span>`;
   return `<section class="card">
     <div class="section-head"><h2>${isChoice() ? 'Multiple choice' : 'Typed answers'}</h2><span class="status ${open ? 'open' : 'closed'}">${open ? 'Open' : 'Closed'}</span></div>
     <p class="hint" style="margin-top:0">${order.length} of ${S.teams.length} ${noun(true)} answered${waiting.length && order.length ? `. Waiting for ${waiting.map(t => esc(t.name)).join(', ')}` : ''}.</p>
     ${order.length ? `<ol class="queue" aria-live="polite">${rows}</ol>` : ''}
     <div class="row" style="margin-top:10px">${footer}</div>
-    ${tapRows}
-    ${isTyped() && !(S.net.on && NET.leader && phonesOnline()) ? `<div class="warn">Typed answers come from phones. Turn on phone buzzers in Setup step 2, or switch this round to multiple choice.</div>` : ''}
+    ${tapRows}${typedHostRows}
+    ${isTyped() && !isClassic() && !(S.net.on && NET.leader && phonesOnline()) ? `<div class="warn">Typed answers in Game Show mode require phones. Turn on phone buzzers in Setup.</div>` : ''}
     ${S.net.on ? `<p class="hint"><span class="net-status ${NET.status}" data-net-status>${netStatusText()}</span>${NET.leader ? `, ${plural(phonesOnline(), 'phone')} connected` : ''}</p>` : ''}
     <div class="row" style="margin-top:6px"><button class="btn sm" data-act="buzz-toggle" type="button" ${awarded ? 'disabled' : ''}>${open ? 'Close answers' : 'Reopen answers'}</button></div>
   </section>`;
@@ -2835,7 +3162,7 @@ function answerStageHTML(q){
     return `<div class="team-ans" style="${teamStyle(t)}">${avatarHTML(t)}<span class="team-ans-name">${esc(t.name)}</span>${right}</div>`;
   }).join('');
   const done = order.length;
-  const banner = S.revealed ? '' : `<p class="stage-info">${done} of ${S.teams.length} ${noun(true)} locked in${isChoice() ? '. Fastest correct answer wins.' : ''}</p>`;
+  const banner = S.revealed ? '' : `<p class="stage-info">${done} of ${S.teams.length} ${noun(true)} locked in${isClassic() ? '. Every correct team scores.' : isChoice() && isShow() ? '. Speed bonuses apply.' : isChoice() ? '. Fastest correct answer wins.' : ''}</p>`;
   return `${grid}${banner}<div class="team-ans-list">${rows}</div>`;
 }
 function optionsSummary(q){
@@ -3257,29 +3584,64 @@ function openImport(){
    Status values: connecting, online, offline, refused (room code owned by another quiz), noserver. */
 function mqttClient(_url, onMsg, onStatus){
   const subs = new Set();
-  let claimArgs = null, closed = false, sock = null;
+  let claimArgs = null, phoneAuth = null, tvPair = null, closed = false, sock = null;
+  let authorised = false, retryAuth = null, authEpoch = 0;
   const api = {
-    online: false, onConnect: null, socket: null,
+    online: false, onConnect: null, onPairLost: null, socket: null,
     subscribe(t){ subs.add(t); if (api.online) sock.emit('sub', { topic: t }); },
     unsubscribe(t){ subs.delete(t); if (api.online) sock.emit('unsub', { topic: t }); },
     publish(t, m, retain){ if (!api.online) return false; sock.emit('pub', { topic: t, msg: String(m), retain: !!retain }); return true; },
-    claim(room, token){ claimArgs = { room, token }; if (api.online) doClaim(); },
-    kick(){ if (sock && !closed && !sock.connected) sock.connect(); },
-    close(){ closed = true; api.online = false; if (sock) sock.close(); }
+    claim(room, token){ claimArgs = { room, token }; if (sock?.connected) authenticate(); },
+    bindPhone(room, cid, secret){ phoneAuth = { room, cid, secret }; if (sock?.connected) authenticate(); },
+    assignPhone(room, cid, team, done){
+      if (!api.online) { if (done) done(false); return; }
+      // A deployment/disconnect can swallow an acknowledgement. Never leave the
+      // quizmaster's Approve button stuck in a permanently pending state.
+      let settled = false;
+      const finish = ok => { if (settled) return; settled = true; clearTimeout(timeout); if (done) done(ok); };
+      const timeout = setTimeout(() => finish(false), 6500);
+      sock.emit('phone-assign', { room, cid, team }, r => finish(!!r?.ok));
+    },
+    pairTV(p){ tvPair = p; if (sock?.connected) authenticate(); },
+    kick(){ if (sock && !closed && !sock.connected) sock.connect(); else if (sock?.connected && !api.online) authenticate(); },
+    close(){ closed = true; clearTimeout(retryAuth); api.online = false; if (sock) sock.close(); }
   };
-  function doClaim(){ sock.emit('claim', claimArgs, r => { if (!r || !r.ok){ if (!closed) onStatus('refused'); } }); }
+  function markReady(){
+    if (closed || !sock?.connected) return;
+    authorised = true; api.online = true;
+    subs.forEach(t => sock.emit('sub', { topic: t }));
+    onStatus('online');
+    if (api.onConnect) api.onConnect();
+  }
+  function authenticate(){
+    if (closed || !sock?.connected) return;
+    clearTimeout(retryAuth);
+    const epoch = ++authEpoch;
+    authorised = false; api.online = false;
+    const method = claimArgs ? 'claim' : phoneAuth ? 'phone-auth' : tvPair ? 'tv-resume' : null;
+    const creds = claimArgs || phoneAuth || tvPair;
+    if (!method){ markReady(); return; }
+    sock.emit(method, creds, r => {
+      if (closed || !sock?.connected || epoch !== authEpoch) return;
+      if (r?.ok){ markReady(); return; }
+      if (method === 'claim'){ onStatus('refused'); return; }
+      if (method === 'tv-resume'){
+        onStatus('unpaired');
+        if (api.onPairLost) api.onPairLost();
+        return;
+      }
+      onStatus('offline');
+      // After a Render restart the host may not have reclaimed the room yet.
+      // Retry phone registration without requiring the player to reload.
+      retryAuth = setTimeout(authenticate, 2000);
+    });
+  }
   if (typeof io !== 'function'){ setTimeout(() => onStatus('noserver'), 0); return api; }
   sock = io('/quiz', { transports: ['websocket', 'polling'], reconnectionDelayMax: 4000 });
   api.socket = sock;
   setTimeout(() => { if (!api.online && !closed) onStatus('connecting'); }, 0);
-  sock.on('connect', () => {
-    api.online = true;
-    if (claimArgs) doClaim();
-    subs.forEach(t => sock.emit('sub', { topic: t }));
-    onStatus('online');
-    if (api.onConnect) api.onConnect();
-  });
-  sock.on('disconnect', () => { api.online = false; if (!closed) onStatus('offline'); });
+  sock.on('connect', () => { onStatus('connecting'); authenticate(); });
+  sock.on('disconnect', () => { clearTimeout(retryAuth); ++authEpoch; authorised = false; api.online = false; if (!closed) onStatus('offline'); });
   sock.on('connect_error', () => { api.online = false; if (!closed) onStatus('offline'); });
   sock.on('msg', d => { if (d && typeof d.topic === 'string') onMsg(d.topic, typeof d.msg === 'string' ? d.msg : ''); });
   return api;
@@ -3458,6 +3820,8 @@ function retireClient(){ const old = NET.client; NET.client = null; if (old) set
 function startNet(){
   retireClient();
   NET.phones.clear();
+  NET.joinRequests.clear();
+  NET.approving.clear();
   NET.key = S.net.on && S.net.room ? S.net.room + '|' + S.net.broker : '';
   if (!NET.key){ NET.status = 'off'; paintNet(); return; }
   let c = null;
@@ -3469,7 +3833,7 @@ function startNet(){
 }
 function stopNet(){
   retireClient();
-  NET.phones.clear(); NET.key = ''; NET.status = 'off'; paintNet();
+  NET.phones.clear(); NET.joinRequests.clear(); NET.approving.clear(); NET.key = ''; NET.status = 'off'; paintNet();
 }
 function netAnnounceClose(){
   if (!NET.leader || !NET.client || !NET.client.online) return;
@@ -3506,19 +3870,22 @@ function netState(){
   const phase = (!totalQs() || S.lobby) ? 'lobby' : S.finished ? 'end' : S.between ? 'between' : 'q';
   let aw = {};
   if (S.buzz.awarded){
-    if (isSpeed()) Array.from(speedAwards()).forEach(([id, p]) => { if (p > 0) aw[id] = p; });
+    if (isBatchScoring() || isAnswerRound()) Array.from(speedAwards()).forEach(([id, p]) => { if (p > 0) aw[id] = p; });
     else S.buzz.order.filter(b => b.st === 'right').forEach(b => { aw[b.id] = q ? q.pts : 1; });
   }
   return {
-    v: 1, ts: Date.now(), title: S.quiz.title, phase, mode: S.settings.mode, scoring: S.settings.scoring,
-    allowNew: !!S.net.allowNew && !isDuel() && S.teams.length < MAX_TEAMS,
-    n: S.buzz.n, w: phase === 'q' && isWritten(), am: isChoice() ? 'choice' : isTyped() ? 'typed' : (r ? r.mode : 'buzz'),
+    v: 1, ts: Date.now(), title: S.quiz.title, phase, mode: S.settings.mode, experience: S.settings.experience, scoring: S.settings.scoring,
+    allowNew: !!S.net.allowNew && !isDuel() && S.teams.length < MAX_TEAMS, requireApproval: !!S.net.requireApproval,
+    n: S.buzz.n, lifecycle: phase === 'q' ? questionPhase() : '',
+    exclusive: phase === 'q' && isShowExclusive(), lockedBy: phase === 'q' && isShowExclusive() && showActive() ? showActive().id : null,
+    remainingBuzzers: phase === 'q' && isShowExclusive() ? PQPShowBuzzer.remaining(S.buzz, S.teams.map(t=>t.id)).length : 0,
+    w: phase === 'q' && isWritten(), am: isChoice() ? 'choice' : isTyped() ? 'typed' : (r ? r.mode : 'buzz'),
     ch: phase === 'q' && q && isChoice() ? choicesFor(q).opts : [], ci: phase === 'q' && q && isChoice() && S.revealed ? choicesFor(q).correct : -1, open: phase === 'q' && S.buzz.open && !S.buzz.awarded && !isWritten(),
     rn: r ? r.name : '', qn: phase === 'q' && r ? `question ${S.pos.q + 1} of ${r.questions.length}` : '',
     q: phase === 'q' && q ? qText(q) : '', lst: phase === 'q' && q && isTyped() && listAnswers(q) ? listAnswers(q).length : 0, a: phase === 'q' && q && S.revealed ? q.a : '',
     teams: S.teams.map(t => ({ id: t.id, name: t.name, c: t.colour, av: avatarId(t.avatar), s: t.score })),
     avatarFx: S.avatarFx || {}, winners: winningTeamIds(S),
-    order: S.buzz.order.map(b => ({ id: b.id, st: b.st, ans: S.revealed ? b.ans : undefined })),
+    order: S.buzz.order.map(b => ({ id: b.id, st: S.revealed || isShowExclusive() ? b.st : 'wait', ans: S.revealed ? b.ans : undefined })),
     aw, ready: phase === 'lobby' ? S.ready : []
   };
 }
@@ -3533,39 +3900,135 @@ function publishState(now){
   };
   if (now) go(); else NET.pubT = setTimeout(go, 120);
 }
+/* Host-controlled team joining. A public room code is not permission to join a team.
+   Pending requests are transient: phones repeat their request after a reconnect. */
+function phoneApprovalHTML(){
+  if (!S.net.on || !NET.leader || !NET.joinRequests.size) return '';
+  const now = Date.now();
+  const requests = [...NET.joinRequests.values()].filter(x => now - x.at < 120000);
+  if (!requests.length) return '';
+  return `<section class="card join-approvals" aria-live="polite">
+    <h2>Phone join requests (${requests.length})</h2>
+    <p class="hint">Choose who can join. A room code alone does not give permission to join someone else's team.</p>
+    ${requests.map(x => `<div class="approval-entry"><div><strong>${esc(x.name || teamName(x.team))}</strong><p class="hint">${x.name && !x.team ? 'New team requested' : 'Wants to join an existing team'} · phone ${esc(x.cid.slice(-5))}</p></div>
+      <div class="approval-buttons"><button class="btn sm ok" type="button" data-act="phone-approve" data-cid="${esc(x.cid)}" ${NET.approving.has(x.cid) ? 'disabled' : ''}>${NET.approving.has(x.cid) ? 'Approving…' : 'Approve'}</button>
+      <button class="btn sm bad" type="button" data-act="phone-reject" data-cid="${esc(x.cid)}">Reject</button></div></div>`).join('')}
+  </section>`;
+}
+function rejectJoin(cid){
+  const x = NET.joinRequests.get(cid); if (!x) return;
+  NET.joinRequests.delete(cid);
+  if (NET.client) NET.client.publish(netTopic('out/' + cid), JSON.stringify({k:'nojoin',why:'The quizmaster declined this request.'}), false);
+  toast('Join request declined'); softRender();
+}
+/* Joining a team is an asynchronous server assignment. Reserve the approval until
+   the relay confirms it, so repeated clicks cannot create phantom/duplicate teams.
+   On cancellation while a request is in flight, restore the prior binding. */
+function finishPhoneJoin(cid, tid, ph, reply, draftTeam){
+  const client = NET.client, room = S.net.room;
+  if (!client || !client.online) return reply({k:'nojoin',why:'Host connection interrupted. Please retry.'});
+  if (NET.approving.has(cid)) return;
+  const request = NET.joinRequests.get(cid);
+  const oldTeam = ph.team;
+  NET.approving.add(cid);
+  softRender();
+  client.assignPhone(room, cid, tid, ok => {
+    // A new room / host connection must never mutate this quiz or respond to its phones.
+    if (NET.client !== client || S.net.room !== room) return;
+    NET.approving.delete(cid);
+    // A user may cancel or be rejected while an approval is in flight.
+    if (request && NET.joinRequests.get(cid) !== request){
+      if (ok) client.assignPhone(room,cid,oldTeam || null,()=>{});
+      softRender();
+      return;
+    }
+    if (!ok){
+      // The relay may have accepted the binding but its acknowledgement was lost.
+      // Restore the previous team where possible before the player retries.
+      if (client.online) client.assignPhone(room,cid,oldTeam || null,()=>{});
+      NET.joinRequests.delete(cid);
+      reply({k:'nojoin',why:'Phone session could not be paired. Reconnect and try again.'});
+      softRender();
+      return;
+    }
+    // Only commit new-team creation after the server has confirmed the phone binding.
+    if (draftTeam && !S.teams.some(t => t.id === draftTeam.id)){
+      S.teams.push(draftTeam);
+      toast(`${draftTeam.name} approved as a new team`);
+    }
+    NET.joinRequests.delete(cid);
+    ph.team = tid;
+    if (S.lobby && !S.ready.includes(tid)){ S.ready.push(tid); beep(600 + S.ready.length * 70, 0.16); }
+    reply({k:'joined',team:tid});
+    save(); softRender();
+  });
+}
+function approveJoin(cid){
+  const x = NET.joinRequests.get(cid); if (!x || NET.approving.has(cid)) return;
+  if (Date.now()-x.at > 120000){ rejectJoin(cid); return; }
+  const ph = NET.phones.get(cid); if (!ph){ NET.joinRequests.delete(cid); softRender(); return; }
+  let tid = x.team, draft = null;
+  if (tid && !team(tid)){ rejectJoin(cid); return; }
+  if (!tid){
+    if (!x.name || !S.net.allowNew || isDuel() || S.teams.length >= MAX_TEAMS){ rejectJoin(cid); return; }
+    const existing = S.teams.find(t => t.name.toLowerCase() === x.name.toLowerCase());
+    if (existing) tid = existing.id;
+    else {
+      // Serialise new-team creation so two approvals cannot exceed the team limit
+      // or create duplicates with the same requested name while a relay ack is late.
+      const newTeamInFlight = [...NET.approving].some(id => {
+        const pending = NET.joinRequests.get(id);
+        return pending && !pending.team;
+      });
+      if (newTeamInFlight){ toast('Another new team is being approved. Try again in a moment.'); return; }
+      draft = newTeam(x.name,S.teams); tid = draft.id;
+    }
+  }
+  const reply = m => { if (NET.client) NET.client.publish(netTopic('out/' + cid), JSON.stringify(m), false); };
+  finishPhoneJoin(cid,tid,ph,reply,draft);
+}
 function onNetMsg(topic, raw){
   let m; try { m = JSON.parse(raw); } catch (e) { return; }
   if (!m || typeof m.cid !== 'string' || m.cid.length > 40 || !/^[a-z0-9]+$/i.test(m.cid)) return;
   const reply = o => { if (NET.client) NET.client.publish(netTopic('out/' + m.cid), JSON.stringify(o), false); };
   const ph = NET.phones.get(m.cid) || { team: null, last: 0 };
   ph.last = Date.now(); NET.phones.set(m.cid, ph);
-  if (typeof m.team === 'string' && team(m.team)) ph.team = m.team;
-  if (m.k === 'ping'){ reply({ k: 'pong', t0: Number(m.t0) || 0, th: Date.now() }); return; }
+  if (m.k === 'ping'){ reply({k:'pong',t0:Number(m.t0)||0,th:Date.now()}); return; }
+  if (m.k === 'cancel'){
+    NET.joinRequests.delete(m.cid); reply({k:'cancelled'}); softRender(); return;
+  }
   if (m.k === 'join'){
-    let tid = typeof m.team === 'string' && team(m.team) ? m.team : null;
-    if (!tid && typeof m.name === 'string' && m.name.trim()){
-      const name = m.name.trim().replace(/\s+/g, ' ').slice(0, 40);
-      const same = S.teams.find(x => x.name.toLowerCase() === name.toLowerCase());
-      if (same) tid = same.id;
-      else if (S.net.allowNew && !isDuel() && S.teams.length < MAX_TEAMS){
-        const nt = newTeam(name, S.teams); S.teams.push(nt); tid = nt.id;
-        toast(`${nt.name} joined from a phone`);
-      } else {
-        reply({ k: 'nojoin', why: isDuel() ? 'Pick one of the two players.' : S.teams.length >= MAX_TEAMS ? 'The quiz is full. Join an existing team.' : 'The host isn\u2019t taking new teams. Pick an existing one.' });
-        return;
+    const desiredTeam = typeof m.team === 'string' && team(m.team) ? m.team : null;
+    const requestedName = !desiredTeam && typeof m.name === 'string' ? m.name.trim().replace(/\s+/g,' ').slice(0,40) : '';
+    let tid = desiredTeam;
+    if (!tid && requestedName){
+      const existing = S.teams.find(t => t.name.toLowerCase() === requestedName.toLowerCase());
+      if (existing) tid = existing.id;
+      else if (!S.net.allowNew || isDuel() || S.teams.length >= MAX_TEAMS){
+        reply({k:'nojoin',why:isDuel()?'Pick one of the two players.':'New teams are closed. Please select an existing team.'}); return;
       }
     }
-    if (!tid){ reply({ k: 'nojoin', why: 'That team no longer exists. Pick again.' }); return; }
-    ph.team = tid;
-    if (S.lobby && !S.ready.includes(tid)){ S.ready.push(tid); beep(600 + S.ready.length * 70, 0.16); }
-    reply({ k: 'joined', team: tid });
-    save(); softRender();
-    return;
+    if (!tid && !requestedName){ reply({k:'nojoin',why:'That team no longer exists. Pick again.'}); return; }
+    // Reconnection to the same previously approved team needs no second approval.
+    if (ph.team === tid && tid){ NET.joinRequests.delete(m.cid); reply({k:'joined',team:tid}); return; }
+    if (S.net.requireApproval){
+      for (const [id, request] of NET.joinRequests) if (Date.now() - request.at > 120000) NET.joinRequests.delete(id);
+      const old=NET.joinRequests.get(m.cid);
+      if (!old || old.team !== tid || old.name !== (tid?null:requestedName)){
+        if (NET.joinRequests.size >= 40){ reply({k:'nojoin',why:'Too many requests. Ask the quizmaster to clear the queue.'}); return; }
+        NET.joinRequests.set(m.cid,{cid:m.cid,team:tid,name:tid?null:requestedName,at:Date.now()});
+        toast('A phone is requesting to join — approve it on the quizmaster screen.'); softRender();
+      }
+      reply({k:'pending',team:tid || null,name:tid?null:requestedName});
+      return;
+    }
+    if (!tid){ const nt=newTeam(requestedName,S.teams); S.teams.push(nt); tid=nt.id; }
+    finishPhoneJoin(m.cid,tid,ph,reply); return;
   }
   if (m.k === 'buzz'){
-    if (typeof m.team !== 'string' || !team(m.team)) return;
-    if (!S.lobby && m.n !== S.buzz.n) return; /* a buzz meant for an earlier question */
-    buzz(m.team, Number(m.te), typeof m.ans === 'number' || typeof m.ans === 'string' ? m.ans : undefined);
+    if (typeof m.team !== 'string' || !team(m.team) || ph.team !== m.team) return;
+    if (!S.lobby && m.n !== S.buzz.n) return;
+    buzz(m.team,Number(m.te),typeof m.ans === 'number' || typeof m.ans === 'string' ? m.ans : undefined);
   }
 }
 
@@ -3586,6 +4049,8 @@ function buzzModeHTML(deviceHowto){
       ? `<div class="join-box">${qrSVG(url, 180)}<div><p class="hint" style="margin:0">Room code</p><p class="room-code">${S.net.room}</p><p class="join-url">${esc(url)}</p></div></div>`
       : `<div class="warn"><strong>Phones can\u2019t join yet.</strong> Open the quiz from its web address (for example your Render address, or the address shown when the quiz server starts), not from a saved file.</div>`}
     ${isDuel() ? '' : `<label class="check"><input type="checkbox" data-bind="net-allow" ${S.net.allowNew ? 'checked' : ''}>Let phones start a new team</label>`}
+    <label class="check"><input type="checkbox" data-bind="net-approval" ${S.net.requireApproval ? 'checked' : ''}>Quizmaster must approve phones before they join (recommended)</label>
+    <p class="hint">Requests appear at the top of the quizmaster's screen. Turning approval off is less secure: anyone with the QR code can pick a team.</p>
     <div class="row">
       <button class="btn sm" data-act="copy-join" type="button" ${url ? '' : 'disabled'}>Copy join link</button>
       <button class="btn sm" data-act="net-newroom" type="button">New room code</button>
@@ -3595,6 +4060,7 @@ function buzzModeHTML(deviceHowto){
       <li>Show the Player screen on the TV. It shows this QR code.</li>
       <li>One person per ${noun()} points their phone camera at the code and taps the link.</li>
       <li>They tap their ${noun()}\u2019s name${S.net.allowNew && !isDuel() ? ', or type a new team name' : ''}.</li>
+      ${S.net.requireApproval ? '<li>The quizmaster approves each new phone request on the host screen.</li>' : ''}
       <li>Their phone turns into a big buzzer in their colour. Fastest tap wins.</li>
       <li>Phones need Wi-Fi or mobile data, and should stay unlocked during the quiz.</li></ol>
     <h3 style="margin-top:16px">Show the quiz on a smart TV</h3>
@@ -3641,11 +4107,14 @@ function runPhone(){
 
   const PKEY = 'pqp.phone.' + room;
   let mem = {}; try { mem = JSON.parse(localStorage.getItem(PKEY) || '{}') || {}; } catch (e) { mem = {}; }
-  if (typeof mem.cid !== 'string' || !/^[a-z0-9]+$/i.test(mem.cid)) mem.cid = 'p' + uid();
+  if (typeof mem.cid !== 'string' || !/^[a-z0-9]{3,40}$/i.test(mem.cid)) mem.cid = 'p' + uid();
+  // This secret lives only on this phone. Its public team/room code is not credentials.
+  if (typeof mem.secret !== 'string' || !/^[a-f0-9]{64}$/.test(mem.secret))
+    mem.secret = Array.from(crypto.getRandomValues(new Uint8Array(32)), b => b.toString(16).padStart(2, '0')).join('');
   const keep = () => { try { localStorage.setItem(PKEY, JSON.stringify(mem)); } catch (e) {} };
   keep();
   const cid = mem.cid;
-  const P = { net: 'connecting', st: null, team: typeof mem.team === 'string' ? mem.team : null, choosing: false, pending: false, n: null, err: '', offs: [], joining: false };
+  const P = { net: 'connecting', st: null, team: typeof mem.team === 'string' ? mem.team : null, choosing: false, pending: false, n: null, err: '', offs: [], joining: false, waiting: null };
   const base = NET_PREFIX + room + '/';
 
   let lock = null;
@@ -3671,18 +4140,22 @@ function runPhone(){
       if (P.offs.length > 8) P.offs.shift();
       return;
     }
-    if (m.k === 'joined' && typeof m.team === 'string'){ P.team = m.team; mem.team = m.team; keep(); P.choosing = false; P.joining = false; vib(40); draw(); return; }
-    if (m.k === 'nojoin'){ P.joining = false; say(String(m.why || 'Couldn\u2019t join. Try again.').slice(0, 120)); draw(); }
+    if (m.k === 'joined' && typeof m.team === 'string'){ P.waiting=null; P.team = m.team; mem.team = m.team; keep(); P.choosing = false; P.joining = false; vib(40); draw(); return; }
+    if (m.k === 'pending'){ P.joining=false; P.waiting={team:m.team||null,name:m.name||null}; draw(); return; }
+    if (m.k === 'cancelled'){ P.waiting=null; P.joining=false; draw(); return; }
+    if (m.k === 'nojoin'){ P.waiting=null; P.joining = false; say(String(m.why || 'Couldn\u2019t join. Try again.').slice(0, 120)); draw(); }
   }
 
   const cl = mqttClient(BROKERS[broker], onMsg, st => { P.net = st; draw(); });
+  cl.bindPhone(room, cid, mem.secret);
   const send = o => cl.publish(base + 'in', JSON.stringify(Object.assign({ cid }, o)), false);
   const offset = () => P.offs.length ? P.offs.slice().sort((a, b) => a.rtt - b.rtt)[0].off : 0;
   const ping = () => send({ k: 'ping', t0: Date.now(), team: P.team || undefined });
   cl.subscribe(base + 'state');
   cl.subscribe(base + 'out/' + cid);
-  cl.onConnect = () => { ping(); setTimeout(ping, 500); setTimeout(ping, 1200); if (P.team) send({ k: 'join', team: P.team }); };
+  cl.onConnect = () => { ping(); setTimeout(ping, 500); setTimeout(ping, 1200); if (P.waiting) send(Object.assign({k:'join'},P.waiting)); else if (P.team) send({k:'join',team:P.team}); };
   setInterval(ping, 8000);
+  setInterval(() => { if (P.waiting && P.net === 'online') send(Object.assign({k:'join'},P.waiting)); }, 12000);
   setTimeout(() => { if (!P.st && !P.err){ P.err = 'notfound'; draw(); } }, 10000);
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible'){ cl.kick(); wake(); } });
 
@@ -3708,10 +4181,16 @@ function runPhone(){
     });
   }, 350);
   function chooseHTML(s){
+    if (P.waiting) return `<header class="ph-top"><span class="ph-title">QUIZ NIGHT LIVE</span><span>Room ${room}</span></header>
+      <section class="ph-await" role="status"><h2>Waiting for quizmaster approval</h2>
+        <p>Your request to join <strong>${esc(P.waiting.name || (s.teams.find(t => t.id === P.waiting.team)||{}).name || 'the quiz')}</strong> has been sent.</p>
+        <p>The quizmaster can approve or reject it. Keep this page open.</p>
+        <button class="btn" type="button" data-ph="cancel">Cancel request</button></section>`;
     const duel = s.mode === 'duel';
     return `<header class="ph-top"><span class="ph-title">QUIZ NIGHT LIVE <small>${esc(s.title)}</small></span><span class="muted">Room ${room}</span></header>
       ${P.net !== 'online' ? '<p class="ph-warn">Reconnecting\u2026</p>' : ''}
       <h1 class="ph-h">${duel ? 'Which player are you?' : 'Which team are you on?'}</h1>
+      ${s.requireApproval ? '<p class="ph-status">The quizmaster will approve your request before you can play.</p>' : ''}
       <div class="ph-teams">${s.teams.map(t => `<button class="ph-team" style="${teamVars(t)}" data-ph="pick" data-id="${esc(t.id)}" type="button">${phoneAvatar(t)}<span>${esc(t.name)}</span></button>`).join('') || '<p class="muted">No teams yet.</p>'}</div>
       ${s.allowNew ? `<div><label class="field">Or start a new team<input id="phName" maxlength="40" placeholder="Team name" autocomplete="off"></label>
         <button class="btn primary big" data-ph="create" type="button" style="width:100%">Join as a new team</button></div>` : ''}
@@ -3729,19 +4208,23 @@ function runPhone(){
       status = ready ? 'You\u2019re checked in. Waiting for the host to start.' : 'Tap the button to check in.';
     } else if (s.phase === 'between') status = `End of ${esc(s.rn)}. The leaderboard is on the big screen.`;
     else if (s.phase === 'end') status = 'That\u2019s the quiz! Final scores are on the big screen.';
-    else if (gain){ label = '+' + gain; cls = 'win'; status = s.lst ? `You got ${gain} right!` : s.scoring === 'speed' ? (gain === 2 ? 'Fastest correct answer!' : 'Second fastest correct answer!') : 'Correct!'; }
+    else if (gain){ label = '+' + gain; cls = 'win'; status = s.exclusive ? 'Winning buzzer! Points awarded.' : s.lst ? `You got ${gain} right!` : s.experience === 'show' ? (gain >= 3 ? 'Fastest correct answer!' : gain === 2 ? 'Second fastest correct answer!' : 'Correct!') : s.scoring === 'speed' && s.experience === 'legacy' ? (gain === 2 ? 'Fastest correct answer!' : 'Second fastest correct answer!') : 'Correct!'; }
+    else if (s.exclusive && s.lockedBy && s.lockedBy !== P.team){
+      if (mine && mine.st === 'wrong'){label = 'Out'; status='Your team has already tried this question. Wait for the next one.';}
+      else { label='Locked'; status=`${esc((s.teams.find(t=>t.id===s.lockedBy)||{}).name || 'Another team')} is answering. Wait for the host.`; }
+    }
     else if (mine){
-      label = ordinal(idx + 1);
-      status = mine.st === 'right' ? (anyAward ? 'Correct, but others were faster.' : 'Correct!') : mine.st === 'wrong' ? 'Not this time.' : (s.am === 'choice' || s.am === 'typed') ? `Locked in ${ordinal(idx + 1)}. Wait for the reveal.` : `Locked in ${ordinal(idx + 1)}. Tell the host your answer.`;
+      label = s.exclusive ? (mine.st === 'wrong' ? 'Out' : 'Your turn') : ordinal(idx + 1);
+      status = mine.st === 'right' ? (anyAward ? (s.experience === 'classic' ? 'Correct!' : 'Correct!') : 'Correct!') : mine.st === 'wrong' ? 'Not this time.' : (s.am === 'choice' || s.am === 'typed') ? s.experience === 'classic' && s.open ? 'Answer received. You can change it until the host closes answers.' : `Locked in ${ordinal(idx + 1)}. Wait for the reveal.` : s.exclusive ? 'Your buzzer won the turn! Tell the quizmaster your answer now.' : `Locked in ${ordinal(idx + 1)}. Tell the host your answer.`;
     }
     else if (s.w){ label = 'Write'; status = 'This round is written. Put your answer on your team\u2019s sheet.'; }
     else if (P.pending){ label = 'Sent'; status = 'Sending your buzz\u2026'; }
-    else if (s.open){ can = true; label = 'Buzz!'; status = s.am === 'choice' ? 'Tap your answer. Fastest correct wins!' : s.am === 'typed' ? 'Type your answer and send it. Fastest correct wins!' : 'Buzzers are open. Tap fast!'; }
+    else if (s.open){ can = true; label = 'Buzz!'; status = s.exclusive ? 'First buzz claims the turn. A wrong answer lets another team try.' : s.am === 'choice' ? (s.experience === 'classic' ? 'Choose your answer. You can change it until close.' : 'Tap your answer. Fastest correct earns a bonus!') : s.am === 'typed' ? (s.experience === 'classic' ? 'Type your answer. You can revise it until close.' : 'Type your answer. Faster correct answers earn bonuses!') : 'Buzzers are open. Tap fast!'; }
     else status = anyAward ? 'Points awarded. Wait for the next question.' : 'Wait for the next question.';
     let main = `<button class="ph-buzz ${can ? '' : 'off'} ${cls}" style="${teamVars(me)}" data-ph="buzz" type="button" ${can ? '' : 'aria-disabled="true"'}>${label}</button>`;
     if (s.phase === 'q' && (s.am === 'choice' || s.am === 'typed')){
       const myAns = mine && mine.ans !== undefined ? mine.ans : (P.my && P.my.n === s.n ? P.my.ans : null);
-      const canAnswer = s.open && !mine && !P.pending;
+      const canAnswer = s.open && (s.experience === 'classic' || !mine) && !P.pending;
       if (s.am === 'choice'){
         const ch = Array.isArray(s.ch) ? s.ch.slice(0, 4) : [];
         main = `<div class="ph-opts">${ch.map((o, i) => {
@@ -3786,7 +4269,7 @@ function runPhone(){
     const s = P.st; if (!s || !P.team) return;
     if (P.net !== 'online'){ say('No connection. Reconnecting\u2026'); cl.kick(); return; }
     if (s.phase === 'lobby'){ send({ k: 'buzz', team: P.team, n: s.n, te: Math.round(Date.now() + offset()) }); vib(30); return; }
-    if (s.phase !== 'q' || !s.open || P.pending || s.order.some(o => o.id === P.team)) return;
+    if (s.phase !== 'q' || !s.open || P.pending || s.order.some(o => o.id === P.team) || (s.exclusive && s.lockedBy)) return;
     P.pending = true;
     send({ k: 'buzz', team: P.team, n: s.n, te: Math.round(Date.now() + offset()) });
     vib(90); draw();
@@ -3796,7 +4279,7 @@ function runPhone(){
     wake();
     const s = P.st; if (!s || !P.team) return;
     if (P.net !== 'online'){ say('No connection. Reconnecting\u2026'); cl.kick(); return; }
-    if (s.phase !== 'q' || !s.open || P.pending || s.order.some(o => o.id === P.team)) return;
+    if (s.phase !== 'q' || !s.open || P.pending || (s.experience !== 'classic' && s.order.some(o => o.id === P.team))) return;
     if (s.am === 'typed'){ ans = String(ans || '').replace(/\s+/g, ' ').trim().slice(0, 160); if (!ans){ say('Type an answer first.'); return; } }
     P.pending = true; P.my = { n: s.n, ans };
     send({ k: 'buzz', team: P.team, n: s.n, te: Math.round(Date.now() + offset()), ans });
@@ -3815,6 +4298,7 @@ function runPhone(){
     const b = e.target.closest('[data-ph]'); if (!b) return;
     const a = b.dataset.ph;
     wake();
+    if (a === 'cancel'){ send({k:'cancel'}); P.waiting=null; P.joining=false; draw(); return; }
     if (a === 'buzz'){ if (e.detail === 0) doBuzz(); return; }
     if (a === 'choose'){ if (e.detail === 0) doAnswer(Number(b.dataset.c)); return; }
     if (a === 'send'){ const inp = document.getElementById('phAns'); doAnswer(inp ? inp.value : ''); return; }
@@ -3869,17 +4353,29 @@ function startScreen(){
     pair = p; live = false; SCREEN_LIVE = false; prev = null; closed = false;
     try { localStorage.setItem(SK, JSON.stringify(p)); } catch (e) {}
     topic = NET_PREFIX + p.room + '/screen/' + p.key;
+    cl.pairTV(p);
     cl.subscribe(topic);
     paint();
   }
   function forget(){
     if (topic) cl.unsubscribe(topic);
     topic = ''; pair = null; live = false; SCREEN_LIVE = false; prev = null; code = '';
+    cl.pairTV(null);
     try { localStorage.removeItem(SK); } catch (e) {}
     S = freshState(); requestCode(); paint();
   }
   ACT['screen-forget'] = () => ask('Show a different quiz?', 'This TV stops following the current quiz and shows a new code to type in.', 'Get a new code', forget);
   if (cl.socket) cl.socket.on('paired', p => { if (valid(p)){ unlockAudio(); follow(p); } });
+  cl.onPairLost = () => {
+    // A restarted server has lost its in-memory pairing grants; ask for a new code.
+    if (pair){
+      if (topic) cl.unsubscribe(topic);
+      pair = null; topic = ''; live = false; SCREEN_LIVE = false; prev = null;
+      cl.pairTV(null);
+      try { localStorage.removeItem(SK); } catch (e) {}
+      requestCode(); paint();
+    }
+  };
   if (pair) follow(pair);
   /* the TV's few buttons appear only when the remote or mouse is used */
   let toolsT = null;

@@ -1,0 +1,24 @@
+Pub Quiz Powerhouse — Weekly Quiz 745–754 Batch 2 QA Report
+
+Build: v3.3 RC1 Expanded Question Library, combined PDF Batch 1 + Batch 2.
+Source: Ten distinct user-supplied 2020–21 Q&A PDFs, IDs 745–754. The repeated (1) copies match the originals byte-for-byte.
+
+Imported new selectable packs: 10
+New playable rounds: 70 (source rounds 2–8 of each quiz)
+New textual questions: 668 (700 scoring opportunities, including eight five-part questions)
+Additional tie-breakers: 20
+Image handout: 150 answer-key entries preserved as JSON, not inserted as playable questions because source Q&A PDFs omit image prompts.
+Retained: 4 preexisting built-in 50-question quizzes; 68 starter entries; 12 Batch1 QuizDemon packs with 594 prompts and 24 tiebreakers; all 72 avatar reaction assets and music/SFX.
+Combined distinct selectable quiz packs: 26.
+
+Duplicate review (conservative): 2 possible reworded duplicates flagged (Mars/Red Planet, Canada/most lakes); 10 repeated 'connection between prior answers' templates treated as different context-dependent puzzles; no original source questions deleted. Further editorial comparison is recommended.
+Time-sensitive material: 72 questions flagged heuristically for dated references, not independently fact-checked in full.
+
+Automated checks:
+- npm run test:offline — PASS (Batch1 & Batch2 bank integrity, core scoring, security, avatars)
+- Headless Chromium — PASS (26 built-in packs visible; Weekly Quiz 748 modal opened and loaded; 7 rounds, 62 prompts, 2 tiebreakers)
+- ZIP archive integrity and internal file manifest — PASS
+- Real phone/TV testing for new content — NOT RUN
+- This build has NOT been pushed to GitHub nor deployed to Render.
+
+This is a TEST BUILD, not a production release.

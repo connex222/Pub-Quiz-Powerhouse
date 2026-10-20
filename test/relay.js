@@ -1,5 +1,5 @@
 'use strict';
-/** Checks the relay: ownership, retained state, privacy and TV pairing. */
+/** Integration protocol smoke test (requires npm ci). For offline mocks see relay-security.js. */
 const assert = require('assert');
 process.env.NO_OPEN = '1';
 process.env.PORT = '3989';
@@ -7,69 +7,69 @@ const { server } = require('../server');
 const { io } = require('socket.io-client');
 const URL = 'http://localhost:3989/quiz';
 const P = 'pqpowerhouse/v1/ROOM42/';
-const connect = () => new Promise((r) => { const s = io(URL, { transports: ['websocket'] }); s.on('connect', () => r(s)); });
-const call = (s, ev, d) => new Promise((r) => s.emit(ev, d, r));
-const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-const inbox = (s) => { const got = []; s.on('msg', (m) => got.push(m)); return got; };
+const connect = () => new Promise(r => { const s=io(URL,{transports:['websocket']});s.on('connect',()=>r(s)); });
+const call=(s,ev,d)=>new Promise((resolve,reject)=>{
+  s.timeout(4000).emit(ev,d,(err,answer)=>err?reject(err):resolve(answer));
+});
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const inbox=s=>{const got=[];s.on('msg',m=>got.push(m));return got;};
+(async()=>{
+  await new Promise(r=>(server.listening?r():server.once('listening',r)));
+  const host=await connect();const hostIn=inbox(host);
+  // A malformed Socket.io client must not crash the host process.
+  for (const event of ['claim','phone-auth','phone-assign','sub','pair','tv-resume']) {
+    const reply=await call(host,event,null);
+    assert.strictEqual(reply.ok,false,`${event} accepted null`);
+  }
+  for (const event of ['pub','unsub']) host.emit(event,null);
 
-(async () => {
-  await new Promise((r) => (server.listening ? r() : server.once('listening', r)));
-  const host = await connect();
-  const hostIn = inbox(host);
-  assert.ok((await call(host, 'claim', { room: 'ROOM42', token: 'a'.repeat(24) })).ok);
-  assert.ok((await call(host, 'sub', { topic: P + 'in' })).ok);
-
-  // someone else can't take the room or eavesdrop on answers
-  const thief = await connect();
-  assert.ok(!(await call(thief, 'claim', { room: 'ROOM42', token: 'b'.repeat(24) })).ok, 'room is owned');
-  assert.ok(!(await call(thief, 'sub', { topic: P + 'in' })).ok, 'only the quizmaster hears phones');
-
-  // retained state reaches a phone that joins late
-  host.emit('pub', { topic: P + 'state', msg: '{"phase":"lobby"}', retain: true });
-  await wait(50);
-  const phone = await connect();
-  const phoneIn = inbox(phone);
-  await call(phone, 'sub', { topic: P + 'state' });
-  await call(phone, 'sub', { topic: P + 'out/p123' });
-  await wait(50);
-  assert.strictEqual(phoneIn[0].msg, '{"phase":"lobby"}', 'late joiner gets the current state');
-
-  // phones can't fake the state
-  thief.emit('pub', { topic: P + 'state', msg: '{"phase":"end"}', retain: true });
-  await wait(50);
-  assert.strictEqual(phoneIn.length, 1, 'fake state ignored');
-
-  // phone -> quizmaster, quizmaster -> one phone
-  phone.emit('pub', { topic: P + 'in', msg: '{"cid":"p123","k":"buzz"}' });
-  host.emit('pub', { topic: P + 'out/p123', msg: '{"k":"joined"}' });
-  await wait(80);
-  assert.ok(hostIn.some((m) => m.msg.includes('buzz')), 'quizmaster receives buzz');
-  assert.ok(phoneIn.some((m) => m.msg.includes('joined')), 'phone receives reply');
-
-  // TV pairing
-  const tv = await connect();
-  const tvIn = inbox(tv);
-  const { code } = await call(tv, 'pair-request', {});
-  assert.ok(/^\d{4}$/.test(code));
-  const paired = new Promise((r) => tv.once('paired', r));
-  assert.ok(!(await call(thief, 'pair', { code, room: 'ROOM42', key: 'SECRETKEY1' })).ok, 'only the quizmaster can pair');
-  assert.ok((await call(host, 'pair', { code, room: 'ROOM42', key: 'SECRETKEY1' })).ok);
-  const p = await paired;
-  assert.deepStrictEqual(p, { room: 'ROOM42', key: 'SECRETKEY1' });
-  host.emit('pub', { topic: P + 'screen/SECRETKEY1', msg: '{"v":1,"s":{}}', retain: true });
-  await call(tv, 'sub', { topic: P + 'screen/SECRETKEY1' });
-  await wait(50);
-  assert.ok(tvIn.some((m) => m.topic.endsWith('screen/SECRETKEY1')), 'TV receives display state');
-  assert.ok(!(await call(host, 'pair', { code, room: 'ROOM42', key: 'SECRETKEY1' })).ok, 'codes are single use');
-
-  // QR address follows the website when hosted, and the Wi-Fi address on a laptop
-  const hosted = await (await fetch('http://localhost:3989/api/base', { headers: { 'x-forwarded-host': 'pub-quiz.onrender.com', 'x-forwarded-proto': 'https' } })).json();
-  assert.strictEqual(hosted.base, 'https://pub-quiz.onrender.com');
-  const tvPage = await fetch('http://localhost:3989/tv');
-  assert.strictEqual(tvPage.status, 200, 'TV page is served');
-  console.log('quiz relay: ownership, privacy, retained state and TV pairing all pass');
-  console.log(`server: hosted QR base ${hosted.base}, /tv page served`);
-  [host, thief, phone, tv].forEach((s) => s.close());
-  server.close();
-  process.exit(0);
-})().catch((e) => { console.error(e); process.exit(1); });
+  assert.ok((await call(host,'claim',{room:'ROOM42',token:'a'.repeat(32)})).ok);
+  assert.ok((await call(host,'sub',{topic:P+'in'})).ok);
+  const thief=await connect();
+  assert.ok(!(await call(thief,'claim',{room:'ROOM42',token:'b'.repeat(32)})).ok);
+  assert.ok(!(await call(thief,'sub',{topic:P+'in'})).ok);
+  assert.ok(!(await call(thief,'sub',{topic:P+'out/p123'})).ok);
+  assert.ok(!(await call(thief,'sub',{topic:P+'screen/SECRETKEY1'})).ok);
+  host.emit('pub',{topic:P+'state',msg:'{"phase":"lobby"}',retain:true});
+  await wait(30);
+  const phone=await connect(),phoneIn=inbox(phone);
+  const creds={room:'ROOM42',cid:'p123',secret:'c'.repeat(64)};
+  assert.ok((await call(phone,'phone-auth',creds)).ok);
+  assert.ok((await call(phone,'sub',{topic:P+'state'})).ok);
+  assert.ok((await call(phone,'sub',{topic:P+'out/p123'})).ok);
+  await wait(40);
+  assert.ok(phoneIn.some(m=>m.msg==='{"phase":"lobby"}'));
+  phone.emit('pub',{topic:P+'in',msg:JSON.stringify({cid:'p123',k:'buzz',team:'teamone'})});
+  await wait(40);assert.strictEqual(hostIn.length,0,'unassigned buzz rejected');
+  assert.ok((await call(host,'phone-assign',{room:'ROOM42',cid:'p123',team:'teamone'})).ok);
+  phone.emit('pub',{topic:P+'in',msg:JSON.stringify({cid:'p123',k:'buzz',team:'teamtwo'})});
+  await wait(40);assert.strictEqual(hostIn.length,0,'team spoof rejected');
+  phone.emit('pub',{topic:P+'in',msg:JSON.stringify({cid:'p123',k:'buzz',team:'teamone'})});
+  await wait(40);assert.strictEqual(hostIn.length,1);
+  host.emit('pub',{topic:P+'out/p123',msg:'{"k":"joined"}'});
+  await wait(35);assert.ok(phoneIn.some(m=>m.msg.includes('joined')));
+  // A second phone can't claim an existing phone ID.
+  assert.ok(!(await call(thief,'phone-auth',{...creds,secret:'d'.repeat(64)})).ok);
+  const tv=await connect(),tvIn=inbox(tv);
+  const {code}=await call(tv,'pair-request',{});
+  assert.match(code,/^\d{4}$/);
+  assert.ok(!(await call(thief,'pair',{code,room:'ROOM42',key:'SECRETKEY1'})).ok);
+  const paired=new Promise(r=>tv.once('paired',r));
+  assert.ok((await call(host,'pair',{code,room:'ROOM42',key:'SECRETKEY1'})).ok);
+  assert.deepStrictEqual(await paired,{room:'ROOM42',key:'SECRETKEY1'});
+  assert.ok((await call(tv,'tv-resume',{room:'ROOM42',key:'SECRETKEY1'})).ok);
+  host.emit('pub',{topic:P+'screen/SECRETKEY1',msg:'{"v":1,"s":{}}',retain:true});
+  await call(tv,'sub',{topic:P+'screen/SECRETKEY1'});
+  await wait(40);assert.ok(tvIn.some(m=>m.topic.endsWith('screen/SECRETKEY1')));
+  assert.ok(!(await call(host,'pair',{code,room:'ROOM42',key:'SECRETKEY1'})).ok);
+  const rejoined=await connect(), reIn=inbox(rejoined);
+  assert.ok((await call(rejoined,'phone-auth',creds)).ok);
+  assert.ok((await call(rejoined,'sub',{topic:P+'out/p123'})).ok);
+  host.emit('pub',{topic:P+'out/p123',msg:'{"k":"reconnected"}'});
+  await wait(50);assert.ok(reIn.some(m=>m.msg.includes('reconnected')));
+  const hosted=await (await fetch('http://localhost:3989/api/base',{headers:{'x-forwarded-host':'pub-quiz.onrender.com','x-forwarded-proto':'https'}})).json();
+  assert.strictEqual(hosted.base,'https://pub-quiz.onrender.com');
+  assert.strictEqual((await fetch('http://localhost:3989/tv')).status,200);
+  console.log('PASS: Socket.io phone auth, spoof prevention, TV pairing, retained state and reconnect');
+  [host,thief,phone,tv,rejoined].forEach(s=>s.close());server.close();
+})().catch(e=>{console.error(e);process.exit(1);});

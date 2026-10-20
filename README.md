@@ -1,8 +1,62 @@
+# Pub Quiz Powerhouse v3.3 — Release Candidate 1
+
+**Version:** `3.3.0-rc.1`  
+**Status:** Release candidate for final staging verification, **not production**.  
+**Branch:** `release/v3.3-rc1` (do not merge into `main` until signed off).  
+**Deployment:** Retain the existing v3.2 Render production service; test RC1 using the separate staging service.
+
+Two experiences are available: **Classic Pub Quiz** (equal points for correct answers) and **TV Game Show** (speed bonuses for simultaneous answers and exclusive first-buzzer rounds). The release candidate retains 24 Quiz Society avatars, 72 Correct/Wrong/Win portraits, the audio library and quizmaster-approved phone joining.
+
+**Staging acceptance evidence:** On 20 October 2026, the quiz owner reported successful real-device tests of team approvals, TV pairing, Classic marking and corrections, Game Show buzzer locks/penalties/timers, browser/phone/TV reconnect, Render restart recovery, end-of-quiz win display, and an eight-question two-round playthrough. These are **reported test outcomes**, not an automated test of RC1 itself. All prior local tests must still be repeated against RC1 on staging.
+
+For the exact release checklist, operational limitations and QA sign-off, see [V3.3_RC1_RELEASE_NOTES.md](V3.3_RC1_RELEASE_NOTES.md) and [V3.3_RELEASE_CHECKLIST.md](V3.3_RELEASE_CHECKLIST.md). On Windows run `run-release-checks.bat`; on a Node-enabled computer use `npm ci && npm test`. The main quiz session and scores remain stored in the quizmaster browser; clearing browser storage or losing that device is not a recoverable server-side backup.
+
+---
+
+## Historical development notes (Alpha 7 and earlier)
+
+# Pub Quiz Powerhouse v3.3 Alpha 7 — relay security verification
+
+**Development build; do not update production Render yet.** This release prevents malformed relay messages from crashing the server and includes strengthened local testing and avatar checks. Extract it on Windows and double-click `run-release-checks.bat`; return `LIVE_TEST_RESULTS.txt` to ChatGPT. See [V3.3_ALPHA7_RELEASE_NOTES.md](V3.3_ALPHA7_RELEASE_NOTES.md). Real phones/TV and Render staging remain untested.
+
+---
+
+# Pub Quiz Powerhouse v3.3 Alpha 6 — pre-release multiplayer checks
+
+**Development version only.** Alpha 6 is not the public v3.3 release. Keep your production Render service deploying from `main` until all real-device and staging tests are passed. Use `run-release-checks.bat` on Windows after extraction to install missing dependencies and run the real Socket.io integration test. See `V3.3_ALPHA6_RELEASE_NOTES.md`.
+
+# Pub Quiz Powerhouse — v3.3.0-alpha.5 (Team Approval)
+
+**Development build — keep the live v3.2 service unchanged.** This adds a quizmaster-controlled phone join queue to the dual-experience (Classic Pub Quiz / TV Game Show) foundation.
+
+**To host:** Setup → **From their phones** → leave **Quizmaster must approve phones before they join** checked. When a guest scans the QR code and selects a team, an **Approve / Reject** request appears on the Host and Setup screens. Guests wait on their phones until approved. Approved phones reconnect to the same team automatically when their session is still valid.
+
+For full feature details, limitations, tests and safe deployment instructions see [V3.3_ALPHA5_RELEASE_NOTES.md](V3.3_ALPHA5_RELEASE_NOTES.md).
+
+**Tests:** `npm run test:offline` runs security, host approval and scoring tests without dependencies. `npm test` includes the real Socket.io test and needs `npm ci`. The optional browser approval test uses Python Playwright + Chromium: `python test/browser-join-approval.py`.
+
+---
+
+# Pub Quiz Powerhouse — v3.3.0-alpha.4 (Stage D, multiplayer hardening)
+
+**Development preview only. Do not replace live v3.2 on Render yet.** This build adds authenticated phone sessions, relay-side team-binding, private phone response channels, TV pairing checks and reconnect sequencing. It includes Classic and TV Game Show gameplay from Alphas 2–3.
+
+See [V3.3_ALPHA4_RELEASE_NOTES.md](V3.3_ALPHA4_RELEASE_NOTES.md) for improvements, test results, security limitations and the manual device checklist.
+
+Run on Windows: unzip into a separate folder, then double-click **start.bat**. After installing dependencies, open **http://localhost:3000/** in Chrome.
+
+**Alpha 4 security boundary:** the relay prevents registered phones from spoofing other phones/teams. Alpha 5 adds default host approval when selecting a team. Neither is verified real-world identity.
+
+**Recovery boundary:** the host's quiz/scores still live in that browser's local storage. A Render restart may require re-pairing the TV. The app is intended for one Render instance, not horizontal scaling.
+
+---
+
+
 # Pub Quiz Powerhouse — v3.2 Quiz Society Edition
 
 **What's new:** the 24 premium Quiz Society avatars are now part of the game, with Correct, Wrong and Win reactions. All supplied game sounds and music remain in place.
 
-**Windows (first run):** Unzip the whole folder, open `pub-quiz-powerhouse-repo`, and double-click `start.bat`. The launcher installs Express and Socket.io automatically the first time (internet needed). Then open `http://localhost:3000/`. Keep the black server window open while playing. Use Setup → Edit avatar to select one of the 24 portraits.
+**Windows (first run):** Extract the ZIP into a new folder and double-click `start.bat` inside that folder. The launcher installs Express and Socket.io automatically the first time (internet needed). Then open `http://localhost:3000/`. Keep the black server window open while playing. Use Setup → Edit avatar to select one of the 24 portraits.
 
 **Important:** the uploaded ZIP supplied three reaction states per character, but no neutral Idle state. The Correct image acts as the resting portrait for now. The full-resolution original PNGs remain in your separate `PUB QUIZ AVATARS.zip`. See `AVATAR_ASSET_LIBRARY.md` for details.
 

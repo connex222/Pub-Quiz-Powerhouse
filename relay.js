@@ -1,25 +1,17 @@
 'use strict';
 /**
- * Pub Quiz Powerhouse — message relay.
- *
- * The quizmaster's browser runs the quiz (all rules, scores and questions live there).
- * This relay passes messages between that browser, the team phones and any TV screens,
- * replacing the public internet relays the single-file version used.
- *
- * Topics look like:  pqpowerhouse/v1/<ROOM>/<channel>
- *   in               phones -> quizmaster (buzzes, joins, typed answers). Only the quizmaster may listen.
- *   state            quizmaster -> phones (what phones may see; never the answer before it's revealed)
- *   out/<phoneId>    quizmaster -> one phone
- *   screen/<key>     quizmaster -> paired TV screens (the full display state)
- *
- * The first browser to claim a room with its secret token owns it. Only the owner can publish
- * anything other than "in", so a phone can't fake the scoreboard or read other teams' answers.
+ * Pub Quiz Powerhouse v3.3 — single-instance, authenticated Socket.io relay.
+ * The quizmaster remains authoritative for gameplay. This relay enforces message
+ * origin and subscription boundaries. A public room code alone is NOT team auth.
+ * Render must use one running instance; retained state is in memory, not durable.
  */
 const crypto = require('crypto');
-
 const PREFIX = 'pqpowerhouse/v1/';
 const ROOM_RE = /^[A-Z0-9]{4,8}$/;
-const MAX_MSG = 600 * 1024; // a large quiz's full display state fits comfortably
+const CID_RE = /^[a-z0-9]{3,40}$/i;
+const SECRET_RE = /^[A-Za-z0-9_-]{24,128}$/;
+const SCREEN_RE = /^[A-Za-z0-9]{6,32}$/;
+const MAX_MSG = 600 * 1024;
 const ROOM_IDLE_MS = 12 * 60 * 60 * 1000;
 const PAIR_TTL_MS = 15 * 60 * 1000;
 const RATE_PER_SEC = 40;
@@ -30,109 +22,167 @@ function parseTopic(topic) {
   if (!ROOM_RE.test(room)) return null;
   const channel = rest.join('/');
   if (channel === 'in' || channel === 'state') return { room, channel, kind: channel };
-  if (/^out\/[a-z0-9]{1,40}$/i.test(channel)) return { room, channel, kind: 'out' };
-  if (/^screen\/[A-Za-z0-9]{6,32}$/.test(channel)) return { room, channel, kind: 'screen' };
+  if (/^out\/[a-z0-9]{3,40}$/i.test(channel)) return { room, channel, kind: 'out', id: channel.slice(4) };
+  if (/^screen\/[A-Za-z0-9]{6,32}$/.test(channel)) return { room, channel, kind: 'screen', key: channel.slice(7) };
   return null;
 }
-
+function sameSecret(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string') return false;
+  const ba = Buffer.from(a), bb = Buffer.from(b);
+  return ba.length === bb.length && crypto.timingSafeEqual(ba, bb);
+}
 function attach(io) {
   const nsp = io.of('/quiz');
-  /** room -> { owner: token, retained: Map<topic,string>, touched } */
   const rooms = new Map();
-  /** 4-digit code -> { socketId, expires } */
   const pairCodes = new Map();
-
   const roomFor = (name) => {
     let r = rooms.get(name);
-    if (!r) { r = { owner: null, retained: new Map(), touched: Date.now() }; rooms.set(name, r); }
+    if (!r) {
+      r = { owner: null, retained: new Map(), touched: Date.now(), phones: new Map(), tvKeys: new Set() };
+      rooms.set(name, r);
+    }
     r.touched = Date.now();
     return r;
   };
 
-  nsp.on('connection', (socket) => {
-    const owns = new Set(); // rooms this socket has claimed
-    let bucket = RATE_PER_SEC;
-    let bucketAt = Date.now();
+  nsp.on('connection', socket => {
+    const owns = new Set();
+    const phones = new Map(); // room -> {cid,secret}, refreshed at every connection
+    const screens = new Set(); // room/key granted only by pairing or resume
+    let bucket = RATE_PER_SEC, bucketAt = Date.now();
     const allow = () => {
       const now = Date.now();
-      bucket = Math.min(RATE_PER_SEC, bucket + ((now - bucketAt) / 1000) * RATE_PER_SEC);
+      bucket = Math.min(RATE_PER_SEC, bucket + Math.max(0, now - bucketAt) / 1000 * RATE_PER_SEC);
       bucketAt = now;
       if (bucket < 1) return false;
       bucket -= 1;
       return true;
     };
-    const ack = (fn, payload) => { if (typeof fn === 'function') fn(payload); };
-
-    // Quizmaster claims a room with a secret token kept in their browser.
-    socket.on('claim', ({ room, token } = {}, fn) => {
-      if (!ROOM_RE.test(String(room)) || typeof token !== 'string' || token.length < 16 || token.length > 64) return ack(fn, { ok: false });
+    const ack = (fn, result) => { if (typeof fn === 'function') fn(result); };
+    // Socket payloads are untrusted. In particular, JavaScript destructuring
+    // accepts undefined defaults but THROWS on null; a remote client could
+    // otherwise crash the entire Node process with an event carrying null.
+    const payload = value => value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+    const canSub = (t) => {
+      if (t.kind === 'in') return owns.has(t.room);
+      if (t.kind === 'out') return phones.get(t.room)?.cid === t.id;
+      if (t.kind === 'screen') return screens.has(t.room + '/' + t.key) || !!socket.data.pairGrants?.has(t.room + '/' + t.key);
+      return !!rooms.get(t.room)?.owner; // room state is intentionally visible to room-code holders
+    };
+    socket.on('claim', (data, fn) => {
+      const {room,token} = payload(data);
+      if (!allow() || !ROOM_RE.test(String(room)) || !SECRET_RE.test(String(token))) return ack(fn, {ok:false,error:'invalid'});
       const r = roomFor(room);
-      if (r.owner && r.owner !== token) return ack(fn, { ok: false, error: 'taken' });
+      if (r.owner && !sameSecret(r.owner, token)) return ack(fn, {ok:false,error:'taken'});
       r.owner = token;
       owns.add(room);
-      ack(fn, { ok: true });
+      ack(fn, {ok:true});
     });
-
-    socket.on('sub', ({ topic } = {}, fn) => {
+    socket.on('phone-auth', (data, fn) => {
+      const {room,cid,secret} = payload(data);
+      if (!allow() || !ROOM_RE.test(String(room)) || !CID_RE.test(String(cid)) || !SECRET_RE.test(String(secret))) return ack(fn, {ok:false,error:'invalid'});
+      const r = rooms.get(room);
+      if (!r?.owner) return ack(fn, {ok:false,error:'notfound'});
+      const existing = r.phones.get(cid);
+      if (existing && !sameSecret(existing.secret,secret)) return ack(fn, {ok:false,error:'already-used'});
+      if (!existing) {
+        if (r.phones.size >= 120) return ack(fn, {ok:false,error:'room-full'});
+        r.phones.set(cid, {secret,team:null,last:Date.now()});
+      }
+      r.phones.get(cid).last = r.touched = Date.now();
+      phones.set(room, {cid,secret});
+      ack(fn, {ok:true,team:r.phones.get(cid).team});
+    });
+    socket.on('phone-assign', (data, fn) => {
+      const {room,cid,team} = payload(data);
+      if (!allow() || !owns.has(room) || !CID_RE.test(String(cid)) || (team !== null && !/^[a-z0-9_-]{1,80}$/i.test(String(team)))) return ack(fn,{ok:false});
+      const p = rooms.get(room)?.phones.get(cid);
+      if (!p) return ack(fn,{ok:false,error:'phone-notfound'});
+      p.team = team; p.last = Date.now();
+      ack(fn,{ok:true});
+    });
+    socket.on('sub', (data, fn) => {
+      const {topic} = payload(data);
+      if (!allow()) return ack(fn,{ok:false,error:'rate'});
       const t = parseTopic(topic);
-      if (!t) return ack(fn, { ok: false });
-      if (t.kind === 'in' && !owns.has(t.room)) return ack(fn, { ok: false });
+      if (!t || !canSub(t)) return ack(fn,{ok:false,error:'unauthorised'});
       socket.join(topic);
-      const r = rooms.get(t.room);
-      const kept = r && r.retained.get(topic);
-      if (kept) socket.emit('msg', { topic, msg: kept });
-      ack(fn, { ok: true });
+      const kept = rooms.get(t.room)?.retained.get(topic);
+      if (kept) socket.emit('msg',{topic,msg:kept});
+      ack(fn,{ok:true});
     });
-
-    socket.on('unsub', ({ topic } = {}) => { if (typeof topic === 'string') socket.leave(topic); });
-
-    socket.on('pub', ({ topic, msg, retain } = {}) => {
+    socket.on('unsub', data => {
+      const {topic} = payload(data); if (typeof topic === 'string' && parseTopic(topic)) socket.leave(topic); });
+    socket.on('pub', data => {
+      const {topic,msg,retain} = payload(data);
       if (!allow()) return;
       const t = parseTopic(topic);
-      if (!t || typeof msg !== 'string' || msg.length > MAX_MSG) return;
+      if (!t || typeof msg !== 'string' || Buffer.byteLength(msg,'utf8') > MAX_MSG) return;
+      const r = rooms.get(t.room);
+      if (!r?.owner) return;
       if (t.kind !== 'in' && !owns.has(t.room)) return;
-      const r = roomFor(t.room);
-      if (retain) {
-        if (msg === '') r.retained.delete(topic);
-        else r.retained.set(topic, msg);
+      if (t.kind === 'in') {
+        const bound = phones.get(t.room), p = bound && r.phones.get(bound.cid);
+        if (!p || !sameSecret(p.secret,bound.secret)) return;
+        let data;
+        try { data = JSON.parse(msg); } catch { return; }
+        if (!data || typeof data !== 'object' || data.cid !== bound.cid || !['join','ping','buzz','cancel'].includes(data.k)) return;
+        if (data.k === 'buzz' && (!p.team || data.team !== p.team)) return;
+        if (data.k === 'join' && (data.team !== undefined && typeof data.team !== 'string' || data.name !== undefined && (typeof data.name !== 'string' || data.name.length > 80))) return;
+        p.last = Date.now();
       }
-      if (msg !== '') socket.to(topic).emit('msg', { topic, msg });
+      r.touched = Date.now();
+      // Never retain private replies or incoming answers. Bound the retained state to two channels.
+      if (retain && ['state','screen'].includes(t.kind)) {
+        if (!msg) r.retained.delete(topic);
+        else r.retained.set(topic,msg);
+      }
+      if (msg) socket.to(topic).emit('msg',{topic,msg});
     });
-
-    // ----- TV pairing: the TV shows a 4-digit code, the quizmaster types it in -----
-    socket.on('pair-request', (_d, fn) => {
-      for (const [code, p] of pairCodes) if (p.socketId === socket.id) pairCodes.delete(code);
+    socket.on('pair-request', (_data, fn) => {
+      if (!allow()) return ack(fn,{ok:false});
+      for (const [code,p] of pairCodes) if (p.socketId === socket.id) pairCodes.delete(code);
       let code;
-      let tries = 0;
-      do { code = String(crypto.randomInt(1000, 10000)); } while (pairCodes.has(code) && ++tries < 50);
-      pairCodes.set(code, { socketId: socket.id, expires: Date.now() + PAIR_TTL_MS });
-      ack(fn, { ok: true, code });
+      for (let tries=0; tries<100;tries++) {
+        const candidate=String(crypto.randomInt(1000,10000));
+        if (!pairCodes.has(candidate)) { code=candidate; break; }
+      }
+      if (!code) return ack(fn,{ok:false,error:'busy'});
+      pairCodes.set(code,{socketId:socket.id,expires:Date.now()+PAIR_TTL_MS});
+      ack(fn,{ok:true,code});
     });
-
-    socket.on('pair', ({ code, room, key } = {}, fn) => {
-      const c = String(code || '').trim();
-      const p = pairCodes.get(c);
-      if (!owns.has(String(room)) || !/^[A-Za-z0-9]{6,32}$/.test(String(key))) return ack(fn, { ok: false, error: 'Turn on phone buzzers first.' });
-      if (!p || p.expires < Date.now()) return ack(fn, { ok: false, error: 'No TV is showing that code. Check the number on the TV.' });
-      const tv = nsp.sockets.get(p.socketId);
-      if (!tv) { pairCodes.delete(c); return ack(fn, { ok: false, error: 'That TV has gone offline. Refresh the TV page for a new code.' }); }
+    socket.on('pair', (data, fn) => {
+      const {code,room,key} = payload(data);
+      if (!allow() || !owns.has(room) || !SCREEN_RE.test(String(key))) return ack(fn,{ok:false,error:'Host must be connected.'});
+      const c = String(code||'').trim(), p=pairCodes.get(c);
+      if (!p || p.expires < Date.now()) return ack(fn,{ok:false,error:'No TV is showing that code.'});
+      const tv=nsp.sockets.get(p.socketId);
+      if (!tv) {pairCodes.delete(c);return ack(fn,{ok:false,error:'TV offline. Refresh its page.'});}
       pairCodes.delete(c);
-      tv.emit('paired', { room, key });
-      ack(fn, { ok: true });
+      roomFor(room).tvKeys.add(key);
+      // Authorise the currently connected TV before it can subscribe.
+      tv.data.pairGrants ||= new Set();
+      tv.data.pairGrants.add(room + '/' + key);
+      tv.emit('paired',{room,key});
+      ack(fn,{ok:true});
     });
-
+    socket.on('tv-resume', (data, fn) => {
+      const {room,key} = payload(data);
+      if (!allow() || !ROOM_RE.test(String(room)) || !SCREEN_RE.test(String(key)) || !rooms.get(room)?.tvKeys.has(key)) return ack(fn,{ok:false,error:'needs-pair'});
+      screens.add(room+'/'+key);
+      ack(fn,{ok:true});
+    });
+    // Grant given via paired event is also valid for sub on the original TV connection.
     socket.on('disconnect', () => {
-      for (const [code, p] of pairCodes) if (p.socketId === socket.id) pairCodes.delete(code);
+      for (const [code,p] of pairCodes) if (p.socketId === socket.id) pairCodes.delete(code);
     });
   });
-
-  setInterval(() => {
-    const now = Date.now();
-    for (const [name, r] of rooms) if (now - r.touched > ROOM_IDLE_MS) rooms.delete(name);
-    for (const [code, p] of pairCodes) if (p.expires < now) pairCodes.delete(code);
-  }, 10 * 60 * 1000).unref();
-
-  return { rooms, pairCodes };
+  const gc = setInterval(() => {
+    const now=Date.now();
+    for (const [name,r] of rooms) if (now-r.touched > ROOM_IDLE_MS) rooms.delete(name);
+    for (const [code,p] of pairCodes) if (p.expires < now) pairCodes.delete(code);
+  },60000);
+  if (gc.unref) gc.unref();
+  return {rooms,pairCodes};
 }
-
-module.exports = { attach, parseTopic, PREFIX };
+module.exports={attach,parseTopic,PREFIX};

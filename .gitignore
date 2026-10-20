@@ -3,3 +3,6 @@ node_modules/
 Thumbs.db
 *.log
 .env
+
+# Local test output (do not upload)
+LIVE_TEST_RESULTS.txt
