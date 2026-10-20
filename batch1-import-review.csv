@@ -1,0 +1,595 @@
+﻿id,source,round,question,answer,mode,points,duplicate_status,editorial_flag,corrected
+QD101-Q01,101,1,Which US state has the same name as a former member of the USSR?,Georgia,written,1,NO_MATCH_DETECTED,,False
+QD101-Q02,101,1,Which member of the Monty Python team sang the theme song to the classic sitcom ‘One Foot In The Grave’?,Eric Idle,written,1,NO_MATCH_DETECTED,,False
+QD101-Q03,101,1,What name is given to the piece of music which opens a classical concert?,Overture,written,1,NO_MATCH_DETECTED,,False
+QD101-Q04,101,1,"In the books by Beatrix Potter, what type of creature was Mr. Tod?",Fox,written,1,NO_MATCH_DETECTED,,False
+QD101-Q05,101,1,Which collective term do the Americans give to serious crime?,Felonies,written,1,NO_MATCH_DETECTED,,False
+QD101-Q06,101,1,Which African river is the only one which flows both North and South of the equator?,Congo,written,1,NO_MATCH_DETECTED,,False
+QD101-Q07,101,1,"Since 1927 which song, aside from the National Anthem, has been sung before the kick-off at the FA Cup Final?",Abide With Me,written,1,NO_MATCH_DETECTED,,False
+QD101-Q08,101,1,What name is given to a word which is spelt the same forwards as backwards?,Palindrome,written,1,CONFIRMED_DUPLICATE,,False
+QD101-Q09,101,1,Which Hungarian born food critic wrote and published a famous series of guides to British and Irish restaurants and hotels in the 1950’s and 1960’s?,Egon Ronay,written,1,NO_MATCH_DETECTED,,False
+QD101-Q10,101,1,Which former Olympic swimming champion went on to star as ‘Amazon’ in the ITV series ‘Gladiators’?,Sharron Davies,written,1,NO_MATCH_DETECTED,NAME_SPELLING,True
+QD101-Q11,101,2,Which well-known musical features the songs ‘Somewhere’ and ‘Tonight’?,West Side Story,written,1,NO_MATCH_DETECTED,,False
+QD101-Q12,101,2,"The island of Cyprus was divided by a Turkish invasion in 1974, which half of the island is Greek?",The South,written,1,NO_MATCH_DETECTED,,False
+QD101-Q13,101,2,"According to the lyrics of a popular song by the Beach Boys, which kinds of girls were ‘hip’?",East Coast Girls,written,1,NO_MATCH_DETECTED,,False
+QD101-Q14,101,2,The high number of canals in Bruges led to it having which nickname?,Venice of the North,written,1,NO_MATCH_DETECTED,,False
+QD101-Q15,101,2,Which 1959 Alfred Hitchcock film featured the tagline ‘The Master of Suspense presents a 2000 mile chase across America!’?,North by Northwest,written,1,NO_MATCH_DETECTED,,False
+QD101-Q16,101,3,"According to a TV advert, what was it that Ian Botham couldn’t eat three of?",Shredded Wheat,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q17,101,3,Jacob’s Creek is a brand name of wine from which country?,Australia,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q18,101,3,"On receiving a comment about how small her feet were, which country and western star replied ‘Nothing grows well in the shade’?",Dolly Parton,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q19,101,3,Which is the largest of the Canary Islands?,Tenerife,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q20,101,3,"From literature, radio and TV, which popular (children’s) character was also known as ‘The Scarecrow of Scatterbrook Farm’?",Worzel Gummidge,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q21,101,3,"Which well-known London building has, in its past history, been used as a Zoo, an Observatory, a Mint and a Prison?",The Tower of London,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q22,101,3,Which German city gives its name to a type of perfume?,Cologne,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q23,101,3,"First shown in 1983, which Television character started out in the 15th century and ended it in 1989 during the First World War?",Blackadder,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q24,101,3,Which popular fizzy drink shares its name with an equally popular 1960’s British sports car?,Sprite (Austin Healey),typed,1,NO_MATCH_DETECTED,,False
+QD101-Q25,101,3,"Which cocktail, with two main ingredients of whiskey and vermouth, is named after one of the boroughs of New York?",Manhattan,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q26,101,4,Which popular Frank Sinatra hit contains the line 'And so I face the final curtain'?,My Way,written,1,NO_MATCH_DETECTED,,False
+QD101-Q27,101,4,Which 1970's hit for The Village People was made up of initial letters?,YMCA,written,1,NO_MATCH_DETECTED,,False
+QD101-Q28,101,4,'The Return Of Jarfar' was a 1994 sequel to which 1992 movie?,Aladdin,written,1,NO_MATCH_DETECTED,,False
+QD101-Q29,101,4,"Which US State, named after a southern English county, is traditionally the first primary in the US presidential election cycle?",New Hampshire,written,1,NO_MATCH_DETECTED,,False
+QD101-Q30,101,4,The 1996 film 'Trainspotting' follows a group of drug addicts in a late 1980's economically depressed area of which city?,Edinburgh,written,1,NO_MATCH_DETECTED,,False
+QD101-Q31,101,4,"Prior to its collapse in 2012, Malev (pronounced MAH-LEV) was the flag carrier and principal airline of which country?",Hungary,written,1,NO_MATCH_DETECTED,,False
+QD101-Q32,101,4,Which Warner Brothers cartoon characters name was inspired by a National park in California?,Yosemite Sam,written,1,NO_MATCH_DETECTED,,False
+QD101-Q33,101,4,Which is the largest species of parrot?,Macaw,written,1,NO_MATCH_DETECTED,,False
+QD101-Q34,101,4,"Uptown Girl was a No1 hit for Billy Joel in 1983, but who took it to No1 in 2001?",Westlife,written,1,NO_MATCH_DETECTED,,False
+QD101-Q35,101,4,At which Scottish club did Sir Alex Ferguson begin his managerial career?,East Stirling,written,1,NO_MATCH_DETECTED,,False
+QD101-Q36,101,5,"During the 1980’s which football team won one, and lost three, FA Cup Finals?",Everton,written,1,NO_MATCH_DETECTED,,False
+QD101-Q37,101,5,"Which measurement system includes feet, inches, pounds and ounces?",The Imperial System,written,1,NO_MATCH_DETECTED,,False
+QD101-Q38,101,5,Which actor played the role of Peter Venkman in the 1984 film ‘Ghostbusters’?,Bill Murray,written,1,NO_MATCH_DETECTED,,False
+QD101-Q39,101,5,"Famed for his role as Tarzan, Johnny Weissmuller won 3 gold medals for swimming at the 1924 Olympics; he also secured a bronze medal in which team sport?",Water Polo,written,1,NO_MATCH_DETECTED,,False
+QD101-Q40,101,5,The link?,"Everton, Imperial, Murray, Polo Types of Mint",written,1,NO_MATCH_DETECTED,,False
+QD101-Q41,101,6,"As you look at a postage stamp, which direction does the Queens head face – right or left?",Left,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q42,101,6,What is the highest mountain in the UK?,Ben Nevis,typed,1,CONFIRMED_DUPLICATE,,False
+QD101-Q43,101,6,How many columns are there in a game of Connect 4?,Seven,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q44,101,6,"In a series of classic TV adverts, which alcoholic drink was advertised by Joan Collins and Leonard Rossiter?",Cinzano,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q45,101,6,"Steven Spielberg is one of the most successful film directors of all time, but can you name the film which won him his first Oscar?",Schindlers List,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q46,101,6,Which Moroccan city shares its name with the title of a classic film?,Casablanca,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q47,101,6,Which branch of the armed forces would you associate with the DFC and DFM?,Airforce,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q48,101,6,Who was Prime Minister of Britain when hanging for murder was abolished?,Harold Wilson (1965),typed,1,NO_MATCH_DETECTED,,False
+QD101-Q49,101,6,The name of which quiz show is shared with the title of a popular song from the 1950’s film ‘High Society’?,Who Wants To Be A Millionaire,typed,1,NO_MATCH_DETECTED,,False
+QD101-Q50,101,6,"With a career in Formula One which spanned 15 seasons, which British born racing driver won the world championship in 1992?",Nigel Mansell,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q01,228,1,"In 2015, a team including architects, civil engineers and archaeologists, put forward a plan to build a 150m (500ft) structure to straddle the harbour of which Greek Island?",Rhodes,written,1,NO_MATCH_DETECTED,,False
+QD228-Q02,228,1,Which general term is used to describe the set of wheels and other parts that support an airplane when it’s on the ground and makes it possible to take off and land?,Undercarriage,written,1,NO_MATCH_DETECTED,,False
+QD228-Q03,228,1,"From the ‘Dandy’ comic, Desperate Dan’s beard was so tough he had to use which unusual piece of equipment to shave?",Blowtorch,written,1,NO_MATCH_DETECTED,,False
+QD228-Q04,228,1,"From the world of politics, who wrote the 2010 book ‘Of Thee I sing – A Letter To My Daughters’?",Barack Obama,written,1,NO_MATCH_DETECTED,,False
+QD228-Q05,228,1,What name is given to ceramic products made of porous clay fired at low heat?,Earthenware,written,1,NO_MATCH_DETECTED,,False
+QD228-Q06,228,1,The first major televised performance of which dance featured as an interval act during the 1994 Eurovision Song Contest (held in Ireland)?,Riverdance,written,1,NO_MATCH_DETECTED,,False
+QD228-Q07,228,1,"Which often repeated drama series features Dr Mark Sloan and his homicide detective son Steve, played by real life father and son Dick and Barry Van Dyke?",Diagnosis Murder,written,1,NO_MATCH_DETECTED,,False
+QD228-Q08,228,1,David Bowie’s first collaboration with another act led to which UK number one hit in 1981?,Under Pressure (with Queen),written,1,NO_MATCH_DETECTED,,False
+QD228-Q09,228,1,Nicolas Lyndhurst’s character in ‘Only Fools And Horses’ (Rodney Trotter) shares his middle name with which London football club?,Charlton,written,1,NO_MATCH_DETECTED,,False
+QD228-Q10,228,1,"In 2016 which clothes item, once worn by Adolf Hitler’s mistress Eva Braun, sold at auction for almost £3,500?",Knickers,written,1,NO_MATCH_DETECTED,,False
+QD228-Q11,228,2,The name of which long-running character from ITV’s ‘Emmerdale’ has the same name as a comic legend?,Bob Hope,written,1,NO_MATCH_DETECTED,,False
+QD228-Q12,228,2,Which (Jamaican) singer was awarded the United Nations Peace Medal of the Third World in 1978 (for his work in appealing for justice and peace during a time of political unrest in Jamaica)?,Bob Marley,written,1,NO_MATCH_DETECTED,,False
+QD228-Q13,228,2,"Which British boxer made history as the first triple-title holder, winning the heavyweight, middleweight and lightweight championships in a 27 year career?",Bob Fitzsimmons,written,1,NO_MATCH_DETECTED,,False
+QD228-Q14,228,2,Which famous name would you associate with ‘Cough the Cat’ (and ‘Spit the Dog’)?,Bob Carolgees,written,1,NO_MATCH_DETECTED,,False
+QD228-Q15,228,2,Who was the host of the first game show to run five days a week in Britain?,(note: Countdown was only aired four days a week at the time) Bob Holness (Blockbusters),written,1,NO_MATCH_DETECTED,,False
+QD228-Q16,228,3,Which US state name features on a bottle of Jack Daniels?,Tennessee,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q17,228,3,"According to the lyrics of the traditional song ‘I Know An Old Lady’, what type of creature was it that the old lady swallowed last?",A Horse,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q18,228,3,Gangster Al Capone gained notoriety during the Prohibition era in which US state?,Illinois,typed,1,NO_MATCH_DETECTED,ANSWER_ERROR,True
+QD228-Q19,228,3,The holy city of Mecca is located in which Middle Eastern country?,Saudi Arabia,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q20,228,3,Which fictional superhero comes from the planet Ultron?,Thermoman,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q21,228,3,Which infuriating 3-D combination puzzle was invented by a Hungarian in 1974?,Rubik’s Cube,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q22,228,3,"In the culinary world, what specific type of fungus is known as a ‘Black Diamond’?",Truffle,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q23,228,3,"In the iconic Beatles album cover ‘Abbey Road’, which of the fab four was leading the way across the zebra crossing?",John Lennon,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q24,228,3,"What nationality is Agatha Christie’s fictional detective, Hercule Poirot?",Belgian,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q25,228,3,In 1939 who received an honorary Oscar with a traditional statuette along with seven miniature versions alongside it?,Walt Disney,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q26,228,4,What name is given to the group of soldiers who protect the pope and his residence?,Swiss Guard,written,1,NO_MATCH_DETECTED,,False
+QD228-Q27,228,4,"In athletics, in which event do competitors make use of a ‘plant box’?",Pole Vault,written,1,NO_MATCH_DETECTED,,False
+QD228-Q28,228,4,"Often used to mark special occasions, which decorative objects were originally created for practical use and featured the use of a lit candle to use as entrance-way lighting?",Chinese Lantern,written,1,NO_MATCH_DETECTED,,False
+QD228-Q29,228,4,What is the more common name for the medical condition Rubella?,German Measles,written,1,NO_MATCH_DETECTED,,False
+QD228-Q30,228,4,"Which health promoting form of exercise, (originally developed as a martial art), combines deep breathing and relaxation with slow gentle movements?",Tai Chi,written,1,NO_MATCH_DETECTED,,False
+QD228-Q31,228,4,"In a poll carried out in 2014, the Monty Python ‘dead parrot’ sketch was named the nation’s favourite routine – what breed was the parrot in question?",Norwegian Blue,written,1,NO_MATCH_DETECTED,,False
+QD228-Q32,228,4,"Which radio DJ, born in 1974, began his career at the age of 16 on his local Hampshire commercial radio station, Power FM, after barraging the station with demo tapes?",Scott Mills,written,1,NO_MATCH_DETECTED,,False
+QD228-Q33,228,4,"Apart from greyhounds, which other breed of dog has occasionally run at racetracks?",Afghan Hound,written,1,NO_MATCH_DETECTED,,False
+QD228-Q34,228,4,"Actor Jim Carrey reached number 31 in the UK charts with which song, taken from the 1994 film ‘The Mask’?",Cuban Pete,written,1,NO_MATCH_DETECTED,,False
+QD228-Q35,228,4,Professional cheerleader ‘Krazy’ George Henderson claimed to be responsible for inventing which sporting crowd phenomenon which became widely used during the 1986 Football World Cup?,Mexican Wave,written,1,NO_MATCH_DETECTED,,False
+QD228-Q36,228,5,At the age of 80 who won a Best Actress Oscar for her role as Daisy Werthan in the 1989 film ‘Driving Miss Daisy’?,Jessica Tandy,written,1,NO_MATCH_DETECTED,,False
+QD228-Q37,228,5,Who reached number two in the UK charts in 1980 with ‘One Day I’ll Fly Away’?,Randy Crawford,written,1,NO_MATCH_DETECTED,,False
+QD228-Q38,228,5,"Which food dish, the recipe for which is a closely guarded secret, has been the subject of various plot lines in the history of Coronation Street?",Betty’s Hotpot,written,1,NO_MATCH_DETECTED,,False
+QD228-Q39,228,5,Who made a final entry in their journal dated August 1st 1944?,Anne Frank,written,1,NO_MATCH_DETECTED,,False
+QD228-Q40,228,5,The Link?,"Jessica, Crawford, Betty, Frank Some Mothers Do ‘Ave ‘Em",written,1,NO_MATCH_DETECTED,,False
+QD228-Q41,228,6,"Which popular puzzle requires the completion of a grid so that each column, row and 3x3 box contain the numbers 1 through to 9?",Sudoku,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q42,228,6,"Dorothy Gale is a well-known character played on film by Judy Garland, what is the title of the book on which the film is based?",The Wonderful Wizard of Oz,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q43,228,6,"Banned for almost 100 years due to its supposed ‘mind altering effects’, which drink (nicknamed ‘Green Fairy’) did France lift its ban on in 2011?",Absinthe,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q44,228,6,"Apart from the city of London, which other city lies in the district of Greater London?",Westminster,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q45,228,6,What name is given to the frozen dessert that is usually made using fruit or fruit juices?,Sorbet,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q46,228,6,"In the title theme song to ‘Dad’s Army’, at what time does Mr Brown go off to town?",8.21,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q47,228,6,"When the quiz show ‘Eggheads’ first aired in 2003, how many original ‘Eggheads’ were there?",Five,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q48,228,6,"In a well-known 1996 plotline from EastEnders, which publication did Cindy Beale use to look for a hitman to hire to kill her husband Ian?",Yellow Pages,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q49,228,6,What name is given to the imaginary line drawn around the northern part of the world at approximately 66° north?,The Arctic Circle,typed,1,NO_MATCH_DETECTED,,False
+QD228-Q50,228,6,What is the largest joint in the human body?,Knee Joint,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q01,235,1,Which card game would you be playing if you used the phrase 'One for his nob'?,Cribbage,written,1,NO_MATCH_DETECTED,,False
+QD235-Q02,235,1,In which city was the UK’s first university established?,Oxford,written,1,NO_MATCH_DETECTED,,False
+QD235-Q03,235,1,"In food, what name is given to the dessert made with small balls of choux pastry, usually filled with cream and often covered with chocolate?",Profiterole,written,1,NO_MATCH_DETECTED,,False
+QD235-Q04,235,1,Which controversial rap star appeared at the 2001 Brit Awards with a mask and chainsaw?,Eminem,written,1,NO_MATCH_DETECTED,,False
+QD235-Q05,235,1,What nickname is common to a former character in EastEnders (played by actor John Altman) and one of the contestants in the first series of UK's 'Big Brother'?,Nasty Nick,written,1,NO_MATCH_DETECTED,,False
+QD235-Q06,235,1,The Sun is mainly composed of Hydrogen and which other gas?,Helium,written,1,NO_MATCH_DETECTED,,False
+QD235-Q07,235,1,"In football, which England world cup winning player was the first to be transferred for £100,000 between British clubs?",Alan Ball,written,1,NO_MATCH_DETECTED,,False
+QD235-Q08,235,1,"Sharing its name with a biblical character, which African creature is one of the world’s largest and heaviest types of insect?",Goliath Beetle,written,1,NO_MATCH_DETECTED,,False
+QD235-Q09,235,1,"In song, whose love rival was 'Two Ton Ted From Teddington'?",Ernie,written,1,NO_MATCH_DETECTED,,False
+QD235-Q10,235,1,Which actor played the role of the man who swapped faces with John Travolta in the 1997 film ‘Face Off'?,Nicholas Cage,written,1,NO_MATCH_DETECTED,,False
+QD235-Q11,235,2,Which of Hollands cheeses are the two most popular?,Edam / Gouda,written,1,NO_MATCH_DETECTED,,False
+QD235-Q12,235,2,Which two UK seaside resorts end with the word 'Regis'?,Bognor / Lyme,written,1,NO_MATCH_DETECTED,,False
+QD235-Q13,235,2,"In an alphabetical list, which of Jesus' disciples would come first and last?",Andrew / Thomas,written,1,NO_MATCH_DETECTED,,False
+QD235-Q14,235,2,John Travolta and Olivia Newton-John had UK number one hits in 1978 with ‘You’re The One That I Want’ and ‘Summer Nights’ – but with which song titles did they achieve the number 2 spot with as solo artists?,Sandy / Hopelessly Devoted To You,written,1,NO_MATCH_DETECTED,,False
+QD235-Q15,235,2,Which two countries lie either side of the Straits of Gibraltar?,Spain / Morocco,written,1,NO_MATCH_DETECTED,,False
+QD235-Q16,235,3,Which confectionary product has a clock on its packaging that reads 8.03pm?,After Eight,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q17,235,3,Which fictional (Agatha Christie) sleuth would you associate with the village of St Mary Mead?,Miss Marple,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q18,235,3,"With eight letters, which word is the longest represented in the NATO alphabet?",November,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q19,235,3,During WWII which slogan was used in a nationwide campaign to prevent people from gossiping and letting useful information get into the hands of the enemy?,Careless Talk Costs Lives,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q20,235,3,"In 1982, Stephen King published ‘Different Seasons’, a collection of four novellas, three of which were made into films. The first story in the collection was entitled ‘Rita Hayworth And…’ what?",The Shawshank Redemption,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q21,235,3,"Which common word contains 4 vowels, each one appearing immediately after the other?",Queue,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q22,235,3,What was the name of the quiz show in which the contestants were invited to go ‘wild in the aisles’?,Supermarket Sweep,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q23,235,3,In Bond films which organization was headed by the supervillain Ernst Stavro Blofeld?,SPECTRE,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q24,235,3,"Which 18th century dictionary compiler defined the word excise as ‘A hateful tax levied upon commodities, and adjudged not by the common judges of property, but wretches hired by those to whom excise is paid’?",Samuel Johnson,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q25,235,3,Who was the first of ‘The Spice Girls’ to become a mother?,Mel B,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q26,235,4,Which type of dance is mentioned in the lyrics of UK number one hits for both ‘Procol Harum’ and ‘Queen’?,Fandango,written,1,NO_MATCH_DETECTED,,False
+QD235-Q27,235,4,The title of which Hitchcock film is also a word which refers to a type of dizziness?,Vertigo,written,1,NO_MATCH_DETECTED,,False
+QD235-Q28,235,4,Which Spanish word is used to refer to a friend?,Amigo,written,1,NO_MATCH_DETECTED,,False
+QD235-Q29,235,4,"Which country borders Burkina Faso, Benin and Ghana?",Togo,written,1,NO_MATCH_DETECTED,,False
+QD235-Q30,235,4,"In geography, what word is used to describe a group of small islands or an area of sea which contains many small islands?",Archipelago,written,1,NO_MATCH_DETECTED,,False
+QD235-Q31,235,4,Which type of African songbird shares its name with a word used by Australians as a mild insult when referring to a person who has done something stupid?,Drongo,written,1,NO_MATCH_DETECTED,,False
+QD235-Q32,235,4,Which type of wading bird is also often used as a garden lawn ornament?,Flamingo,written,1,NO_MATCH_DETECTED,,False
+QD235-Q33,235,4,Which type of small drum shares it name with a species of African antelope?,Bongo,written,1,NO_MATCH_DETECTED,,False
+QD235-Q34,235,4,Which highly contagious infection is the most common skin infection seen in young children in the UK?,Impetigo,written,1,NO_MATCH_DETECTED,,False
+QD235-Q35,235,4,"In January 2000, what was officially named as the toy of the 20th century?",Lego,written,1,NO_MATCH_DETECTED,,False
+QD235-Q36,235,5,"What term is used in knitting, along with a number, to indicate the amount of special stitches needed to begin a piece of work?",Cast On,written,1,NO_MATCH_DETECTED,,False
+QD235-Q37,235,5,"In children’s fiction, which character was stalked by a crocodile?",(Captain James) Hook,written,1,NO_MATCH_DETECTED,,False
+QD235-Q38,235,5,Which 1995 film starred Sandra Bullock as computer expert Angela Bennett who had her identity erased?,The Net,written,1,NO_MATCH_DETECTED,,False
+QD235-Q39,235,5,Which song was a one-hit wonder for US soul group ‘The Floaters’ in 1977?,Float On,written,1,NO_MATCH_DETECTED,,False
+QD235-Q40,235,5,The Link?,"Cast, Hook, Net, Float Fishing Terms",written,1,NO_MATCH_DETECTED,,False
+QD235-Q41,235,6,Which games manufacturer produced the Sonic the Hedgehog computer game?,Sega,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q42,235,6,Which sport has categories which include Freestyle and Greco-Roman?,Wrestling,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q43,235,6,"What is the common name for Soya-bean curd, which is drained and pressed into white blocks?",Tofu,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q44,235,6,Making her maiden voyage in 1969 (and docked in Dubai in 2008) which cruise liner was known as the flagship of the Cunard Line for nearly 40 years?,QE2,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q45,235,6,What symbol is used by the British Standards Institute?,Kitemark,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q46,235,6,"Children’s TV - when a character called Joseph McLaine joined an organization named the 'World Intelligence Network', what agent number did he become?",90 (As in Joe 90),typed,1,NO_MATCH_DETECTED,,False
+QD235-Q47,235,6,What type of bird is the Looney Tunes character 'Tweetie Pie'?,Canary,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q48,235,6,What is mixed with Whisky to make a Whisky Mac?,Ginger,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q49,235,6,"When Arnold Schwarzenegger took over from Donald Trump in the US 'Celebrity Apprentice', what did he replace the catchphrase 'You're Fired' with?",You're Terminated,typed,1,NO_MATCH_DETECTED,,False
+QD235-Q50,235,6,Which bird is associated with Lundy Island in the Bristol Channel?,Puffin,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q01,241,1,"Up until June 2018, which was the only country in the world where women were not legally allowed to drive?",Saudi Arabia,written,1,NO_MATCH_DETECTED,,False
+QD241-Q02,241,1,"As featured in ‘The Muppets’, what is the surname of Miss Piggy?",Lee,written,1,NO_MATCH_DETECTED,,False
+QD241-Q03,241,1,Which four letter word refers to a piece of classical music by a particular composer and is usually followed by a number which indicates when the piece was written?,Opus,written,1,NO_MATCH_DETECTED,,False
+QD241-Q04,241,1,"In food, which fruit is used to flavour Crepe Suzettes?",Orange,written,1,NO_MATCH_DETECTED,,False
+QD241-Q05,241,1,Which property on a standard Monopoly board shares its name with Britain’s first king size cigarette?,Pall Mall,written,1,NO_MATCH_DETECTED,,False
+QD241-Q06,241,1,Who started his career in show business in the mid-1980’s in the alternative comedy circuit as a flamboyant act called ‘The Joan Collins Fan Club’?,Julian Clary,written,1,NO_MATCH_DETECTED,,False
+QD241-Q07,241,1,"In wildlife, which is the only bird of prey whose diet consists almost exclusively of fish?",Osprey,written,1,NO_MATCH_DETECTED,,False
+QD241-Q08,241,1,Which doglike African mammals are famed as scavengers?,Hyenas,written,1,NO_MATCH_DETECTED,,False
+QD241-Q09,241,1,The 1812 overture was written to commemorate the successful Russian defence against an army led by which military leader?,Napoleon (Bonaparte),written,1,NO_MATCH_DETECTED,,False
+QD241-Q10,241,1,"The country officially called Myanmar is often referred to, and known by, which former name?",Burma,written,1,NO_MATCH_DETECTED,,False
+QD241-Q11,241,2,"Winning Gold at the 1992 Olympics, at which event did Britain’s Sally Gunnell excel in?",400m Hurdles,written,1,NO_MATCH_DETECTED,,False
+QD241-Q12,241,2,Which 1960 film starring five of the famous ‘Rat Pack’ was remade in 2001 with stars including George Clooney and Brad Pitt?,Ocean's 11,written,1,NO_MATCH_DETECTED,,False
+QD241-Q13,241,2,The title of which 1980 Sheena Easton hit was altered in America to avoid being confused with a Dolly Parton hit of the same name?,(The two songs charted almost simultaneously) 9 to 5 (altered to ‘Morning Train (Nine to Five)),written,1,NO_MATCH_DETECTED,,False
+QD241-Q14,241,2,"On which C5 1990’s weekday game show, (often billed as ‘the game show without a host), did Ian Lygo step down as reigning champion, having won a record-breaking 75 consecutive victories?",100%,written,1,NO_MATCH_DETECTED,,False
+QD241-Q15,241,2,"First published in the mid 1940’s, which series of novels feature a group of friends who meet in a hut, have secret passwords and solve mysteries together?",Secret Seven,written,1,NO_MATCH_DETECTED,,False
+QD241-Q16,241,3,In which country is the Kruger National Park?,South Africa,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q17,241,3,The famous Italian artist Leonardo da Vinci was alive during which two centuries?,15th and 16th,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q18,241,3,"Often combined with Spinach, what type of cheese is used as a filling for Cannelloni?",Ricotta,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q19,241,3,Which island was connected to mainland Scotland by a bridge that opened in 1995?,Skye,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q20,241,3,"In the lyrics of a children’s rhyme, who had a hole in his bucket and who offered various ways to fix it?",Henry / Liza,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q21,241,3,In 2019 the Royal Mint released a 50p coin commemorating the pioneering work made by physicist Stephen Hawking on which subject?,Black Holes,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q22,241,3,"Created by author Robert Ludlum, who plays the title character in the Bourne film series?",Matt Damon (Jason Bourne),typed,1,NO_MATCH_DETECTED,,False
+QD241-Q23,241,3,"In TV’s ‘Star Trek’, what letter is used to describe the class of a planet that is similar to the Earth?",M,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q24,241,3,The landscape of which English county is associated with the artist John Constable?,Suffolk,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q25,241,3,Which boy's name was the first big hit for Blondie?,Denis,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q26,241,4,British computer scientist Tim Berners-Lee is credited with the invention of what?,World Wide Web,written,1,NO_MATCH_DETECTED,,False
+QD241-Q27,241,4,Which 1990 hit for Kylie Minogue shares its title with the 1993 UK entry in the Eurovision Song Contest (for Sonia)?,Better The Devil You Know,written,1,NO_MATCH_DETECTED,,False
+QD241-Q28,241,4,"In which US state is ‘The Devil’s Tower’, an iconic landmark used in Stephen Spielberg’s ‘Close Encounters of the Third Kind’?",Wyoming,written,1,NO_MATCH_DETECTED,,False
+QD241-Q29,241,4,Which one word connects a segment featured in the popular 1990’s series of ‘Noel’s House Party’ and an infamous headline that featured on ‘The Sun’ newspaper on 4th May 1982?,Gotcha,written,1,NO_MATCH_DETECTED,,False
+QD241-Q30,241,4,"In Greek mythology, what name was given to the daughter of Zeus, known as the goddess of the hunt and twin of the god Apollo?",Artemis,written,1,NO_MATCH_DETECTED,,False
+QD241-Q31,241,4,"Previously known as the Rokerites, the Black Cats became the official nickname of which football club in 1997?",Sunderland,written,1,NO_MATCH_DETECTED,,False
+QD241-Q32,241,4,Cricket - On 27th April 1997 the one-day match between Glamorgan and Warwickshire was the first- ever in the U.K. to be decided by what method?,Duckworth Lewis,written,1,NO_MATCH_DETECTED,,False
+QD241-Q33,241,4,In 1994 Danish born Whigfield became the first female solo artist to debut at the top of the UK charts with which europop dance classic?,Saturday Night,written,1,NO_MATCH_DETECTED,,False
+QD241-Q34,241,4,Which of the Wimbledon Wombles was named after a town in Serbia?,Tomsk,written,1,NO_MATCH_DETECTED,,False
+QD241-Q35,241,4,Who was the first footballer to score 100 goals in both the Scottish and English football leagues?,Kenny Daglish,written,1,NO_MATCH_DETECTED,,False
+QD241-Q36,241,5,"Finding fame in the early 1980’s as the lead singer of a New Wave band, by what name is Stuart Goddard better known?",Adam Ant,written,1,NO_MATCH_DETECTED,,False
+QD241-Q37,241,5,What was the name of David Bowie’s backing band in the early 1970’s?,The Spiders From Mars,written,1,NO_MATCH_DETECTED,,False
+QD241-Q38,241,5,"Born in 1945, which popular 1980’s comedian was known for wearing his trademark wellington boots on the wrong feet?",Jimmy Cricket,written,1,NO_MATCH_DETECTED,,False
+QD241-Q39,241,5,Which Puccini opera follows the tragic tale of a young Japanese girl who falls in love with an American naval officer?,Madam Butterfly,written,1,NO_MATCH_DETECTED,,False
+QD241-Q40,241,5,The Link?,"Ant, Spiders, Cricket, Butterfly Insects",written,1,NO_MATCH_DETECTED,,False
+QD241-Q41,241,6,What two colours make up the stripes of the jumper worn by the Beano comic-strip character ‘Dennis the Menace’?,Red / Black,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q42,241,6,Which area of France is known for its particular type of mustard?,Dijon,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q43,241,6,Gary Strang and Tony Smart were the main male characters in which long-running 1990’s BBC sitcom?,Men Behaving Badly,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q44,241,6,Poopdeck Pappy is the father of which animated cartoon character?,Popeye,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q45,241,6,The word ‘goodbye’ is a contraction of which four-word phrase?,God Be With You,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q46,241,6,"As in the title of a Shakespeare play, who are Valentine and Proteus?",The Two Gentlemen of Verona,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q47,241,6,In which TV soap could the children attend Bessie Street school?,Coronation Street,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q48,241,6,"Multiple Choice Question - What collective noun is used to describe a group of rhino; is it a crash, a bang or a wallop?",Crash,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q49,241,6,Which brand of toilet cleaner would you associate with the slogan 'cleans round the bend'?,Harpic,typed,1,NO_MATCH_DETECTED,,False
+QD241-Q50,241,6,Which word is shared by a former children’s comic and the name of the Apollo 11 Lunar Module?,Eagle,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q01,280,1,Sarajevo is the capital of which European country?,Bosnia and Herzegovina,written,1,NO_MATCH_DETECTED,,False
+QD280-Q02,280,1,"A hit in 2004, ‘My Boo’ was a duet for Alicia Keys and which other singer?",Usher,written,1,NO_MATCH_DETECTED,,False
+QD280-Q03,280,1,"In the Roman army, what name was given to an officer who was in charge of approximately 100 men?",Centurion,written,1,NO_MATCH_DETECTED,,False
+QD280-Q04,280,1,"Recognised by the United States and major European countries, which disputed territory unilaterally declared independence from Serbia in February 2008?",Kosovo,written,1,NO_MATCH_DETECTED,,False
+QD280-Q05,280,1,In 2004 which country became the first in the world to introduce a total smoking ban?,Ireland,written,1,NO_MATCH_DETECTED,,False
+QD280-Q06,280,1,"In the original 'Monopoly' board game, if you owned Pall Mall and Whitehall, which other property would you need to complete the set?",Northumberland Avenue,written,1,NO_MATCH_DETECTED,,False
+QD280-Q07,280,1,In what sport could you win the Claret Jug and the Green Jacket?,Golf,written,1,NO_MATCH_DETECTED,,False
+QD280-Q08,280,1,During World War II which well-known fashion house used Polish and French slave labourers to make uniforms which it supplied to the Nazis?,Hugo Boss,written,1,NO_MATCH_DETECTED,,False
+QD280-Q09,280,1,"Written around 350BC, which Greek philosopher is credited with writing the first book on meteorology?",Aristotle,written,1,NO_MATCH_DETECTED,,False
+QD280-Q10,280,1,Which famous boys' toy was patented by its inventor Frank Hornby in 1901?,Meccano,written,1,NO_MATCH_DETECTED,,False
+QD280-Q11,280,2,Which Bank of England currency was introduced in 1797 and withdrawn in 1984?,One Pound Note,written,1,NO_MATCH_DETECTED,,False
+QD280-Q12,280,2,The title of which BBC comedy series was inspired by a 1980 hit for English Punk Rock band Splodegnessabounds?,Two Pints of Lager and a Packet of Crisps,written,1,NO_MATCH_DETECTED,,False
+QD280-Q13,280,2,"What name is given to a narrow horn-shaped drinking glass, typically holding between two and three pints of beer?",Yard of Ale,written,1,NO_MATCH_DETECTED,,False
+QD280-Q14,280,2,Which actress provided the voice for Princess Bala in the 1998 film Antz?,Sharon Stone,written,1,NO_MATCH_DETECTED,,False
+QD280-Q15,280,2,"Which song, originally performed by Danny Kaye in the role of Hans Christian Andersen, is best known for its maths chorus of times tables?","(two and two are four, four and four are eight, eight and eight are sixteen, sixteen and sixteen are thirty-two) The Inch Worm aka Inchworm",written,1,NO_MATCH_DETECTED,,False
+QD280-Q16,280,3,What food crop is most vulnerable to attack by the Colorado Beetle?,Potato,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q17,280,3,"Which 1960’s pop group were formed as a result of a TV series, which followed the adventures of four young men trying to make a name for themselves as a rock ‘n’ roll band?",The Monkees,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q18,280,3,Which 2004 film starred Leonardo DiCaprio as entrepreneur Howard Hughes?,The Aviator,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q19,280,3,"In a famous rhyme by Edward Lear, how long did the ‘Owl and the Pussycat’ sail away for?",A Year And A Day,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q20,280,3,"Which former British bronze coin, worth a quarter of an old penny, ceased to be legal tender in the early 1960's?",Farthing,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q21,280,3,Who is the Roman equivalent of the Greek Goddess Aphrodite?,Venus,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q22,280,3,"The Mystery of Edwin Drood was the final, and unfinished, novel by which famous author?",Charles Dickens,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q23,280,3,"Which comic, created in 1990 by the merger of two other comics, featured The Numskulls, Beryl the Peril, Tricky Dicky and The Banana Bunch?",Beezer and Topper,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q24,280,3,"Which famous film villain has had David Prowse play the body, Sebastian Shaw play the face and James Earl Jones provide the voice?",Darth Vader,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q25,280,3,"Princess Anne was the first member of the royal family to appear on a TV quiz show, what was the name of the show?",A Question of Sport (1987),typed,1,NO_MATCH_DETECTED,,False
+QD280-Q26,280,4,Which phrase refers to an unintentional mistake where a speaker will say a word they are subconsciously thinking of rather than the one they meant to say?,Freudian Slip,written,1,NO_MATCH_DETECTED,,False
+QD280-Q27,280,4,"Which iconic luxury fashion brand was established in Milan, 1913?",Prada,written,1,NO_MATCH_DETECTED,,False
+QD280-Q28,280,4,"In the Royal Navy, which rank is equivalent to a General in both the US and British Armies?",Admiral,written,1,NO_MATCH_DETECTED,,False
+QD280-Q29,280,4,"Which famous musician was once quoted as saying ‘To jazz, or not to jazz, there is no question’?",Louis Armstrong,written,1,NO_MATCH_DETECTED,,False
+QD280-Q30,280,4,"In 2001 which Croatian tennis player, then ranked 125 in the world, won Wimbledon after being given a wildcard entry on the strength of his previous performances?",Goran Ivanisevic,written,1,NO_MATCH_DETECTED,,False
+QD280-Q31,280,4,On which racecourse is the Welsh Grand National run?,Chepstow,written,1,NO_MATCH_DETECTED,,False
+QD280-Q32,280,4,"There are two properties on a Monopoly board that are common to both the British and US versions; one is the Electric Company, what is the other?",Water Works,written,1,NO_MATCH_DETECTED,,False
+QD280-Q33,280,4,Which chemical element has the symbol Na?,Sodium,written,1,REVIEW_SAME_FACT,,False
+QD280-Q34,280,4,"In which (state of Tennessee) U.S. city did many musicians, including Aretha Franklin, Otis Redding, and Elvis Presley get their start during the 1950’s and ‘60’s?",Memphis,written,1,NO_MATCH_DETECTED,,False
+QD280-Q35,280,4,In which month does the annual Munich Oktoberfest usually take place?,September,written,1,NO_MATCH_DETECTED,,False
+QD280-Q36,280,5,What name is given to a period of one thousand years?,Millennium,written,1,NO_MATCH_DETECTED,,False
+QD280-Q37,280,5,"Discovered by James Cook, where would you find several islands including Shark, Goat, Cockatoo and Snapper?",Sydney Harbour,written,1,NO_MATCH_DETECTED,,False
+QD280-Q38,280,5,Which one word nickname is associated with both the Duke of Wellington and former PM Margaret Thatcher?,Iro,written,1,NO_MATCH_DETECTED,,False
+QD280-Q39,280,5,At which venue was the original series of ‘Come Dancing’ filmed in the 1970’s?,Tower Ballroom (Blackpool),written,1,NO_MATCH_DETECTED,,False
+QD280-Q40,280,5,The Link?,"Millennium, Sydney Harbour, Iron, Tower Bridges",written,1,NO_MATCH_DETECTED,,False
+QD280-Q41,280,6,"If 40% of students from a class of 50 had failed their Maths exam, how many of the 50 students would have passed the exam?",30,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q42,280,6,Which vitamin improves the eye's ability to see in low light situations?,Vitamin A,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q43,280,6,Which university has its main campus in Milton Keynes?,Open University,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q44,280,6,"In athletics, which is the only one of the four usual throwing events that is not part of a decathlon?",Hammer Throw,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q45,280,6,What 1993 film sequel was subtitled ‘Back in the Habit’?,Sister Act 2,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q46,280,6,How many numbers without a zero in them are there on a on a roulette wheel?,33,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q47,280,6,"If the subject of this round was 'cliff hangers' and the answer was Kristin Shepard played by Mary Crosby, what would the question be?",Who shot JR?,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q48,280,6,Which US rock singer-songwriter played the role of singer and bass guitarist ‘Leather Tuscadero’ in the TV classic ‘Happy Days’?,Suzi Quatro,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q49,280,6,In Formula One what colour flag is used to warn drivers to slow down and be prepared to stop if necessary?,Yellow,typed,1,NO_MATCH_DETECTED,,False
+QD280-Q50,280,6,"In 2011, police forces introduced which phone number for non-emergency calls?",101,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q01,281,1,"Which food items were originally filled with meat, and shaped into an oval to represent the Manger that Jesus slept in as a baby?",Mince Pies,written,1,NO_MATCH_DETECTED,,False
+QD281-Q02,281,1,In a 1979 academic paper a Greek astronomer proposed the star of Bethlehem was actually which planet?,Uranus,written,1,NO_MATCH_DETECTED,,False
+QD281-Q03,281,1,"Which popular Christmas carol, recorded by many artists (and a UK hit for Nina and Frederik) is about the journey made by Mary and Joseph to Bethlehem?",Little Donkey,written,1,NO_MATCH_DETECTED,,False
+QD281-Q04,281,1,"According to the nursery rhyme, who ‘sat in the corner eating a Christmas Pie’?",Little Jack Horner,written,1,NO_MATCH_DETECTED,,False
+QD281-Q05,281,1,What name is given to the day when Christians remember the wise men who visited Jesus (celebrated on 6th January)?,Epiphany,written,1,NO_MATCH_DETECTED,,False
+QD281-Q06,281,1,"Adapted for the theatre, film and television, which famous poet wrote ‘A Child’s Christmas in Wales’?",Dylan Thomas,written,1,NO_MATCH_DETECTED,,False
+QD281-Q07,281,1,"In the lyrics of ‘Good King Wenceslas’, when a poor man came into sight what was he gathering?",Winter Fuel,written,1,NO_MATCH_DETECTED,,False
+QD281-Q08,281,1,"Which film, once voted the most inspirational film of all time, was inspired by a short story called ‘The Greatest Gift’?",It’s a Wonderful Life,written,1,NO_MATCH_DETECTED,,False
+QD281-Q09,281,1,"For over sixty years, which organization has tracked Santa as he travels the world delivering presents?",Norad,written,1,NO_MATCH_DETECTED,,False
+QD281-Q10,281,1,Who recorded the 1973 song ‘Step Into Christmas’?,Elton John,written,1,NO_MATCH_DETECTED,,False
+QD281-Q11,281,2,Do the twelve days of Christmas occur before or after Christmas Day?,After,written,1,NO_MATCH_DETECTED,,False
+QD281-Q12,281,2,"According to the results of a survey taken in 2017, what percentage of 2,000 adults were unaware that Jesus was born in a stable – 10% or 20%?",10%,written,1,NO_MATCH_DETECTED,,False
+QD281-Q13,281,2,"According to tradition, when making a Christmas pudding what is the only direction you can stir the mixture – East to West or West to East?",East to West,written,1,NO_MATCH_DETECTED,,False
+QD281-Q14,281,2,Santaclausphobia is fear of Christmas – True or False?,False,written,1,NO_MATCH_DETECTED,,False
+QD281-Q15,281,2,In the well-known fairy tale did Cinderella lose her right or left glass slipper as she left the ball?,Left,written,1,NO_MATCH_DETECTED,,False
+QD281-Q16,281,3,Who was the only human to appear in the 1992 film ‘The Muppet Christmas Carol’?,Michael Caine,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q17,281,3,"Which 1980’s classic Christmas hit was co-written by one of its singers, Shane MacGowan, who was born on Christmas Day?",Fairytale of New York,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q18,281,3,(Known for the hit ‘The Chicken Song’) Who had a minor hit in 1986 with the song ‘Santa Claus Is On The Dole’?,Spitting Image,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q19,281,3,Which Christmas carol is most associated with being sung at the start of the truce which took place in the WW1 trenches in 1914?,Silent Night,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q20,281,3,What type of herb often features as a magical word used in Pantomime?,Sesame,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q21,281,3,"After 40 years on the panto circuit, who was given a Lifetime Achievement Award at the first ever Great British Pantomime Awards held in 2017?",Christopher Biggins,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q22,281,3,"Which singer’s first major acting role was in 2010, when she played the role of Abigail Pettigrew in the ‘Doctor Who’ Christmas special?",Katherine Jenkins,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q23,281,3,What is the opening line to Nat King Cole’s ‘The Christmas Song’?,Chestnuts Roasting On An Open Fire,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q24,281,3,"On the 2006/7 series ‘Life on Mars’ DCI Sam Tyler found himself travelling back in time to the year when Slade first charted with their million-seller Xmas hit, for a point each can you name the song title and year?",Merry Xmas Everybody / 1973,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q25,281,3,Which pantomime features the character 'King Rat'?,Dick Whittington,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q26,281,4,"Which word connects a 1950's singer, an Audrey Hepburn film role and a talking computer that appears in a cult TV show?",Holly,written,1,NO_MATCH_DETECTED,,False
+QD281-Q27,281,4,Which six-letter word can refer to a small picturesque cave?,Grotto,written,1,NO_MATCH_DETECTED,,False
+QD281-Q28,281,4,‘What You Will’ is a Shakespeare play also known by what other name?,Twelfth Night,written,1,NO_MATCH_DETECTED,,False
+QD281-Q29,281,4,Which film franchise was first created in 1977 by George Lucas?,Star Wars,written,1,NO_MATCH_DETECTED,,False
+QD281-Q30,281,4,"Reportedly sacked from Coronation Street in 1994 due to having cosmetic lip enhancements, which character had been played by actress Lynne Perrie for over 20 years?",Ivy Tisley (or Brennan),written,1,NO_MATCH_DETECTED,,False
+QD281-Q31,281,4,On a standard Monopoly board which property completes the light blue set of Euston Road and Pentonville Road?,The Angel Islington,written,1,NO_MATCH_DETECTED,,False
+QD281-Q32,281,4,What is the name of Tin Tin's dog in 'Herge's adventures of Tin Tin'?,Snowy,written,1,NO_MATCH_DETECTED,,False
+QD281-Q33,281,4,In May 1961 who became the first American in space when he flew in a one-person Mercury spacecraft?,Alan Shepherd,written,1,NO_MATCH_DETECTED,,False
+QD281-Q34,281,4,"Which Paraguayan footballer played for two English clubs during the 2000’s, both of which have been Premier League winners?",Roque Santa Cruz,written,1,NO_MATCH_DETECTED,,False
+QD281-Q35,281,4,"Which Andrew Lloyd Webber and Tim Rice production started out as a 1970 rock opera concept album, before making its Broadway debut in 1971?",Jesus Christ Superstar,written,1,NO_MATCH_DETECTED,,False
+QD281-Q36,281,5,"Who declined his Best Actor Academy Award in 1971 (for the film ‘Patton’), saying he detested the whole idea of the awards, referring to it as a ‘meat parade’?",George C Scott,written,1,NO_MATCH_DETECTED,,False
+QD281-Q37,281,5,Who played the role of the Captain of the ‘Enterprise’ in Star Trek TNG (the next generation)?,Patrick Stewart,written,1,NO_MATCH_DETECTED,,False
+QD281-Q38,281,5,"Which comedian first came to prominence in the BBC sketch show ‘Not The Nine O’clock News’, winning a BAFTA award for Best Entertainment Performance’ in 1981?",Rowan Atkinson,written,1,NO_MATCH_DETECTED,,False
+QD281-Q39,281,5,"In classic film comedy, which actor played the dual role of a school headmistress (at St Trinian’s) named Miss Millicent Fritton and her twin brother Clarence?","Alistair Sim (Scrooge, 1951)",written,1,NO_MATCH_DETECTED,,False
+QD281-Q40,281,5,The Link?,All Played Scrooge,written,1,NO_MATCH_DETECTED,,False
+QD281-Q41,281,6,"Which retailer is known for its Christmas Pudding that comes complete with a whole orange ‘hidden’ inside, created for them by Heston Blumenthal?",Waitrose,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q42,281,6,Which gift brought by the Three Kings is distilled from the essence of Orchids?,Myrrh,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q43,281,6,"Commonly referred to as ‘The Night Before Christmas’, what type of animal is the first to feature in the poem ‘A Visit from St Nicholas?",Mouse,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q44,281,6,What was the title of the first UK number one hit to contain the word ‘Christmas’?,The Christmas Alphabet,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q45,281,6,In which song do a love-struck couple build a snowman and pretend he is Parson Brown?,Winter Wonderland,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q46,281,6,"In an often repeated clip from the 1977 Morecombe and Wise Christmas special, BBC newsmen (dressed as sailors) performed which famous musical song (from South Pacific)?",There Is Nothing Like A Dame,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q47,281,6,On which lake does the annual Christmas Day ‘Peter Pan Cup’ take place – a race to see who can be the first to swim 100 metres?,Serpentine,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q48,281,6,"Published in 2017 and inspired by her own daughter, which Grammy award-winning singer, (the first winner of ‘American Idol’), wrote the children’s book ‘River Rose and the Magical Christmas’?",Kelly Clarkson,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q49,281,6,"Which plant derives its name from second century Anglo-Saxon’s who likened its appearance to bird droppings on tree branches, and has a name which translates as ‘Dung on a Twig’?",Mistletoe,typed,1,NO_MATCH_DETECTED,,False
+QD281-Q50,281,6,Which sporting venue is found in ‘The 12 Days of Christmas’?,Lords,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q01,337,1,"Which Motown artist had hits with ‘Too Busy Thinking ‘Bout My Baby’, ‘Let’s Get It On’ and ‘I Heard It Through The Grapevine’?",Marvin Gaye,written,1,NO_MATCH_DETECTED,,False
+QD337-Q02,337,1,In Greek mythology who was renowned for his great beauty?,Adonis,written,1,NO_MATCH_DETECTED,,False
+QD337-Q03,337,1,"In Physics, what name is given to the study or relationship between heat and mechanical or other forms of energy?",Thermodynamics,written,1,NO_MATCH_DETECTED,,False
+QD337-Q04,337,1,Cut-throat Jake is the arch enemy of which children's TV character?,Captain Pugwash,written,1,NO_MATCH_DETECTED,,False
+QD337-Q05,337,1,"In Greek mythology, the second of the 12 labours of Hercules involved him slaying which nine-headed creature?",Hydra,written,1,NO_MATCH_DETECTED,,False
+QD337-Q06,337,1,"Often incorrectly described as a school, what is the correct collective noun for a group of dolphins?",Pod,written,1,NO_MATCH_DETECTED,,False
+QD337-Q07,337,1,Scapa Flow is a body of water in which group of British islands?,Orkney,written,1,NO_MATCH_DETECTED,,False
+QD337-Q08,337,1,"In which classic Sci-fi horror film do a group of people discover the human race is being replaced one by one, with clones devoid of emotion?",Invasion of the Body Snatchers,written,1,NO_MATCH_DETECTED,,False
+QD337-Q09,337,1,"Who, in 1989, became the first Englishman to win the US Masters golf title?",Nick Faldo,written,1,NO_MATCH_DETECTED,,False
+QD337-Q10,337,1,"Officially the Republic of China, which largely mountainous island nation was formerly known as Formosa?",Taiwan,written,1,NO_MATCH_DETECTED,,False
+QD337-Q11,337,2,Fast food chain outlet Nando’s specialise in Portuguese-style chicken dishes served with which type of sauce?,Peri Peri,written,1,NO_MATCH_DETECTED,,False
+QD337-Q12,337,2,What was the only UK number one hit for rock band Status Quo?,Down Down,written,1,NO_MATCH_DETECTED,,False
+QD337-Q13,337,2,"What type of dancing originated in the early 1960’s, when women at the Peppermint Lounge in New York City began to get up on tables and dance the twist?",Go Go,written,1,NO_MATCH_DETECTED,,False
+QD337-Q14,337,2,"In the lyrics of a traditional children’s song about a very busy bus, the wheels go round and round and the horn goes beep, beep, beep – what do the babies say?",Wah Wah Wah,written,1,NO_MATCH_DETECTED,,False
+QD337-Q15,337,2,"Abba famously won the Eurovision song contest in 1974 with ‘Waterloo’, but which song had the group unsuccessfully submitted the year before (it went on to become their first chart entry after Waterloo)?",Ring Ring,written,1,NO_MATCH_DETECTED,,False
+QD337-Q16,337,3,Which Windows operating system was the first to feature the year in which it was released?,Windows 95,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q17,337,3,Feta cheese is traditionally made from the milk of which animal?,Sheep,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q18,337,3,What is the U.S. version of the BBC’s ‘Strictly Come Dancing’?,Dancing With The Stars,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q19,337,3,Who were the original sponsors of the football Premier League?,Carling,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q20,337,3,"Which Beatles song includes the lyrics, 'Love you every day girl, Always on my mind, One thing I can say girl, Love you all the time'?",Eight Days A Week,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q21,337,3,"The wreck of which British explorer’s ship, the SS Terra Nova, was discovered off the coast of Greenland in 2012?",Captain (Robert Falcon) Scott,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q22,337,3,In the Star Wars series what type of creature is Chewbacca?,Wookie,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q23,337,3,Which two countries could offer Dead Sea Beach holidays?,Israel / Jordan,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q24,337,3,Which Japanese car manufacturer’s logo is composed of three diamond shapes?,Mitsubishi,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q25,337,3,"The world’s first vaccine was pioneered by Edward Jenner, whose work effectively eliminated which disease?",Smallpox,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q26,337,4,"In the title of a Jules Verne novel, what was the destination of the expedition led by the intrepid Professor Lindenbrock?",(Journey to) The Centre of the Earth,written,1,NO_MATCH_DETECTED,,False
+QD337-Q27,337,4,"Separated by ten years, which two duo’s had a top five hit with ‘Especially For You’?",Kylie and Jason (1988) Denise and Johnny(1998),written,2,NO_MATCH_DETECTED,,False
+QD337-Q29,337,4,What are the three main active volcanoes in Italy?,Etna Vesuvius Stromboli,written,3,NO_MATCH_DETECTED,,False
+QD337-Q32,337,4,"Wales has six cities; besides the capital of Cardiff, can you name any four of the other five?",Swansea Newport Bangor St Davids / St Asaph,written,4,NO_MATCH_DETECTED,,False
+QD337-Q36,337,5,"With which Channel 4 reality series would you associate the name of Ant Middleton, an ex UK Special Forces soldier?",SAS: Who Dares Wins,written,1,NO_MATCH_DETECTED,,False
+QD337-Q37,337,5,Which phrase is used to describe wealthy and fashionable people who travel widely and frequently for pleasure?,The Jet Set,written,1,NO_MATCH_DETECTED,,False
+QD337-Q38,337,5,"Which two words are shared by a classic series of video games and the highest level of emergency in several warning systems, as frequently heard by the fictional Will Ryker on board the USS Enterprise?",Red Alert,written,1,NO_MATCH_DETECTED,,False
+QD337-Q39,337,5,"According to a well-known proverb, if you want to be successful or win a top prize you have to be what?",In It To Win It,written,1,NO_MATCH_DETECTED,,False
+QD337-Q40,337,5,The Link?,"National Lottery Quiz Shows Who Dares Wins (2007 – present), Jet Set (2001-07) Red Alert (1999-2000), In It To Win It (2002-2016)",written,1,NO_MATCH_DETECTED,,False
+QD337-Q41,337,6,Tesco’s own brand of clothing label is F&F – what does the F and F stand for?,Florence and Fred,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q42,337,6,"According to the lyrics of the best-selling song of 1973, how many yellow ribbons were tied round the old oak tree?",100,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q43,337,6,"In literature, the collection of Middle Eastern tales called ‘One Thousand and One Nights’ is also known by what name?",Arabian Nights,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q44,337,6,What type of nut is used to make macaroons?,Almond,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q45,337,6,"In fashion, who unveiled her first collection in New York in 2008, at the time regarded as a ‘novelty’ and dubbed the world’s worst dressed celebrity?",Victoria Beckham,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q46,337,6,‘Love Never Dies’ is the sequel to which stage musical?,Phantom of the Opera,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q47,337,6,Which leader’s invasion of Kuwait in 1990 led to the start of the first Gulf War?,Saddam Hussein,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q48,337,6,Which film features Arnold Schwarzenegger as a male scientist who agrees to become the world’s first pregnant man?,Junior,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q49,337,6,"On a standard Monopoly board, how many different colours represent street properties?",Eight,typed,1,NO_MATCH_DETECTED,,False
+QD337-Q50,337,6,"After escaping from prison in 1963, Great Train Robber Ronnie Biggs spent his time on the run leading a playboy lifestyle in which (South American) country?",Brazil,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q01,338,1,William H. Bonney was a 19th century gunman who became a frontier outlaw in the American Old West – by what name was he better known?,Billy The Kid,written,1,NO_MATCH_DETECTED,,False
+QD338-Q02,338,1,Which African country is regarded as the spiritual home of the Rastafarian religious movement?,Ethiopia,written,1,NO_MATCH_DETECTED,,False
+QD338-Q03,338,1,Who won ‘Britain’s Got Talent’ the year Susan Boyle came second?,Diversity,written,1,NO_MATCH_DETECTED,,False
+QD338-Q04,338,1,(Based on a Charles Dickens novel) In which musical did Harry Secombe play the role of ‘Mr Bumble’?,Oliver!,written,1,NO_MATCH_DETECTED,,False
+QD338-Q05,338,1,‘Tossed Salad and Scrambled Eggs’ was the closing theme song on which long-running U.S. sitcom?,Frasier,written,1,NO_MATCH_DETECTED,,False
+QD338-Q06,338,1,"Which British compulsory activity was extended from 18 months to 2 years in 1950, and finally abolished in 1960?",National Service,written,1,NO_MATCH_DETECTED,,False
+QD338-Q07,338,1,Which car manufacturer has a logo featuring a red cross and a green snake?,Alfa Romeo,written,1,NO_MATCH_DETECTED,,False
+QD338-Q08,338,1,On what peninsula do Spain and Portugal lie?,Iberian,written,1,NO_MATCH_DETECTED,,False
+QD338-Q09,338,1,Which aquatic perennial flower is also the national plant of India and Vietnam?,Lotus,written,1,NO_MATCH_DETECTED,,False
+QD338-Q10,338,1,"Recorded and used as a theme for her 1960’s TV series, which hit for Cilla Black was written by Paul McCartney?",Step Inside Love,written,1,NO_MATCH_DETECTED,,False
+QD338-Q11,338,2,Which 1979 low-budget film made Mel Gibson a household name?,Mad Max,written,1,NO_MATCH_DETECTED,,False
+QD338-Q12,338,2,"In the rock opera ‘Jesus Christ Superstar’, which character sings the ballad ‘I Don’t Know How To Love Him’?",Mary Magdalene,written,1,NO_MATCH_DETECTED,,False
+QD338-Q13,338,2,"Launched in the UK in 1977 by Smiths, which baked corn snack packs were advertised as ‘The Biggest Snack Pennies Can Buy’?",Monster Munch,written,1,NO_MATCH_DETECTED,,False
+QD338-Q14,338,2,Which French mime artist was famous for his stage persona of ‘Bip the Clown’?,Marcel Marceau,written,1,NO_MATCH_DETECTED,,False
+QD338-Q15,338,2,"According to the lyrics of a folk song, which fishmonger sold cockles and mussels from her barrow which she wheeled through the streets of Dublin city?",Molly Malone,written,1,NO_MATCH_DETECTED,,False
+QD338-Q16,338,3,A classic TV ad for which product features Rowan Atkinson playing his famous Mr Bean character as a hopeless Kung Fu Master in ancient China?,(With the tagline ‘You’re not you when you’re hungry’) Snickers,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q17,338,3,Which insects’ powerful leg muscles enable them to jump up to 200 times their own body length?,Flea,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q18,338,3,"David Cameron and Tony Blair were both aged 43 when they became Prime Minister of the UK, but which of them was youngest when they did it?",David Cameron,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q19,338,3,"In athletics, what is the last throwing event in a decathlon?",Javelin,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q20,338,3,Which ancient philosopher is often fictitiously attributed to being responsible for sayings such as ‘he who has sharp tongue cuts own throat’ and ‘squirrel who runs up woman’s leg not find nuts’?,Confucius,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q21,338,3,What is Britain’s fastest land mammal?,Hare,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q22,338,3,"In the human body, what is the main constituent of hair and nails?",Keratin,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q23,338,3,"In a famous poem by Samuel Taylor Coleridge, where was a stately pleasure-dome built according to the decree of Kubla Khan?",Xanadu,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q24,338,3,Which chemical is released into a hay fever sufferer that results in a runny nose and other allergy related symptoms?,Histamine,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q25,338,3,The logo for Apple Mac is an apple with a bite taken out of which side?,Right,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q26,338,4,What was the only solo UK number one hit for 1980’s star ‘Adam Ant’?,Goody Two Shoes,written,1,NO_MATCH_DETECTED,,False
+QD338-Q27,338,4,How many American States are comprised of two words?,Ten,written,1,NO_MATCH_DETECTED,,False
+QD338-Q28,338,4,"Set in a fictional age of cavemen and dinosaurs, which film begins with the narrator announcing ‘This is a story of long, long ago; when the world was just beginning’?",One Million Years B.C.,written,1,NO_MATCH_DETECTED,,False
+QD338-Q29,338,4,What is the recommended number of people to take part in a game of Scrabble?,Four,written,1,NO_MATCH_DETECTED,,False
+QD338-Q30,338,4,"Which TV series, starring Lee Majors, led to a spin-off series starring Lyndsay Wagner?",Six Million Dollar Man (Bionic Woman),written,1,NO_MATCH_DETECTED,,False
+QD338-Q31,338,4,"The Supremes had a UK number one hit in 1964 with ‘Baby Love’, it would take another ten years for the next all-female group to hit the top spot – who were they?",Three Degrees,written,1,NO_MATCH_DETECTED,,False
+QD338-Q32,338,4,"Under FA rules, a match has to be abandoned if a side has less than how many players?",Seven,written,1,NO_MATCH_DETECTED,,False
+QD338-Q33,338,4,"In the lyrics of the 1982 Human League song ‘Don't You Want Me’, how many years had the couple been together?",Five,written,1,NO_MATCH_DETECTED,,False
+QD338-Q34,338,4,How many holes are there on the playing surface of a bar billiards table?,Nine,written,1,NO_MATCH_DETECTED,,False
+QD338-Q35,338,4,How many sides does the Great Pyramid of Giza have?,Eight,written,1,NO_MATCH_DETECTED,,False
+QD338-Q36,338,5,What name is given to the metal identification plate worn on a chain round the neck by members of the armed forces?,Dog Tags,written,1,NO_MATCH_DETECTED,,False
+QD338-Q37,338,5,What was the former name of the counselling service offered to people in relationships that is now known as Relate?,The Marriage Guidance Council,written,1,NO_MATCH_DETECTED,,False
+QD338-Q38,338,5,Which famous poem includes the line ‘Into the valley of death rode the 600’?,Charge Of The Light Brigade,written,1,NO_MATCH_DETECTED,,False
+QD338-Q39,338,5,As in the title of a UK number one hit for Shakin’ Stevens in 1981 – what colour was the door?,Green (Door),written,1,NO_MATCH_DETECTED,,False
+QD338-Q40,338,5,The Link?,"Dog, Council, Light, Green - Words that go before/types of House",written,1,NO_MATCH_DETECTED,,False
+QD338-Q41,338,6,The 38th parallel is the dividing line between which two countries?,North and South Korea,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q42,338,6,"St. Marys, St. Agnes and St. Martin’s are three of the five inhabited islands of which British group?",Isles of Scilly,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q43,338,6,In which decade is the 1970's musical ‘Grease’ set?,1950’s,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q44,338,6,Quinine was originally developed as a medicine to fight which disease?,Malaria,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q45,338,6,In which month do the French celebrate Bastille Day?,July (14th),typed,1,NO_MATCH_DETECTED,,False
+QD338-Q46,338,6,What is the main flavour of the Italian dessert Tiramisu?,Coffee,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q47,338,6,"In Greek mythology, a Griffin is a cross between which two animals?",Lion / Eagle,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q48,338,6,"Which standard piece of sporting equipment is made using 20 Hexagons, 12 Pentagons, and weighs around 15 ounces?",Football,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q49,338,6,"Which country has the time zones Eastern, Central, Mountain and Pacific?",United States,typed,1,NO_MATCH_DETECTED,,False
+QD338-Q50,338,6,Which elite military force feature in the plot of the 1967 film ‘Carry On Follow That Camel’?,French Foreign Legion,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q01,343,1,"The subject of a 2017 film, which tennis player beat Bobby Riggs in the so-called ‘Battle of the Sexes’ match in 1973?",Billie Jean King,written,1,NO_MATCH_DETECTED,,False
+QD343-Q02,343,1,The logo for which U.S. film studio features a picture of the planet Earth against a starry sky?,Universal,written,1,NO_MATCH_DETECTED,,False
+QD343-Q03,343,1,What name is given to the device that steers a boat?,Rudder,written,1,NO_MATCH_DETECTED,,False
+QD343-Q04,343,1,Which well-established insurer changed its name to Aviva in 2009?,Norwich Union,written,1,NO_MATCH_DETECTED,,False
+QD343-Q05,343,1,"In fiction, Doctor Octopus is a highly intelligent but mad scientist who is a prominent enemy of which superhero?",Spiderman,written,1,NO_MATCH_DETECTED,,False
+QD343-Q06,343,1,What kind of gas is used to inflate aircraft tyres?,Nitrogen,written,1,NO_MATCH_DETECTED,,False
+QD343-Q07,343,1,"Which former first lady, married to a dictator and former president of the Philippines, is infamous for her collection of up to 3,000 pair of shoes?",Imelda Marcos,written,1,NO_MATCH_DETECTED,,False
+QD343-Q08,343,1,What nationality was composer and big band leader James Last?,German,written,1,NO_MATCH_DETECTED,,False
+QD343-Q09,343,1,First aired in 2004 which medical drama is set at the fictional Princeton-Plainsboro Teaching Hospital?,House,written,1,NO_MATCH_DETECTED,,False
+QD343-Q10,343,1,Which river forms a natural border between Devon and Cornwall?,Tamar,written,1,NO_MATCH_DETECTED,,False
+QD343-Q11,343,2,Which is bigger – a dessert spoon or a tablespoon?,Tablespoon,written,1,NO_MATCH_DETECTED,,False
+QD343-Q12,343,2,What time do polling stations close in UK General Elections – 9 or 10pm?,10pm,written,1,NO_MATCH_DETECTED,,False
+QD343-Q13,343,2,In ballroom dancing etiquette should a man offer his right or left hand to a woman as an invitation to dance?,His Left,written,1,NO_MATCH_DETECTED,,False
+QD343-Q14,343,2,Is the Pantheon in Rome or Athens?,Rome,written,1,NO_MATCH_DETECTED,,False
+QD343-Q15,343,2,The first of which series of films was released the earliest - Star Wars or Planet of the Apes?,"Planet of the Apes, 1968",written,1,NO_MATCH_DETECTED,,False
+QD343-Q16,343,3,A Grandmaster is the highest title which can be given to an extremely good player of which game?,Chess,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q17,343,3,Which Bond film featured a partially reusable orbital spacecraft system modelled on the real-life Space Shuttle?,Moonraker,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q18,343,3,"Which English city gives its name to a type of shoe, shirt and trousers?",Oxford,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q19,343,3,What was the term popularized by Winston Churchill for the imaginary boundary dividing Europe between the capitalist West and the communist East?,The Iron Curtain,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q20,343,3,"As played by Una Stubbs, which character was the love interest of Worzel Gummidge in the TV series of the same name?",Aunt Sally,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q21,343,3,"For a point each, which three U.S. states have just five letters in their name?","Texas, Maine, Idaho",typed,1,NO_MATCH_DETECTED,,False
+QD343-Q22,343,3,What was the title of the 1980 top ten UK hit for Dennis Waterman that was the theme tune to the hit series ‘Minder’?,I Could Be So Good For You,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q23,343,3,Jonquil is a shade of which colour?,Yellow,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q24,343,3,"Between 1870 and 1877, the famous cargo ship ‘Cutty Sark’ carried 10 million lbs of which product?",Tea,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q25,343,3,How many of the Ten Commandments are instructions not to do something?,"Eight (The eight things you should not do - worship other gods, make false idols, misuse name of the lord, commit murder, commit adultery, steal, give false evidence, be envious of neighbours)",typed,1,NO_MATCH_DETECTED,,False
+QD343-Q26,343,4,"Which one word connects a Greek hero, a famous football team and a term used in computer programming?",Ajax,written,1,NO_MATCH_DETECTED,,False
+QD343-Q27,343,4,"Common in Eastern Europe and across Russia, which vegetable is the soup ‘Borscht’ made from?",Beetroot,written,1,NO_MATCH_DETECTED,,False
+QD343-Q28,343,4,For which 2002 film did Catherine Zeta-Jones win an Oscar for Best Supporting Actress (while Renee Zellweger was nominated for Best Actress in a Leading Role)?,Chicago,written,1,NO_MATCH_DETECTED,,False
+QD343-Q29,343,4,What common condition has the scientific name Seborrheic Dermatitis?,Dandruff,written,1,NO_MATCH_DETECTED,,False
+QD343-Q30,343,4,"Which seaside resort is immediately east of Beachy Head, the highest chalk sea cliff in Great Britain?",Eastbourne,written,1,NO_MATCH_DETECTED,,False
+QD343-Q31,343,4,What type of acid is found in the sprayed venom of some ant species?,Formic,written,1,NO_MATCH_DETECTED,,False
+QD343-Q32,343,4,Which fictional character was shipwrecked when a boat named the ‘Antelope’ sank?,Gulliver,written,1,NO_MATCH_DETECTED,,False
+QD343-Q33,343,4,"Although not technically the correct answer, what is generally thought to be the first word spoken from the lunar module that landed on the moon in 1969?",Houston,written,1,NO_MATCH_DETECTED,,False
+QD343-Q34,343,4,Which BBC quiz show shares its name with a 2012 UK number one hit from a former ‘X-Factor’ winner?,Impossible (James Arthur),written,1,NO_MATCH_DETECTED,,False
+QD343-Q35,343,4,"Which frozen orange juice drink, distinctive due to its triangular shaped carton, had a slogan which was later written into the script of ‘Only Fools and Horses’ which in turn became a popular catchphrase of Del Boy’s?",Jubbly,written,1,NO_MATCH_DETECTED,,False
+QD343-Q36,343,5,"According to its marketing campaign, it takes six steps and 119.5 seconds to achieve the perfect what?",Pint of Guinness,written,1,NO_MATCH_DETECTED,,False
+QD343-Q37,343,5,Sir David Hempleman-Adams is a record breaking adventurer; among his achievements he was the first person to climb the highest peaks in all seven continents and was the first to reach the North Pole in what type of transport?,Hot Air Balloon,written,1,NO_MATCH_DETECTED,,False
+QD343-Q38,343,5,What is the national flower of the Netherlands?,Tulip,written,1,NO_MATCH_DETECTED,,False
+QD343-Q39,343,5,What was the subtitle of the Harry Potter book which featured the ‘Triwizard Tournament’ – a magical contest between the three largest wizarding schools of Europe?,The Goblet of Fire,written,1,NO_MATCH_DETECTED,,False
+QD343-Q40,343,5,The Link?,"Pint, Balloon, Tulip, Goblet Types of Glasses",written,1,NO_MATCH_DETECTED,,False
+QD343-Q41,343,6,In which quiz show can contestants become members of the ‘200’ club?,Pointless,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q42,343,6,What is the closest French town to England?,Calais,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q43,343,6,"In nature, what name is given to a young bird that has grown enough feathers to fly?",Fledging,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q44,343,6,What type of creature is the cartoon character ‘Speedy Gonzales’?,Mouse,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q45,343,6,Which song from Les Misérables did Susan Boyle sing on her 2009 ‘Britain’s Got Talent’ audition?,I Dreamed A Dream,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q46,343,6,Which 1998 chart-topper for the Spice Girls gave its name to a 2012 short-lived musical based on their songs?,Viva Forever,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q47,343,6,"Which Italian bacon is made of pork belly meat, which is salted, cured and usually spiced with black pepper?",Pancetta,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q48,343,6,Which Lionel Ritchie chart-topper shares its name with a UK magazine?,Hello,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q49,343,6,Which cricket broadcaster and former professional cricketer would you associate with the nickname ‘Aggers’?,Jonathan Agnew,typed,1,NO_MATCH_DETECTED,,False
+QD343-Q50,343,6,"If you spelt out the numbers one to ninety-nine, which would come first alphabetically?",Eight,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q01,344,1,What is the name of the cowboy voiced by Tom Hanks in the ‘Toy Story’ films?,Woody,written,1,NO_MATCH_DETECTED,,False
+QD344-Q02,344,1,"Also known by its former name of Saigon, what is the largest city in Vietnam?",Ho Chi Minh City,written,1,NO_MATCH_DETECTED,,False
+QD344-Q03,344,1,Which French theme park is named after a wing-helmeted comic-strip character (whose adventures involve resisting the Roman occupation of a village of Gauls in 50BC)?,Asterix,written,1,NO_MATCH_DETECTED,,False
+QD344-Q04,344,1,"Often caused by overuse of muscles of the forearm, what is the medical condition lateral epicondylitis more commonly known as?",Tennis Elbow,written,1,NO_MATCH_DETECTED,,False
+QD344-Q05,344,1,"The Gangnam District, as made famous by PSY’s 2012 smash hit, is one the local government districts that make up which South Korean city?",Seoul,written,1,NO_MATCH_DETECTED,,False
+QD344-Q06,344,1,"In astronomy Polaris, also known as The North Star, is the brightest star in which constellation?",Ursa Minor,written,1,NO_MATCH_DETECTED,,False
+QD344-Q07,344,1,"Which company produce many globally marketed brands including Ariel, Fairy, Gillette and Pampers?",Procter & Gamble,written,1,NO_MATCH_DETECTED,NAME_SPELLING,True
+QD344-Q08,344,1,Which Hindu festival is also known as ‘The Festival of Lights’?,Diwali,written,1,NO_MATCH_DETECTED,,False
+QD344-Q09,344,1,"In music, which group had hits in the late 1970’s and early 1980’s with ‘Going Back To My Roots’, ‘Native New Yorker’ and ‘Use It Up And Wear It Out’?",Odyssey,written,1,NO_MATCH_DETECTED,,False
+QD344-Q10,344,1,What name is given to a young male horse?,Colt,written,1,NO_MATCH_DETECTED,,False
+QD344-Q11,344,2,Which 2018 live-action/computer animated comedy film caused a storm of protest on social media due to a scene showing the title character and his friends hurling blackberries at a character who had an allergy to them?,Peter Rabbit,written,1,NO_MATCH_DETECTED,,False
+QD344-Q12,344,2,Which global tools company was founded in 1843 and is particularly noted for its manufacture of hand- tools?,Stanley,written,1,NO_MATCH_DETECTED,ANSWER_ERROR,True
+QD344-Q13,344,2,Which three-word phrase describes a statement of basic laws that are meant to ensure a country’s citizens have justice and fairness?,Bill of Rights,written,1,NO_MATCH_DETECTED,,False
+QD344-Q14,344,2,"Well-known for her skill at comedy improvisation from the TV series ‘Whose Line Is It Anyway’, who went on to play the role of Manda Best in EastEnders?",Josie Lawrence,written,1,NO_MATCH_DETECTED,,False
+QD344-Q15,344,2,"Which retailer once claimed to be ‘The Empire’s Largest Jeweller’, and according to its website has provided ‘quality jewellery at affordable prices for over 150 years’?",H. Samuel,written,1,NO_MATCH_DETECTED,,False
+QD344-Q16,344,3,Which Cornwall town is both home to a Tate Gallery and the subject of a nursery rhyme?,St Ives,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q17,344,3,Which mountain range was formed by the collision of the Indian plate into the Eurasian plate?,Himalayas,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q18,344,3,"Which six-letter word connects a David Bowie song title, the name of an old sailing ship, a 1981 film starring Henry Fonda and a classic quiz hosted by Bob Monkhouse?",Golden,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q19,344,3,"Better known as a ‘Strictly Come Dancing’ judge, who appeared in the video of Elton John’s 1983 hit ‘I’m Still Standing’?",Bruno Tonioli,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q20,344,3,What nickname was given to the English crime gang of the late 1950’s and 1960’s led by twins Ronnie and Reggie Kray?,The Firm,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q21,344,3,"In science, which element is common to all acids?",Hydrogen,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q22,344,3,Which seaside resort made history on 1 April 1980 when it opened the first English naturist beach?,Brighton,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q23,344,3,"Usually played at the end of a church wedding, who composed ‘The Wedding March’?",Mendelssohn (Felix),typed,1,NO_MATCH_DETECTED,,False
+QD344-Q24,344,3,Which British tennis player won the 1976 Women’s French Open singles title?,Sue Barker,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q25,344,3,"According to a well-known proverb, what is it that makes the heart grow fonder?",Absence,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q26,344,4,Which Shakespeare play features the two feuding families of the Montagues and the Capulets?,Romeo and Juliet,written,1,NO_MATCH_DETECTED,,False
+QD344-Q27,344,4,In which 1982 film does Julie Andrews play a struggling female soprano who finds her life complicated after posing as a man who finds work as a male female impersonator?,Victor Victoria,written,1,NO_MATCH_DETECTED,,False
+QD344-Q28,344,4,Which Australian singer played the role of ‘Nina Tucker’ in Neighbours?,Delta Goodrem,written,1,NO_MATCH_DETECTED,,False
+QD344-Q29,344,4,"With a tagline of ‘He Talks’, who directed, produced, wrote and starred in the 1940 film ‘The Great Dictator’?",Charlie Chaplin,written,1,NO_MATCH_DETECTED,,False
+QD344-Q30,344,4,From the 1980’s which then BBC Radio 1 DJ refused to play ‘Relax’ by Frankie Goes To Hollywood’ because of the single’s controversial artwork and lyrics?,Mike Read,written,1,NO_MATCH_DETECTED,,False
+QD344-Q31,344,4,The Lotus flower is the national symbol of which country?,India,written,1,NO_MATCH_DETECTED,,False
+QD344-Q32,344,4,"Which World Championship competition involves the competitors having to navigate through lighthouses, windmills and water wheels?",World Crazy Golf,written,1,NO_MATCH_DETECTED,,False
+QD344-Q33,344,4,From the lyrics of a well-known children’s song who stuck a feather in his hat and called it macaroni?,Yankee Doodle,written,1,NO_MATCH_DETECTED,,False
+QD344-Q34,344,4,"Which classic American ballroom dance is characterized by long, continuous flowing movements across the dance floor, usually to the sounds of a big band?",Foxtrot,written,1,NO_MATCH_DETECTED,,False
+QD344-Q35,344,4,In Greek Mythology who became so broken hearted when Narcissus rejected her that she pined away until only her voice remained?,Echo,written,1,NO_MATCH_DETECTED,,False
+QD344-Q36,344,5,"Better known as a singer and one half of a (brother and sister) duo, who topped a 1975 Playboy magazine’s annual opinion poll for the Best Rock Drummer of the Year?",Karen Carpenter,written,1,NO_MATCH_DETECTED,,False
+QD344-Q37,344,5,"Known for his quips and put-downs, on whose daytime TV series would you hear the phrase ‘I can smell a lie like a fart in a lift’?",Judge Rinder,written,1,NO_MATCH_DETECTED,,False
+QD344-Q38,344,5,Which British comedian released a 1970’s record of ‘We’ll Meet Again’ as an ‘A’ side and a humorous version of ‘The Sheik of Araby’ on the ‘B’ side (he also had a top 40 hit in 1961 with ‘Don’t Jump Off The Roof Dad’),Tommy Cooper,written,1,NO_MATCH_DETECTED,,False
+QD344-Q39,344,5,Which popular children’s character owns a cat called Pilchard?,Bob The Builder,written,1,NO_MATCH_DETECTED,,False
+QD344-Q40,344,5,The Link?,"Carpenter, Judge, Cooper, Builder Occupations",written,1,NO_MATCH_DETECTED,,False
+QD344-Q41,344,6,What type of harmful rays does the Earth’s ozone layer protect us from?,Ultraviolet,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q42,344,6,"What type of creature can be blue, king, spider or fiddler?",Crab,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q43,344,6,Which street in central London is particularly known for its traditional bespoke tailoring for men?,Saville Row,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q44,344,6,How many stars are there on the flag of China?,Five,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q45,344,6,Feyenoord football club is based in what Dutch city?,Rotterdam,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q46,344,6,"Which Andrew Lloyd Webber musical features the songs ‘The Perfect Year’, ‘Let’s Have Lunch’ and ‘The Greatest Star of All’?",Sunset Boulevard,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q47,344,6,"What word is used to describe a type of wine that is intense, full-bodied and high in alcohol?",Robust,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q48,344,6,Which boy band of the 1980’s share their name with the first number plate ever registered in the UK?,A1,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q49,344,6,Peacocks are unable to fly – is that true or false?,False,typed,1,NO_MATCH_DETECTED,,False
+QD344-Q50,344,6,"A box-office hit in both America and the UK, which 1979 British film was banned in Norway, with the filmmakers using the notoriety to promote the film in Sweden with posters reading ‘The film so funny it was banned in Norway!’?",Monty Python’s Life of Brian,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q01,345,1,"What is the proper name given to a person who makes, or sells, women’s hats?",Milliner,written,1,NO_MATCH_DETECTED,,False
+QD345-Q02,345,1,"Born in 1977, which cricketer was awarded the freedom of the city of Preston in 2005?",Andrew Flintoff,written,1,NO_MATCH_DETECTED,,False
+QD345-Q03,345,1,What word refers to one-billionth of a second?,Nanosecond,written,1,NO_MATCH_DETECTED,,False
+QD345-Q04,345,1,What name is given to the cuisine of the deep south of the USA?,Cajun,written,1,NO_MATCH_DETECTED,,False
+QD345-Q05,345,1,Which Caribbean island is divided politically into the Dominican Republic and Haiti?,Hispaniola,written,1,NO_MATCH_DETECTED,,False
+QD345-Q06,345,1,Which book of the Old Testament shares its name with the title of a classic 1977 album by Bob Marley and the Wailers?,Exodus,written,1,NO_MATCH_DETECTED,,False
+QD345-Q07,345,1,"Which word describes the explosive death of a star, which unleashes a burst of light through the cosmos?",Supernova,written,1,NO_MATCH_DETECTED,,False
+QD345-Q08,345,1,"Created in 1929, which cartoon character is famed for his exotic adventures exposing skulduggery across the world?","(created by Belgian cartoonist Georges Remi, better known as Herge) Tintin",written,1,NO_MATCH_DETECTED,,False
+QD345-Q09,345,1,"Described by Winston Churchill as ‘the end of the beginning’, in which country did the WWII battle of El Alamein take place?",Egypt,written,1,NO_MATCH_DETECTED,,False
+QD345-Q10,345,1,Which Oscar nominated actor had a 1968 UK top ten hit with ‘Macarthur Park’?,Richard Harris,written,1,NO_MATCH_DETECTED,,False
+QD345-Q11,345,2,"(A Eurovision song contest winner,) who is the only British solo female singer to have three UK number one hits in the 1960’s?","Sandie Shaw (1964 (There’s) Always Something There to Remind Me, 1965 Long Live Love, 1967 Puppet On A String)",written,1,NO_MATCH_DETECTED,,False
+QD345-Q12,345,2,Which fictional detective went in search of The Maltese Falcon?,Sam Spade,written,1,NO_MATCH_DETECTED,,False
+QD345-Q13,345,2,Which TV comedy panel game show featured a round called 'The Dove from Above'?,Shooting Stars,written,1,NO_MATCH_DETECTED,,False
+QD345-Q14,345,2,In fashion history which once popular brightly coloured polyester trouser and jacket outfits went on to be voted the worst fashion crime of the 1980’s?,Shell Suits,written,1,NO_MATCH_DETECTED,,False
+QD345-Q15,345,2,"Who starred as an ex-Navy Seal turned cook in the 1992 film ‘Under Siege’, fighting to stop a group of terrorists when they seize control of a U.S. battleship?",Steven Seagal,written,1,NO_MATCH_DETECTED,,False
+QD345-Q16,345,3,In advertising which insurance company would you associate with a red phone on wheels?,Direct Line,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q17,345,3,"On a standard computer keyboard what number, along with shift, would you press to type a pound sign?",3,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q18,345,3,In the human body what is the correct name for the shinbone?,Tibia,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q19,345,3,What is the name of the beautiful gypsy dancing girl who features in Victor Hugo’s ‘The Hunchback of Notre-Dame’?,Esmerelda,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q20,345,3,Which British drama was based around the fictional Premier League football club Earls park FC?,Footballers Wives,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q21,345,3,The name of which popular 1950’s singer is mentioned in the opening line of ‘Dexy’s Midnight Runners’ 1982 number one hit ‘Come On Eileen’?,Johnnie Ray,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q22,345,3,Whitehaven Mansions is the London address of which famous fictional detective?,Hercule Poirot,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q23,345,3,Which 2011 hit for Cher Lloyd contains the name of a Rolling Stone?,Swagger Jagger,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q24,345,3,The Seychelles are located in which ocean?,Indian Ocean,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q25,345,3,Is an icicle classed as a stalagmite or a stalactite?,Stalactite,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q26,345,4,Which seaside resort is the biggest of the Fylde coast town centres?,Blackpool,written,1,NO_MATCH_DETECTED,,False
+QD345-Q27,345,4,Which city would you be in if you were taking a tour round the Jorvik Viking Centre?,York,written,1,NO_MATCH_DETECTED,,False
+QD345-Q28,345,4,Which English county has the longest coastline?,Cornwall,written,1,NO_MATCH_DETECTED,,False
+QD345-Q29,345,4,What is the longest river that is completely located in England?,River Thames,written,1,NO_MATCH_DETECTED,,False
+QD345-Q30,345,4,Which King of England had the nickname ‘The Merry Monarch’?,Charles II,written,1,NO_MATCH_DETECTED,,False
+QD345-Q31,345,4,"Under which London landmark did the Victorians plant a time capsule that included children’s toys, a razor, copies of the bible and a Bradshaw Railway Guide?",Cleopatra’s Needle,written,1,NO_MATCH_DETECTED,,False
+QD345-Q32,345,4,According to legend which 11th century Viking King of England had his throne carried down to the shore and ordered the waves not to break upon his land?,King Canute,written,1,NO_MATCH_DETECTED,,False
+QD345-Q33,345,4,In which county are all ten of England's highest peaks?,Cumbria,written,1,NO_MATCH_DETECTED,,False
+QD345-Q34,345,4,"Which is further north, Southport or Northampton?",Southport,written,1,NO_MATCH_DETECTED,,False
+QD345-Q35,345,4,"One of England’s oldest visitor attractions, the birthplace of which prophetess is located within historic woodland along the River Nidd situated next to the Petrifying Well (in Knaresborough, North Yorkshire)?",Mother Shipton,written,1,NO_MATCH_DETECTED,,False
+QD345-Q36,345,5,"What name is given to an elongated pointed tooth, usually one of a pair, that extends from the outside of the mouth of certain animals such as a walrus or elephant?",Tusk,written,1,NO_MATCH_DETECTED,,False
+QD345-Q37,345,5,"Under the leadership of Geronimo, who were the last North American Indian people to surrender to European settlers?",Apache,written,1,NO_MATCH_DETECTED,,False
+QD345-Q38,345,5,"Running from 2004 to 2012, which crime drama series featured Robert Vaughn as ‘Albert Stroller,’ a veteran con man working with a group of elite con artists who pull off complicated scams with several twists in the process?",Hustle,written,1,NO_MATCH_DETECTED,,False
+QD345-Q39,345,5,"In golf, which European term is called a ‘double-eagle’ in America?",Albatross,written,1,NO_MATCH_DETECTED,,False
+QD345-Q40,345,5,The Link?,"Tusk, Apache, Hustle, Albatross (All Instrumentals) Song Titles",written,1,NO_MATCH_DETECTED,,False
+QD345-Q41,345,6,How are the (husband and wife) comic duo with the first names Janette and Ian better known?,The Krankies,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q42,345,6,On which game show did Bruce Forsythe use the catchphrase ‘What do points make’?,Play Your Cards Right,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q43,345,6,In 1989 where in Beijing did students stage an unsuccessful protest featuring a famous confrontation with a tank?,Tiananmen Square,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q44,345,6,Which large dung beetle of the eastern Mediterranean area was regarded as sacred in Egypt?,Scarab,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q45,345,6,What is the total distance run by a heptathlon athlete in the three track events in which the compete?,1100 metres,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q46,345,6,"Besides missing England penalties footballers Stuart Pearce, Chris Waddle and Gareth Southgate all famously appeared in a 1990’s TV advert for which food chain?",Pizza Hut,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q47,345,6,"In the lyrics of the song ‘Aquarius’ from the musical ‘Hair’, the moon is said to be in what house?","(When the moon is in the Seventh House, and Jupiter aligns with Mars) Seventh",typed,1,NO_MATCH_DETECTED,,False
+QD345-Q48,345,6,Which Liverpool comedian had a million-selling UK number one hit in 1965?,Ken Dodd (Tears),typed,1,NO_MATCH_DETECTED,,False
+QD345-Q49,345,6,"‘The Big X’, ‘The Scrounger’, ‘The Forger’ and ‘The Mole’ were all nicknames given to characters in which Oscar nominated 1963 film?",The Great Escape,typed,1,NO_MATCH_DETECTED,,False
+QD345-Q50,345,6,In the James Bond novels who is head of the fictional research and development of the British Secret Service?,Q,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q01,346,1,Blue fin and skipjack are both types of what?,Tuna,written,1,NO_MATCH_DETECTED,,False
+QD346-Q02,346,1,Who played the role of ‘Grizabella’ in the original 1981 London production of Andrew Lloyd Webber’s musical ‘Cats’?,Elaine Paige,written,1,NO_MATCH_DETECTED,,False
+QD346-Q03,346,1,"Originally written, performed and recorded by Neil Diamond, which song was a UK chart-topper in 1983 for UB40?",Red Red Wine,written,1,NO_MATCH_DETECTED,,False
+QD346-Q04,346,1,In which Lancashire town was the modern Cooperative Movement founded?,Rochdale,written,1,NO_MATCH_DETECTED,,False
+QD346-Q05,346,1,"Known for comedic spoofs of pop songs, what is the surname of ‘Weird Al’?",Yankovic,written,1,NO_MATCH_DETECTED,,False
+QD346-Q06,346,1,"Before adopting the Euro in 1999, what was the currency of Austria?",Schilling,written,1,NO_MATCH_DETECTED,,False
+QD346-Q07,346,1,What name is common to the state capital of Ohio and a famous 15th century explorer?,Columbus,written,1,NO_MATCH_DETECTED,,False
+QD346-Q08,346,1,"Which nursery rhyme features the line ‘Nine, ten, a big fat hen’?",One Two Buckle My Shoe,written,1,NO_MATCH_DETECTED,,False
+QD346-Q09,346,1,In which east African country is Mount Kilimanjaro?,Tanzania,written,1,CONFIRMED_DUPLICATE,,False
+QD346-Q10,346,1,Which seven-letter word can be both part of a ship and a cut of beef?,Topside,written,1,NO_MATCH_DETECTED,,False
+QD346-Q11,346,2,Which 2005 film starred Christian Bale in the lead role and Cillian Murphy as a villain known as ‘The Scarecrow’?,Batman Begins,written,1,NO_MATCH_DETECTED,,False
+QD346-Q12,346,2,What are the first names of Fred and Wilma’s neighbours in ‘The Flintstones’?,Barney / Betty,written,1,NO_MATCH_DETECTED,,False
+QD346-Q13,346,2,"Great Britain’s Fred Perry won three consecutive Wimbledon men’s singles’ titles in the 1930’s – who was the next tennis player to equal, then surpass, that record?",Bjorn Borg,written,1,NO_MATCH_DETECTED,,False
+QD346-Q14,346,2,Which UK investment company collapsed after broker Nick Leeson lost $1.3 billion on the Tokyo stock exchange in 1995?,Barings Bank,written,1,NO_MATCH_DETECTED,,False
+QD346-Q15,346,2,What class of medications are predominantly used to manage abnormal heart rhythms?,Beta Blockers,written,1,NO_MATCH_DETECTED,,False
+QD346-Q16,346,3,What name connects a space hero from the 25th century and an American slang term for a dollar?,Buck,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q17,346,3,"In the human body, what type of acid is produced during power exercises such as sprinting?",Lactic Acid,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q18,346,3,Which Japanese company derived its name from the Latin word for sound?,Sony (Sonus),typed,1,NO_MATCH_DETECTED,,False
+QD346-Q19,346,3,Which Simon and Garfunkel hit is famous for its inclusion in the 1967 film ‘The Graduate’?,Mrs Robinson,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q20,346,3,What type of nut is used in the making of Satay Sauce?,Peanut,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q21,346,3,Who is the only female character to appear in the Winne-the-Pooh books?,Kanga,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q22,346,3,"Which BBC children’s TV series was filmed in Tobermory, chosen for its location, colourful waterfront and, more importantly, its multi-coloured houses?",Balamory,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q23,346,3,Who was Prime Minister of the UK when Roger Bannister broke the four-minute mile?,Winston Churchill (1954),typed,1,NO_MATCH_DETECTED,,False
+QD346-Q24,346,3,Followers of which so-called religion believe that people are immortal spiritual beings who have forgotten their true nature?,Scientology,typed,1,NO_MATCH_DETECTED,WORDING_TYPO,True
+QD346-Q25,346,3,Which 2001 TV documentary was the sequel to the Emmy award winning ‘Walking With Dinosaurs’?,Walking With Beasts,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q26,346,4,"If 10 is Tin, 20 China and 30 Pearl, what is 40?",Ruby,written,1,NO_MATCH_DETECTED,,False
+QD346-Q27,346,4,In which city does football club Lazio play its home matches?,Rome,written,1,NO_MATCH_DETECTED,,False
+QD346-Q28,346,4,"In horse racing, what is the shortest winning distance a horse can be placed?",Nose,written,1,NO_MATCH_DETECTED,,False
+QD346-Q29,346,4,Irish-American actress Maureen O’Sullivan is probably best-known for playing which role in a series of films (that also starred Johnny Weissmuller)?,Jane,written,1,NO_MATCH_DETECTED,,False
+QD346-Q30,346,4,What is removed from natural yogurt to produce Greek yogurt?,Whey,written,1,NO_MATCH_DETECTED,,False
+QD346-Q31,346,4,What is the largest and lowest-pitched musical instrument in the brass family?,Tuba,written,1,NO_MATCH_DETECTED,,False
+QD346-Q32,346,4,"Associated with sailors, what word is shouted in order to draw attention to something from a distance?",Ahoy,written,1,NO_MATCH_DETECTED,,False
+QD346-Q33,346,4,"Once ruled by the Romans, what was the ancient name for the region of Europe including what is now modern-day France, parts of Belgium, western Germany and Northern Italy?",Gaul,written,1,NO_MATCH_DETECTED,,False
+QD346-Q34,346,4,What is the name of the large desert situated in China and Mongolia?,Gobi,written,1,NO_MATCH_DETECTED,,False
+QD346-Q35,346,4,"As played by John Travolta in ‘Grease’, what is the surname of Danny?",Zuko,written,1,NO_MATCH_DETECTED,,False
+QD346-Q36,346,5,"Said to come from the sound it makes when being cooked, which traditional dish is made from equal measures of mashed potato and chopped cooked cabbage?",Bubble and Squeak,written,1,NO_MATCH_DETECTED,,False
+QD346-Q37,346,5,What type of accommodation shares its name with a nickname given to a score of 26 in darts?,Bed and Breakfast (From a time when a typical breakfast in England cost 2s 6d (2 shilling and 6 pence)),written,1,NO_MATCH_DETECTED,,False
+QD346-Q38,346,5,Which politician was widely criticised for wearing what appeared to be a Donkey Jacket as he laid his party’s wreath at the Cenotaph on Remembrance Sunday 1981?,Michael Foot,written,1,NO_MATCH_DETECTED,,False
+QD346-Q39,346,5,"Which popular 1970’s group had UK top ten hits with ‘The Cat Crept In’, Oh Boy’ and ‘Dyna-Mite’?",Mud,written,1,NO_MATCH_DETECTED,,False
+QD346-Q40,346,5,The Link?,"Bubble, Bed, Foot, Mud (Type of/words that go before…) Bath",written,1,NO_MATCH_DETECTED,,False
+QD346-Q41,346,6,On which day of the week is Prime Ministers question time in Parliament?,Wednesday,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q42,346,6,"Which man-made, box-like structure shares its name with a hairstyle first created in the 1960’s?",Beehive,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q43,346,6,"Outside of the UK, what is the nearest European capital city to London?",Brussels,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q44,346,6,"In health, what decade were prescription charges first introduced in the UK?",1950’s (1952),typed,1,NO_MATCH_DETECTED,,False
+QD346-Q45,346,6,From the 1970’s ‘Watch out… Watch out there’s a Humphrey about’ became an overnight catchphrase after being used as a publicity slogan for which (Unigate Dairy) product?,Milk,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q46,346,6,Scala and Yeti are car models associated with which manufacturer?,Skoda,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q47,346,6,Who was the first grandchild of King George VI?,Prince Charles,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q48,346,6,In which sport is there an attacking move called a spike (where an attacker jumps into the air and hits the ball in a downward direction towards the opponent)?,Volleyball,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q49,346,6,"As played on film by Martin Clunes, which school subject was taught by a schoolteacher nicknamed ‘Mr Chips’?",Latin,typed,1,NO_MATCH_DETECTED,,False
+QD346-Q50,346,6,"Which James Bond villain owned the fictional island of Crab Key, just off the coast of Jamaica?",Dr No,typed,1,NO_MATCH_DETECTED,,False
