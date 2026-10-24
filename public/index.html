@@ -1405,7 +1405,7 @@ const MUSIC_SOURCES = {
 };
 const FX = new Map();
 const AUDIO_LEVEL = { music: .11, cues: .68 };
-let musicTrack = null, musicName = '', musicTransition = 0;
+let musicTrack = null, musicName = '', musicTransition = 0, fadingTrack = null;
 function playCue(name, volume = .45){
   if (!S.settings.sound || !SOUND_FILES[name]) return;
   try {
@@ -1425,11 +1425,15 @@ function syncMusic(){
   if (!enabled) {
     musicTransition++;
     if (musicTrack) { musicTrack.pause(); musicTrack = null; }
+    if (fadingTrack) { fadingTrack.pause(); fadingTrack = null; }
     musicName = '';
     return;
   }
   const desired = S.finished ? 'victory' : S.lobby ? 'lobby' : S.between ? 'board' : 'tension';
   if (desired === musicName && musicTrack) return;
+  // A cancelled crossfade must not leave its older recording audible.
+  if (fadingTrack && fadingTrack !== musicTrack) fadingTrack.pause();
+  fadingTrack = musicTrack;
   const old = musicTrack;
   const sources = MUSIC_SOURCES[desired];
   const audio = new Audio();
@@ -1451,7 +1455,10 @@ function syncMusic(){
       audio.volume = AUDIO_LEVEL.music * mix;
       if (old) old.volume = AUDIO_LEVEL.music * (1 - mix);
       if (mix < 1) requestAnimationFrame(frame);
-      else if (old) old.pause();
+      else if (old) {
+        old.pause();
+        if (fadingTrack === old) fadingTrack = null;
+      }
     }
     requestAnimationFrame(frame);
   }
