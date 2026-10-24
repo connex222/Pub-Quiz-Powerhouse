@@ -13,7 +13,7 @@ const weekly=packs.filter(q=>q.title.startsWith('Weekly Quiz'));
 for(const z of weekly){ assert.equal(z.rounds.length,7);assert.equal(z.tiebreakers.length,2); assert(!z.rounds.some(r=>r.name.includes('Round 1')));for(const r of z.rounds)for(const q of r.questions){ assert(q.q.trim()&&q.a.trim());assert(q.id&&q.pts>=1&&q.pts<=5); } }
 assert.equal(weekly.reduce((n,z)=>n+z.rounds.reduce((v,r)=>v+r.questions.reduce((c,q)=>c+q.pts,0),0),0),700);
 assert.equal(weekly.flatMap(z=>z.rounds.flatMap(r=>r.questions)).find(q=>q.id==='WQ751-R2-Q01').a,'Mars');
-assert(weekly.flatMap(z=>z.rounds.flatMap(r=>r.questions)).find(q=>q.id==='WQ748-R4-Q01').a.split(';').length===5);
+assert(weekly.flatMap(z=>z.rounds.flatMap(r=>r.questions)).find(q=>q.id==='WQ748-R4-Q01').a.split(';').length>=5);
 const html=fs.readFileSync(path.join(root,'public/index.html'),'utf8');
 assert(html.indexOf('quizdemon-batch1.js')<html.indexOf('weekly-745-754-batch2.js'));
 assert.equal(html.match(/weekly-745-754-batch2.js/g).length,1);

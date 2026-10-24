@@ -1,6 +1,6 @@
 {
   "name": "pub-quiz-powerhouse",
-  "version": "3.3.0-rc.1",
+  "version": "3.4.0-rc.1",
   "description": "Pub Quiz Powerhouse: a quiz night with a TV screen, phone buzzers and a quizmaster console",
   "main": "server.js",
   "private": true,

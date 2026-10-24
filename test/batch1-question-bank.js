@@ -24,9 +24,13 @@ assert(html.includes('src="/question-banks/quizdemon-batch1.js"'));
 const match=html.match(/const BUILTIN_QUIZZES = (\[[^\n]+?\].concat\(window.PQP_IMPORTED_QUIZZES \|\| \[\]\));/);
 assert(match,'original library plus batch1 must be concatenated');
 const all=vm.runInNewContext(match[1],ctx);
-assert.equal(all.length,16,'4 existing + 12 imported quizzes');
-assert.equal(all.slice(0,4).reduce((n,q)=>n+q.rounds.reduce((a,r)=>a+r.questions.length,0),0),200);
-assert.equal(all.slice(4).reduce((n,q)=>n+q.rounds.reduce((a,r)=>a+r.questions.length,0),0),594);
+assert.equal(all.length,18,'6 built-in + 12 imported quizzes');
+assert.equal(all.slice(0,6).reduce((n,q)=>n+q.rounds.reduce((a,r)=>a+r.questions.length,0),0),300);
+assert.equal(all.slice(6).reduce((n,q)=>n+q.rounds.reduce((a,r)=>a+r.questions.length,0),0),594);
+for(const z of all.slice(0,6))for(const r of z.rounds)for(const q of r.questions){assert.equal(q.wrong.length,3,q.q);assert(!q.wrong.includes(q.a),q.q);assert.equal(new Set(q.wrong).size,3,q.q);}
+// Every Link-a-Letter round must still spell its mystery phrase after editorial fixes.
+const ini=a=>String(a).replace(/^\(?(the|a|an)\s+/i,'').replace(/^[^A-Za-z0-9]+/,'')[0].toUpperCase();
+for(const r of allRounds.filter(r=>r.type==='letters')){const want=r.mystery.replace(/[^A-Z]/gi,'').toUpperCase();const got=r.questions.map(q=>String(q.a).replace(/^[^A-Za-z0-9]+/,'')[0].toUpperCase()).join('');assert.equal(got,want,r.id);}
 assert.equal(qs.find(q=>q.id==='QD228-Q18').a,'Illinois');
 assert.equal(qs.find(q=>q.id==='QD101-Q10').a,'Sharron Davies');
 assert.equal(qs.find(q=>q.id==='QD344-Q12').a,'Stanley');

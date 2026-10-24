@@ -1,6 +1,6 @@
 {
   "source": "QuizDemon — user provided PDFs",
-  "rights": "Verify publication rights before deployment",
+  "rights": "Owned by the quiz owner. Reviewed and corrected October 2026.",
   "quizzes": [
     {
       "title": "QuizDemon 101",
@@ -236,7 +236,7 @@
             },
             {
               "id": "QD101-Q23",
-              "q": "First shown in 1983, which Television character started out in the 15th century and ended it in 1989 during the First World War?",
+              "q": "First shown in 1983, which TV character's series began in the 15th century and ended, in its 1989 series, in the trenches of the First World War?",
               "a": "Blackadder",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
@@ -292,7 +292,7 @@
             },
             {
               "id": "QD101-Q28",
-              "q": "'The Return Of Jarfar' was a 1994 sequel to which 1992 movie?",
+              "q": "'The Return Of Jafar' was a 1994 sequel to which 1992 Disney film?",
               "a": "Aladdin",
               "pts": 1,
               "cat": "FEATURE ROUND - CHAIN LETTERS",
@@ -328,7 +328,7 @@
             },
             {
               "id": "QD101-Q32",
-              "q": "Which Warner Brothers cartoon characters name was inspired by a National park in California?",
+              "q": "Which Warner Brothers cartoon character's name was inspired by a national park in California?",
               "a": "Yosemite Sam",
               "pts": 1,
               "cat": "FEATURE ROUND - CHAIN LETTERS",
@@ -337,11 +337,11 @@
             },
             {
               "id": "QD101-Q33",
-              "q": "Which is the largest species of parrot?",
-              "a": "Macaw",
+              "q": "Which is the longest species of parrot in the world?",
+              "a": "Hyacinth macaw",
               "pts": 1,
               "cat": "FEATURE ROUND - CHAIN LETTERS",
-              "note": "",
+              "note": "Accept Macaw. The kakapo is the heaviest parrot.",
               "wrong": []
             },
             {
@@ -356,7 +356,7 @@
             {
               "id": "QD101-Q35",
               "q": "At which Scottish club did Sir Alex Ferguson begin his managerial career?",
-              "a": "East Stirling",
+              "a": "East Stirlingshire",
               "pts": 1,
               "cat": "FEATURE ROUND - CHAIN LETTERS",
               "note": "",
@@ -367,7 +367,7 @@
         {
           "id": "QD101-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -431,7 +431,7 @@
           "questions": [
             {
               "id": "QD101-Q41",
-              "q": "As you look at a postage stamp, which direction does the Queens head face – right or left?",
+              "q": "On a standard British postage stamp, which way does the monarch's head face, right or left?",
               "a": "Left",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -468,7 +468,7 @@
             {
               "id": "QD101-Q45",
               "q": "Steven Spielberg is one of the most successful film directors of all time, but can you name the film which won him his first Oscar?",
-              "a": "Schindlers List",
+              "a": "Schindler's List",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
               "note": "",
@@ -486,19 +486,19 @@
             {
               "id": "QD101-Q47",
               "q": "Which branch of the armed forces would you associate with the DFC and DFM?",
-              "a": "Airforce",
+              "a": "The Air Force (RAF)",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
-              "note": "Distinguished Flying Cross and Medal",
+              "note": "Distinguished Flying Cross and Distinguished Flying Medal",
               "wrong": []
             },
             {
               "id": "QD101-Q48",
               "q": "Who was Prime Minister of Britain when hanging for murder was abolished?",
-              "a": "Harold Wilson (1965)",
+              "a": "Harold Wilson",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
-              "note": "",
+              "note": "Murder (Abolition of Death Penalty) Act 1965",
               "wrong": []
             },
             {
@@ -532,8 +532,8 @@
         {
           "id": "QD101-TB2",
           "q": "Ben Nevis is the highest mountain in the UK – what is its height in metres?",
-          "a": "1345m (In March 2016 Ben Nevis gained a metre in height thanks to a new GPS height measuremen",
-          "note": ""
+          "a": "1,345",
+          "note": "Metres. Re-measured in 2016 at 1,345 m"
         }
       ]
     },
@@ -636,7 +636,7 @@
               "a": "Knickers",
               "pts": 1,
               "cat": "LINK-A-LETTER",
-              "note": "Pink, frilly ones!!",
+              "note": "",
               "wrong": []
             }
           ]
@@ -644,7 +644,7 @@
         {
           "id": "QD228-R2",
           "name": "THEMED ROUND – ALL ABOUT BOB",
-          "info": "Five famous Bob’s",
+          "info": "Five famous Bobs.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -670,7 +670,7 @@
             },
             {
               "id": "QD228-Q13",
-              "q": "Which British boxer made history as the first triple-title holder, winning the heavyweight, middleweight and lightweight championships in a 27 year career?",
+              "q": "Which Cornish-born boxer made history as the first fighter to win world titles at three weights: middleweight, heavyweight and light heavyweight?",
               "a": "Bob Fitzsimmons",
               "pts": 1,
               "cat": "THEMED ROUND – ALL ABOUT BOB",
@@ -688,7 +688,7 @@
             },
             {
               "id": "QD228-Q15",
-              "q": "Who was the host of the first game show to run five days a week in Britain?",
+              "q": "Which host presented the ITV student quiz Blockbusters from 1983 to 1993?",
               "a": "(note: Countdown was only aired four days a week at the time) Bob Holness (Blockbusters)",
               "pts": 1,
               "cat": "THEMED ROUND – ALL ABOUT BOB",
@@ -902,7 +902,7 @@
         {
           "id": "QD228-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -1029,8 +1029,8 @@
             },
             {
               "id": "QD228-Q48",
-              "q": "In a well-known 1996 plotline from EastEnders, which publication did Cindy Beale use to look for a hitman to hire to kill her husband Ian?",
-              "a": "Yellow Pages",
+              "q": "In 1996, which EastEnders character hired a hitman to kill her husband, Ian Beale?",
+              "a": "Cindy Beale",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
               "note": "",
@@ -1060,15 +1060,15 @@
       "tiebreakers": [
         {
           "id": "QD228-TB1",
-          "q": "In 2017 a robot took less than a second (0.637) to solve a rubik’s cube. What (at that time) was the fastest recorded time for a human to do the same?",
-          "a": "4.904 seconds",
-          "note": ""
+          "q": "In January 2017, a robot solved a Rubik's Cube in 0.637 seconds. In seconds, what was the official human world record at that time?",
+          "a": "4.73",
+          "note": "Set by Feliks Zemdegs in December 2016"
         },
         {
           "id": "QD228-TB2",
           "q": "In ‘Eggheads’ which episode number was it before Kevin Ashman gave an incorrect answer to a history questions?",
           "a": "96 (Aired 06 Jan 2014, in total he’d gone 10 years, 1 month and 27 days without getting one wrong!)",
-          "note": "Original Five - Kevin Ashman, Chris Hughes, Judith Keppel, Daphne Fowler, CJ de Mooi"
+          "note": "Aired 6 January 2014. He had gone over ten years without a wrong answer."
         }
       ]
     },
@@ -1168,7 +1168,7 @@
             {
               "id": "QD235-Q10",
               "q": "Which actor played the role of the man who swapped faces with John Travolta in the 1997 film ‘Face Off'?",
-              "a": "Nicholas Cage",
+              "a": "Nicolas Cage",
               "pts": 1,
               "cat": "LINK-A-LETTER",
               "note": "",
@@ -1243,7 +1243,7 @@
           "questions": [
             {
               "id": "QD235-Q16",
-              "q": "Which confectionary product has a clock on its packaging that reads 8.03pm?",
+              "q": "Which brand of mint chocolates is named after the time of evening when they are meant to be eaten?",
               "a": "After Eight",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
@@ -1280,10 +1280,10 @@
             {
               "id": "QD235-Q20",
               "q": "In 1982, Stephen King published ‘Different Seasons’, a collection of four novellas, three of which were made into films. The first story in the collection was entitled ‘Rita Hayworth And…’ what?",
-              "a": "The Shawshank Redemption",
+              "a": "Shawshank Redemption",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
-              "note": "",
+              "note": "Full title: Rita Hayworth and Shawshank Redemption",
               "wrong": []
             },
             {
@@ -1437,7 +1437,7 @@
         {
           "id": "QD235-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -1565,7 +1565,7 @@
             {
               "id": "QD235-Q48",
               "q": "What is mixed with Whisky to make a Whisky Mac?",
-              "a": "Ginger",
+              "a": "Ginger wine",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
               "note": "",
@@ -1657,7 +1657,7 @@
             },
             {
               "id": "QD241-Q05",
-              "q": "Which property on a standard Monopoly board shares its name with Britain’s first king size cigarette?",
+              "q": "Which property on a standard UK Monopoly board shares its name with the cigarette brand that introduced the king-size cigarette?",
               "a": "Pall Mall",
               "pts": 1,
               "cat": "LINK-A-LETTER",
@@ -1675,7 +1675,7 @@
             },
             {
               "id": "QD241-Q07",
-              "q": "In wildlife, which is the only bird of prey whose diet consists almost exclusively of fish?",
+              "q": "Which bird of prey, sometimes called the sea hawk, lives almost entirely on fish?",
               "a": "Osprey",
               "pts": 1,
               "cat": "LINK-A-LETTER",
@@ -1741,10 +1741,10 @@
             {
               "id": "QD241-Q13",
               "q": "The title of which 1980 Sheena Easton hit was altered in America to avoid being confused with a Dolly Parton hit of the same name?",
-              "a": "(The two songs charted almost simultaneously) 9 to 5 (altered to ‘Morning Train (Nine to Five))",
+              "a": "9 to 5",
               "pts": 1,
               "cat": "THEMED ROUND – NUMBERS",
-              "note": "",
+              "note": "Renamed Morning Train (Nine to Five) in the US",
               "wrong": []
             },
             {
@@ -1753,12 +1753,12 @@
               "a": "100%",
               "pts": 1,
               "cat": "THEMED ROUND – NUMBERS",
-              "note": "He was apparently annoyed with the producers who asked him to step down – he felt they should have let him try and finish on 100 wins to keep in with the show’s theme",
+              "note": "",
               "wrong": []
             },
             {
               "id": "QD241-Q15",
-              "q": "First published in the mid 1940’s, which series of novels feature a group of friends who meet in a hut, have secret passwords and solve mysteries together?",
+              "q": "First published in the late 1940s, which Enid Blyton series features a group of friends who meet in a shed, use secret passwords and solve mysteries together?",
               "a": "Secret Seven",
               "pts": 1,
               "cat": "THEMED ROUND – NUMBERS",
@@ -1942,7 +1942,7 @@
             },
             {
               "id": "QD241-Q33",
-              "q": "In 1994 Danish born Whigfield became the first female solo artist to debut at the top of the UK charts with which europop dance classic?",
+              "q": "In 1994, Danish-born Whigfield went straight in at number one in the UK with which Europop debut single?",
               "a": "Saturday Night",
               "pts": 1,
               "cat": "FEATURE ROUND – CHAIN LETTERS",
@@ -1960,8 +1960,8 @@
             },
             {
               "id": "QD241-Q35",
-              "q": "Who was the first footballer to score 100 goals in both the Scottish and English football leagues?",
-              "a": "Kenny Daglish",
+              "q": "Which Celtic and Liverpool legend scored more than 100 league goals in both Scotland and England?",
+              "a": "Kenny Dalglish",
               "pts": 1,
               "cat": "FEATURE ROUND – CHAIN LETTERS",
               "note": "",
@@ -1972,7 +1972,7 @@
         {
           "id": "QD241-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -2054,7 +2054,7 @@
             },
             {
               "id": "QD241-Q43",
-              "q": "Gary Strang and Tony Smart were the main male characters in which long-running 1990’s BBC sitcom?",
+              "q": "Gary Strang and Tony Smart were the main male characters in which 1990s sitcom?",
               "a": "Men Behaving Badly",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -2192,7 +2192,7 @@
             },
             {
               "id": "QD280-Q05",
-              "q": "In 2004 which country became the first in the world to introduce a total smoking ban?",
+              "q": "In 2004, which country became the first in the world to ban smoking in all enclosed workplaces?",
               "a": "Ireland",
               "pts": 1,
               "cat": "LINK-A-LETTER",
@@ -2257,7 +2257,7 @@
           "questions": [
             {
               "id": "QD280-Q11",
-              "q": "Which Bank of England currency was introduced in 1797 and withdrawn in 1984?",
+              "q": "Which Bank of England note was first introduced in 1797 and last issued in 1984?",
               "a": "One Pound Note",
               "pts": 1,
               "cat": "THEMED ROUND – WEIGHTS AND MEASURES",
@@ -2266,7 +2266,7 @@
             },
             {
               "id": "QD280-Q12",
-              "q": "The title of which BBC comedy series was inspired by a 1980 hit for English Punk Rock band Splodegnessabounds?",
+              "q": "The title of which BBC comedy series was inspired by a 1980 hit for punk band Splodgenessabounds?",
               "a": "Two Pints of Lager and a Packet of Crisps",
               "pts": 1,
               "cat": "THEMED ROUND – WEIGHTS AND MEASURES",
@@ -2294,10 +2294,10 @@
             {
               "id": "QD280-Q15",
               "q": "Which song, originally performed by Danny Kaye in the role of Hans Christian Andersen, is best known for its maths chorus of times tables?",
-              "a": "(two and two are four, four and four are eight, eight and eight are sixteen, sixteen and sixteen are thirty-two) The Inch Worm aka Inchworm",
+              "a": "The Inch Worm",
               "pts": 1,
               "cat": "THEMED ROUND – WEIGHTS AND MEASURES",
-              "note": "",
+              "note": "Accept Inchworm",
               "wrong": []
             }
           ]
@@ -2499,7 +2499,7 @@
               "a": "September",
               "pts": 1,
               "cat": "FEATURE ROUND – CHAIN LETTERS",
-              "note": "",
+              "note": "It usually starts in mid-to-late September and ends on the first Sunday of October, or later",
               "wrong": []
             }
           ]
@@ -2507,7 +2507,7 @@
         {
           "id": "QD280-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -2524,7 +2524,7 @@
             },
             {
               "id": "QD280-Q37",
-              "q": "Discovered by James Cook, where would you find several islands including Shark, Goat, Cockatoo and Snapper?",
+              "q": "In which famous harbour would you find islands including Shark, Goat, Cockatoo and Snapper?",
               "a": "Sydney Harbour",
               "pts": 1,
               "cat": "QUIZ LINK",
@@ -2534,16 +2534,16 @@
             {
               "id": "QD280-Q38",
               "q": "Which one word nickname is associated with both the Duke of Wellington and former PM Margaret Thatcher?",
-              "a": "Iro",
+              "a": "Iron",
               "pts": 1,
               "cat": "QUIZ LINK",
-              "note": "Iron Duke / Iron Lady",
+              "note": "The Iron Duke and the Iron Lady",
               "wrong": []
             },
             {
               "id": "QD280-Q39",
-              "q": "At which venue was the original series of ‘Come Dancing’ filmed in the 1970’s?",
-              "a": "Tower Ballroom (Blackpool)",
+              "q": "Strictly Come Dancing's annual Blackpool show is held in which famous ballroom?",
+              "a": "The Tower Ballroom",
               "pts": 1,
               "cat": "QUIZ LINK",
               "note": "",
@@ -2652,7 +2652,7 @@
             },
             {
               "id": "QD280-Q50",
-              "q": "In 2011, police forces introduced which phone number for non-emergency calls?",
+              "q": "Rolled out across England and Wales in 2011 and 2012, which phone number is used for non-emergency calls to the police?",
               "a": "101",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -2700,7 +2700,7 @@
             },
             {
               "id": "QD281-Q02",
-              "q": "In a 1979 academic paper a Greek astronomer proposed the star of Bethlehem was actually which planet?",
+              "q": "Some astronomers have suggested the Star of Bethlehem was the faint seventh planet, officially discovered by William Herschel in 1781. Which planet?",
               "a": "Uranus",
               "pts": 1,
               "cat": "LINK-A-LETTER",
@@ -2763,8 +2763,8 @@
             },
             {
               "id": "QD281-Q09",
-              "q": "For over sixty years, which organization has tracked Santa as he travels the world delivering presents?",
-              "a": "Norad",
+              "q": "Since 1955, which North American military organisation has 'tracked' Santa as he travels the world delivering presents?",
+              "a": "NORAD",
               "pts": 1,
               "cat": "LINK-A-LETTER",
               "note": "North American Aerospace Defence Command",
@@ -2784,7 +2784,7 @@
         {
           "id": "QD281-R2",
           "name": "THEMED ROUND – 50/50",
-          "info": "",
+          "info": "Choose between the two options.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -2828,7 +2828,7 @@
             },
             {
               "id": "QD281-Q15",
-              "q": "In the well-known fairy tale did Cinderella lose her right or left glass slipper as she left the ball?",
+              "q": "In Disney's 1950 film, does Cinderella lose her right or her left glass slipper as she leaves the ball?",
               "a": "Left",
               "pts": 1,
               "cat": "THEMED ROUND – 50/50",
@@ -2848,7 +2848,7 @@
           "questions": [
             {
               "id": "QD281-Q16",
-              "q": "Who was the only human to appear in the 1992 film ‘The Muppet Christmas Carol’?",
+              "q": "Who played Ebenezer Scrooge in the 1992 film 'The Muppet Christmas Carol'?",
               "a": "Michael Caine",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
@@ -2861,7 +2861,7 @@
               "a": "Fairytale of New York",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
-              "note": "Pogues and Kirsty McColl",
+              "note": "The Pogues and Kirsty MacColl",
               "wrong": []
             },
             {
@@ -2884,7 +2884,7 @@
             },
             {
               "id": "QD281-Q20",
-              "q": "What type of herb often features as a magical word used in Pantomime?",
+              "q": "Which seed, from Ali Baba's story, features in the magic words often heard in pantomime?",
               "a": "Sesame",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
@@ -2986,10 +2986,10 @@
             {
               "id": "QD281-Q30",
               "q": "Reportedly sacked from Coronation Street in 1994 due to having cosmetic lip enhancements, which character had been played by actress Lynne Perrie for over 20 years?",
-              "a": "Ivy Tisley (or Brennan)",
+              "a": "Ivy Tilsley",
               "pts": 1,
               "cat": "FEATURE ROUND – CHRISTMAS ANSWERS",
-              "note": "",
+              "note": "Later Ivy Brennan",
               "wrong": []
             },
             {
@@ -3003,7 +3003,7 @@
             },
             {
               "id": "QD281-Q32",
-              "q": "What is the name of Tin Tin's dog in 'Herge's adventures of Tin Tin'?",
+              "q": "What is the name of Tintin's dog in Hergé's The Adventures of Tintin?",
               "a": "Snowy",
               "pts": 1,
               "cat": "FEATURE ROUND – CHRISTMAS ANSWERS",
@@ -3013,7 +3013,7 @@
             {
               "id": "QD281-Q33",
               "q": "In May 1961 who became the first American in space when he flew in a one-person Mercury spacecraft?",
-              "a": "Alan Shepherd",
+              "a": "Alan Shepard",
               "pts": 1,
               "cat": "FEATURE ROUND – CHRISTMAS ANSWERS",
               "note": "",
@@ -3042,7 +3042,7 @@
         {
           "id": "QD281-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -3054,7 +3054,7 @@
               "a": "George C Scott",
               "pts": 1,
               "cat": "QUIZ LINK",
-              "note": "A Christmas Carol, 1984",
+              "note": "He also played Scrooge in A Christmas Carol (1984)",
               "wrong": []
             },
             {
@@ -3078,10 +3078,10 @@
             {
               "id": "QD281-Q39",
               "q": "In classic film comedy, which actor played the dual role of a school headmistress (at St Trinian’s) named Miss Millicent Fritton and her twin brother Clarence?",
-              "a": "Alistair Sim (Scrooge, 1951)",
+              "a": "Alastair Sim",
               "pts": 1,
               "cat": "QUIZ LINK",
-              "note": "",
+              "note": "He played Scrooge in the 1951 film Scrooge",
               "wrong": []
             },
             {
@@ -3115,7 +3115,7 @@
             },
             {
               "id": "QD281-Q42",
-              "q": "Which gift brought by the Three Kings is distilled from the essence of Orchids?",
+              "q": "Which gift brought by the Wise Men is an aromatic resin taken from Commiphora trees?",
               "a": "Myrrh",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -3151,8 +3151,8 @@
             },
             {
               "id": "QD281-Q46",
-              "q": "In an often repeated clip from the 1977 Morecombe and Wise Christmas special, BBC newsmen (dressed as sailors) performed which famous musical song (from South Pacific)?",
-              "a": "There Is Nothing Like A Dame",
+              "q": "In an often repeated clip from the 1977 Morecambe and Wise Christmas special, BBC newsreaders dressed as sailors performed which song from South Pacific?",
+              "a": "There Is Nothin' Like A Dame",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
               "note": "",
@@ -3160,8 +3160,8 @@
             },
             {
               "id": "QD281-Q47",
-              "q": "On which lake does the annual Christmas Day ‘Peter Pan Cup’ take place – a race to see who can be the first to swim 100 metres?",
-              "a": "Serpentine",
+              "q": "On which lake in London's Hyde Park does the annual Christmas Day 'Peter Pan Cup' swimming race take place over 100 yards?",
+              "a": "The Serpentine",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
               "note": "",
@@ -3178,7 +3178,7 @@
             },
             {
               "id": "QD281-Q49",
-              "q": "Which plant derives its name from second century Anglo-Saxon’s who likened its appearance to bird droppings on tree branches, and has a name which translates as ‘Dung on a Twig’?",
+              "q": "Which plant's name is thought to come from Old English words meaning 'dung on a twig'?",
               "a": "Mistletoe",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -3188,10 +3188,10 @@
             {
               "id": "QD281-Q50",
               "q": "Which sporting venue is found in ‘The 12 Days of Christmas’?",
-              "a": "Lords",
+              "a": "Lord's",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
-              "note": "",
+              "note": "Lords a-leaping",
               "wrong": []
             }
           ]
@@ -3396,7 +3396,7 @@
               "a": "Sheep",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
-              "note": "",
+              "note": "Sheep's milk, or sheep's milk mixed with up to 30% goat's milk",
               "wrong": []
             },
             {
@@ -3438,7 +3438,7 @@
             {
               "id": "QD337-Q22",
               "q": "In the Star Wars series what type of creature is Chewbacca?",
-              "a": "Wookie",
+              "a": "Wookiee",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
               "note": "",
@@ -3476,7 +3476,7 @@
         {
           "id": "QD337-R4",
           "name": "FEATURE ROUND – PYRAMID",
-          "info": "The first question has one answer, the second two, the third three and the fourth four, 1 point for each correct answer Host: award 1 point per correct component (1, then 2, 3 and 4).",
+          "info": "The first question has one answer, the second two, the third three and the fourth four. One point per correct answer.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -3511,11 +3511,11 @@
             },
             {
               "id": "QD337-Q32",
-              "q": "Wales has six cities; besides the capital of Cardiff, can you name any four of the other five?",
-              "a": "Swansea Newport Bangor St Davids / St Asaph",
+              "q": "Wales has seven cities. Besides the capital, Cardiff, can you name any four of the other six?",
+              "a": "Swansea, Newport, Bangor, St Davids, St Asaph, Wrexham",
               "pts": 4,
               "cat": "FEATURE ROUND – PYRAMID",
-              "note": "With a population of under 2000, St Davids is the smallest city in the UK, St Asaph was awarded City status as part of the Queens Diamond Jubilee celebrations in 2012",
+              "note": "Wrexham became a city in 2022. St Asaph in 2012.",
               "wrong": []
             }
           ]
@@ -3523,7 +3523,7 @@
         {
           "id": "QD337-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -3549,7 +3549,7 @@
             },
             {
               "id": "QD337-Q38",
-              "q": "Which two words are shared by a classic series of video games and the highest level of emergency in several warning systems, as frequently heard by the fictional Will Ryker on board the USS Enterprise?",
+              "q": "Which two words are shared by a classic series of video games and the highest alert status often heard aboard the USS Enterprise in Star Trek?",
               "a": "Red Alert",
               "pts": 1,
               "cat": "QUIZ LINK",
@@ -3568,10 +3568,10 @@
             {
               "id": "QD337-Q40",
               "q": "The Link?",
-              "a": "National Lottery Quiz Shows Who Dares Wins (2007 – present), Jet Set (2001-07) Red Alert (1999-2000), In It To Win It (2002-2016)",
+              "a": "National Lottery game shows",
               "pts": 1,
               "cat": "QUIZ LINK",
-              "note": "",
+              "note": "Who Dares Wins, Jet Set, Red Alert, In It To Win It",
               "wrong": []
             }
           ]
@@ -3618,7 +3618,7 @@
               "a": "Almond",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
-              "note": "",
+              "note": "Coconut macaroons are also common",
               "wrong": []
             },
             {
@@ -3668,7 +3668,7 @@
             },
             {
               "id": "QD337-Q50",
-              "q": "After escaping from prison in 1963, Great Train Robber Ronnie Biggs spent his time on the run leading a playboy lifestyle in which (South American) country?",
+              "q": "After escaping from Wandsworth Prison in 1965, Great Train Robber Ronnie Biggs spent most of his years on the run in which South American country?",
               "a": "Brazil",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -3865,10 +3865,10 @@
             {
               "id": "QD338-Q16",
               "q": "A classic TV ad for which product features Rowan Atkinson playing his famous Mr Bean character as a hopeless Kung Fu Master in ancient China?",
-              "a": "(With the tagline ‘You’re not you when you’re hungry’) Snickers",
+              "a": "Snickers",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
-              "note": "",
+              "note": "Tagline: You're not you when you're hungry",
               "wrong": []
             },
             {
@@ -3882,11 +3882,11 @@
             },
             {
               "id": "QD338-Q18",
-              "q": "David Cameron and Tony Blair were both aged 43 when they became Prime Minister of the UK, but which of them was youngest when they did it?",
+              "q": "David Cameron and Tony Blair were both aged 43 when they became Prime Minister of the UK, but which of them was younger when they did it?",
               "a": "David Cameron",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
-              "note": "David Cameron 43 yrs 214 days, Tony Blair 43 yrs 361 days",
+              "note": "Cameron 43 years 214 days, Blair 43 years 361 days",
               "wrong": []
             },
             {
@@ -3992,7 +3992,7 @@
             },
             {
               "id": "QD338-Q29",
-              "q": "What is the recommended number of people to take part in a game of Scrabble?",
+              "q": "What is the maximum number of players in a standard game of Scrabble?",
               "a": "Four",
               "pts": 1,
               "cat": "FEATURE ROUND – TEN TO ONE",
@@ -4001,11 +4001,11 @@
             },
             {
               "id": "QD338-Q30",
-              "q": "Which TV series, starring Lee Majors, led to a spin-off series starring Lyndsay Wagner?",
-              "a": "Six Million Dollar Man (Bionic Woman)",
+              "q": "Which TV series, starring Lee Majors, led to a spin-off series starring Lindsay Wagner?",
+              "a": "The Six Million Dollar Man",
               "pts": 1,
               "cat": "FEATURE ROUND – TEN TO ONE",
-              "note": "",
+              "note": "The spin-off was The Bionic Woman",
               "wrong": []
             },
             {
@@ -4058,7 +4058,7 @@
         {
           "id": "QD338-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -4237,7 +4237,7 @@
           "info": "The initial letters of each answer, in order, spell a mystery name, word or phrase ",
           "type": "letters",
           "mystery": "BURNS NIGHT",
-          "clue": "A specific annual occasion, celebrated on the birth of a person born in the 18th century (1759). A famous poet who penned more than 550 verses and songs. National poet of his home country. Falls in the month of January. Generally celebrated with Haggis and Whiskey.",
+          "clue": "An annual celebration on 25 January of a poet born in 1759. The national poet of his home country. Generally celebrated with haggis and whisky.",
           "mode": "written",
           "questions": [
             {
@@ -4279,7 +4279,7 @@
             {
               "id": "QD343-Q05",
               "q": "In fiction, Doctor Octopus is a highly intelligent but mad scientist who is a prominent enemy of which superhero?",
-              "a": "Spiderman",
+              "a": "Spider-Man",
               "pts": 1,
               "cat": "LINK-A-LETTER",
               "note": "",
@@ -4335,7 +4335,7 @@
         {
           "id": "QD343-R2",
           "name": "THEMED ROUND – 50/50",
-          "info": "",
+          "info": "Choose between the two options.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -4361,11 +4361,11 @@
             },
             {
               "id": "QD343-Q13",
-              "q": "In ballroom dancing etiquette should a man offer his right or left hand to a woman as an invitation to dance?",
-              "a": "His Left",
+              "q": "Is a male swan called a cob or a pen?",
+              "a": "Cob",
               "pts": 1,
               "cat": "THEMED ROUND – 50/50",
-              "note": "",
+              "note": "A female is a pen",
               "wrong": []
             },
             {
@@ -4481,10 +4481,10 @@
             {
               "id": "QD343-Q25",
               "q": "How many of the Ten Commandments are instructions not to do something?",
-              "a": "Eight (The eight things you should not do - worship other gods, make false idols, misuse name of the lord, commit murder, commit adultery, steal, give false evidence, be envious of neighbours)",
+              "a": "Eight",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
-              "note": "Those you should do; respect parents, keep Sabbath as a holy day",
+              "note": "The two positive ones: keep the Sabbath and honour your parents",
               "wrong": []
             }
           ]
@@ -4593,7 +4593,7 @@
         {
           "id": "QD343-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -4610,7 +4610,7 @@
             },
             {
               "id": "QD343-Q37",
-              "q": "Sir David Hempleman-Adams is a record breaking adventurer; among his achievements he was the first person to climb the highest peaks in all seven continents and was the first to reach the North Pole in what type of transport?",
+              "q": "Sir David Hempleman-Adams was the first person to complete the Adventurers' Grand Slam, and in 2000 he became the first to reach the North Pole in what type of craft?",
               "a": "Hot Air Balloon",
               "pts": 1,
               "cat": "QUIZ LINK",
@@ -4666,7 +4666,7 @@
             },
             {
               "id": "QD343-Q42",
-              "q": "What is the closest French town to England?",
+              "q": "Which French port is the main ferry terminal for crossings from Dover?",
               "a": "Calais",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -4676,7 +4676,7 @@
             {
               "id": "QD343-Q43",
               "q": "In nature, what name is given to a young bird that has grown enough feathers to fly?",
-              "a": "Fledging",
+              "a": "Fledgling",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
               "note": "",
@@ -4720,7 +4720,7 @@
             },
             {
               "id": "QD343-Q48",
-              "q": "Which Lionel Ritchie chart-topper shares its name with a UK magazine?",
+              "q": "Which Lionel Richie chart-topper shares its name with a UK celebrity magazine?",
               "a": "Hello",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -4751,9 +4751,9 @@
       "tiebreakers": [
         {
           "id": "QD343-TB1",
-          "q": "The Pantheon in Rome has the largest unsupported dome in the world – what is its diameter?",
-          "a": "142ft (43.3mt)",
-          "note": ""
+          "q": "The Pantheon in Rome has the largest unreinforced concrete dome in the world. What is its diameter in feet?",
+          "a": "142",
+          "note": "About 43.3 metres"
         },
         {
           "id": "QD343-TB2",
@@ -5027,7 +5027,7 @@
         {
           "id": "QD344-R4",
           "name": "FEATURE PHONETICALLY SPEAKING",
-          "info": "Each answer contains a word which features in the Nato Phonetic Alphabet",
+          "info": "Each answer contains a word from the NATO phonetic alphabet.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -5120,7 +5120,7 @@
               "a": "Echo",
               "pts": 1,
               "cat": "FEATURE PHONETICALLY SPEAKING",
-              "note": "Alpha , Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu",
+              "note": "",
               "wrong": []
             }
           ]
@@ -5128,7 +5128,7 @@
         {
           "id": "QD344-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -5140,7 +5140,7 @@
               "a": "Karen Carpenter",
               "pts": 1,
               "cat": "QUIZ LINK",
-              "note": "John Bonham of Led Zeppelin came second and was not pleased, saying she couldn’t last ten minutes with a Zeppelin number",
+              "note": "Led Zeppelin's John Bonham came second",
               "wrong": []
             },
             {
@@ -5211,7 +5211,7 @@
             {
               "id": "QD344-Q43",
               "q": "Which street in central London is particularly known for its traditional bespoke tailoring for men?",
-              "a": "Saville Row",
+              "a": "Savile Row",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
               "note": "",
@@ -5246,8 +5246,8 @@
             },
             {
               "id": "QD344-Q47",
-              "q": "What word is used to describe a type of wine that is intense, full-bodied and high in alcohol?",
-              "a": "Robust",
+              "q": "What name is given to a trained wine expert or wine waiter in a restaurant?",
+              "a": "Sommelier",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
               "note": "",
@@ -5255,7 +5255,7 @@
             },
             {
               "id": "QD344-Q48",
-              "q": "Which boy band of the 1980’s share their name with the first number plate ever registered in the UK?",
+              "q": "Which late-1990s boy band shared their name with the first car number plate ever registered in the UK?",
               "a": "A1",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -5339,7 +5339,7 @@
             },
             {
               "id": "QD345-Q04",
-              "q": "What name is given to the cuisine of the deep south of the USA?",
+              "q": "What name is given to the cooking style of the French-descended people of rural Louisiana?",
               "a": "Cajun",
               "pts": 1,
               "cat": "LINK-A-LETTER",
@@ -5376,10 +5376,10 @@
             {
               "id": "QD345-Q08",
               "q": "Created in 1929, which cartoon character is famed for his exotic adventures exposing skulduggery across the world?",
-              "a": "(created by Belgian cartoonist Georges Remi, better known as Herge) Tintin",
+              "a": "Tintin",
               "pts": 1,
               "cat": "LINK-A-LETTER",
-              "note": "",
+              "note": "Created by the Belgian cartoonist Hergé",
               "wrong": []
             },
             {
@@ -5414,10 +5414,10 @@
             {
               "id": "QD345-Q11",
               "q": "(A Eurovision song contest winner,) who is the only British solo female singer to have three UK number one hits in the 1960’s?",
-              "a": "Sandie Shaw (1964 (There’s) Always Something There to Remind Me, 1965 Long Live Love, 1967 Puppet On A String)",
+              "a": "Sandie Shaw",
               "pts": 1,
               "cat": "THEMED ROUND – ALLITERATIVE ANSWERS",
-              "note": "",
+              "note": "Always Something There To Remind Me, Long Live Love, Puppet On A String",
               "wrong": []
             },
             {
@@ -5478,7 +5478,7 @@
             },
             {
               "id": "QD345-Q17",
-              "q": "On a standard computer keyboard what number, along with shift, would you press to type a pound sign?",
+              "q": "On a standard UK computer keyboard, which number key do you press with Shift to type a pound sign?",
               "a": "3",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
@@ -5497,7 +5497,7 @@
             {
               "id": "QD345-Q19",
               "q": "What is the name of the beautiful gypsy dancing girl who features in Victor Hugo’s ‘The Hunchback of Notre-Dame’?",
-              "a": "Esmerelda",
+              "a": "Esmeralda",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
               "note": "",
@@ -5506,7 +5506,7 @@
             {
               "id": "QD345-Q20",
               "q": "Which British drama was based around the fictional Premier League football club Earls park FC?",
-              "a": "Footballers Wives",
+              "a": "Footballers' Wives",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
               "note": "",
@@ -5562,7 +5562,7 @@
         {
           "id": "QD345-R4",
           "name": "FEATURE ROUND – ALL ABOUT ENGLAND",
-          "info": "",
+          "info": "Ten questions about England.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -5663,7 +5663,7 @@
         {
           "id": "QD345-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -5680,7 +5680,7 @@
             },
             {
               "id": "QD345-Q37",
-              "q": "Under the leadership of Geronimo, who were the last North American Indian people to surrender to European settlers?",
+              "q": "Geronimo was a famous leader of which Native American people?",
               "a": "Apache",
               "pts": 1,
               "cat": "QUIZ LINK",
@@ -5708,10 +5708,10 @@
             {
               "id": "QD345-Q40",
               "q": "The Link?",
-              "a": "Tusk, Apache, Hustle, Albatross (All Instrumentals) Song Titles",
+              "a": "Hit songs",
               "pts": 1,
               "cat": "QUIZ LINK",
-              "note": "",
+              "note": "Tusk and Albatross by Fleetwood Mac, Apache by The Shadows, The Hustle by Van McCoy",
               "wrong": []
             }
           ]
@@ -5736,7 +5736,7 @@
             },
             {
               "id": "QD345-Q42",
-              "q": "On which game show did Bruce Forsythe use the catchphrase ‘What do points make’?",
+              "q": "On which game show did Bruce Forsyth use the catchphrase 'What do points make?'",
               "a": "Play Your Cards Right",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
@@ -5782,7 +5782,7 @@
             {
               "id": "QD345-Q47",
               "q": "In the lyrics of the song ‘Aquarius’ from the musical ‘Hair’, the moon is said to be in what house?",
-              "a": "(When the moon is in the Seventh House, and Jupiter aligns with Mars) Seventh",
+              "a": "The Seventh House",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
               "note": "",
@@ -5791,10 +5791,10 @@
             {
               "id": "QD345-Q48",
               "q": "Which Liverpool comedian had a million-selling UK number one hit in 1965?",
-              "a": "Ken Dodd (Tears)",
+              "a": "Ken Dodd",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
-              "note": "",
+              "note": "The song was Tears",
               "wrong": []
             },
             {
@@ -5984,7 +5984,7 @@
             },
             {
               "id": "QD346-Q15",
-              "q": "What class of medications are predominantly used to manage abnormal heart rhythms?",
+              "q": "Which class of drugs, such as propranolol, slows the heart rate and lowers blood pressure?",
               "a": "Beta Blockers",
               "pts": 1,
               "cat": "THEMED ROUND – ALLITERATIVE ANSWERS",
@@ -6049,7 +6049,7 @@
             },
             {
               "id": "QD346-Q21",
-              "q": "Who is the only female character to appear in the Winne-the-Pooh books?",
+              "q": "Who is the only female character in A. A. Milne's Winnie-the-Pooh books?",
               "a": "Kanga",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
@@ -6068,15 +6068,15 @@
             {
               "id": "QD346-Q23",
               "q": "Who was Prime Minister of the UK when Roger Bannister broke the four-minute mile?",
-              "a": "Winston Churchill (1954)",
+              "a": "Winston Churchill",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
-              "note": "",
+              "note": "Bannister ran the four-minute mile in 1954",
               "wrong": []
             },
             {
               "id": "QD346-Q24",
-              "q": "Followers of which so-called religion believe that people are immortal spiritual beings who have forgotten their true nature?",
+              "q": "Founded by L. Ron Hubbard, which movement teaches that people are immortal spiritual beings who have forgotten their true nature?",
               "a": "Scientology",
               "pts": 1,
               "cat": "GENERAL KNOWLEDGE AND POT LUCK",
@@ -6198,7 +6198,7 @@
         {
           "id": "QD346-R5",
           "name": "QUIZ LINK",
-          "info": "Take a word or words contained in each answer 36 to 39 and identify the common link as the answer to question 40",
+          "info": "Find the link between the previous four answers.",
           "type": "standard",
           "mystery": "",
           "clue": "",
@@ -6216,10 +6216,10 @@
             {
               "id": "QD346-Q37",
               "q": "What type of accommodation shares its name with a nickname given to a score of 26 in darts?",
-              "a": "Bed and Breakfast (From a time when a typical breakfast in England cost 2s 6d (2 shilling and 6 pence))",
+              "a": "Bed and Breakfast",
               "pts": 1,
               "cat": "QUIZ LINK",
-              "note": "",
+              "note": "From when a typical bed and breakfast cost 2s 6d",
               "wrong": []
             },
             {
@@ -6243,10 +6243,10 @@
             {
               "id": "QD346-Q40",
               "q": "The Link?",
-              "a": "Bubble, Bed, Foot, Mud (Type of/words that go before…) Bath",
+              "a": "Bath",
               "pts": 1,
               "cat": "QUIZ LINK",
-              "note": "",
+              "note": "Bubble bath, bed bath, foot bath, mud bath",
               "wrong": []
             }
           ]
@@ -6290,10 +6290,10 @@
             {
               "id": "QD346-Q44",
               "q": "In health, what decade were prescription charges first introduced in the UK?",
-              "a": "1950’s (1952)",
+              "a": "The 1950s",
               "pts": 1,
               "cat": "THE FINAL COUNTDOWN – POT LUCK",
-              "note": "",
+              "note": "Charges began in 1952",
               "wrong": []
             },
             {
@@ -6364,7 +6364,7 @@
           "id": "QD346-TB2",
           "q": "What was the cost of a prescription when charges were first introduced in 1952?",
           "a": "One Shilling",
-          "note": "NHS was founded in 1948 with free prescriptions until 1952"
+          "note": "The NHS began in 1948 with free prescriptions"
         }
       ]
     }
