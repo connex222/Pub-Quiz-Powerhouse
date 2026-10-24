@@ -38,3 +38,13 @@ Generated sound effects are entirely original procedural synthesis (no third-par
 ## Operating guidance
 
 Press the sound control on the TV or host to satisfy browser autoplay requirements. Sound and music remain user-controlled. Avoid playing music continuously on phones if the players prefer a quiet answer-entry experience. When the three Daydream MP3s can be downloaded securely into the repo, replace the remote entries in `MUSIC_SOURCES` with local `/assets/music/` paths and re-test offline.
+
+## Follow-up hardening (24 October 2026)
+
+- Corrected both generation scripts to write into the repository-root `public/assets/` directories regardless of invocation from `tools/`.
+- Interrupted music crossfades now stop orphaned older recordings; switching off sound also immediately silences active effects.
+- A browser-blocked autoplay attempt clears playback state so it can be retried after user interaction.
+- Added `test/audio-regression.js` to both `npm test` and `npm run test:offline`. It tests the SFX and local fallback file paths, simulated state transitions, interrupted fades, master mute and remote-to-local music fallback without any provider network dependency.
+- Locally reran offline checks, Classic/Game Show browser tests, exclusive-buzzer tests and regenerated all 22 MP3s with both scripts in a clean scratch directory.
+
+**Still not confirmed:** physical TV/phone listening test and remote Daydream availability from the player's network. This pull request is deliberately held as a draft, and production remains on the previous working commit until explicitly promoted.
