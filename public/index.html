@@ -1379,6 +1379,8 @@ function beep(freq, dur){
     o.start(t); o.stop(t + dur + 0.03);
   } catch (e) { /* audio unavailable */ }
 }
+/* Premium game-audio controller (v3.3 audio pass): local SFX and licensed
+   Daydream music; offline local music used if the hosted stream is unreachable. */
 const SOUND_FILES = {
   buzz:'sfx/sfx-buzz.mp3', correct:'sfx/sfx-correct.mp3', wrong:'sfx/sfx-wrong.mp3',
   cheer:'sfx/sfx-crowd-cheer.mp3', aww:'sfx/sfx-crowd-aww.mp3', join:'sfx/sfx-join.mp3',
@@ -1386,33 +1388,119 @@ const SOUND_FILES = {
   showdown:'sfx/sfx-showdown.mp3', gain:'sfx/sfx-spark-gain.mp3', lose:'sfx/sfx-spark-lose.mp3',
   boom:'sfx/sfx-boom.mp3', swap:'sfx/sfx-swap.mp3'
 };
+const MUSIC_SOURCES = {
+  lobby: [
+    'https://gen.daydream.live/v1/songs/sng_PcWuYxLAPqASLHaEOAVRrR/1.mp3',
+    '/assets/music/mus-lobby.ogg'
+  ],
+  board: [
+    'https://gen.daydream.live/v1/songs/sng_JrZ1hRMDTeBEGvRAjxYJN2/1.mp3',
+    '/assets/music/mus-board.ogg'
+  ],
+  tension: [
+    'https://gen.daydream.live/v1/songs/sng_JXbdrpnScsF8qBG3QI7aGl/1.mp3',
+    '/assets/music/mus-tension.ogg'
+  ],
+  victory: ['/assets/music/mus-victory.mp3']
+};
 const FX = new Map();
-let musicTrack = null, musicName = '';
+const AUDIO_LEVEL = { music: .11, cues: .68 };
+let musicTrack = null, musicName = '', musicTransition = 0, fadingTrack = null;
 function playCue(name, volume = .45){
   if (!S.settings.sound || !SOUND_FILES[name]) return;
   try {
-    const src = '/assets/' + SOUND_FILES[name];
-    const sound = new Audio(src); sound.volume = Math.max(0, Math.min(1, volume));
-    sound.play().catch(() => {});
+    // Do not stack repeated countdown ticks at high update frequency.
+    const prior = FX.get(name);
+    if (prior && !prior.paused && !prior.ended) { prior.pause(); prior.currentTime = 0; }
+    const sound = new Audio('/assets/' + SOUND_FILES[name]);
+    sound.preload = 'auto';
+    sound.volume = Math.max(0, Math.min(.82, volume * AUDIO_LEVEL.cues));
     FX.set(name, sound);
-  } catch (e) { /* audio playback is optional */ }
+    sound.addEventListener('ended', () => { if (FX.get(name) === sound) FX.delete(name); }, {once:true});
+    sound.play().catch(() => { if (FX.get(name) === sound) FX.delete(name); });
+  } catch (e) { /* audio may be unavailable on unsupported clients */ }
 }
 function syncMusic(){
-  if (!S.settings.music || !S.settings.sound){
-    if (musicTrack) { musicTrack.pause(); musicTrack = null; musicName = ''; }
+  const enabled = !!(S.settings.music && S.settings.sound);
+  if (!enabled) {
+    musicTransition++;
+    if (musicTrack) { musicTrack.pause(); musicTrack = null; }
+    if (fadingTrack) { fadingTrack.pause(); fadingTrack = null; }
+    // Switching master sound off also silences short effects immediately.
+    if (!S.settings.sound) {
+      for (const effect of FX.values()) {
+        effect.pause();
+        try { effect.currentTime = 0; } catch (e) { /* ignored */ }
+      }
+      FX.clear();
+    }
+    musicName = '';
     return;
   }
   const desired = S.finished ? 'victory' : S.lobby ? 'lobby' : S.between ? 'board' : 'tension';
   if (desired === musicName && musicTrack) return;
-  if (musicTrack) musicTrack.pause();
-  const path = desired === 'victory' ? '/assets/music/mus-victory.mp3' : '/assets/music/mus-' + desired + '.ogg';
-  try {
-    musicTrack = new Audio(path); musicTrack.loop = desired !== 'victory'; musicTrack.volume = .12;
-    musicName = desired; musicTrack.play().catch(() => {});
-  } catch (e) { musicTrack = null; musicName = ''; }
+  // A cancelled crossfade must not leave its older recording audible.
+  if (fadingTrack && fadingTrack !== musicTrack) fadingTrack.pause();
+  fadingTrack = musicTrack;
+  const old = musicTrack;
+  const sources = MUSIC_SOURCES[desired];
+  const audio = new Audio();
+  const token = ++musicTransition;
+  musicTrack = audio;
+  musicName = desired;
+  audio.loop = desired !== 'victory';
+  audio.preload = 'auto';
+  audio.volume = 0;
+  let fallbackIndex = 0;
+  let started = false;
+  function crossfade(){
+    if (started || token !== musicTransition) return;
+    started = true;
+    const start = performance.now(), duration = 1000;
+    function frame(now){
+      if (token !== musicTransition) return;
+      const mix = Math.min(1, (now - start) / duration);
+      audio.volume = AUDIO_LEVEL.music * mix;
+      if (old) old.volume = AUDIO_LEVEL.music * (1 - mix);
+      if (mix < 1) requestAnimationFrame(frame);
+      else if (old) {
+        old.pause();
+        if (fadingTrack === old) fadingTrack = null;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  function playSource(index){
+    if (token !== musicTransition) return;
+    fallbackIndex = index;
+    audio.src = sources[index];
+    audio.load();
+    const promise = audio.play();
+    if (promise && typeof promise.then === 'function') {
+      promise.then(crossfade).catch(() => {
+        // Browser autoplay restrictions are respected; only errors loading
+        // the remote source trigger the locally bundled fallback.
+        if (audio.error && index + 1 < sources.length) playSource(index + 1);
+        else if (token === musicTransition && !audio.error) {
+          // A blocked autoplay attempt must be retried on a later user action.
+          audio.pause();
+          if (musicTrack === audio) { musicTrack = null; musicName = ''; }
+        }
+      });
+    }
+  }
+  audio.addEventListener('error', () => {
+    if (token === musicTransition && fallbackIndex + 1 < sources.length) {
+      playSource(fallbackIndex + 1);
+    }
+  });
+  playSource(0);
+  if (sources.length > 1) setTimeout(() => {
+    if (token === musicTransition && !started && fallbackIndex === 0 && audio.readyState < 2)
+      playSource(1);
+  }, 3500);
 }
-function fanfare(){ playCue('cheer',.38); playCue('showdown',.48); }
-
+function fanfare(){ playCue('cheer',.42); playCue('showdown',.34); }
 /* ---------- Scoring ---------- */
 function addScore(id, d, label, g){
   const t = team(id); if (!t || !d) return;
