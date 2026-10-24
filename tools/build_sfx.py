@@ -7,7 +7,7 @@ from scipy.signal import butter, sosfilt
 import soundfile as sf
 SR=48000
 rng=np.random.default_rng(543219)
-OUT=Path(__file__).parent/'public/assets/sfx'; OUT.mkdir(parents=True,exist_ok=True)
+OUT=Path(__file__).resolve().parent.parent/'public/assets/sfx'; OUT.mkdir(parents=True,exist_ok=True)
 
 def tvec(d):return np.arange(round(d*SR))/SR
 
