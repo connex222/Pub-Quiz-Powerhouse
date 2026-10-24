@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "test": "node test/join-approval.js && node test/approval-transaction.js && node test/relay-security.js && node test/client-reconnect.js && node test/client-assignment-timeout.js && node test/relay.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js && node test/assets.js",
-    "test:offline": "node test/batch1-question-bank.js && node test/batch2-question-bank.js && node test/join-approval.js && node test/approval-transaction.js && node test/relay-security.js && node test/client-reconnect.js && node test/client-assignment-timeout.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js && node test/assets.js",
+    "test": "node test/join-approval.js && node test/approval-transaction.js && node test/relay-security.js && node test/client-reconnect.js && node test/client-assignment-timeout.js && node test/relay.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js && node test/assets.js && node test/audio-regression.js",
+    "test:offline": "node test/batch1-question-bank.js && node test/batch2-question-bank.js && node test/join-approval.js && node test/approval-transaction.js && node test/relay-security.js && node test/client-reconnect.js && node test/client-assignment-timeout.js && node test/rules.js && node test/lifecycle.js && node test/show-buzzer.js && node test/assets.js && node test/audio-regression.js",
     "test:browser-join": "python test/browser-join-approval.py"
   },
   "engines": {
